@@ -1,9 +1,18 @@
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Footer from './components/Layout/Footer';
+import Header from './components/Layout/Header';
+import Guide from './Guide/Guide';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header" />
+    <div>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/guide" element={<Guide />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

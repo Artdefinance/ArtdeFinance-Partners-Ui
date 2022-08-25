@@ -1,0 +1,25 @@
+.head_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    display: flex;
+    width: 100px;
+    height: 86px;
+    a {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.head_search {
+  .search_input {
+    width: 332px;
+    padding: 14px 20px;
+    background-color: #F4F4F4;
+    border: 0;
+    border-radius: 8px;
+  }
+}
