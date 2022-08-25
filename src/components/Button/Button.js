@@ -9,10 +9,10 @@ const StyledButton = styled.button`
   border-radius: 100px;
   padding-left: 30px;
   padding-right: 30px;
-  font-size: ${(props) => props.size || '16px'};
-  height: ${(props) => props.height || '50px'};
-  color: ${(props) => props.color || '#ffffff'};
-  background: ${(props) => props.background || 'linear-gradient(to bottom right, #000000, #555555)'};
+  font-size: 16px;
+  height: 50px;
+  color: #ffffff;
+  background: linear-gradient(to bottom right, #000000, #555555);
 `;
 
 function Button({ children }) {
