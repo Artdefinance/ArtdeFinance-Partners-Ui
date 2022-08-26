@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Footer from './components/Layout/Footer';
-import Header from './components/Layout/Header';
+import Footer from './Components/Layout/Footer';
+import Header from './Components/Layout/Header';
 import Guide from './Guide/Guide';
 
 function App() {

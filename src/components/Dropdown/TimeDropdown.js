@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-
 import './DateDropdown.scss';
 
 export default class DateDropdown extends React.Component {

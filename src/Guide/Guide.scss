@@ -1,7 +1,6 @@
 @import "../assets/css/Mixins.scss";
 
 .guide {
-  padding: 5vw;
   h2 {
     padding: 15px;
     background-color: #07006D;
@@ -130,5 +129,28 @@
 
   .date-dropdown.disabled {
     margin-top: 10px;
+  }
+
+  .primary-buttons, 
+  .secondary-button,
+  .radio-button {
+    float: left;
+  }
+
+  .buttons-position {
+    &::after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+  }
+
+  .radio-tab {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .check-button{
+    margin-bottom: 20px;
   }
 }
