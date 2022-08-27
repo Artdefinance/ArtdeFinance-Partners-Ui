@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 import './Guide.scss';
+// Dropdown
 import Dropdown from '../Components/Dropdown/Dropdown';
 import DateDropdown from '../Components/Dropdown/DateDropdown';
 import TimeDropdown from '../Components/Dropdown/TimeDropdown';
 import CountryDropdown from '../Components/Dropdown/CountryDropdown';
+// Button
 import PrimaryButton from '../Components/Button/PrimaryButton';
 import SecondaryButtonGray from '../Components/Button/SecondaryButtonGray';
 import SecondaryButtonBlack from '../Components/Button/SecondaryButtonBlack';
@@ -11,6 +13,8 @@ import SecondaryButtonFill from '../Components/Button/SecondaryButtonFill';
 import RadioButton from '../Components/Button/RadioButton';
 import RadioTabButton from '../Components/Button/RadioTabButton';
 import CheckButton from '../Components/Button/CheckButton';
+// Icons
+import Icons from '../Components/Icons/Icons';
 
 function Guide() {
   const ExampleContent1 = [
@@ -177,6 +181,8 @@ function Guide() {
           <CheckButton content="Approve" widthStyle="847px" heightStyle="80px" />
         </div>
       </div>
+      {/* Button */}
+
       <div className="dropdown-position">
         <h2>Dropbox Menu</h2>
         <div>
@@ -195,6 +201,8 @@ function Guide() {
           <CountryDropdown dropWidth="650px" dropTitle="Please select a country" content={ExampleContent4} />
         </div>
       </div>
+      {/* Dropdown box */}
+
       <div className="bubble-position">
         <h2>말풍선 위치</h2>
         <div className="item">
@@ -228,6 +236,24 @@ function Guide() {
         <div className="item">
           <h3>bubble-top-right</h3>
           <p className="bubble bubble-top-right">This is tooltip content. Seamlessly formulate magnetic methodologies with go forward deliverables.</p>
+        </div>
+      </div>
+      {/* 말풍선 */}
+
+      <div>
+        <h2>Icons</h2>
+        <div>
+          <Icons shape="close" width="24px" height="24px" color="#555555" />
+          <Icons shape="search" width="24px" height="24px" />
+          <Icons shape="check" width="24px" height="24px" />
+          <Icons shape="refresh" width="24px" height="24px" />
+          <Icons shape="plus" width="24px" height="24px" />
+          <Icons shape="flag" width="24px" height="24px" />
+          <Icons shape="flag-fill" width="24px" height="24px" />
+          <Icons shape="global" width="24px" height="24px" />
+          <Icons shape="notice" width="24px" height="24px" />
+          <Icons shape="share" />
+          <Icons shape="trash" />
         </div>
       </div>
     </div>
