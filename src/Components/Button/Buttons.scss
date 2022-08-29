@@ -1,4 +1,4 @@
-.primary-buttons {
+.buttons {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -8,45 +8,65 @@
   padding-right: 30px;
   font-size: 16px;
   color: #ffffff;
+}
+
+.buttons--black {
   background: linear-gradient(to bottom right, #000000, #555555);
 }
 
-.primary-buttons:disabled {
+.buttons:disabled {
   pointer-events: none;
   background: #BBBBBB66;
   color: #BBBBBB;
 }
 
-.primary-buttons--type1:hover {
+.buttons--type1:hover {
   background: linear-gradient(109.69deg, #6C54F3 36.82%, #9482FF 92.64%);
   box-shadow: 0 16px 25px 0 #7B65F840;
 }
 
-.primary-buttons--type2:hover {
+.buttons--type2:hover {
   background: linear-gradient(137.38deg, #5F44FF 39.44%, #E6D2FF 90.31%);
   box-shadow: 1px 1px 3px 0px #AE9FFF inset;
 }
 
-.secondary-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.buttons--default {
+  height: 50px;
+  padding: 0 30px;
+  line-height: 50px;
+  box-sizing: border-box;
+}
+
+.buttons--mid {
+  height: 60px;
+  padding: 0 30px;
+  line-height: 60px;
+  box-sizing: border-box;
+}
+
+.buttons--big {
+  height: 70px;
+  padding: 0 40px;
+  line-height: 70px;
+  box-sizing: border-box;
+}
+
+.buttons--gray-line {
   border-radius: 100px;
-  color: #000000;
-  font-size: 16px;
-}
-
-.secondary-button--gray {
   border: 1px solid #DDDDDD;
+  color: #000000;
 }
 
-.secondary-button--black {
+.buttons--black-line {
+  border-radius: 100px;
   border: 1px solid #000000;
+  color: #000000;
 }
 
-.secondary-button--fill {
+.buttons--fill {
+  border-radius: 100px;
   background-color: #F4F4F4;
+  color: #000000;
 }
 
 .radio-button {
