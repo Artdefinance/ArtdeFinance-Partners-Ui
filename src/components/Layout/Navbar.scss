@@ -3,6 +3,10 @@
 
   .nav_item {
     margin-right: 30px;
+    font-weight: 600;
+    a {
+      font-weight: inherit;
+    }
   }
   .menu_dropdown {
     .dropdown__title {
