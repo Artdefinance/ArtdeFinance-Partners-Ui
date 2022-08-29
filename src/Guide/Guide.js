@@ -308,6 +308,11 @@ function Guide() {
           <Icons shape="account" width="20px" height="20px" color="#BBBBBB" />
         </div>
       </div>
+      <div>
+        <p>Arrow</p>
+          <Icons shape="pagenation-left" width="24px" height="24px" />
+          <Icons shape="pagenation-right" width="24px" height="24px" />
+      </div>
     </div>
   );
 }
