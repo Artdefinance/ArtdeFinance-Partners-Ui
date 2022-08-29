@@ -6,10 +6,10 @@ import DateDropdown from '../Components/Dropdown/DateDropdown';
 import TimeDropdown from '../Components/Dropdown/TimeDropdown';
 import CountryDropdown from '../Components/Dropdown/CountryDropdown';
 // Button
-import PrimaryButton from '../Components/Button/PrimaryButton';
-import SecondaryButtonGray from '../Components/Button/SecondaryButtonGray';
-import SecondaryButtonBlack from '../Components/Button/SecondaryButtonBlack';
-import SecondaryButtonFill from '../Components/Button/SecondaryButtonFill';
+import Button from '../Components/Button/Button';
+import ButtonGray from '../Components/Button/ButtonGray';
+import ButtonBlack from '../Components/Button/ButtonBlack';
+import ButtonFill from '../Components/Button/ButtonFill';
 import RadioButton from '../Components/Button/RadioButton';
 import RadioTabButton from '../Components/Button/RadioTabButton';
 import CheckButton from '../Components/Button/CheckButton';
@@ -148,36 +148,35 @@ function Guide() {
   return (
     <div className="guide">
       <div className="buttons">
-        <h2>buttons</h2>
-        <div className="buttons-position">
-          <PrimaryButton content="Disabled type1" type="type1" contentPadding="17px 30px" disabled="true" />
-          <PrimaryButton content="Disabled type1" type="type1" contentPadding="17px 30px" disabled="false" />
-          <PrimaryButton content="Disabled type2" type="type2" contentPadding="21px 30px" disabled="false" />
-          <PrimaryButton content="Disabled type2" type="type2" contentPadding="25px 40px" disabled="false" />
+        <h2>button</h2>
+        <div className="button-position">
+          <Button className="button button--black button--default" content="type1" type="type1" disabled="true" />
+          <Button className="button button--black button--mid" content="type1" type="type1" />
+          <Button className="button button--black button--big" content="type2" type="type2" />
         </div>
-        <div className="buttons-position">
-          <SecondaryButtonGray content="Button" contentPadding="17px 30px" />
-          <SecondaryButtonGray content="Button" contentPadding="21px 30px" />
-          <SecondaryButtonGray content="Button" contentPadding="25px 40px" />
+        <div className="button-position">
+          <ButtonGray className="button button--gray-line button--default" content="Button" />
+          <ButtonGray className="button button--gray-line button--mid" content="Button" />
+          <ButtonGray className="button button--gray-line button--big" content="Button" />
         </div>
-        <div className="buttons-position">
-          <SecondaryButtonBlack content="Button" contentPadding="17px 30px" />
-          <SecondaryButtonBlack content="Button" contentPadding="21px 30px" />
-          <SecondaryButtonBlack content="Button" contentPadding="25px 40px" />
+        <div className="button-position">
+          <ButtonBlack className="button button--black-line button--default" content="Button" />
+          <ButtonBlack className="button button--black-line button--mid" content="Button" />
+          <ButtonBlack className="button button--black-line button--big" content="Button" />
         </div>
-        <div className="buttons-position">
-          <SecondaryButtonFill content="Button" contentPadding="17px 30px" />
-          <SecondaryButtonFill content="Button" contentPadding="21px 30px" />
-          <SecondaryButtonFill content="Button" contentPadding="25px 40px" />
+        <div className="button-position">
+          <ButtonFill className="button button--fill button--default" content="Button" />
+          <ButtonFill className="button button--fill button--mid" content="Button" />
+          <ButtonFill className="button button--fill button--big" content="Button" />
         </div>
-        <div className="buttons-position">
+        <div className="button-position">
           <RadioButton content="Default" value="option1" name="option1" widthStyle="368px" />
           <RadioButton content="Default" value="option2" name="option2" widthStyle="368px" />
         </div>
-        <div className="buttons-position">
+        <div className="button-position">
           <RadioTabButton data={ExampleContent5} widthStyle="646px" heightStyle="80px" />
         </div>
-        <div className="buttons-position">
+        <div className="button-position">
           <CheckButton content="Approve" widthStyle="847px" heightStyle="80px" />
         </div>
       </div>

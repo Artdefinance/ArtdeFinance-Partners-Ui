@@ -1,6 +1,5 @@
 import React from 'react';
 import './Navbar.scss';
-import Dropdown from '../Dropdown/Dropdown';
 
 class Navbar extends React.Component {
   constructor(props) {
