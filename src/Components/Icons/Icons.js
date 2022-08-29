@@ -237,6 +237,16 @@ export default class IconStyle extends React.Component {
               </>
             );
           }
+          if (shape === 'pagenation-left') {
+            return (
+              <path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z" fill="#BBBBBB" />
+            );
+          }
+          if (shape === 'pagenation-right') {
+            return (
+              <path d="M9.99984 6L8.58984 7.41L13.1698 12L8.58984 16.59L9.99984 18L15.9998 12L9.99984 6Z" fill="#555555" />
+            );
+          }
           return <path d={d} fill={color} />;
         })()}
         </g>
