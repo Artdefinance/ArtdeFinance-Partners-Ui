@@ -1,4 +1,4 @@
-.buttons {
+.button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10,60 +10,60 @@
   color: #ffffff;
 }
 
-.buttons--black {
+.button--black {
   background: linear-gradient(to bottom right, #000000, #555555);
 }
 
-.buttons:disabled {
+.button:disabled {
   pointer-events: none;
   background: #BBBBBB66;
   color: #BBBBBB;
 }
 
-.buttons--type1:hover {
+.button--type1:hover {
   background: linear-gradient(109.69deg, #6C54F3 36.82%, #9482FF 92.64%);
   box-shadow: 0 16px 25px 0 #7B65F840;
 }
 
-.buttons--type2:hover {
+.button--type2:hover {
   background: linear-gradient(137.38deg, #5F44FF 39.44%, #E6D2FF 90.31%);
   box-shadow: 1px 1px 3px 0px #AE9FFF inset;
 }
 
-.buttons--default {
+.button--default {
   height: 50px;
   padding: 0 30px;
   line-height: 50px;
   box-sizing: border-box;
 }
 
-.buttons--mid {
+.button--mid {
   height: 60px;
   padding: 0 30px;
   line-height: 60px;
   box-sizing: border-box;
 }
 
-.buttons--big {
+.button--big {
   height: 70px;
   padding: 0 40px;
   line-height: 70px;
   box-sizing: border-box;
 }
 
-.buttons--gray-line {
+.button--gray-line {
   border-radius: 100px;
   border: 1px solid #DDDDDD;
   color: #000000;
 }
 
-.buttons--black-line {
+.button--black-line {
   border-radius: 100px;
   border: 1px solid #000000;
   color: #000000;
 }
 
-.buttons--fill {
+.button--fill {
   border-radius: 100px;
   background-color: #F4F4F4;
   color: #000000;

@@ -6,7 +6,7 @@ import DateDropdown from '../Components/Dropdown/DateDropdown';
 import TimeDropdown from '../Components/Dropdown/TimeDropdown';
 import CountryDropdown from '../Components/Dropdown/CountryDropdown';
 // Button
-import Buttons from '../Components/Button/Buttons';
+import Button from '../Components/Button/Button';
 import ButtonGray from '../Components/Button/ButtonGray';
 import ButtonBlack from '../Components/Button/ButtonBlack';
 import ButtonFill from '../Components/Button/ButtonFill';
@@ -147,36 +147,36 @@ function Guide() {
   ];
   return (
     <div className="guide">
-      <div className="button">
-        <h2>buttons</h2>
-        <div className="buttons-position">
-          <Buttons className="buttons buttons--black buttons--default" content="type1" type="type1" disabled="true" />
-          <Buttons className="buttons buttons--black buttons--mid" content="type1" type="type1" />
-          <Buttons className="buttons buttons--black buttons--big" content="type2" type="type2" />
+      <div className="buttons">
+        <h2>button</h2>
+        <div className="button-position">
+          <Button className="button button--black button--default" content="type1" type="type1" disabled="true" />
+          <Button className="button button--black button--mid" content="type1" type="type1" />
+          <Button className="button button--black button--big" content="type2" type="type2" />
         </div>
-        <div className="buttons-position">
-          <ButtonGray className="buttons buttons--gray-line buttons--default" content="Button" />
-          <ButtonGray className="buttons buttons--gray-line buttons--mid" content="Button" />
-          <ButtonGray className="buttons buttons--gray-line buttons--big" content="Button" />
+        <div className="button-position">
+          <ButtonGray className="button button--gray-line button--default" content="Button" />
+          <ButtonGray className="button button--gray-line button--mid" content="Button" />
+          <ButtonGray className="button button--gray-line button--big" content="Button" />
         </div>
-        <div className="buttons-position">
-          <ButtonBlack className="buttons buttons--black-line buttons--default" content="Button" />
-          <ButtonBlack className="buttons buttons--black-line buttons--mid" content="Button" />
-          <ButtonBlack className="buttons buttons--black-line buttons--big" content="Button" />
+        <div className="button-position">
+          <ButtonBlack className="button button--black-line button--default" content="Button" />
+          <ButtonBlack className="button button--black-line button--mid" content="Button" />
+          <ButtonBlack className="button button--black-line button--big" content="Button" />
         </div>
-        <div className="buttons-position">
-          <ButtonFill className="buttons buttons--fill buttons--default" content="Button" />
-          <ButtonFill className="buttons buttons--fill buttons--mid" content="Button" />
-          <ButtonFill className="buttons buttons--fill buttons--big" content="Button" />
+        <div className="button-position">
+          <ButtonFill className="button button--fill button--default" content="Button" />
+          <ButtonFill className="button button--fill button--mid" content="Button" />
+          <ButtonFill className="button button--fill button--big" content="Button" />
         </div>
-        <div className="buttons-position">
+        <div className="button-position">
           <RadioButton content="Default" value="option1" name="option1" widthStyle="368px" />
           <RadioButton content="Default" value="option2" name="option2" widthStyle="368px" />
         </div>
-        <div className="buttons-position">
+        <div className="button-position">
           <RadioTabButton data={ExampleContent5} widthStyle="646px" heightStyle="80px" />
         </div>
-        <div className="buttons-position">
+        <div className="button-position">
           <CheckButton content="Approve" widthStyle="847px" heightStyle="80px" />
         </div>
       </div>

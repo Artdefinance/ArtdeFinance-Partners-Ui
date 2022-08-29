@@ -132,12 +132,12 @@
     margin-top: 10px;
   }
 
-  .buttons,
+  .button,
   .radio-button {
     float: left;
   }
 
-  .buttons-position {
+  .button-position {
     &::after {
       display: block;
       content: '';
