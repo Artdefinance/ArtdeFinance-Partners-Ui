@@ -54,10 +54,8 @@
           ]
         }
       ],
-      "indent": [
-        2,
-        2
-      ],
+      "indent": "off",
+      "react/jsx-indent": "off",
       "jsx-a11y/href-no-hash": "off",
       "jsx-a11y/anchor-is-valid": [
         "warn",

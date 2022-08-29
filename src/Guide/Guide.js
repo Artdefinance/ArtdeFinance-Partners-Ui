@@ -243,17 +243,70 @@ function Guide() {
       <div>
         <h2>Icons</h2>
         <div>
+          <p>SIZE 42</p>
+          <div>
+          <Icons shape="home" width="42px" height="42px" viewBox="0 0 42 42" />
+          </div>
+          <br />
+        </div>
+        <div>
+          <p>SIZE 38</p>
+          <div>
+          <Icons shape="camera" width="38px" height="38px" viewBox="0 0 38 38" />
+          <Icons shape="pencil" width="38px" height="38px" viewBox="0 0 38 38" />
+          </div>
+          <br />
+        </div>
+        <div>
+          <p>SIZE 24</p>
           <Icons shape="close" width="24px" height="24px" color="#555555" />
           <Icons shape="search" width="24px" height="24px" />
           <Icons shape="check" width="24px" height="24px" />
           <Icons shape="refresh" width="24px" height="24px" />
           <Icons shape="plus" width="24px" height="24px" />
           <Icons shape="flag" width="24px" height="24px" />
-          <Icons shape="flag-fill" width="24px" height="24px" />
+          <Icons shape="flag_fill" width="24px" height="24px" />
           <Icons shape="global" width="24px" height="24px" />
           <Icons shape="notice" width="24px" height="24px" />
           <Icons shape="share" />
           <Icons shape="trash" />
+        </div>
+        <div>
+          <Icons shape="exclama" color="#000000" />
+          <Icons shape="exclama_fill" color="#000000" />
+          <Icons shape="exclama_fill" color="#366DFC" />
+          <Icons shape="exclama" color="#366DFC" />
+          <Icons shape="checkbox_fill" color="#15A46E" />
+          <Icons shape="checkbox" color="#15A46E" />
+          <Icons shape="warning_fill" color="#FF3B30" />
+          <Icons shape="warning" color="#FF3B30" />
+          <Icons shape="alram" color="#555555" />
+          <Icons shape="calendar" />
+          <Icons shape="addcircle" />
+          <Icons shape="download" />
+        </div>
+        <div>
+          <Icons shape="close_small" />
+          <Icons shape="search_small" />
+          <Icons shape="expand" />
+          <Icons shape="hambuger" />
+        </div>
+        <br />
+      </div>
+      <div>
+        <p>SIZE 20</p>
+        <div>
+          <Icons shape="exclama20" width="20px" height="20px" color="#366DFC" />
+          <Icons shape="question" width="21px" height="20px" color="#366DFC" />
+        </div>
+        <div>
+          <Icons shape="acution" width="20px" height="20px" />
+          <Icons shape="data" width="20px" height="20px" />
+          <Icons shape="dashboard" width="20px" height="20px" color="#BBBBBB" />
+          <Icons shape="heart" width="20px" height="20px" color="#BBBBBB" />
+          <Icons shape="hand" width="20px" height="20px" color="#BBBBBB" />
+          <Icons shape="panorama" width="20px" height="20px" color="#BBBBBB" />
+          <Icons shape="account" width="20px" height="20px" color="#BBBBBB" />
         </div>
       </div>
     </div>
