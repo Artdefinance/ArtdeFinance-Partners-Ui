@@ -104,8 +104,8 @@ export default class IconStyle extends React.Component {
           if (shape === 'trash') {
             return (
               <>
-              <path d="M15 10V18H13V10H15Z" fill="#555555" />
-              <path d="M11 18V10H9V18H11Z" fill="#555555" />
+              <path d="M15 10V18H13V10H15Z" fill={color} />
+              <path d="M11 18V10H9V18H11Z" fill={color} />
               <path fillRule="evenodd" clipRule="evenodd" d="M17 2H7V6H3V8H5V22H19V8H21V6H17V2ZM15 6V4H9V6H15ZM7 8V20H17V8H7Z" fill={color} />
               </>
             );

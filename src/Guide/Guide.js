@@ -185,8 +185,8 @@ function Guide() {
       <div className="dropdown-position">
         <h2>Dropbox Menu</h2>
         <div>
-          <Dropdown dropWidth="210px" dropHeight="100%" dropTitle="드롭박스이름" content={ExampleContent1} />
-          <Dropdown dropWidth="263px" dropHeight="100%" dropTitle="드롭박스이름2" content={ExampleContent2} />
+          <Dropdown dropWidth="210px" dropHeight="60px" dropTitle="드롭박스이름" content={ExampleContent1} dropFontSize="16px" />
+          <Dropdown dropWidth="263px" dropHeight="60px" dropTitle="드롭박스이름2" content={ExampleContent2} dropFontSize="16px" />
         </div>
         <div>
           <DateDropdown dropWidth="415px" />
@@ -197,7 +197,7 @@ function Guide() {
           <TimeDropdown dropWidth="333px" disabled="true" />
         </div>
         <div>
-          <CountryDropdown dropWidth="650px" dropTitle="Please select a country" content={ExampleContent4} />
+          <CountryDropdown dropWidth="650px" dropHeight="60px" dropTitle="Please select a country" content={ExampleContent4} dropFontSize="16px" />
         </div>
       </div>
       {/* Dropdown box */}

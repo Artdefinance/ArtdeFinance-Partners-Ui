@@ -5,15 +5,20 @@
   min-height: 1080px;
 
   &__wrap {
-    display: flex;
     max-width: 1440px;
     padding-top: 60px;
-    justify-content: space-between;
     margin: 0 auto;
+  }
+
+  &__wrap::after {
+    display: block;
+    content: '';
+    clear: both;
   }
 }
 
 .side-list {
+  float: left;
   width: 580px;
   min-height: 564px;
   background-color: #FFFFFF;
@@ -127,11 +132,18 @@
       justify-content: center;
       padding: 0 13px;
       height: 50px;
+      border: 1px solid transparent;
       @include AcuminproR;
     }
 
     li:nth-child(odd) {
       background-color: #FAFAFA;
+    }
+
+    li:hover {
+      background-color: #F3F1FF;
+      border: 1px solid #000000;
+      border-radius: 5px;
     }
 
     p {
@@ -163,6 +175,7 @@
 }
 
 .side-info {
+  float: right;
   width: 825px;
   height: 564px;
   background-color: #FFFFFF;
@@ -229,20 +242,26 @@
 }
 
 .side-regist {
+  min-height: 564px;
+  height: auto;
+  margin-bottom: 80px;
+
   &__profile {
+    position: relative;
     margin-top: 40px;
-    text-align: center;
+  }
+
+  &__content {
+    padding: 0 88px;
   }
 
   &__profile-button {
+    overflow: hidden;
     position: relative;
     width: 90px;
     height: 90px;
+    margin: 0 auto;
     border-radius: 30px;
-    background-color: #C4C4C4;
-    color: #ffffff;
-    font-size: 32px;
-    font-weight: 700;
 
     svg {
       padding-top: 65px;
@@ -250,12 +269,148 @@
     }
 
     span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -23px;
-      margin-left: -11px;
+      display: inline-block;
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  &__file {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    margin: -25px 17px;
+    text-align: center;
+  }
+
+  input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__title {
+    display: inline-block;
+    position: relative;
+    color: #888888;
+    font-size: 16px;
+    @include RotaB;
+  }
+
+  &__title--need::after {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: -7px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #FD3D39;
+    content: '';
+  }
+
+  &__title--mark svg {
+    position: absolute;
+    top: 4px;
+    right: -27px;
+  }
+
+  &__inputs + &__inputs {
+    margin-top: 54px;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    margin-top: 13px;
+    padding-bottom: 8px;
+    font-size: 24px;
+    line-height: 24px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #DDDDDD;
+    @include RotaR;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__input::placeholder {
+    color: #BBBBBB;
+  }
+
+  &__more {
+    color: #888888;
+    font-size: 14px;
+    line-height: 20px;
+    @include AcuminproR;
+  }
+
+  &__inputs--half input {
+    width: 305px;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      width: 19px;
+      height: 1px;
+      background-color: #000000;
+      margin: 0 8px;
+    }
+
+    input {
+      text-align: center;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 140px;
+    padding: 12px 16px 34px;
+    margin-top: 7px;
+    color: #000000;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    resize: none;
+    box-sizing: border-box;
+    @include AcuminproR;
+
+    &::placeholder {
+      color: #000000;
+    }
+  }
+
+  &__drag-drop {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 80px;
+
+    button:nth-child(1) {
+      width: 200px;
+      margin: 0;
+    }
+    button:nth-child(2) {
+      width: 431px;
+      margin: 0;
     }
   }
 }
+
 
