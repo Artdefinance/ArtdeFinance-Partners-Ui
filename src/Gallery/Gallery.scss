@@ -1,0 +1,62 @@
+@import '../assets/css/Mixins.scss';
+
+.gallery__wrap {
+  .head {
+    padding: 169px 0 100px;
+    text-align: center;
+    > p {
+      font-weight: 500;
+      font-size: 62px;
+      line-height: 100%;
+    }
+    span {
+      display: block;
+      margin-top: 30px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 100%;
+      color: #888888;
+    }
+  }
+  .btn_wrap {
+    display: flex;
+    justify-content: center;
+    padding: 70px 0;
+    .button {
+      width:250px;
+    }
+  }
+}
+.card-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 36px;
+  .items {
+    flex: 1;
+    padding: 27px 32px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(197, 197, 197, 0.1);
+  }
+  i {
+    display: block;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 60px;
+  }
+  .title {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 100%;
+  }
+  .desc {
+    display: block;
+    font-size: 16px;
+    line-height: 110%;
+    @include AcuminproL();
+    & + .desc {
+      margin-top: 18px;
+    }
+  }
+}

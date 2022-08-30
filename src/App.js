@@ -5,10 +5,11 @@ import Guide from './Guide/Guide';
 import Artist from './Artist/Artist';
 import List from './Artist/List';
 import Regist from './Artist/Regist';
+import Gallery from './Gallery/Gallery';
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <BrowserRouter>
         <Header />
         <Routes>
@@ -16,6 +17,7 @@ function App() {
           <Route path="/artist" element={<Artist />} />
           <Route path="/artist/list" element={<List />} />
           <Route path="/artist/regist" element={<Regist />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
         <Footer />
       </BrowserRouter>
