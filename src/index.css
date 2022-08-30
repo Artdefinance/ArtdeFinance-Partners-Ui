@@ -104,3 +104,17 @@ button {
 	padding-left: 15px;
 	padding-right: 15px;
 }
+
+.pathGuide {
+	padding: 5vw;
+}
+.pathtable {
+	width: 100%;
+}
+.pathtable th {
+	font-weight: 700;
+}
+.pathtable th, .pathtable td {
+	padding: 15px 0;
+	border-bottom: 1px solid #555555;
+}
