@@ -1,4 +1,5 @@
 import './Header.scss';
+import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import Button from '../Button/Button';
 import Icons from '../Icons/Icons';
@@ -11,10 +12,17 @@ function Header() {
   };
   return (
     <div className="head_wrap">
-      <h1 style={logoStyle} className="logo"><a href="/"><span className="a11y">ARTDE FINANCE</span></a></h1>
-      <Navbar />
-      <Icons shape="close" width="24px" height="24px" color="#555555" />
-      <Button content="Connet to Wallet" type="type1" />
+      <div className="inner">
+        <h1 style={logoStyle} className="logo"><a href="/"><span className="a11y">ARTDE FINANCE</span></a></h1>
+        <div className="head_util">
+          <Navbar />
+          <Link to="#" className="link_notice">
+            <span className="cnt">32</span>
+            <Icons shape="notice" />
+          </Link>
+          <Button className="button button--black button--default" content="Connet to Wallet" type="type1" />
+        </div>
+      </div>
     </div>
   );
 }

@@ -9,9 +9,10 @@ import Gallery from './Gallery/Gallery';
 
 function App() {
   return (
-    <div className="app-container">
+    <div>
       <BrowserRouter>
         <Header />
+        <div className="app-container">
         <Routes>
           <Route path="/guide" element={<Guide />} />
           <Route path="/artist" element={<Artist />} />
@@ -19,6 +20,7 @@ function App() {
           <Route path="/artist/regist" element={<Regist />} />
           <Route path="/gallery" element={<Gallery />} />
         </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
     </div>

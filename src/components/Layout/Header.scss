@@ -1,7 +1,7 @@
 .head_wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: calc(100% - 30px);
+  padding-left:15px;
+  padding-right:15px;
   border-bottom: 1px solid #BBBBBB;
   .logo {
     display: flex;
@@ -13,6 +13,14 @@
     }
   }
 }
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
 
 .head_search {
   .search_input {
@@ -21,5 +29,32 @@
     background-color: #F4F4F4;
     border: 0;
     border-radius: 8px;
+  }
+}
+
+.head_util {
+  display: flex;
+  align-items: center;
+  .link_notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 43px;
+    height: 43px;
+    margin-right: 7px;
+    .cnt {
+      position:absolute;
+      right: 5px;
+      top: 0;
+      display: flex;
+      background-color: #FF3B30;
+      border-radius: 10px;
+      padding: 3px 5px;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 10px;
+      color: #ffffff;
+    }
   }
 }

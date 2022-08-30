@@ -1,5 +1,24 @@
 .foo_wrap {
-  height: 1046px;
+  // height: 1046px;
   background-color: #19191B;
+  padding-left: 15px;
+  padding-right: 15px;
   color: #ffffff;
+  .logo {
+    width: 119px;
+    height: 45px;
+  }
+  .inner {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .inner-top {
+    padding-top: 115px;
+    padding-bottom: 91px;
+    border-bottom: 1px solid #555555;
+  }
+  .inner-btm {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
 }
