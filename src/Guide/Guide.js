@@ -15,6 +15,8 @@ import RadioTabButton from '../Components/Button/RadioTabButton';
 import CheckButton from '../Components/Button/CheckButton';
 // Icons
 import Icons from '../Components/Icons/Icons';
+// Input
+import Input from '../Components/Inputs/Input';
 
 function Guide() {
   const ExampleContent1 = [
@@ -269,6 +271,7 @@ function Guide() {
           <Icons shape="notice" width="24px" height="24px" />
           <Icons shape="share" />
           <Icons shape="trash" />
+          <Icons shape="close-circle" />
         </div>
         <div>
           <Icons shape="exclama" color="#000000" />
@@ -313,6 +316,12 @@ function Guide() {
           <Icons shape="pagenation-left" width="24px" height="24px" />
           <Icons shape="pagenation-right" width="24px" height="24px" />
           <Icons shape="arrow-left" width="24px" height="24px" />
+      </div>
+
+      <div>
+        <h2>Input</h2>
+        <Input name="artist" disabled="true" placeholder="Content" />
+        <Input name="ID" placeholder="Content" />
       </div>
     </div>
   );

@@ -1,0 +1,44 @@
+@import "../../assets/css/Mixins.scss";
+
+.input {
+  &__input {
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding-right: 30px;
+    font-size: 24px;
+    line-height: 60px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #DDDDDD;
+    box-sizing: border-box;
+    @include RotaR;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__input::placeholder {
+    color: #BBBBBB;
+  }
+
+  &__input-box {
+    position: relative;
+
+    button {
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+    }
+  }
+
+}
+
+.input.disabled {
+  .input__input {
+    padding-left: 10px;
+    background-color: #F4F4F4;
+    border: none;
+  }
+}
