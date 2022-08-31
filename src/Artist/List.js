@@ -102,7 +102,7 @@ export default class List extends React.Component {
                   <p className="side-list__type">Artist</p>
                   <p className="side-list__count">{ artistCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') }</p>
                 </div>
-                <Dropdown dropWidth="216px" dropHeight="60px" dropTitle="Sort by" content={Content1} dropFontSize="16px" />
+                <Dropdown dropWidth="216px" dropHeight="60px" dropTitle="Sort by" content={Content1} dropFontSize="16px" dropFontColor="#000000" />
               </div>
             </div>
             <div className="side-list__content">

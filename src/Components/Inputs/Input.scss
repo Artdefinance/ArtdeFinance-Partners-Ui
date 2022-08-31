@@ -41,4 +41,8 @@
     background-color: #F4F4F4;
     border: none;
   }
+
+  input::placeholder {
+    color: #888888;
+  }
 }

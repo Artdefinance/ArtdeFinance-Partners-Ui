@@ -5,6 +5,8 @@ import Guide from './Guide/Guide';
 import Artist from './Artist/Artist';
 import List from './Artist/List';
 import Regist from './Artist/Regist';
+import View from './Artist/View';
+import Modify from './Artist/Modify';
 import Gallery from './Gallery/Gallery';
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
           <Route path="/artist" element={<Artist />} />
           <Route path="/artist/list" element={<List />} />
           <Route path="/artist/regist" element={<Regist />} />
+          <Route path="/artist/view" element={<View />} />
+          <Route path="/artist/modify" element={<Modify />} />
           <Route path="/gallery" element={<Gallery />} />
         </Routes>
         <div className="pathGuide">

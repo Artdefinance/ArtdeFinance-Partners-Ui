@@ -16,7 +16,7 @@ export default class Regist extends React.Component {
     super(props);
     this.state = {
       artistCount: 1000000,
-      fileImage: '/assets/images/page/artist/img_profile.png',
+      fileImage: '/assets/images/page/artist/img_profile_view.png',
       totalByte: 0,
     };
     this.handleChange = this.handleChange.bind(this);
@@ -45,11 +45,7 @@ export default class Regist extends React.Component {
   }
 
   render() {
-    const {
-      artistCount,
-      fileImage,
-      totalByte,
-    } = this.state;
+    const { artistCount, fileImage, totalByte } = this.state;
     const Content1 = [
       {
         id: '1',
@@ -211,7 +207,7 @@ export default class Regist extends React.Component {
                 </div>
                 <div className="side-regist__file">
                   <Icons
-                    shape="camera"
+                    shape="pencil"
                     width="38px"
                     height="38px"
                     viewBox="0 0 38 38"
@@ -220,20 +216,20 @@ export default class Regist extends React.Component {
                 </div>
               </div>
               <div className="side-regist__inputs">
-                <p className="side-regist__title side-regist__title--need">
+                <p className="side-regist__title">
                   Artist Name
                 </p>
-                <Input name="artist" placeholder="Text" />
+                <Input name="artist" disabled="true" placeholder="Content" />
                 <div className="side-regist__message">
                   <Icons shape="warning_fill" color="#FF3B30" />
                   <span className="side-regist__more">Supporting Text</span>
                 </div>
               </div>
               <div className="side-regist__inputs">
-                <p className="side-regist__title side-regist__title--need">
+                <p className="side-regist__title">
                   ID
                 </p>
-                <Input name="ID" placeholder="Text" />
+                <Input name="ID" placeholder="Content" />
                 <div className="side-regist__message">
                   <Icons shape="warning_fill" color="#FF3B30" />
                   <span className="side-regist__more">Supporting Text</span>
@@ -296,7 +292,7 @@ export default class Regist extends React.Component {
                   Up to 2000Bytes can be registered.
                 </span>
               </div>
-              <div className="side-regist__inputs side-regist__inputs--error">
+              <div className="side-regist__inputs">
                 <p className="side-regist__title">Biography</p>
                 <textarea
                   placeholder="Type your contents here."

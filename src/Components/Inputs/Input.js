@@ -3,7 +3,7 @@ import React from 'react';
 import './Input.scss';
 import Icons from '../Icons/Icons';
 
-export default class ButtonFill extends React.Component {
+export default class Input extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
