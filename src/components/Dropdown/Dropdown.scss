@@ -107,7 +107,24 @@
 }
 
 .country-dropdown {
+  .dropdown__title::before {
+    width: 0;
+    height: 0;
+    border-color: #DDDDDD transparent transparent; 
+    border-style: solid; 
+    border-width: 7px 5px 0; 
+    transform: rotate(0);
+  }
   .dropdown__item span {
     padding-left: 47px;
   }
+}
+
+.dropdown__title.active::before {
+  width: 0;
+  height: 0;
+  border-color: #DDDDDD transparent transparent; 
+  border-style: solid; 
+  border-width: 7px 5px 0; 
+  transform: rotate(180deg);
 }

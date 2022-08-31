@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
 import './Pagenation.scss';
 import Icons from '../Icons/Icons';
 

@@ -185,8 +185,8 @@ function Guide() {
       <div className="dropdown-position">
         <h2>Dropbox Menu</h2>
         <div>
-          <Dropdown dropWidth="210px" dropHeight="60px" dropTitle="드롭박스이름" content={ExampleContent1} dropFontSize="16px" />
-          <Dropdown dropWidth="263px" dropHeight="60px" dropTitle="드롭박스이름2" content={ExampleContent2} dropFontSize="16px" />
+          <Dropdown dropWidth="210px" dropHeight="60px" dropTitle="드롭박스이름" content={ExampleContent1} dropFontSize="16px" dropFontColor="#000000" />
+          <Dropdown dropWidth="263px" dropHeight="60px" dropTitle="드롭박스이름2" content={ExampleContent2} dropFontSize="16px" dropFontColor="#000000" />
         </div>
         <div>
           <DateDropdown dropWidth="415px" />
@@ -312,6 +312,7 @@ function Guide() {
         <p>Arrow</p>
           <Icons shape="pagenation-left" width="24px" height="24px" />
           <Icons shape="pagenation-right" width="24px" height="24px" />
+          <Icons shape="arrow-left" width="24px" height="24px" />
       </div>
     </div>
   );

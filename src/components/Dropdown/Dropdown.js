@@ -29,25 +29,45 @@ export default class Dropdown extends React.Component {
 
   render() {
     const { isToggleOn, getDropTitle } = this.state;
-    const { dropWidth, dropHeight, dropFontSize, dropTitle, dropClass, content } = this.props;
+    const {
+      dropWidth,
+      dropHeight,
+      dropFontSize,
+      dropFontColor,
+      dropTitle,
+      dropClass,
+      content,
+    } = this.props;
     const dropdownStyle = {
       width: dropWidth,
       height: dropHeight,
       fontSize: dropFontSize,
+      color: dropFontColor,
     };
     return (
       <div className={`dropdown ${dropClass}`} style={dropdownStyle}>
-        <button type="button" className={isToggleOn ? 'dropdown__title active' : 'dropdown__title '} onClick={this.handleClick} style={dropdownStyle}>
+        <button
+          type="button"
+          className={isToggleOn ? 'dropdown__title active' : 'dropdown__title '}
+          onClick={this.handleClick}
+          style={dropdownStyle}
+        >
           <span>{getDropTitle === '' ? dropTitle : getDropTitle}</span>
         </button>
-        <div className={isToggleOn ? 'dropdown__list active' : 'dropdown__list'} style={{ width: dropWidth }}>
-          {
-            content && content.map((items) => (
-              <button type="button" className="dropdown__item" key={items.id} onClick={this.handleClick2}>
+        <div
+          className={isToggleOn ? 'dropdown__list active' : 'dropdown__list'}
+          style={{ width: dropWidth }}
+        >
+          {content && content.map((items) => (
+              <button
+                type="button"
+                className="dropdown__item"
+                key={items.id}
+                onClick={this.handleClick2}
+              >
                 <span>{items.title}</span>
               </button>
-            ))
-          }
+            ))}
         </div>
       </div>
     );

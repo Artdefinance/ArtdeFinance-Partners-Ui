@@ -247,6 +247,11 @@ export default class IconStyle extends React.Component {
               <path d="M9.99984 6L8.58984 7.41L13.1698 12L8.58984 16.59L9.99984 18L15.9998 12L9.99984 6Z" fill="#555555" />
             );
           }
+          if (shape === 'arrow-left') {
+            return (
+              <path d="M9.41437 11.9999L16.4144 4.9999L15.0002 3.58569L6.58594 11.9999L15.0002 20.4141L16.4144 18.9999L9.41437 11.9999Z" fill="black" />
+            );
+          }
           return <path d={d} fill={color} />;
         })()}
         </g>

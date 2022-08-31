@@ -3,7 +3,7 @@ import { FileUploader } from 'react-drag-drop-files';
 import './FileDragDrop.scss';
 import Icons from '../Icons/Icons';
 
-const fileTypes = ['JPG', 'PNG', 'GIF'];
+const fileTypes = ['JPG', 'GIF', 'SVG', 'PNG'];
 
 export default class FileDragDrop extends React.Component {
   constructor(props) {
