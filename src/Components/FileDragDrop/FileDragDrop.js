@@ -14,6 +14,12 @@ export default class FileDragDrop extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  gotoTrash = () => {
+    this.setState(() => ({
+      file: '',
+    }));
+  };
+
   handleChange = (files) => {
     this.setState(() => ({
       file: files,
@@ -32,7 +38,6 @@ export default class FileDragDrop extends React.Component {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
     };
-    console.log(file);
     return (
       <div className={file ? 'drag-drop active' : 'drag-drop'}>
         {file ? (
@@ -49,7 +54,7 @@ export default class FileDragDrop extends React.Component {
               </span>
               <button type="button" className="preview">Preview</button>
             </div>
-            <button type="button" className="trash">
+            <button type="button" className="trash" onClick={this.gotoTrash}>
               <Icons shape="trash" color="#BBBBBB" />
               <span className="a11y">휴지통으로 이동</span>
             </button>
