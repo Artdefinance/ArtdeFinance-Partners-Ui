@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+/* eslint-disable react/prop-types */
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './Components/Layout/Footer';
 import Header from './Components/Layout/Header';
 import Path from './Path';
@@ -10,6 +11,7 @@ import View from './Artist/View';
 import Modify from './Artist/Modify';
 import Gallery from './Gallery/Gallery';
 import GalleryStart from './Gallery/Start';
+import Activity from './Activity/Activity';
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           <Route path="/artist/modify" element={<Modify />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/gallery/start" element={<GalleryStart />} />
+          <Route path="/activity" element={<Activity />} />
         </Routes>
         </div>
         <Footer />
