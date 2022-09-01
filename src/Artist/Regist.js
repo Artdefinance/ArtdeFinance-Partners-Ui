@@ -2,20 +2,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Artist.scss';
+import ArtistList from './ArtistList';
 import Button from '../Components/Button/Button';
 import ButtonGray from '../Components/Button/ButtonGray';
 import CountryDropdown from '../Components/Dropdown/CountryDropdown';
-import Dropdown from '../Components/Dropdown/Dropdown';
 import Icons from '../Components/Icons/Icons';
 import Input from '../Components/Inputs/Input';
-import Pagenation from '../Components/Pagenation/Pagenation';
 import FileDragDrop from '../Components/FileDragDrop/FileDragDrop';
 
 export default class Regist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      artistCount: 1000000,
       fileImage: '/assets/images/page/artist/img_profile.png',
       totalByte: 0,
     };
@@ -46,83 +44,10 @@ export default class Regist extends React.Component {
 
   render() {
     const {
-      artistCount,
       fileImage,
       totalByte,
     } = this.state;
-    const Content1 = [
-      {
-        id: '1',
-        title: 'Sort by recently active',
-      },
-      {
-        id: '2',
-        title: 'Sort by artist name',
-      },
-    ];
-    const exampleData = [
-      {
-        id: '1',
-        artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '2',
-        artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '3',
-        artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '4',
-        artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '5',
-        artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '6',
-        artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '7',
-        artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '8',
-        artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '9',
-        artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '10',
-        artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-    ];
-    const ExampleContent4 = [
+    const ExampleContent1 = [
       {
         id: '1',
         title: '[SPM] Saint Pierre and Miquelon',
@@ -147,59 +72,7 @@ export default class Regist extends React.Component {
     return (
       <div className="artist">
         <div className="artist__wrap">
-          <div className="side-list">
-            <div className="side-list__header">
-              <div className="side-list__info">
-                <div className="side-list__wrap">
-                  <span className="side-list__icon">
-                    <Icons
-                      shape="account"
-                      width="20px"
-                      height="20px"
-                      color="#BBBBBB"
-                    />
-                  </span>
-                  <p className="side-list__type">Artist</p>
-                  <p className="side-list__count">
-                    {artistCount
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                  </p>
-                </div>
-                <Dropdown
-                  dropWidth="216px"
-                  dropHeight="60px"
-                  dropTitle="Sort by"
-                  content={Content1}
-                  dropFontSize="16px"
-                  dropFontColor="#000000"
-                />
-              </div>
-            </div>
-            <div className="side-list__content">
-              <div className="side-list__titles">
-                <ul>
-                  <li>Artist</li>
-                  <li>Birth</li>
-                  <li>Update date</li>
-                </ul>
-              </div>
-              <div className="side-list__list">
-                <ul className="side-list__items">
-                  {exampleData.map((items) => (
-                    <li key={items.id}>
-                      <p>{items.artist}</p>
-                      <p>{items.birth}</p>
-                      <p>{items.update}</p>
-                    </li>
-                  ))}
-                </ul>
-                <div className="side-list__pagenation">
-                  <Pagenation />
-                </div>
-              </div>
-            </div>
-          </div>
+          <ArtistList data="true" />
           <div className="side-info side-regist">
             <div className="side-info__header">
               <p>Artist Registration</p>
@@ -289,7 +162,7 @@ export default class Regist extends React.Component {
                   dropWidth="650px"
                   dropHeight="80px"
                   dropTitle="Please select a country"
-                  content={ExampleContent4}
+                  content={ExampleContent1}
                   dropFontSize="24px"
                 />
                 <span className="side-regist__more">

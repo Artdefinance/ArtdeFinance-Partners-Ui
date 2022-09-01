@@ -32,6 +32,7 @@ export default class FileDragDrop extends React.Component {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
     };
+    console.log(file);
     return (
       <div className={file ? 'drag-drop active' : 'drag-drop'}>
         {file ? (
@@ -60,6 +61,7 @@ export default class FileDragDrop extends React.Component {
               name="file"
               types={fileTypes}
               maxSize={150}
+              multiple={true}
             />
             <div className="drag-drop__content">
               <i style={imgStyle} />

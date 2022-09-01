@@ -45,7 +45,7 @@ export default class Input extends React.Component {
 
   render() {
     const { value, isClearButton } = this.state;
-    const { name, disabled, placeholder } = this.props;
+    const { name, disabled, placeholder, getValue } = this.props;
     return (
       <div className={disabled === 'true' ? 'input disabled' : 'input'}>
         <div className="input__input-box">
@@ -60,16 +60,28 @@ export default class Input extends React.Component {
               disabled
             />
           ) : (
-            <input
-              type="text"
-              className="input__input"
-              placeholder={placeholder}
-              name={name}
-              onChange={this.showCloseButton}
-              value={value}
-            />
+            <div>
+              {getValue === '' ? (
+                <input
+                  type="text"
+                  className="input__input"
+                  placeholder={placeholder}
+                  name={name}
+                  onChange={this.showCloseButton}
+                  value={value}
+                />
+              ) : (
+                <input
+                  type="text"
+                  className="input__input"
+                  placeholder={placeholder}
+                  name={name}
+                  onChange={this.showCloseButton}
+                  value={getValue}
+                />
+              )}
+            </div>
           )}
-
           {isClearButton ? (
             <button type="button" onClick={this.clearText} name={name}>
               <Icons shape="close-circle" />
