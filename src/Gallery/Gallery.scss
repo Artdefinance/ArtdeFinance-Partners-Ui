@@ -1,6 +1,7 @@
 @import '../assets/css/Mixins.scss';
 
 .gallery__wrap {
+  padding-bottom: 199px;
   .head {
     padding: 169px 0 100px;
     text-align: center;
@@ -43,6 +44,8 @@
     width: 52px;
     height: 52px;
     margin-bottom: 60px;
+    border-radius: 50%;
+    font-style: normal;
   }
   .title {
     margin-bottom: 30px;
@@ -57,6 +60,32 @@
     @include AcuminproL();
     & + .desc {
       margin-top: 18px;
+    }
+  }
+  &.item-center {
+    .items {
+      text-align: center;
+    }
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 26px;
+      background-color: #F4F4F4;
+      span {
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+    .title {
+      margin-bottom: 16px;
+      font-size: 24px;
+    }
+    .desc {
+      font-weight: 500;
+      color: #888888;
     }
   }
 }

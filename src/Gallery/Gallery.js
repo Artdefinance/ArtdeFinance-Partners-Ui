@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Gallery.scss';
 import Button from '../Components/Button/Button';
 
-export default class Artist extends React.Component {
+export default class Gallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
