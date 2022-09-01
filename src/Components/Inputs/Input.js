@@ -36,7 +36,7 @@ export default class Input extends React.Component {
     }
   }
 
-  clearText(e) {
+  clearText() {
     this.setState(() => ({
       value: '',
       isClearButton: false,

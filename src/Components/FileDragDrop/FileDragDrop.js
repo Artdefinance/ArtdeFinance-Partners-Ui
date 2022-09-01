@@ -59,7 +59,6 @@ export default class FileDragDrop extends React.Component {
               handleChange={this.handleChange}
               name="file"
               types={fileTypes}
-              multiple={true}
               maxSize={150}
             />
             <div className="drag-drop__content">
