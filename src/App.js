@@ -11,6 +11,7 @@ import View from './Artist/View';
 import Modify from './Artist/Modify';
 import Gallery from './Gallery/Gallery';
 import GalleryStart from './Gallery/Start';
+import GalleryRegist from './Gallery/Regist';
 import Activity from './Activity/Activity';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/artist/modify" element={<Modify />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/gallery/start" element={<GalleryStart />} />
+          <Route path="/gallery/regist" element={<GalleryRegist />} />
           <Route path="/activity" element={<Activity />} />
         </Routes>
         </div>

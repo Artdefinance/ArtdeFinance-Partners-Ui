@@ -34,6 +34,12 @@ export default class GalleryStart extends React.Component {
               <span className="desc">
               First, in the Chrome browser metamask extension? Please install it.
               </span>
+              <div className="more">
+                <a href="/#" className="btn_chorme_download">
+                  <span>Add to Chrome</span>
+                  <i className="ico_chrome" style={{ backgroundImage: 'url(/assets/images/page/gallery/ico_chrome.png)' }} />
+                </a>
+              </div>
             </div>
             <div className="items">
               <i>
@@ -45,6 +51,9 @@ export default class GalleryStart extends React.Component {
               <br />
               Please create a wallet.
               </span>
+              <div className="more">
+                <i className="ico_fox" style={{ backgroundImage: 'url(/assets/images/page/gallery/ico_fox.svg)' }} />
+              </div>
             </div>
             <div className="items">
               <i>
@@ -56,6 +65,11 @@ export default class GalleryStart extends React.Component {
               <br />
               You can start the service!
               </span>
+              <div className="more">
+                <a href="/#">
+                  <i className="ico_start" style={{ backgroundImage: 'url(/assets/images/page/gallery/btn_start_service.png)' }} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
