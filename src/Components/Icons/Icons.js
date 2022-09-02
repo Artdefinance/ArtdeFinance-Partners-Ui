@@ -215,7 +215,7 @@ export default class IconStyle extends React.Component {
               </g>
               <path d="M19.1668 27.7916V22.2916H22.8335V27.7916H27.4168V20.4583H30.1668L21.0002 12.2083L11.8335 20.4583H14.5835V27.7916H19.1668Z" fill="black" />
               <defs>
-              <filter id="filter0_d_372_8491" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" colorInterpolation-filters="sRGB">
+              <filter id="filter0_d_372_8491" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" colorinterpolation-filters="sRGB">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
               <feOffset />
@@ -252,9 +252,29 @@ export default class IconStyle extends React.Component {
               <path d="M9.41437 11.9999L16.4144 4.9999L15.0002 3.58569L6.58594 11.9999L15.0002 20.4141L16.4144 18.9999L9.41437 11.9999Z" fill="black" />
             );
           }
+          if (shape === 'arrow-right') {
+            return (
+              <path d="M7.91797 15.333L12.418 10.583L7.91797 5.83301" stroke="#BBBBBB" />
+            );
+          }
+          if (shape === 'arrow-up') {
+            return (
+              <path d="M7.78656 15.41L12.6105 10.83L17.4345 15.41L18.9163 14L12.6105 8L6.30469 14L7.78656 15.41Z" fill="#888888" />
+            );
+          }
+          if (shape === 'arrow-down') {
+            return (
+              <path d="M7.78656 9L12.6105 13.58L17.4345 9L18.9163 10.41L12.6105 16.41L6.30469 10.41L7.78656 9Z" fill="#888888" />
+            );
+          }
           if (shape === 'close-circle') {
             return (
               <path d="M12 3.5C7.0374 3.5 3 7.5374 3 12.5C3 17.4626 7.0374 21.5 12 21.5C16.9626 21.5 21 17.4626 21 12.5C21 7.5374 16.9626 3.5 12 3.5ZM15.7863 15.0137L14.5137 16.2863L12 13.7726L9.4863 16.2863L8.2137 15.0137L10.7274 12.5L8.2137 9.9863L9.4863 8.7137L12 11.2274L14.5137 8.7137L15.7863 9.9863L13.2726 12.5L15.7863 15.0137Z" fill="#DDDDDD" />
+            );
+          }
+          if (shape === 'clock') {
+            return (
+              <path d="M12.2906 1H7.14531V2.7151H12.2906V1ZM8.86041 12.1482H10.5755V7.00286H8.86041V12.1482ZM15.7465 6.47118L16.9643 5.25345C16.5955 4.8161 16.1925 4.40448 15.7551 4.04431L14.5374 5.26203C13.2082 4.19867 11.536 3.56408 9.71796 3.56408C5.45593 3.56408 2 7.02001 2 11.282C2 15.5441 5.44736 19 9.71796 19C13.9886 19 17.4359 15.5441 17.4359 11.282C17.4359 9.47261 16.8013 7.80038 15.7465 6.47118ZM9.71796 17.2935C6.39924 17.2935 3.7151 14.6093 3.7151 11.2906C3.7151 7.97189 6.39924 5.28776 9.71796 5.28776C13.0367 5.28776 15.7208 7.97189 15.7208 11.2906C15.7208 14.6093 13.0367 17.2935 9.71796 17.2935Z" fill="black" />
             );
           }
           return <path d={d} fill={color} />;

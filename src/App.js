@@ -13,6 +13,7 @@ import Gallery from './Gallery/Gallery';
 import GalleryStart from './Gallery/Start';
 import GalleryRegist from './Gallery/Regist';
 import Activity from './Activity/Activity';
+import ActivityList from './Activity/List';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/gallery/start" element={<GalleryStart />} />
           <Route path="/gallery/regist" element={<GalleryRegist />} />
           <Route path="/activity" element={<Activity />} />
+          <Route path="/activity/list" element={<ActivityList />} />
         </Routes>
         </div>
         <Footer />

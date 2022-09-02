@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './Activity.scss';
 import Dropdown from '../Components/Dropdown/Dropdown';
 import Icons from '../Components/Icons/Icons';
 import Pagenation from '../Components/Pagenation/Pagenation';
@@ -8,179 +10,219 @@ export default class Activity extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      artistCount: 1000000,
+      isData: true, // false 일경우 nodata 화면
     };
   }
 
   render() {
-    const { artistCount } = this.state;
-    const { data } = this.props;
-    const Content1 = [
+    const { isData } = this.state;
+    const ExampleContent1 = [
       {
         id: '1',
+        title: 'Sort by ending soon',
+      },
+      {
+        id: '2',
         title: 'Sort by recently active',
       },
       {
-        id: '2',
-        title: 'Sort by artist name',
-      },
-    ];
-    const exampleData = [
-      {
-        id: '1',
-        artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '2',
-        artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
         id: '3',
-       artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
+        title: 'Sort by newest',
       },
       {
         id: '4',
-       artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
+        title: 'Sort by oldest',
+      },
+    ];
+    const ExampleData = [
+      {
+        id: '1',
+        bg: '/assets/images/page/activity/img_square_dummy.png',
+        title: 'Vincent van GoghVincent van Gogh Vincent',
+        desc: 'Starry Night Over the RhonefOver the rho nef dafsd ober aldedfdaq...2011',
+        type: 'Auction',
+        price: '1,500,000 USD',
+        priceToBUSD: '= 1,500,000 BUSD',
+        duration: '180d 17h 38m 52s',
+        status: 'For Sale',
+      },
+      {
+        id: '2',
+        bg: '/assets/images/page/activity/img_square_dummy.png',
+        title: 'Vincent van GoghVincent van Gogh Vincent',
+        desc: 'Starry Night Over the RhonefOver the rho nef dafsd ober aldedfdaq...2011',
+        type: 'List Price',
+        price: '1,500,000 ~ 9,999,999 USD',
+        priceToBUSD: '= 1,500,000 ~ 9,99,999 BUSD',
+        duration: '180d 17h 38m 52s',
+        status: 'Sold Out',
+      },
+      {
+        id: '3',
+        bg: '/assets/images/page/activity/img_square_dummy.png',
+        title: 'Vincent van GoghVincent van Gogh Vincent',
+        desc: 'Starry Night Over the RhonefOver the rho nef dafsd ober aldedfdaq...2011',
+        type: 'List Price',
+        price: '1,500,000 ~ 9,999,999 USD',
+        priceToBUSD: '= 1,500,000 ~ 9,99,999 BUSD',
+        duration: '180d 17h 38m 52s',
+        status: 'Sold Out',
+      },
+      {
+        id: '4',
+        bg: '/assets/images/page/activity/img_square_dummy.png',
+        title: 'Vincent van GoghVincent van Gogh Vincent',
+        desc: 'Starry Night Over the RhonefOver the rho nef dafsd ober aldedfdaq...2011',
+        type: 'Auction',
+        price: '1,500,000 USD',
+        priceToBUSD: '= 1,500,000 BUSD',
+        duration: '180d 17h 38m 52s',
+        status: 'For Sale',
       },
       {
         id: '5',
-       artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
+        bg: '/assets/images/page/activity/img_square_dummy.png',
+        title: 'Vincent van GoghVincent van Gogh Vincent',
+        desc: 'Starry Night Over the RhonefOver the rho nef dafsd ober aldedfdaq...2011',
+        type: 'List Price',
+        price: '1,500,000 ~ 9,999,999 USD',
+        priceToBUSD: '= 1,500,000 ~ 9,99,999 BUSD',
+        duration: '180d 17h 38m 52s',
+        status: 'Sold Out',
       },
       {
         id: '6',
-       artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
+        bg: '/assets/images/page/activity/img_square_dummy.png',
+        title: 'Vincent van GoghVincent van Gogh Vincent',
+        desc: 'Starry Night Over the RhonefOver the rho nef dafsd ober aldedfdaq...2011',
+        type: 'Auction',
+        price: '1,500,000 USD',
+        priceToBUSD: '= 1,500,000 BUSD',
+        duration: '180d 17h 38m 52s',
+        status: 'For Sale',
       },
       {
         id: '7',
-       artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '8',
-       artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '9',
-       artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
-      },
-      {
-        id: '10',
-       artist: 'Gordon Alexander Buchanan Gordon Alexander Buchanan',
-        birth: '2000 - 2022',
-        update: '22/06/2022 17:33:55',
+        bg: '/assets/images/page/activity/img_square_dummy.png',
+        title: 'Vincent van GoghVincent van Gogh Vincent',
+        desc: 'Starry Night Over the RhonefOver the rho nef dafsd ober aldedfdaq...2011',
+        type: 'Auction',
+        price: '1,500,000 USD',
+        priceToBUSD: '= 1,500,000 BUSD',
+        duration: '180d 17h 38m 52s',
+        status: 'For Sale',
       },
     ];
-    const nodataStyle = {
-      backgroundImage: 'url(/assets/images/page/artist/img_no_data.png)',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-    };
     return (
-      <div>
-        {data === 'true' ? (
-          <div className="side-list">
-            <div className="side-list__header">
-              <div className="side-list__info">
-                <div className="side-list__wrap">
-                  <span className="side-list__icon">
-                    <Icons
-                      shape="account"
-                      width="20px"
-                      height="20px"
-                      color="#BBBBBB"
-                    />
-                  </span>
-                  <p className="side-list__type">Artist</p>
-                  <p className="side-list__count">
-                    {artistCount
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                  </p>
-                </div>
-                <Dropdown
-                  dropWidth="216px"
-                  dropHeight="60px"
-                  dropTitle="Sort by"
-                  content={Content1}
-                  dropFontSize="16px"
-                  dropFontColor="#000000"
-                />
-              </div>
+      <div className="activity">
+        <h2>Works Activity</h2>
+        <div className="filter">
+          <div className="filter-header">
+            <div className="filter-header__inputs">
+              <label htmlFor="filter-radio1">
+                <input type="radio" id="filter-radio1" name="filter-radio" />
+                <span />
+                All
+              </label>
+              <label htmlFor="filter-radio2">
+                <input type="radio" id="filter-radio2" name="filter-radio" />
+                <span />
+                For Sale
+              </label>
+              <label htmlFor="filter-radio3">
+                <input type="radio" id="filter-radio3" name="filter-radio" />
+                <span />
+                Sold Out
+              </label>
             </div>
-            <div className="side-list__content">
-              <div className="side-list__titles">
-                <ul>
-                  <li>Artist</li>
-                  <li>Birth</li>
-                  <li>Update date</li>
-                </ul>
-              </div>
-              <div className="side-list__list">
-                <ul className="side-list__items">
-                  {exampleData.map((items) => (
-                    <li key={items.id}>
-                      <p>{items.artist}</p>
-                      <p>{items.birth}</p>
-                      <p>{items.update}</p>
-                    </li>
-                  ))}
-                </ul>
-                <div className="side-list__pagenation">
-                  <Pagenation />
-                </div>
-              </div>
+            <div className="filter-header__drop">
+              <Dropdown
+                dropWidth="215px"
+                dropHeight="60px"
+                dropTitle="Sort by"
+                content={ExampleContent1}
+                dropFontSize="16px"
+                dropFontColor="#000000"
+              />
+              <p>10,000 Results</p>
             </div>
           </div>
-        ) : (
-          <div className="side-list">
-            <div className="side-list__header">
-              <div className="side-list__info">
-                <div className="side-list__wrap">
-                  <span className="side-list__icon">
-                    <Icons shape="account" width="20px" height="20px" color="#BBBBBB" />
-                  </span>
-                  <p className="side-list__type">Artist</p>
-                  <p className="side-list__count">{ artistCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') }</p>
-                </div>
-                <Dropdown dropWidth="216px" dropHeight="60px" dropTitle="Sort by" content={Content1} dropFontSize="16px" dropFontColor="#000000" />
-              </div>
-            </div>
-            <div className="side-list__content">
-              <div className="side-list__titles">
-                <ul>
-                  <li>Artist</li>
-                  <li>Birth</li>
-                  <li>Update date</li>
-                </ul>
-              </div>
-              <div className="side-list__no-data">
-                <i className="side-list__img" style={nodataStyle}><span className="a11y">데이터 없을때 이미지</span></i>
-                <p>
-                  There is no registered artist information.
-                  {'\n'}
-                  Register an artist first and start curating your work.
-                </p>
-              </div>
-            </div>
+          <div className="filter-content">
+            <ul className="filter-content__type">
+              <li>Artworks</li>
+              <li>Sale Type</li>
+              <li>Price</li>
+              <li>Duration</li>
+              <li>Status</li>
+            </ul>
           </div>
-        )}
+          {isData ? (
+            <div className="filter-content__wrap">
+              <ul className="filter-content__list">
+                {ExampleData.map((items) => (
+                  <li key={items.id}>
+                    <Link to="/">
+                      <div className="art">
+                        <div className="art__wrap">
+                          <span
+                            style={{ backgroundImage: `url(${items.bg})` }}
+                            className="art__bg"
+                          />
+                          <div className="art__box">
+                            <p className="art__title">{items.title}</p>
+                            <p className="art__desc">{items.desc}</p>
+                          </div>
+                        </div>
+                        <div>
+                          <p
+                            className={
+                              items.type === 'Auction'
+                                ? 'art__type art__type--color'
+                                : 'art__type art__type--default'
+                            }
+                          >
+                            {items.type}
+                          </p>
+                        </div>
+                        <div>
+                          <div>
+                            <p className="art__price">{items.price}</p>
+                            <p className="art__price--busd">
+                              {items.priceToBUSD}
+                            </p>
+                          </div>
+                        </div>
+                        <div>
+                          <Icons shape="clock" width="20px" height="20px" />
+                          <p className="art__clock">{items.duration}</p>
+                        </div>
+                        <div>
+                          <p
+                            className={
+                              items.status === 'For Sale'
+                                ? 'art__status art__status--color'
+                                : 'art__status art__status--default'
+                            }
+                          >
+                            {items.status}
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Pagenation />
+            </div>
+          ) : (
+            <div className="filter-content">
+              <div className="nodata">
+                <span className="nodata__img" />
+                <p>No artworks found for this search</p>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     );
   }

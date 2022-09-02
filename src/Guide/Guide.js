@@ -309,6 +309,7 @@ function Guide() {
           <Icons shape="hand" width="20px" height="20px" color="#BBBBBB" />
           <Icons shape="panorama" width="20px" height="20px" color="#BBBBBB" />
           <Icons shape="account" width="20px" height="20px" color="#BBBBBB" />
+          <Icons shape="clock" width="20px" height="20px" />
         </div>
       </div>
       <div>
@@ -316,6 +317,9 @@ function Guide() {
           <Icons shape="pagenation-left" width="24px" height="24px" />
           <Icons shape="pagenation-right" width="24px" height="24px" />
           <Icons shape="arrow-left" width="24px" height="24px" />
+          <Icons shape="arrow-right" width="24px" height="24px" />
+          <Icons shape="arrow-up" width="24px" height="24px" />
+          <Icons shape="arrow-down" width="24px" height="24px" />
       </div>
 
       <div>

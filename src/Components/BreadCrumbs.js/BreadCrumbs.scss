@@ -1,0 +1,14 @@
+@import "../../assets/css/Mixins.scss";
+
+.breadcrumbs {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    color: #888888;
+    font-size: 14px;
+    @include RotaSB;
+  }
+}
