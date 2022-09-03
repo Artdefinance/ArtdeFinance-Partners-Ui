@@ -124,26 +124,31 @@ function Guide() {
     {
       id: '1',
       title: 'Default1',
+      named: 'radioTab',
       value: '1',
     },
     {
       id: '2',
       title: 'Default2',
+      named: 'radioTab',
       value: '2',
     },
     {
       id: '3',
       title: 'Default3',
+      named: 'radioTab',
       value: '3',
     },
     {
       id: '4',
       title: 'Default4',
+      named: 'radioTab',
       value: '4',
     },
     {
       id: '5',
       title: 'Default5',
+      named: 'radioTab',
       value: '5',
     },
   ];

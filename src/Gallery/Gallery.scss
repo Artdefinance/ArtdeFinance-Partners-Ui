@@ -152,6 +152,8 @@
 // .card-list
 
 .regist_wrap {
+  max-width:1021px;
+  margin: 0 auto;
   .head {
     padding-top: 80px;
     p {
@@ -177,7 +179,7 @@
   }
 }
 // .regist_wrap
-.regust__form {
+.regist__form {
   background-color: #ffffff;
   border-radius: 20px;
   .form__head {
@@ -195,7 +197,124 @@
     }
   }
   .form__body {
-    padding: 80px 8.55%;
+    padding: 80px 123px;
+  }
+  .form__inputs {
+    padding-bottom: 54px;
+  }
+  .input__input {
+    height: 36px;
+  }
+  .form__title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #888888;
+    line-height: 100%;
+  }
+  .form__title--need::after {
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    right: -7px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #FD3D39;
+    content: "";
+  }
+
+  .radio-tab {
+    width: 100%;
+    min-width: 100%;
+    .radio-tab__label {
+      flex: 1;
+      span {
+        width: 100%;
+      }
+    }
+  }
+
+  .dropdown.nation_code {
+    .dropdown__title  {
+      padding-left: 0;
+      border: 0;
+      border-bottom: 1px solid #dddddd;
+      border-radius: 0;
+      box-shadow: none;
+      span {
+        font-size: 20px;
+        color: #888888;
+      }
+      &:before {
+        width: 0;
+        height: 0;
+        border-color: #DDDDDD transparent transparent; 
+        border-style: solid; 
+        border-width: 7px 5px 0; 
+        transform: rotate(0);
+      }
+      &.active::before {
+        width: 0;
+        height: 0;
+        border-color: #DDDDDD transparent transparent; 
+        border-style: solid; 
+        border-width: 7px 5px 0; 
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .dropdown__list {
+    top: -1;
+  }
+
+  .form__multi {
+    display: flex;
+    .input {
+      width: 100%;
+    }
+  }
+
+  .agree_check {
+    label, a {
+      display: inline;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 120%;
+      vertical-align: middle;
+    }
+    a {
+      text-decoration: underline;
+      color: #3685E1;
+    }
+    .agr_chk {
+      position: relative;
+      padding-left: 42px;
+      input[type=checkbox]{
+        position: absolute;
+        width: 0;
+        height: 0;
+        top:0;
+        left: 0;
+      }
+      .ico_check {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+}
+.warning__message {
+  margin-top: 4px;
+  .warning__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    @include AcuminproL();
+    color: #888888;
   }
 }
 // .regust__form

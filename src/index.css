@@ -98,6 +98,16 @@ button {
 	cursor:pointer
 }
 
+.selectbox {
+	border: 0;
+	outline: 0;
+	font-weight: 400;
+	font-size: 20px;
+	color: #888888;
+	line-height: 100%;
+}
+/* selectbox */
+
 .app-container {
 	max-width: 1440px;
 	margin: 0 auto;

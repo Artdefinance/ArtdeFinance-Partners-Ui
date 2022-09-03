@@ -35,10 +35,10 @@ export default class RadioTabButton extends React.Component {
             key={items.id}
           >
             <input
-              type="checkbox"
+              type="radio"
               className="radio-tab__button"
               id={items.title}
-              name={items.title}
+              name={items.named}
               value={items.value}
               onChange={this.handleChange}
             />
