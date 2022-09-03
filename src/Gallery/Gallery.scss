@@ -267,7 +267,7 @@
     }
   }
   .dropdown__list {
-    top: -1;
+    border: 0;
   }
 
   .form__multi {
@@ -278,6 +278,7 @@
   }
 
   .agree_check {
+    padding: 0 50px;
     label, a {
       display: inline;
       font-weight: 600;
@@ -291,6 +292,7 @@
     }
     .agr_chk {
       position: relative;
+      display: block;
       padding-left: 42px;
       input[type=checkbox]{
         position: absolute;
@@ -298,11 +300,20 @@
         height: 0;
         top:0;
         left: 0;
+        visibility: hidden;
       }
       .ico_check {
+        position: absolute;
+        left:0;
+        top:0;
         display: inline-block;
         width: 28px;
         height: 28px;
+        background: {
+          size: cover;
+          repeat: no-repeat;
+          position: 0 0;
+        }
       }
     }
   }

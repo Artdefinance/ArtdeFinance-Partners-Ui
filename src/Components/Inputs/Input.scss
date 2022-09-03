@@ -46,3 +46,32 @@
     color: #888888;
   }
 }
+
+.checkbox_wrap {
+  display: flex;
+  align-items: center;
+  label {
+    position: relative;
+  }
+  input[type=checkbox] {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+  }
+  .ico_chkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    background: {
+      size: cover;
+      repeat: no-repeat;
+      position: 0 0;
+    }
+  }
+  .default_chk {
+
+  }
+}

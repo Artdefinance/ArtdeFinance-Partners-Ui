@@ -12,8 +12,16 @@ export default class GalleryRegist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      agreechecked: false,
     };
+    this.handleAgreeChange = this.handleAgreeChange.bind(this);
   }
+
+  handleAgreeChange = (e) => {
+    this.setState({
+      agreechecked: e.target.checked,
+    });
+  };
 
   render() {
     const GallerySize = [
@@ -97,6 +105,14 @@ export default class GalleryRegist extends React.Component {
         value: '4',
       },
     ];
+
+    const { agreechecked } = this.state;
+    const chkboxChecked = {
+      backgroundImage: 'url(/assets/images/component/check_true.png)',
+    };
+    const chkboxUnChecked = {
+      backgroundImage: 'url(/assets/images/component/check_false.png)',
+    };
 
     return (
       <div className="gallery">
@@ -187,15 +203,25 @@ export default class GalleryRegist extends React.Component {
               </div>
 
               <div className="agree_check">
-                <label htmlFor="agr_chk" className="agr_chk">
-                  <input type="checkbox" id="agr_chk" />
-                  <i className="ico_check" />
+                <label htmlFor="agreeChk" className="agr_chk">
+                  <input
+                    type="checkbox"
+                    id="agreeChk"
+                    name="agreeChk"
+                    value=""
+                    checked={agreechecked}
+                    onChange={this.handleAgreeChange}
+                  />
+                  <i
+                    className="ico_check"
+                    style={agreechecked ? chkboxChecked : chkboxUnChecked}
+                  />
                   By continuing, you agree to Art de Finance’s
-                  <Link to="/#"> Terms of Use </Link>
+                  <Link to="/gallery/regist"> Terms of Use </Link>
                   and confirm that you have read
                   <br />
                   Art de Finance’s
-                  <Link to="/#"> Privacy Policy </Link>
+                  <Link to="/gallery/regist"> Privacy Policy </Link>
                 </label>
               </div>
 

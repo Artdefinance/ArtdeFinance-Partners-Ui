@@ -17,6 +17,7 @@ import CheckButton from '../Components/Button/CheckButton';
 import Icons from '../Components/Icons/Icons';
 // Input
 import Input from '../Components/Inputs/Input';
+import Checkbox from '../Components/Inputs/Checkbox';
 
 function Guide() {
   const ExampleContent1 = [
@@ -331,6 +332,14 @@ function Guide() {
         <h2>Input</h2>
         <Input name="artist" disabled="true" placeholder="Content" />
         <Input name="ID" placeholder="Content" />
+      </div>
+
+      <div>
+        <h2>Checkbox</h2>
+        <Checkbox
+          chkId="test"
+          content="test"
+        />
       </div>
     </div>
   );
