@@ -1,8 +1,8 @@
 .head_wrap {
-	min-width: 1240px;
-  width: calc(100% - 30px);
-  padding-left:15px;
-  padding-right:15px;
+	// min-width: 1240px;
+  // max-width: 1440px;
+  // width: calc(100% - 30px);
+  width: 100%;
   border-bottom: 1px solid #BBBBBB;
   .logo {
     display: flex;
@@ -11,6 +11,25 @@
     a {
       display: block;
       width: 100%;
+    }
+  }
+  .inner { 
+    width: calc(100% - 30px);
+    padding-left:15px;
+    padding-right:15px;
+  }
+  &.head_white {
+    .logo {
+      img {
+        filter: invert(100%);
+      }
+    }
+    .nav_menu {
+      .nav_item {
+        a {
+          color:#ffffff;
+        }
+      }
     }
   }
 }

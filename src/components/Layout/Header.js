@@ -1,19 +1,24 @@
 import './Header.scss';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Button from '../Button/Button';
 import Icons from '../Icons/Icons';
 
 function Header() {
-  const logoStyle = {
-    backgroundImage: 'url(/assets/images/common/logo.png)',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-  };
+  const location = useLocation();
+  let headType = '';
+  if (location.pathname === '/gallery/confirm') {
+    headType = 'head_white';
+  }
   return (
-    <div className="head_wrap">
+    <div className={`head_wrap ${headType}`}>
       <div className="inner">
-        <h1 style={logoStyle} className="logo"><a href="/"><span className="a11y">ARTDE FINANCE</span></a></h1>
+        <h1 className="logo">
+          <a href="/">
+            <img src={`${process.env.PUBLIC_URL}/assets/images/common/logo.png`} alt="ARTDE FINANCE" />
+            <span className="a11y">ARTDE FINANCE</span>
+          </a>
+        </h1>
         <div className="head_util">
           <Navbar />
           <Link to="#" className="link_notice">

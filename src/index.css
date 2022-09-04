@@ -108,13 +108,16 @@ button {
 }
 /* selectbox */
 
+html, body {
+	min-width:1240px;
+}
 .app-container {
-	min-width: 1240px;
-	max-width: 1440px;
 	margin: 0 auto;
+}
+/* .app-container > div {
 	padding-left: 15px;
 	padding-right: 15px;
-}
+} */
 
 .pathGuide {
 	padding: 5vw;

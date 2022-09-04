@@ -12,33 +12,35 @@ import Modify from './Artist/Modify';
 import Gallery from './Gallery/Gallery';
 import GalleryStart from './Gallery/Start';
 import GalleryRegist from './Gallery/Regist';
+import GalleryConfirm from './Gallery/Confirm';
+import GallerySorry from './Gallery/Sorry';
 import Activity from './Activity/Activity';
 import ActivityList from './Activity/List';
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Header />
-        <div className="app-container">
-        <Routes>
-          <Route path="/path" element={<Path />} />
-          <Route path="/guide" element={<Guide />} />
-          <Route path="/artist" element={<Artist />} />
-          <Route path="/artist/list" element={<List />} />
-          <Route path="/artist/regist" element={<Regist />} />
-          <Route path="/artist/view" element={<View />} />
-          <Route path="/artist/modify" element={<Modify />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/gallery/start" element={<GalleryStart />} />
-          <Route path="/gallery/regist" element={<GalleryRegist />} />
-          <Route path="/activity" element={<Activity />} />
-          <Route path="/activity/list" element={<ActivityList />} />
-        </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <div className="app-container">
+      <Routes>
+        <Route path="/path" element={<Path />} />
+        <Route path="/guide" element={<Guide />} />
+        <Route path="/artist" element={<Artist />} />
+        <Route path="/artist/list" element={<List />} />
+        <Route path="/artist/regist" element={<Regist />} />
+        <Route path="/artist/view" element={<View />} />
+        <Route path="/artist/modify" element={<Modify />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery/start" element={<GalleryStart />} />
+        <Route path="/gallery/regist" element={<GalleryRegist />} />
+        <Route exact path="/gallery/confirm" element={<GalleryConfirm />} />
+        <Route path="/gallery/sorry" element={<GallerySorry />} />
+        <Route path="/activity" element={<Activity />} />
+        <Route path="/activity/list" element={<ActivityList />} />
+      </Routes>
+      </div>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
