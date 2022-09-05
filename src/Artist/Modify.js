@@ -156,7 +156,7 @@ export default class Regist extends React.Component {
                   Country
                 </p>
                 <CountryDropdown
-                  dropWidth="650px"
+                  dropWidth="100%"
                   dropHeight="80px"
                   dropTitle="Please select a country"
                   content={ExampleContent1}
