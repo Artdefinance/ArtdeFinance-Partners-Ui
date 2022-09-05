@@ -36,8 +36,13 @@ export default class DateDropdown extends React.Component {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
     };
-    const arrowStyle = {
+    const arrowStyleDown = {
       backgroundImage: 'url(/assets/images/component/arrow_down.png)',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+    };
+    const arrowStyleUp = {
+      backgroundImage: 'url(/assets/images/component/arrow_up.png)',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
     };
@@ -55,7 +60,7 @@ export default class DateDropdown extends React.Component {
                 <span className="a11y">달력 아이콘</span>
               </div>
               <span className="date-dropdown__data">{date}</span>
-              <div style={arrowStyle} className="date-dropdown__arrow">
+              <div style={isToggleOn ? arrowStyleUp : arrowStyleDown} className="date-dropdown__arrow">
                 <span className="a11y">아래 화살표 아이콘</span>
               </div>
             </button>
@@ -76,7 +81,7 @@ export default class DateDropdown extends React.Component {
                 <span className="a11y">달력 아이콘</span>
               </div>
               <span className="date-dropdown__data">{date}</span>
-              <div style={arrowStyle} className="date-dropdown__arrow">
+              <div style={isToggleOn ? arrowStyleUp : arrowStyleDown} className="date-dropdown__arrow">
                 <span className="a11y">아래 화살표 아이콘</span>
               </div>
             </button>
