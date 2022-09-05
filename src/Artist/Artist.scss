@@ -5,7 +5,7 @@
   min-height: 1080px;
 
   &__wrap {
-    // max-width: 1440px;
+    max-width: 1440px;
     padding-top: 60px;
     margin: 0 auto;
   }
@@ -15,11 +15,15 @@
     content: '';
     clear: both;
   }
+
+  &__wrap--long {
+    padding-bottom: 147px;
+  }
 }
 
 .side-list {
   float: left;
-  width: 580px;
+  width: 40%;
   min-height: 564px;
   background-color: #FFFFFF;
   border-radius: 10px;
@@ -65,7 +69,8 @@
   }
 
   &__count {
-    width: 215px;
+    width: 150px;
+    height: 28px;
     color: #000000;
     font-size: 28px;
     line-height: 28px;
@@ -88,17 +93,19 @@
     }
 
     li:nth-child(1) {
-      width: 220px;
+      width: 44%;
     }
 
     li:nth-child(2) {
       text-align: right;
-      width: 130px;
+      width: 36%;
+      padding-right: 10px;
+      box-sizing: border-box;
     } 
 
     li:nth-child(3) {
       text-align: right;
-      width: calc(100% - 350px);
+      width: 20%;
     } 
   }
 
@@ -154,29 +161,37 @@
     }
 
     p:nth-child(1) {
-      width: 220px;
+      width: 44%;
       @include ellipse(1);
     }
 
     p:nth-child(2) {
-      width: 130px;
+      width: 36%;
+      padding-right: 10px;
       text-align: right;
+      box-sizing: border-box;
       @include ellipse(1);
     } 
 
     p:nth-child(3) {
-      width: calc(100% - 350px);
-      color: #888888;
+      width: 20%;
       font-size: 14px;
       text-align: right;
       @include ellipse(1);
     } 
   }
+
+  &__pagenation {
+    position: absolute;
+    left: 2%;
+    margin-top: 30px;
+  }
 }
 
 .side-info {
   float: right;
-  width: 825px;
+  width: 57%;
+  margin-left: 3%;
   height: 564px;
   background-color: #FFFFFF;
   border-radius: 10px;
@@ -483,7 +498,7 @@
 
 .side-view {
   float: right;
-  width: 825px;
+  width: 57%;
   background-color: #FFFFFF;
   border-radius: 10px;
   box-shadow: 0 0 25px 0 rgba(187,187,187, .15);

@@ -8,7 +8,7 @@ import Icons from '../Components/Icons/Icons';
 function View() {
   return (
     <div className="artist">
-      <div className="artist__wrap">
+      <div className="artist__wrap artist__wrap--long">
         <ArtistList data="true" />
         <div className="side-view">
           <div className="side-view__header">

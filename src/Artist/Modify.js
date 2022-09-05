@@ -68,7 +68,7 @@ export default class Regist extends React.Component {
     ];
     return (
       <div className="artist">
-        <div className="artist__wrap">
+        <div className="artist__wrap artist__wrap--long">
           <ArtistList data="true" />
           <div className="side-info side-regist">
             <div className="side-info__header">
