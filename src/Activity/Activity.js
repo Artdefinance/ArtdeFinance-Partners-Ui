@@ -115,113 +115,115 @@ export default class Activity extends React.Component {
     ];
     return (
       <div className="activity">
-        <h2>Works Activity</h2>
-        <div className="filter">
-          <div className="filter-header">
-            <div className="filter-header__inputs">
-              <label htmlFor="filter-radio1">
-                <input type="radio" id="filter-radio1" name="filter-radio" />
-                <span />
-                All
-              </label>
-              <label htmlFor="filter-radio2">
-                <input type="radio" id="filter-radio2" name="filter-radio" />
-                <span />
-                For Sale
-              </label>
-              <label htmlFor="filter-radio3">
-                <input type="radio" id="filter-radio3" name="filter-radio" />
-                <span />
-                Sold Out
-              </label>
+        <div className="activity__wrap">
+          <h2>Works Activity</h2>
+          <div className="filter">
+            <div className="filter-header">
+              <div className="filter-header__inputs">
+                <label htmlFor="filter-radio1">
+                  <input type="radio" id="filter-radio1" name="filter-radio" />
+                  <span />
+                  All
+                </label>
+                <label htmlFor="filter-radio2">
+                  <input type="radio" id="filter-radio2" name="filter-radio" />
+                  <span />
+                  For Sale
+                </label>
+                <label htmlFor="filter-radio3">
+                  <input type="radio" id="filter-radio3" name="filter-radio" />
+                  <span />
+                  Sold Out
+                </label>
+              </div>
+              <div className="filter-header__drop">
+                <Dropdown
+                  dropWidth="215px"
+                  dropHeight="60px"
+                  dropTitle="Sort by"
+                  content={ExampleContent1}
+                  dropFontSize="16px"
+                  dropFontColor="#000000"
+                />
+                <p>10,000 Results</p>
+              </div>
             </div>
-            <div className="filter-header__drop">
-              <Dropdown
-                dropWidth="215px"
-                dropHeight="60px"
-                dropTitle="Sort by"
-                content={ExampleContent1}
-                dropFontSize="16px"
-                dropFontColor="#000000"
-              />
-              <p>10,000 Results</p>
+            <div className="filter-content">
+              <ul className="filter-content__type">
+                <li>Artworks</li>
+                <li>Sale Type</li>
+                <li>Price</li>
+                <li>Duration</li>
+                <li>Status</li>
+              </ul>
             </div>
-          </div>
-          <div className="filter-content">
-            <ul className="filter-content__type">
-              <li>Artworks</li>
-              <li>Sale Type</li>
-              <li>Price</li>
-              <li>Duration</li>
-              <li>Status</li>
-            </ul>
-          </div>
-          {isData ? (
-            <div className="filter-content__wrap">
-              <ul className="filter-content__list">
-                {ExampleData.map((items) => (
-                  <li key={items.id}>
-                    <Link to="/">
-                      <div className="art">
-                        <div className="art__wrap">
-                          <span
-                            style={{ backgroundImage: `url(${items.bg})` }}
-                            className="art__bg"
-                          />
-                          <div className="art__box">
-                            <p className="art__title">{items.title}</p>
-                            <p className="art__desc">{items.desc}</p>
+            {isData ? (
+              <div className="filter-content__wrap">
+                <ul className="filter-content__list">
+                  {ExampleData.map((items) => (
+                    <li key={items.id}>
+                      <Link to="/">
+                        <div className="art">
+                          <div className="art__wrap">
+                            <span
+                              style={{ backgroundImage: `url(${items.bg})` }}
+                              className="art__bg"
+                            />
+                            <div className="art__box">
+                              <p className="art__title">{items.title}</p>
+                              <p className="art__desc">{items.desc}</p>
+                            </div>
                           </div>
-                        </div>
-                        <div>
-                          <p
-                            className={
-                              items.type === 'Auction'
-                                ? 'art__type art__type--color'
-                                : 'art__type art__type--default'
-                            }
-                          >
-                            {items.type}
-                          </p>
-                        </div>
-                        <div>
                           <div>
-                            <p className="art__price">{items.price}</p>
-                            <p className="art__price--busd">
-                              {items.priceToBUSD}
+                            <p
+                              className={
+                                items.type === 'Auction'
+                                  ? 'art__type art__type--color'
+                                  : 'art__type art__type--default'
+                              }
+                            >
+                              {items.type}
+                            </p>
+                          </div>
+                          <div>
+                            <div>
+                              <p className="art__price">{items.price}</p>
+                              <p className="art__price--busd">
+                                {items.priceToBUSD}
+                              </p>
+                            </div>
+                          </div>
+                          <div>
+                            <Icons shape="clock" width="20px" height="20px" />
+                            <p className="art__clock">{items.duration}</p>
+                          </div>
+                          <div>
+                            <p
+                              className={
+                                items.status === 'For Sale'
+                                  ? 'art__status art__status--color'
+                                  : 'art__status art__status--default'
+                              }
+                            >
+                              {items.status}
                             </p>
                           </div>
                         </div>
-                        <div>
-                          <Icons shape="clock" width="20px" height="20px" />
-                          <p className="art__clock">{items.duration}</p>
-                        </div>
-                        <div>
-                          <p
-                            className={
-                              items.status === 'For Sale'
-                                ? 'art__status art__status--color'
-                                : 'art__status art__status--default'
-                            }
-                          >
-                            {items.status}
-                          </p>
-                        </div>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <Pagenation />
-            </div>
-          ) : (
-            <div className="filter-content">
-              <div className="nodata">
-                <span className="nodata__img" />
-                <p>No artworks found for this search</p>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <Pagenation />
               </div>
-            </div>
-          )}
+            ) : (
+              <div className="filter-content">
+                <div className="nodata">
+                  <span className="nodata__img" />
+                  <p>No artworks found for this search</p>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     );

@@ -327,7 +327,14 @@ function Guide() {
           <Icons shape="arrow-up" width="24px" height="24px" />
           <Icons shape="arrow-down" width="24px" height="24px" />
       </div>
-
+      <div>
+        <p>SIZE 18</p>
+        <Icons shape="data-small" />
+      </div>
+      <div>
+        <p>SIZE 16</p>
+        <Icons shape="busd" />
+      </div>
       <div>
         <h2>Input</h2>
         <Input name="artist" disabled="true" placeholder="Content" />

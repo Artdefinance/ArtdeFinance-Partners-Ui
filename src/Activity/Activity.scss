@@ -10,7 +10,16 @@
   }
 
   .filter-header {
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
+  }
+
+  &__wrap {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__wrap--long {
+    padding-bottom: 147px;
   }
 }
 
@@ -33,7 +42,7 @@
       position: relative;
     }
 
-    label + label {
+    label+label {
       margin-left: 30px;
     }
 
@@ -50,10 +59,10 @@
       border: 2px solid #DDDDDD;
       border-radius: 4px;
       box-sizing: border-box;
-      content:'';
+      content: '';
     }
 
-    input:checked + span::after {
+    input:checked+span::after {
       display: inline-block;
       position: absolute;
       left: 0px;
@@ -86,6 +95,7 @@
 
 .filter-content {
   position: relative;
+
   &__type {
     display: flex;
     padding: 25px 50px;
@@ -105,19 +115,19 @@
       text-align: left;
       width: 475px;
     }
-  
+
     li:nth-child(2) {
       width: 215px;
     }
-  
+
     li:nth-child(3) {
       width: 265px;
     }
-  
+
     li:nth-child(4) {
       width: 250px;
     }
-  
+
     li:nth-child(5) {
       width: 135px;
     }
@@ -125,18 +135,19 @@
 
   &__list {
     margin-bottom: 35px;
+
     li {
       display: flex;
       padding: 25px 50px;
       margin-top: 15px;
       background-color: #ffffff;
       border-radius: 10px;
-      box-shadow: 0 15px 40px 0 rgba(187,187,187, .15);
+      box-shadow: 0 15px 40px 0 rgba(187, 187, 187, .15);
     }
 
     li:hover {
       position: relative;
-      box-shadow: 0 15px 40px 0 rgba(96,69,255, .15);
+      box-shadow: 0 15px 40px 0 rgba(96, 69, 255, .15);
     }
   }
 }
@@ -163,7 +174,7 @@
     margin-left: 20px;
     width: calc(100% - 190px);
   }
-  
+
   &__title {
     color: #000000;
     font-size: 16px;
@@ -181,32 +192,32 @@
     @include AcuminproR;
   }
 
-   > div {
+  >div {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  > div:nth-child(1) {
+  >div:nth-child(1) {
     width: 475px;
   }
 
-  > div:nth-child(2) {
+  >div:nth-child(2) {
     width: 215px;
   }
 
-  > div:nth-child(3) {
+  >div:nth-child(3) {
     width: 265px;
   }
 
-  > div:nth-child(4) {
+  >div:nth-child(4) {
     width: 250px;
   }
 
-  > div:nth-child(5) {
+  >div:nth-child(5) {
     width: 135px;
   }
-  
+
   &__type {
     width: 135px;
     font-size: 16px;
@@ -267,7 +278,7 @@
     color: #FF3B30;
     background-color: #FFDEDC;
   }
-} 
+}
 
 .nodata {
   margin-bottom: 120px;
@@ -296,14 +307,6 @@
 }
 
 .activity-list {
-  &--left {
-    float: left;
-  }
-
-  &--right {
-    float: right;
-  }
-
   .breadcrumbs__list {
     margin: 15px 0;
   }
@@ -315,8 +318,21 @@
   }
 }
 
+.activity-item {
+  &--left {
+    float: left;
+    width: 49%;
+  }
+
+  &--right {
+    float: right;
+    margin-left: 2%;
+    width: 49%;
+  }
+}
+
 .activity-side {
-  width: 700px;
+  width: 100%;
   padding: 50px;
   background-color: #ffffff;
   border-radius: 10px;
@@ -346,7 +362,7 @@
   }
 
   &__list {
-    margin-top: 40px; 
+    margin-top: 40px;
   }
 
   &__item {
@@ -354,7 +370,7 @@
     text-align: left;
   }
 
-  &__item + &__item {
+  &__item+&__item {
     margin-top: 25px;
   }
 
@@ -377,10 +393,325 @@
 }
 
 .activity-info {
+  margin-top: 30px;
   padding: 40px 50px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 15px 40px 0px #BBBBBB26;
 
+  >div+div {
+    margin-top: 25px;
+  }
+
+  &__header {
+    width: 100%;
+    padding-bottom: 27px;
+    text-align: left;
+
+    span {
+      position: relative;
+      display: block;
+      font-size: 20px;
+      @include RotaB
+    }
+
+    span::after {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 14px;
+      width: 7px;
+      height: 7px;
+      border-top: 2.5px solid #888888;
+      border-right: 2.5px solid #888888;
+      transform: rotate(-45deg);
+      content: '';
+    }
+  }
+
+  &__content {
+    border-bottom: 1px solid #EEEEEE;
+  }
+
+  &__item:nth-child(1) {
+    margin-top: 0;
+  }
+
+  &__item {
+    display: flex;
+    margin: 9px 0;
+  }
+
+  &__item:last-child {
+    margin-bottom: 27px;
+  }
+
+  &__title {
+    width: 160px;
+    color: #888888;
+    font-size: 16px;
+    @include RotaB;
+  }
+
+  &__text {
+    width: calc(100% - 160px);
+    text-align: right;
+    @include AcuminproR;
+  }
+
+  &__titles {
+    display: flex;
+
+    li {
+      width: 46%;
+      text-align: left;
+      color: #888888;
+      font-size: 16px;
+      @include RotaB;
+    }
+
+    li:first-child {
+      width: 35%;
+    }
+
+    li:last-child {
+      width: 19%;
+    }
+  }
+
+  &__texts {
+    display: flex;
+
+    li {
+      width: 45%;
+      margin: 7.5px 0;
+      text-align: left;
+      font-size: 16px;
+      @include AcuminproR;
+      @include ellipse(1);
+
+      span {
+        margin-left: 10px;
+      }
+    }
+
+    li:first-child {
+      width: 35%;
+    }
+
+    li:last-child {
+      width: 20%;
+    }
+  }
+
+  &__date {
+    button {
+      color: #366DFC;
+      font-size: 16px;
+      @include AcuminproR;
+    }
+
+    span {
+      display: inline-block;
+      width: 18.59px;
+      height: 18.29px;
+      background-image: url('../../public/assets/images/page/activity/icon_download_color.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
 }
 
+.activity-info .active {
+  .activity-info__header {
+    span::after {
+      transform: rotate(135deg);
+    }
+  }
+}
+
+.activity-sale {
+  width: 100%;
+  margin-top: 72px;
+  padding: 40px 50px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  text-align: left;
+  box-sizing: border-box;
+  box-shadow: 0px 15px 40px 0px #BBBBBB26;
+
+  &__header {
+    margin-bottom: 10px;
+
+    p {
+      color: #000000;
+      font-size: 24px;
+      @include RotaB;
+    }
+
+    p:first-child {
+      color: #888888;
+      font-size: 16px;
+    }
+  }
+
+  &__content {
+    margin-top: 60px;
+
+    >p {
+      color: #888888;
+      font-size: 16px;
+      @include RotaB;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 30px;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+
+    div {
+      display: flex;
+      height: 24px;
+      line-height: 24px;
+    }
+
+    div:first-child {
+      svg {
+        margin-top: 3px;
+      }
+
+      p {
+        font-size: 24px;
+        line-height: 24px;
+        @include RotaB;
+      }
+
+      p:last-child {
+        margin-left: 10px;
+        padding: 5px 9px;
+        background-color: #8888881A;
+        border-radius: 2px;
+        color: #888888;
+        font-size: 15px;
+        line-height: 1;
+        @include RotaB;
+      }
+    }
+
+    div:last-child {
+      svg {
+        margin-top: 3px;
+      }
+
+      p {
+        color: #888888;
+        font-size: 18px;
+        line-height: 24px;
+        @include RotaSB;
+      }
+
+      p:last-child {
+        margin-left: 10px;
+        padding: 5px 9px;
+        background-color: #8888881A;
+        border-radius: 2px;
+        color: #888888;
+        font-size: 15px;
+        line-height: 1;
+        @include RotaB;
+      }
+    }
+  }
+
+  .button {
+    margin: 30px auto 0;
+    width: 400px;
+  }
+
+
+
+}
+
+.activity-buyer {
+  margin-top: 30px;
+  padding: 40px 50px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  text-align: left;
+  box-sizing: border-box;
+  box-shadow: 0px 15px 40px 0px #BBBBBB26;
+
+  &__header {
+    margin-bottom: 25px;
+
+    p {
+      font-size: 20px;
+      @include RotaB;
+    }
+  }
+
+  &__title {
+    width: 190px;
+    color: #888888;
+    font-size: 16px;
+    @include RotaB;
+  }
+
+  &__text {
+    width: calc(100% - 190px);
+    font-size: 16p;
+    @include AcuminproL;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 19px;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    height: 50px;
+    line-height: 50px;
+
+    >span:first-child {
+      color: #000000;
+      font-size: 20px;
+      @include RotaB;
+    }
+
+    >span:last-child {
+      color: #888888;
+      font-size: 16px;
+      @include RotaSB;
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    line-height: 50px;
+
+    span {
+      margin-left: 10px;
+      padding: 5px;
+      color: #888888;
+      font-size: 14px;
+      line-height: 20px;
+      background-color: #8888881A;
+      @include RotaB;
+    }
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  &__item:last-child {
+    margin-bottom: 0;
+  }
+
+}

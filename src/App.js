@@ -16,6 +16,8 @@ import GalleryConfirm from './Gallery/Confirm';
 import GallerySorry from './Gallery/Sorry';
 import Activity from './Activity/Activity';
 import ActivityList from './Activity/List';
+import ActivityPrice from './Activity/Price';
+import ActivityAuction from './Activity/Auction';
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
         <Route path="/gallery/sorry" element={<GallerySorry />} />
         <Route path="/activity" element={<Activity />} />
         <Route path="/activity/list" element={<ActivityList />} />
+        <Route path="/activity/price" element={<ActivityPrice />} />
+        <Route path="/activity/auction" element={<ActivityAuction />} />
       </Routes>
       </div>
       <Footer />

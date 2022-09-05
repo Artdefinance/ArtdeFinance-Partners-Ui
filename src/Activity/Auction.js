@@ -5,8 +5,9 @@ import BreadCrumbs from '../Components/BreadCrumbs.js/BreadCrumbs';
 import Info from './Info';
 import Sale from './Sale';
 import Side from './Side';
+import Buyer from './Buyer';
 
-function List() {
+function Auction() {
   return (
     <div className="activity">
       <div className="activity__wrap activity__wrap--long">
@@ -18,6 +19,7 @@ function List() {
           </div>
           <div className="activity-item--right">
             <Sale />
+            <Buyer />
           </div>
         </div>
       </div>
@@ -25,4 +27,4 @@ function List() {
   );
 }
 
-export default List;
+export default Auction;
