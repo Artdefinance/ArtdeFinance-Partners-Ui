@@ -6,7 +6,7 @@ import SaleTypeAuction from './SaleTypeAuction';
 import Side from './Side';
 import History from './History';
 
-function Auction() {
+function AuctionRemove() {
   return (
     <div className="activity">
       <div className="activity__wrap activity__wrap--long">
@@ -20,8 +20,8 @@ function Auction() {
             <Info />
           </div>
           <div className="activity-item--right">
-            <SaleTypeAuction />
-            <History />
+            <SaleTypeAuction hammerPrice content="Remove Market list" />
+            <History noData="true" />
           </div>
         </div>
       </div>
@@ -29,4 +29,4 @@ function Auction() {
   );
 }
 
-export default Auction;
+export default AuctionRemove;

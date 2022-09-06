@@ -5,8 +5,9 @@ import Info from './Info';
 import SaleTypeAuction from './SaleTypeAuction';
 import Side from './Side';
 import History from './History';
+import Buyer from './Buyer';
 
-function Auction() {
+function AuctionSoldout() {
   return (
     <div className="activity">
       <div className="activity__wrap activity__wrap--long">
@@ -20,8 +21,9 @@ function Auction() {
             <Info />
           </div>
           <div className="activity-item--right">
-            <SaleTypeAuction />
+            <SaleTypeAuction hammerPrice content="Sold Out" disabled="true" />
             <History />
+            <Buyer />
           </div>
         </div>
       </div>
@@ -29,4 +31,4 @@ function Auction() {
   );
 }
 
-export default Auction;
+export default AuctionSoldout;

@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
 import './Activity.scss';
 import BreadCrumbs from '../Components/BreadCrumbs.js/BreadCrumbs';
 import Info from './Info';
-import Sale from './Sale';
+import SaleTypePrice from './SaleTypePrice';
 import Side from './Side';
 
 function List() {
@@ -14,10 +13,10 @@ function List() {
           <div className="activity-item--left">
             <BreadCrumbs content1="Works Activity" content2="Works Activity list" />
             <Side />
-            <Info />
+            <Info activeHistory />
           </div>
           <div className="activity-item--right">
-            <Sale />
+            <SaleTypePrice contents="Remove Market list" isDisabled="false" />
           </div>
         </div>
       </div>

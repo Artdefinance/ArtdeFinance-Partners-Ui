@@ -7,13 +7,13 @@ export default class Info extends React.Component {
     super(props);
     this.state = {
       isToggleOn: false,
-      isToggleOnHistory: false,
+      isToggleOnHistory: true,
     };
     this.onClickHandler = this.onClickHandler.bind(this);
     this.onClickHandler2 = this.onClickHandler2.bind(this);
   }
 
-  onClickHandler(props) {
+  onClickHandler() {
     this.setState((prevState) => ({
       isToggleOn: !prevState.isToggleOn,
     }));
@@ -27,7 +27,6 @@ export default class Info extends React.Component {
 
   render() {
     const { isToggleOn, isToggleOnHistory } = this.state;
-    const { activeNFT, activeHistory } = this.props;
     const nftDatas = [
       {
         id: '1',
@@ -38,7 +37,6 @@ export default class Info extends React.Component {
         metadata: 'Centralized',
       },
     ];
-
     const history = [
       {
         id: '1',
@@ -71,7 +69,6 @@ export default class Info extends React.Component {
         date: '13day ago',
       },
     ];
-
     return (
       <div className="activity-info">
         <div className={isToggleOn ? 'active' : ''}>

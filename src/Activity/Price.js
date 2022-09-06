@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
 import './Activity.scss';
 import BreadCrumbs from '../Components/BreadCrumbs.js/BreadCrumbs';
 import Info from './Info';
-import Sale from './Sale';
+import SaleTypePrice from './SaleTypePrice';
 import Side from './Side';
 import Buyer from './Buyer';
 
@@ -18,7 +17,7 @@ function Price() {
             <Info />
           </div>
           <div className="activity-item--right">
-            <Sale />
+            <SaleTypePrice contents="Sold Out" isDisabled="true" />
             <Buyer />
           </div>
         </div>
