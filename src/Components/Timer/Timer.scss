@@ -1,0 +1,41 @@
+@import "../../assets/css/Mixins.scss";
+
+.timer {
+  &__wrap {
+    display: flex;
+    align-items: center;
+
+    >span {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+
+  &__wrap--end {
+    p > span {
+      color: #BBBBBB !important;
+    }
+  }
+
+  p {
+    padding-top: 16px;
+    width: 62px;
+    height: 80px;
+    background-color: #F9F9F9;
+    border-radius: 5px;
+    color: #888888;
+    font-size: 14px;
+    text-align: center;
+    box-sizing: border-box;
+    @include RotaSB;
+  
+    span {
+      display: block;
+      color: #000000;
+      font-size: 32px;
+      line-height: 32px;
+      @include RotaEB;
+    }
+  }
+}
+

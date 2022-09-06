@@ -3,23 +3,27 @@ import React from 'react';
 import './Activity.scss';
 import BreadCrumbs from '../Components/BreadCrumbs.js/BreadCrumbs';
 import Info from './Info';
-import SaleTypePrice from './SaleTypePrice';
+import SaleTypeAuction from './SaleTypeAuction';
 import Side from './Side';
+import History from './History';
 import Buyer from './Buyer';
 
-function Price() {
+function AuctionRemove() {
   return (
     <div className="activity">
       <div className="activity__wrap activity__wrap--long">
         <div className="activity-list">
           <div className="activity-item--left">
-            <BreadCrumbs content1="Works Activity" content2="Works Activity list" />
+            <BreadCrumbs
+              content1="Works Activity"
+              content2="Works Activity list"
+            />
             <Side />
             <Info />
           </div>
           <div className="activity-item--right">
-            <SaleTypePrice contents="Sold Out" isDisabled="true" />
-            <Buyer />
+            <SaleTypeAuction hammerPrice content="Remove Market list" />
+            <History noData="true" />
           </div>
         </div>
       </div>
@@ -27,4 +31,4 @@ function Price() {
   );
 }
 
-export default Price;
+export default AuctionRemove;
