@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import './Gallery.scss';
 import Button from '../Components/Button/Button';
+import Icons from '../Components/Icons/Icons';
 
 export default class Gallery extends React.Component {
   constructor(props) {
@@ -11,6 +13,14 @@ export default class Gallery extends React.Component {
   }
 
   render() {
+    function notiBrowser() {
+      toast(
+        <div className="toastify__custom">
+          <Icons shape="exclama_fill" color="#ffffff" />
+          For a more stable service, please use it by accessing the Chrome browser.
+        </div>,
+      );
+    }
     return (
       <div className="gallery">
         <div className="gallery__wrap">
@@ -86,7 +96,13 @@ export default class Gallery extends React.Component {
             </div>
           </div>
           <div className="btn_wrap">
-            <Button className="button button--black button--mid" content="Get Started" type="type1" />
+            <ToastContainer
+              position="bottom-center"
+              autoClose={false}
+              closeOnClick
+              rtl={false}
+            />
+            <button type="button" onClick={() => notiBrowser()} className="button button--black button--mid">Get Started</button>
           </div>
         </div>
       </div>

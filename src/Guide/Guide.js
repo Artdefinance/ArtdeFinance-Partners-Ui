@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import './Guide.scss';
+// Toast
+import { ToastContainer, toast } from 'react-toastify';
 // Dropdown
 import Dropdown from '../Components/Dropdown/Dropdown';
 import DateDropdown from '../Components/Dropdown/DateDropdown';
@@ -153,6 +155,65 @@ function Guide() {
       value: '5',
     },
   ];
+  function toastDefault() {
+    toast(
+      <div className="toastify__custom">
+        <Icons shape="exclama_fill" color="#ffffff" />
+        Toastify Default Bottom Center
+      </div>,
+      {
+        position: 'bottom-center',
+      },
+    );
+  }
+  function toastError() {
+    toast(
+      <div className="toastify__custom">
+        <Icons shape="warning_fill" color="#ffffff" />
+        Toastify Error Bottom Center
+      </div>,
+      {
+        position: 'bottom-center',
+        className: 'toast__custom-error',
+      },
+    );
+  }
+  function toastWarning() {
+    toast(
+      <div className="toastify__custom">
+        <Icons shape="exclama_fill" color="#ffffff" />
+        Toastify Warning Bottom Center
+      </div>,
+      {
+        position: 'bottom-center',
+        className: 'toast__custom-warn',
+      },
+    );
+  }
+  function toastSuccess() {
+    toast(
+      <div className="toastify__custom">
+        <Icons shape="checkbox" color="#ffffff" />
+        Toastify Info Bottom Center
+      </div>,
+      {
+        position: 'bottom-center',
+        className: 'toast__custom-success',
+      },
+    );
+  }
+  function toastInfo() {
+    toast(
+      <div className="toastify__custom">
+      <Icons shape="exclama_fill" color="#366DFC" />
+        Toastify Info Bottom Center
+      </div>,
+      {
+        position: 'bottom-center',
+        className: 'toast__custom-info',
+      },
+    );
+  }
   return (
     <div className="guide">
       <div className="buttons">
@@ -347,6 +408,31 @@ function Guide() {
           chkId="test"
           content="test"
         />
+      </div>
+
+      <div>
+        <h2>Toast</h2>
+        <ToastContainer
+          autoClose={false}
+          closeOnClick
+          rtl={false}
+        />
+
+        <p>
+        <button type="button" onClick={() => toastDefault()} className="button button--black button--mid">Toast Default Bottom Center</button>
+        </p>
+        <p>
+        <button type="button" onClick={() => toastError()} className="button button--black button--mid">Toast Error Bottom Center</button>
+        </p>
+        <p>
+        <button type="button" onClick={() => toastWarning()} className="button button--black button--mid">Toast Warning Bottom Center</button>
+        </p>
+        <p>
+        <button type="button" onClick={() => toastSuccess()} className="button button--black button--mid">Toast Success Bottom Center</button>
+        </p>
+        <p>
+        <button type="button" onClick={() => toastInfo()} className="button button--black button--mid">Toast Info Bottom Center</button>
+        </p>
       </div>
     </div>
   );
