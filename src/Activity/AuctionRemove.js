@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
 import './Activity.scss';
 import BreadCrumbs from '../Components/BreadCrumbs.js/BreadCrumbs';
 import Info from './Info';
 import SaleTypeAuction from './SaleTypeAuction';
 import Side from './Side';
 import History from './History';
-import Buyer from './Buyer';
 
 function AuctionRemove() {
   return (

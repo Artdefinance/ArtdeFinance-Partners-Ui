@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
 import './Activity.scss';
 import BreadCrumbs from '../Components/BreadCrumbs.js/BreadCrumbs';
 import Info from './Info';

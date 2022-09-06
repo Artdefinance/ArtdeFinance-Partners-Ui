@@ -33,7 +33,11 @@ export default class SaleTypePrice extends React.Component {
                 <p>BUSD</p>
               </div>
             </div>
-            <Button className="button button--black button--mid" content={ contents } disabled={ isDisabled } />
+            <Button
+              className="button button--black button--mid"
+              content={contents}
+              disabled={isDisabled}
+            />
           </div>
         </div>
       </div>

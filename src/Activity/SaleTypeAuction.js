@@ -24,7 +24,7 @@ export default class SaleTypeAuction extends React.Component {
               </div>
               <div className="activity-sale__timer">
                 <p>Auction end in</p>
-                <Timer />
+                <Timer expiryTimestamp="10" />
               </div>
             </div>
             <div className="activity-sale__content">

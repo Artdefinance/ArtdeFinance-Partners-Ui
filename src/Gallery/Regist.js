@@ -6,7 +6,6 @@ import Button from '../Components/Button/Button';
 import Input from '../Components/Inputs/Input';
 import RadioTabButton from '../Components/Button/RadioTabButton';
 import Dropdown from '../Components/Dropdown/Dropdown';
-import Icons from '../Components/Icons/Icons';
 
 export default class GalleryRegist extends React.Component {
   constructor(props) {
