@@ -14,7 +14,7 @@ function Header() {
     <div className={`head_wrap ${headType}`}>
       <div className="inner">
         <h1 className="logo">
-          <a href="/">
+          <a href="/path">
             <img src={`${process.env.PUBLIC_URL}/assets/images/common/logo.png`} alt="ARTDE FINANCE" />
             <span className="a11y">ARTDE FINANCE</span>
           </a>
