@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useTimer } from 'react-timer-hook';
 import './Timer.scss';
 
-function MyTimer({ expiryTimestamp }) {
+function Timer({ expiryTimestamp }) {
   const [isEnd, setisEnd] = useState(false);
   const { seconds, minutes, hours, days } = useTimer({
     expiryTimestamp,
@@ -11,7 +11,6 @@ function MyTimer({ expiryTimestamp }) {
       setisEnd(!isEnd);
     },
   });
-
   return (
     <div className="timer">
       <div className={isEnd ? 'timer__wrap timer__wrap--end' : 'timer__wrap'}>
@@ -39,12 +38,4 @@ function MyTimer({ expiryTimestamp }) {
   );
 }
 
-export default function App() {
-  const time = new Date();
-  time.setSeconds(time.getSeconds() + 10); // 10 minutes timer
-  return (
-    <div>
-      <MyTimer expiryTimestamp={time} />
-    </div>
-  );
-}
+export default Timer;

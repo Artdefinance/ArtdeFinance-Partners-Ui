@@ -13,6 +13,9 @@ export default class SaleTypeAuction extends React.Component {
 
   render() {
     const { hammerPrice, content, disabled } = this.props;
+    const time = new Date();
+    time.setSeconds(time.getSeconds() + 10); // 10초
+
     return (
       <div>
         {hammerPrice ? (
@@ -24,7 +27,7 @@ export default class SaleTypeAuction extends React.Component {
               </div>
               <div className="activity-sale__timer">
                 <p>Auction end in</p>
-                <Timer expiryTimestamp="10" />
+                <Timer expiryTimestamp={time} />
               </div>
             </div>
             <div className="activity-sale__content">
