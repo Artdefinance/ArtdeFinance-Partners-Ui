@@ -1,0 +1,55 @@
+@import '../assets/css/Mixins.scss';
+
+.main {
+  padding: 60px 0 100px;
+  hr {
+    display: block;
+    border:0;
+    margin:0;
+    height: 36px;
+  }
+}
+.dash_item {
+  background-color: #ffffff;
+  box-shadow: 0px 15px 40px rgba(187, 187, 187, 0.15);
+  border-radius: 10px;
+  .item_inner {
+    padding: 39px;
+  }
+}
+.dashboard_top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 36px;
+  height: 425px;
+}
+.personal_area {
+  width: calc(32.95% - 18px);
+}
+.personal_status {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: calc(67.05% - 18px);
+  height: 100%;
+  .status_count {
+    .item_inner {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+  .current_bid {
+    height: 100%;
+  }
+}
+.dashboad_half {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 36px;
+  min-height: 500px;
+  .dash_item {
+    flex: 1;
+  }
+}

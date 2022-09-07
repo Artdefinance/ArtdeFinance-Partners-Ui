@@ -26,8 +26,8 @@ function Path() {
               <td>Main</td>
               <td>Main</td>
               <td>
-              <Link to="/">
-                {/* /artist */}
+              <Link to="/main">
+                /main
               </Link>
               </td>
             </tr>
