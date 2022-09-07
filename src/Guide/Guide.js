@@ -360,6 +360,7 @@ function Guide() {
           <Icons shape="search_small" />
           <Icons shape="expand" />
           <Icons shape="hambuger" />
+          <Icons shape="setting" />
         </div>
         <br />
       </div>
@@ -388,6 +389,7 @@ function Guide() {
           <Icons shape="arrow-right" width="24px" height="24px" />
           <Icons shape="arrow-up" width="24px" height="24px" />
           <Icons shape="arrow-down" width="24px" height="24px" />
+          <Icons shape="arrow-link" width="20px" height="20px" />
       </div>
       <div>
         <p>SIZE 18</p>
