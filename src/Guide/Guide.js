@@ -353,6 +353,7 @@ function Guide() {
           <Icons shape="calendar" />
           <Icons shape="addcircle" />
           <Icons shape="download" />
+          <Icons shape="exclama24" color="#366DFC" />
         </div>
         <div>
           <Icons shape="close_small" />

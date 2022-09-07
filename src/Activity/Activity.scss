@@ -681,9 +681,9 @@
     margin-top: 40px;
     padding-top: 40px;
     border-top: 1px solid #EEEEEE;
-   
+
     >p {
-      color: #888888; 
+      color: #888888;
       font-size: 16px;
       @include RotaB;
     }
@@ -693,11 +693,11 @@
       box-shadow: 2px 2px 3px 0px #AE9FFF inset;
     }
 
-    .activity-sale__box > p {
+    .activity-sale__box>p {
       color: #ffffff !important;
     }
 
-    .activity-sale__box > p:last-child {
+    .activity-sale__box>p:last-child {
       background: #FFFFFF1A !important;
     }
   }
@@ -944,7 +944,6 @@
   }
 }
 
-
 .activity-info .active {
   .activity-info__header {
     span::after {
@@ -952,3 +951,467 @@
     }
   }
 }
+
+.artboard-status {
+  width: 700px;
+  padding: 47px 50px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px 0px #BBBBBB26;
+  box-sizing: border-box;
+
+  .status {
+    margin-bottom: 30px;
+  }
+
+  .button {
+    width: 400px;
+    margin: 40px auto 0;
+  }
+
+  &__main-title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    @include RotaB;
+  }
+
+  &__content {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #EEEEEE;
+  }
+
+  &--top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &--bottom {
+    margin-top: 18px;
+  }
+
+  &__box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__title {
+    width: 80px;
+    color: #888888;
+    font-size: 15px;
+    line-height: 1;
+    @include RotaB;
+  }
+
+  &__sub-text {
+    width: 350px;
+    font-size: 20px;
+    line-height: 1;
+    @include RotaB;
+    @include ellipse(2);
+  }
+
+  &__sub-title {
+    height: 38px;
+    color: #888888;
+    font-size: 16px;
+    line-height: 38px;
+    @include RotaB;
+  }
+
+  &__percent {
+    color: #5F44FF;
+    font-size: 36px;
+    line-height: 1;
+    @include RotaB;
+  }
+
+  &__info {
+    width: 47%;
+    padding: 12px 15px 10px;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  &__info+&__desc {
+    margin-left: 6%;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    span:nth-child(1) {
+      color: #000000;
+      font-size: 28px;
+      @include RotaB;
+      @include ellipse(1);
+    }
+
+    span:nth-child(2) {
+      height: 22px;
+      margin-left: 10px;
+      padding: 5px 9px;
+      background: #8888881A;
+      color: #888888;
+      font-size: 15px;
+      line-height: 1;
+      border-radius: 2px;
+      box-sizing: border-box;
+      @include RotaB;
+    }
+  }
+
+  &__desc {
+    margin-top: 15px;
+    color: #555555;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: right;
+    @include AcuminproR;
+
+    span {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: #F4F4F4;
+      color: #000000;
+      font-size: 21px;
+      line-height: 28px;
+      text-align: center;
+      border-radius: 5px;
+      @include RotaB;
+    }
+  }
+
+  &__notice {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 21px;
+    padding: 19px 15px;
+    background: #EDF2FF;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px #A5A5A51A;
+    box-sizing: border-box;
+
+    svg {
+      margin-top: 5px;
+    }
+
+    p {
+      width: 500px;
+      margin-left: 12px;
+      color: #366DFC;
+      text-align: left;
+      @include ellipse(3);
+    }
+  }
+}
+
+.artboard-status + .more-info {
+  margin-top: 30px;
+}
+
+.more-info {
+  width: 700px;
+  padding: 50px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px 0px #BBBBBB26;
+
+  &__title {
+    color: #000000;
+    font-size: 24px;
+    @include RotaB;
+  }
+
+  &__text {
+    color: #555555;
+    letter-spacing: -.2px;
+    @include RotaR;
+  }
+
+  >div {
+    margin-top: 40px;
+  }
+
+  &__sub-title {
+    color: #000000;
+    font-size: 20px;
+    @include RotaB;
+  }
+
+  &__count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    svg {
+      margin-top: 6px;
+    }
+
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: calc(100% - 50px);
+      text-align: right;
+    }
+
+    span:nth-child(1) {
+      color: #000000;
+      font-size: 28px;
+      @include RotaB;
+      @include ellipse(1);
+    }
+
+    span:nth-child(2) {
+      margin-left: 10px;
+      padding: 5px 4px;
+      color: #888888;
+      font-size: 15px;
+      line-height: 1;
+      background: #8888881A;
+      border-radius: 2px;
+      box-sizing: border-box;
+      @include RotaB;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    min-height: 110px;
+    margin-top: 10px;
+    padding: 35px 15px;
+    align-items: flex-start;
+    background: #EDF2FF;
+    border-radius: 5px;
+    color: #366DFC;
+    box-sizing: border-box;
+
+    p {
+      width: 500px;
+      margin-left: 12px;
+    }
+
+    svg {
+      margin-top: 4px;
+    }
+  }
+
+  &__text + &__desc {
+    margin-top: 10px;
+  }
+
+}
+
+.more-info--noTitle {
+  padding: 40px;
+
+  .more-info__wrap {
+    margin-top: 0;
+    div:first-child {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .more-info__sub-title {
+    width: 215px;
+    font-size: 16px;
+  }
+
+  .more-info__count {
+    width: calc(100% - 215px);
+    height: 52px;
+    padding: 15px;
+
+    p {
+      width: 100%;
+    }
+  }
+}
+
+.sale-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 50px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 25px 0px #BBBBBB26;
+  box-sizing: border-box;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  div:first-child {
+    width: 230px;
+    border-right: 1px solid #EEEEEE;
+  }
+
+  p:nth-child(1) {
+    color: #888888;
+    font-size: 16px;
+    @include RotaB;
+  }
+
+  &__count {
+    margin-left: 10px;
+    padding: 5px 4px;
+    color: #888888;
+    font-size: 15px;
+    line-height: 1;
+    background: #8888881A;
+    border-radius: 2px;
+    box-sizing: border-box;
+    @include RotaB;
+  }
+
+  &__text {
+    margin-left: 15px;
+    color: #000000;
+    font-size: 24px;
+    @include RotaB;
+    @include ellipse(1);
+  }
+
+
+}
+
+.artboard-status +.sale-type {
+  margin-top: 30px;
+}
+
+.sale-type + .curator-info {
+  margin-top: 30px;
+}
+
+.curator-info {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px 0px #BBBBBB26;
+  border-radius: 10px;
+
+  &__header {
+    display: flex;
+    height: 60px; 
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 20px 50px;
+    border-bottom: 1px solid #EEEEEE;
+    box-sizing: border-box;
+
+    p {
+      width: 50%;
+      color: #888888;
+      font-size: 16px;
+      @include RotaB;
+    }
+  }
+
+  &__content {
+    display: flex;
+    padding: 15px 45px;
+    box-sizing: border-box;
+  }
+
+  &__content:last-child {
+    padding-bottom: 30px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    width: 50%;
+
+     p {
+       margin-left: 15px;
+       color: #000000;
+       font-size: 18px;
+       line-height: 20px;
+       @include RotaB;
+     }
+  }
+
+  &__numbering {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    background-color: #000000;
+    border-radius: 50%;
+    @include RotaB;
+  }
+
+  &__count {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    padding: 14px 24px;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    box-sizing: border-box;
+    
+    p {
+      color: #000000;
+      font-size: 24px;
+      @include RotaEB;
+      @include ellipse(1);
+    }
+
+    span {
+      margin-left: 10px;
+      padding: 5px 4px;
+      color: #888888;
+      font-size: 15px;
+      line-height: 1;
+      background: #8888881A;
+      border-radius: 2px;
+      box-sizing: border-box;
+      @include RotaB;
+    }
+  }
+}
+
+.curator-info + .more-info {
+  margin-top: 30px;
+}
+
+.status-guide {
+  display: flex;
+  min-height: 1600px;
+
+  >div + div {
+    margin-left: 30px;
+  }
+
+  .artboard-status {
+    margin-top: 50px;
+  }
+
+  .more-info,
+  .sale-type,
+  .curator-info {
+    width: 700px;
+  }
+}
+
