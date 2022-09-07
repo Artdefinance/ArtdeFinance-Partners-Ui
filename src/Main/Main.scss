@@ -1,6 +1,8 @@
 @import '../assets/css/Mixins.scss';
 
 .main {
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 60px 0 100px;
   hr {
     display: block;
@@ -9,12 +11,22 @@
     height: 36px;
   }
 }
-.dash_item {
+.board_item {
+  position: relative;
   background-color: #ffffff;
   box-shadow: 0px 15px 40px rgba(187, 187, 187, 0.15);
   border-radius: 10px;
   .item_inner {
+    position: relative;
     padding: 39px;
+  }
+  .item_head {
+    position: relative;
+    h2 {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 100%;
+    }
   }
 }
 .dashboard_top {
@@ -26,7 +38,101 @@
 }
 .personal_area {
   width: calc(32.95% - 18px);
+  height: 100%;
+  .item_inner {
+    padding-top: 37px;
+    padding-bottom: 34px;
+  }
+  .btn__setting {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  .photo {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: {
+      color: #F4F4F4;
+      repeat: no-repeat;
+      position: center center;
+      size: cover;
+    }
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      @include translate(-50%, -50%);
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .name {
+    width: calc(100% - 90px);
+    p {
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 100%;
+    }
+    span {
+      display: block;
+      color: #888888;
+      font-size: 14px;
+      line-height: 100%;
+      @include AcuminproR();
+    }
+  }
+  .count {
+    margin-bottom: 15px;
+    .item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      gap: 20px;
+      border-top: 1px solid #F4F4F4;
+      &:first-child {
+        border-top: 0;
+      }
+      p {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        color: #888888;
+      }
+      strong {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 100%;
+      }
+    }
+  }
+  .btnwrap {
+    .button {
+      width: 100%;
+      margin-top: 15px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
 }
+
 .personal_status {
   display: flex;
   flex-direction: column;
@@ -35,12 +141,144 @@
   height: 100%;
   .status_count {
     .item_inner {
+      display: flex;
+      justify-content: space-between;
       padding-top: 24px;
       padding-bottom: 24px;
+      padding-right: 0;
+    }
+    .status_items {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0 15px;
+      padding-left: 5%;
+      border-left: 1px solid #F4F4F4;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 100%;
+      &:first-child {
+        padding-left: 0;
+        border-left: 0;
+      }
+      .desc {
+        width: 100%;
+        margin-top: 5px;
+        padding-left: 35px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        color: #BBBBBB;
+      }
+    }
+    .more {
+      display: flex;
+      align-items: center;
     }
   }
   .current_bid {
     height: 100%;
+    .item_inner {
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
+    .btn_update {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+      color: #888888;
+    }
+  }
+  .bid_list {
+    margin-top: 15px;
+    li {
+      margin-top: 10px;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:nth-child(odd) {
+        .items {
+          background-color: #FAFAFA;
+        }
+      }
+    }
+    .items {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      // justify-content: space-between;
+      padding: 23px 20px;
+      border-radius: 10px;
+
+      @include AcuminproR();
+      &:first-child {
+        margin-top: 0;
+      }
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 100%;
+        background-color: #BDBDBD;
+      }
+    }
+    .artist_nm {
+      width: 20%;
+      font-size: 16px;
+      line-height: 120%;
+      @include ellipse(2);
+    }
+    .work_nm {
+      width: 40%;
+      font-size: 16px;
+      line-height: 120%;
+      color: #888888;
+      @include ellipse(1);
+    }
+    .wallet_nm {
+      width: 13%;
+      font-size: 16px;
+      line-height: 120%;
+      color: #BBBBBB;
+      @include ellipse(1);
+    }
+    .price {
+      width: 27%;
+      text-align: right;
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 100%;
+      }
+      .unit {
+        display: inline-flex;
+        padding: 5px;
+        margin-left: 6px;
+        background: rgba(136, 136, 136, 0.1);
+        border-radius: 2px;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 100%;
+        color: #888888;
+      }
+      .date {
+        font-size: 14px;
+        line-height: 120%;
+        @include AcuminproR();
+        color: #BBBBBB;
+      }
+    }
   }
 }
 .dashboad_half {
@@ -49,7 +287,7 @@
   justify-content: space-between;
   gap: 36px;
   min-height: 500px;
-  .dash_item {
+  .board_item {
     flex: 1;
   }
 }

@@ -1,7 +1,9 @@
 @import '../assets/css/Mixins.scss';
 
 .gallery__wrap {
+  max-width: 1440px;
   padding-bottom: 199px;
+  margin: 0 auto;
   .head {
     padding: 169px 0 100px;
     text-align: center;
