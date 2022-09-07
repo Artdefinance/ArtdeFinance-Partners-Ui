@@ -126,7 +126,7 @@ function Path() {
             {/*  */}
             <tr>
               <td>Activity</td>
-              <td>Activity</td>
+              <td>Activity_List_01</td>
               <td>
               <Link to="/activity">
                 /activity
@@ -135,7 +135,7 @@ function Path() {
             </tr>
             <tr>
               <td>-</td>
-              <td>Activity List</td>
+              <td>Activity_List Price_01</td>
               <td>
               <Link to="/activity/list">
                 /activity/list
@@ -144,7 +144,7 @@ function Path() {
             </tr>
             <tr>
               <td>-</td>
-              <td>Activity Price</td>
+              <td>Activity_List Price_02</td>
               <td>
               <Link to="/activity/price">
                 /activity/price
@@ -153,14 +153,49 @@ function Path() {
             </tr>
             <tr>
               <td>-</td>
-              <td>Activity Auction</td>
+              <td>Activity_Action_01</td>
               <td>
               <Link to="/activity/auction">
                 /activity/auction
               </Link>
               </td>
             </tr>
-
+            <tr>
+              <td>-</td>
+              <td>Activity_Action_02</td>
+              <td>
+              <Link to="/activity/auction/soldout">
+                /activity/auction/soldout
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>Activity_Action_03</td>
+              <td>
+              <Link to="/activity/auction/remove">
+                /activity/auction/remove
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>Activity_Action_04</td>
+              <td>
+              <Link to="/activity/auction/status">
+                /activity/auction/status
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>Activity Status Component</td>
+              <td>
+              <Link to="/activity/guide">
+                /activity/guide
+              </Link>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

@@ -22,6 +22,7 @@ import ActivityAuction from './Activity/Auction';
 import AuctionSoldout from './Activity/AuctionSoldout';
 import AuctionRemove from './Activity/AuctionRemove';
 import StatusGuide from './Activity/StatusGuide';
+import AuctionStatus from './Activity/AuctionStatus';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path="/activity/auction" element={<ActivityAuction />} />
         <Route path="/activity/auction/soldout" element={<AuctionSoldout />} />
         <Route path="/activity/auction/remove" element={<AuctionRemove />} />
+        <Route path="/activity/auction/status" element={<AuctionStatus />} />
         <Route path="/activity/guide" element={<StatusGuide />} />
       </Routes>
       </div>

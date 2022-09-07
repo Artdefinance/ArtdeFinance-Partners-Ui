@@ -336,6 +336,10 @@
   }
 }
 
+.activity-item--status {
+  margin-top: 72px;
+}
+
 .activity-side {
   width: 100%;
   padding: 50px;
@@ -376,7 +380,7 @@
   }
 
   &__item+&__item {
-    margin-top: 25px;
+    margin-top: 23.5px;
   }
 
   &__title {
@@ -1217,7 +1221,7 @@
 }
 
 .more-info--noTitle {
-  padding: 40px;
+  padding: 35px;
 
   .more-info__wrap {
     margin-top: 0;
