@@ -10,11 +10,14 @@ export default class Main extends React.Component {
     super(props);
     this.state = {
       photoImage: '/assets/images/page/artist/img_profile_view.png',
+      nodataBid: '/assets/images/common/nodata_bid.png',
+      nodataCurating: '/assets/images/common/nodata_curating.png',
+      nodataContent: '/assets/images/common/nodata_content.png',
     };
   }
 
   render() {
-    const { photoImage } = this.state;
+    const { photoImage, nodataBid, nodataCurating, nodataContent } = this.state;
     return (
       <div className="main">
         <div className="dashboard_top">
@@ -94,6 +97,24 @@ export default class Main extends React.Component {
                     <Icons shape="refresh" width="24px" height="24px" />
                   </a>
                 </div>
+                {/* nodata */}
+                <div className="nodata displaynone">
+                  <img src={nodataBid} alt="nodata" className="nodata-img" />
+                  <div className="nodata-desc">
+                    <p>
+                      As of yet, there are no works that are being auctioned off
+                      or there are no new auction proposals.
+                    </p>
+                    <span>
+                      When the value of a work is determined through
+                      curation and DAO
+                      <br />
+                      You can register on the market by selecting
+                      the type of sale between auction and full price sale.
+                    </span>
+                  </div>
+                </div>
+                {/*  */}
                 <ul className="bid_list">
                   <li>
                     <Link to="/" className="items">
@@ -119,7 +140,6 @@ export default class Main extends React.Component {
                           1,500,000.00
                           <span className="unit">USD</span>
                         </p>
-                        <span className="date">2022/04/04  03:23:51</span>
                       </div>
                     </Link>
                   </li>
@@ -127,13 +147,19 @@ export default class Main extends React.Component {
               </div>
             </div>
           </div>
+          {/*  */}
         </div>
         <hr />
         {/*  */}
-        <div className="dashboad_wide board_item">
+        <div className="dashboad_wide dashboad_curating board_item">
           <div className="item_inner">
             <div className="item_head">
               <h2>Now Curating</h2>
+            </div>
+            {/* nodata */}
+            <div className="nodata">
+              <img src={nodataCurating} alt="nodata" className="nodata-img" />
+              <p>Currently in progress, There is no curation.</p>
             </div>
           </div>
         </div>
@@ -144,12 +170,32 @@ export default class Main extends React.Component {
               <div className="item_head">
                 <h2>Curated Results</h2>
               </div>
+              {/* nodata */}
+              <div className="nodata-content">
+                <img src={nodataContent} alt="nodata" className="nodata-img" />
+                <p>
+                There are currently no curated works.
+                <br />
+                Start curation now by minting your work.
+                </p>
+              </div>
             </div>
           </div>
           <div className="board_item">
             <div className="item_inner">
               <div className="item_head">
                 <h2>Waiting for Sale</h2>
+              </div>
+              {/* nodata */}
+              <div className="nodata-content">
+                <img src={nodataContent} alt="nodata" className="nodata-img" />
+                <p>
+                There are no works waiting for sale yet.
+                <br />
+                When the curation and DAO are completed, the
+                <br />
+                form of the  work is decided and Register on the market.
+                </p>
               </div>
             </div>
           </div>

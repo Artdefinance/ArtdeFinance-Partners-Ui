@@ -1,5 +1,6 @@
 @import '../assets/css/Mixins.scss';
 
+.displaynone {display: none !important;}
 .main {
   max-width: 1440px;
   margin: 0 auto;
@@ -27,6 +28,24 @@
       font-size: 24px;
       line-height: 100%;
     }
+  }
+}
+.nodata-content {
+  display: flex;
+  flex-direction: column;
+  gap: 131px;
+  margin-top: 38px;
+  text-align: center;
+  .nodata-img {
+    flex: 1;
+    width: 533px;
+    margin: 0 auto;
+  }
+  p {
+    flex: 1;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
   }
 }
 .dashboard_top {
@@ -195,6 +214,35 @@
       color: #888888;
     }
   }
+  .nodata {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin: 0;
+    padding-top: 51px;
+    .nodata-img {
+      width: 153.04px;
+      height: 95.69px;
+    }
+    .nodata-desc {
+      text-align: left;
+      p {
+        margin: 0;
+        margin-bottom: 11px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 20px;
+        text-align: left;
+      }
+      span {
+        display: block;
+        font-size: 16px;
+        line-height: 120%;
+        @include AcuminproR();
+        color: #888888;
+      }
+    }
+  }
   .bid_list {
     margin-top: 15px;
     li {
@@ -278,6 +326,22 @@
         @include AcuminproR();
         color: #BBBBBB;
       }
+    }
+  }
+}
+.dashboad_curating {
+  .nodata {
+    width: 315px;
+    margin: 100px auto;
+    text-align: center;
+    img {
+      max-width: 230px;
+
+    }
+    p {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
     }
   }
 }
