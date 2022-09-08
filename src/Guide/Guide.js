@@ -214,6 +214,7 @@ function Guide() {
       },
     );
   }
+
   return (
     <div className="guide">
       <div className="buttons">
@@ -384,6 +385,8 @@ function Guide() {
       <div>
         <p>Arrow</p>
           <Icons shape="pagenation-left" width="24px" height="24px" />
+          <Icons shape="pagenation-left--black" width="24px" height="24px" />
+          <Icons shape="pagenation-right--gray" width="24px" height="24px" />
           <Icons shape="pagenation-right" width="24px" height="24px" />
           <Icons shape="arrow-left" width="24px" height="24px" />
           <Icons shape="arrow-right" width="24px" height="24px" />
@@ -420,22 +423,23 @@ function Guide() {
           closeOnClick
           rtl={false}
         />
-
-        <p>
-        <button type="button" onClick={() => toastDefault()} className="button button--black button--mid">Toast Default Bottom Center</button>
-        </p>
-        <p>
-        <button type="button" onClick={() => toastError()} className="button button--black button--mid">Toast Error Bottom Center</button>
-        </p>
-        <p>
-        <button type="button" onClick={() => toastWarning()} className="button button--black button--mid">Toast Warning Bottom Center</button>
-        </p>
-        <p>
-        <button type="button" onClick={() => toastSuccess()} className="button button--black button--mid">Toast Success Bottom Center</button>
-        </p>
-        <p>
-        <button type="button" onClick={() => toastInfo()} className="button button--black button--mid">Toast Info Bottom Center</button>
-        </p>
+        <div className="toast">
+          <p>
+          <button type="button" onClick={() => toastDefault()} className="button button--black button--mid">Toast Default Bottom Center</button>
+          </p>
+          <p>
+          <button type="button" onClick={() => toastError()} className="button button--black button--mid">Toast Error Bottom Center</button>
+          </p>
+          <p>
+          <button type="button" onClick={() => toastWarning()} className="button button--black button--mid">Toast Warning Bottom Center</button>
+          </p>
+          <p>
+          <button type="button" onClick={() => toastSuccess()} className="button button--black button--mid">Toast Success Bottom Center</button>
+          </p>
+          <p>
+          <button type="button" onClick={() => toastInfo()} className="button button--black button--mid">Toast Info Bottom Center</button>
+          </p>
+        </div>
       </div>
     </div>
   );

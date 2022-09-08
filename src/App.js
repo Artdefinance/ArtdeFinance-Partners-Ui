@@ -23,6 +23,7 @@ import AuctionSoldout from './Activity/AuctionSoldout';
 import AuctionRemove from './Activity/AuctionRemove';
 import StatusGuide from './Activity/StatusGuide';
 import AuctionStatus from './Activity/AuctionStatus';
+import Wallet from './Wallet/Wallet';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
         <Route path="/activity/auction/remove" element={<AuctionRemove />} />
         <Route path="/activity/auction/status" element={<AuctionStatus />} />
         <Route path="/activity/guide" element={<StatusGuide />} />
+        <Route path="/wallet" element={<Wallet />} />
       </Routes>
       </div>
       <Footer />

@@ -7,6 +7,7 @@ function Pagenation() {
     <div className="pagenation">
       <button type="button" className="pagenation__arrow arrow-left">
         <Icons shape="pagenation-left" width="24px" height="24px" />
+        {/* <Icons shape="pagenation-left--black" width="24px" height="24px" /> */}
         <span className="a11y">왼쪽 페이지로 이동 화살표</span>
       </button>
       <div className="pagenation__list">
@@ -20,6 +21,7 @@ function Pagenation() {
       </div>
       <button type="button" className="pagenation__arrow arrow-right">
         <Icons shape="pagenation-right" width="24px" height="24px" />
+        {/* <Icons shape="pagenation-right--gray" width="24px" height="24px" /> */}
         <span className="a11y">오른쪽 페이지로 이동 화살표</span>
       </button>
       <div className="go-page">
