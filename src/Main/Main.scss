@@ -28,6 +28,17 @@
       font-size: 24px;
       line-height: 100%;
     }
+    .btn_head {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+      color: #888888;
+    }
   }
 }
 .nodata-content {
@@ -204,17 +215,6 @@
       padding-top: 30px;
       padding-bottom: 20px;
     }
-    .btn_update {
-      position: absolute;
-      right: 0;
-      top: 0;
-      display: flex;
-      align-items: center;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 100%;
-      color: #888888;
-    }
   }
   .nodata {
     display: flex;
@@ -263,7 +263,6 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      // justify-content: space-between;
       padding: 23px 20px;
       border-radius: 10px;
 
@@ -338,12 +337,93 @@
     text-align: center;
     img {
       max-width: 230px;
-
     }
     p {
       font-weight: 700;
       font-size: 18px;
       line-height: 22px;
+    }
+  }
+  .curation_content {
+    display: flex;
+    margin-top: 60px;
+  }
+  .curation_total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 195px;
+    p {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 100%;
+      color: #BBBBBB;
+    }
+    strong {
+      font-weight: 700;
+      font-size: 62px;
+      line-height: 100%;
+    }
+  }
+  .curation_list {
+    display: flex;
+    width: calc(100% - 195px);
+    .curation_items {
+      position: relative;
+      flex: 1;
+      margin-right: 56px;
+      background: #FFFFFF;
+      box-shadow: 0px 15px 40px rgba(187, 187, 187, 0.15);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .figure {
+      position: relative;
+      width: 100%;
+      padding-top: 118.019%;
+      overflow: hidden;
+      background-color: #F0F0F0;
+      img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include translate(-50%, -50%);
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .desc {
+      padding: 34px 22px;
+      p {
+        height:18px;
+        @include AcuminproM();
+        font-size: 16px;
+        line-height: 100%;
+        @include ellipse(1);
+      }
+      span {
+        display: block;
+        margin-top: 10px;
+        font-size: 18px;
+        line-height: 120%;
+        color: #888888;
+        @include ellipse(2);
+      }
+    }
+    .curation_time-tag {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      padding: 6px 10px;
+      gap: 5px;
+      background: #FFFFFF;
+      border: 1px solid #000000;
+      border-radius: 100px;
+      z-index: 1;
     }
   }
 }
