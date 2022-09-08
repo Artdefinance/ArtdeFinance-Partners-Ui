@@ -13,11 +13,16 @@ export default class Main extends React.Component {
       nodataBid: '/assets/images/common/nodata_bid.png',
       nodataCurating: '/assets/images/common/nodata_curating.png',
       nodataContent: '/assets/images/common/nodata_content.png',
+      curationImg0: 'https://www.corradi.eu/getattachment/d381ade5-acf8-45ae-8ddd-36a616efb8b3/image001-3-.jpg',
+      curationImg1: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
     };
   }
 
   render() {
-    const { photoImage, nodataBid, nodataCurating, nodataContent } = this.state;
+    const {
+      photoImage, nodataBid, nodataCurating,
+      nodataContent, curationImg0, curationImg1,
+    } = this.state;
     return (
       <div className="main">
         <div className="dashboard_top">
@@ -65,25 +70,25 @@ export default class Main extends React.Component {
                 <div className="status_items">
                   <Icons shape="data" width="20px" height="20px" />
                   1,234
-                  <a href="#" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></a>
+                  <button type="button" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></button>
                   <p className="desc">NFT Minted</p>
                 </div>
                 <div className="status_items">
                   <Icons shape="dashboard" width="20px" height="20px" color="#BBBBBB" />
                   0
-                  <a href="#" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></a>
+                  <button type="button" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></button>
                   <p className="desc">Curating</p>
                 </div>
                 <div className="status_items">
                   <Icons shape="heart" width="20px" height="20px" color="#BBBBBB" />
                   10
-                  <a href="#" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></a>
+                  <button type="button" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></button>
                   <p className="desc">Curated</p>
                 </div>
                 <div className="status_items">
                   <Icons shape="hand" width="20px" height="20px" color="#BBBBBB" />
                   999
-                  <a href="#" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></a>
+                  <button type="button" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></button>
                   <p className="desc">Dao Voted</p>
                 </div>
               </div>
@@ -92,10 +97,10 @@ export default class Main extends React.Component {
               <div className="item_inner">
                 <div className="item_head">
                   <h2>Current Bid</h2>
-                  <a href="#" className="btn_update">
+                  <button type="button" className="btn_head">
                     Update
                     <Icons shape="refresh" width="24px" height="24px" />
-                  </a>
+                  </button>
                 </div>
                 {/* nodata */}
                 <div className="nodata displaynone">
@@ -155,11 +160,64 @@ export default class Main extends React.Component {
           <div className="item_inner">
             <div className="item_head">
               <h2>Now Curating</h2>
+              <button type="button" className="btn_head">
+                View All
+                <Icons shape="refresh" width="24px" height="24px" />
+              </button>
             </div>
             {/* nodata */}
-            <div className="nodata">
+            <div className="nodata displaynone">
               <img src={nodataCurating} alt="nodata" className="nodata-img" />
               <p>Currently in progress, There is no curation.</p>
+            </div>
+            <div className="curation_content">
+              <div className="curation_total">
+                <p>Total</p>
+                <strong>6</strong>
+              </div>
+              <ul className="curation_list">
+                <li className="curation_items">
+                  <Link to="/">
+                    <p className="curation_time-tag">
+                      <Icons shape="clock" width="20px" height="20px" />
+                      <span>180d</span>
+                      <span>17h</span>
+                      <span>38m</span>
+                      <span>52s</span>
+                    </p>
+                    <p className="figure"><img src={curationImg0} alt="curatingimg" /></p>
+                    <div className="desc">
+                      <p>Vincent van GoghVincent van Gogh Vincent van Gogh</p>
+                      <span>Starry Night Over the RhonefOver the Rhonef, 2011</span>
+                    </div>
+                  </Link>
+                </li>
+                <li className="curation_items">
+                  <Link to="/">
+                    <p className="figure"><img src={curationImg1} alt="curatingimg" /></p>
+                    <div className="desc">
+                      <p>Vincent van GoghVincent van Gogh Vincent van Gogh</p>
+                      <span>Starry Night Over the RhonefOver the Rhonef, 2011</span>
+                    </div>
+                  </Link>
+                </li>
+                <li className="curation_items">
+                  <Link to="/">
+                    <p className="curation_time-tag">
+                      <Icons shape="clock" width="20px" height="20px" />
+                      <span>180d</span>
+                      <span>17h</span>
+                      <span>38m</span>
+                      <span>52s</span>
+                    </p>
+                    <p className="figure"><img src={curationImg0} alt="curatingimg" /></p>
+                    <div className="desc">
+                      <p>Vincent van GoghVincent van Gogh Vincent van Gogh</p>
+                      <span>Starry Night Over the RhonefOver the Rhonef, 2011</span>
+                    </div>
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
