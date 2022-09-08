@@ -65,25 +65,25 @@ export default class Main extends React.Component {
                 <div className="status_items">
                   <Icons shape="data" width="20px" height="20px" />
                   1,234
-                  <a href="#" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></a>
+                  <button type="button" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></button>
                   <p className="desc">NFT Minted</p>
                 </div>
                 <div className="status_items">
                   <Icons shape="dashboard" width="20px" height="20px" color="#BBBBBB" />
                   0
-                  <a href="#" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></a>
+                  <button type="button" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></button>
                   <p className="desc">Curating</p>
                 </div>
                 <div className="status_items">
                   <Icons shape="heart" width="20px" height="20px" color="#BBBBBB" />
                   10
-                  <a href="#" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></a>
+                  <button type="button" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></button>
                   <p className="desc">Curated</p>
                 </div>
                 <div className="status_items">
                   <Icons shape="hand" width="20px" height="20px" color="#BBBBBB" />
                   999
-                  <a href="#" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></a>
+                  <button type="button" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></button>
                   <p className="desc">Dao Voted</p>
                 </div>
               </div>
@@ -92,10 +92,10 @@ export default class Main extends React.Component {
               <div className="item_inner">
                 <div className="item_head">
                   <h2>Current Bid</h2>
-                  <a href="#" className="btn_update">
+                  <button type="button" className="btn_update">
                     Update
                     <Icons shape="refresh" width="24px" height="24px" />
-                  </a>
+                  </button>
                 </div>
                 {/* nodata */}
                 <div className="nodata displaynone">
