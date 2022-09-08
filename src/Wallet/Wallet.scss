@@ -1,0 +1,30 @@
+@import '../assets/css/Mixins.scss';
+
+.question-bubble {
+  &__wrap {
+    position: absolute;
+    min-width: 210px;
+    width: 243px;
+    padding: 13px 11px;
+    color: #ffffff;
+    background-color: #5F44FF;
+    border-radius: 6px;
+    box-shadow: 0px 5px 15px 0px #0510371A;
+    @include AcuminproR;
+
+    &::after {
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      bottom: -8.5px;
+      width: 15px;
+      height: 8.5px;
+      margin-left: -8.5px;
+      background-image: url('../../public/assets/images/page/wallet/icon_bubble.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: '';
+    }
+  }
+ 
+}

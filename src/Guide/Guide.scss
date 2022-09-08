@@ -132,9 +132,16 @@
     margin-top: 10px;
   }
 
-  .button,
-  .radio-button {
-    float: left;
+  .toast {
+    button {
+      float: left;
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      clear: both;
+    }
   }
 
   .button-position {
