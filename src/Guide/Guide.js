@@ -1,8 +1,5 @@
 /* eslint-disable react/prop-types */
 import './Guide.scss';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.min.css';
-import 'swiper/swiper.min.css';
 // Toast
 import { ToastContainer, toast } from 'react-toastify';
 // Dropdown
