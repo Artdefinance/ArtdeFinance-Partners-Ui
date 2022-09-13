@@ -455,15 +455,31 @@
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    font-size: 0;
     cursor: pointer;
     &.slick-disabled {
       opacity: 0.3;
+      cursor: default;
     }
-    &.arrow-next {
-
+    &.slick-next {
+      background: {
+        image: url('/assets/images/icons/ico_carosel_next.svg');
+        repeat: no-repeat;
+        position: center center;
+        size: cover;
+      }
     }
-    &.arrow-prev {
-      right: 49px;
+    &.slick-prev {
+      right: 45px;
+      background: {
+        image: url('/assets/images/icons/ico_carosel_prev.svg');
+        repeat: no-repeat;
+        position: center center;
+        size: cover;
+      }
     }
   }
   .slide-item {

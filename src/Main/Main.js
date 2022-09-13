@@ -18,16 +18,6 @@ export default class Main extends React.Component {
       curationImg0: 'https://www.corradi.eu/getattachment/d381ade5-acf8-45ae-8ddd-36a616efb8b3/image001-3-.jpg',
       curationImg1: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
     };
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
-  }
-
-  next() {
-    this.slider.slickNext();
-  }
-
-  previous() {
-    this.slider.slickPrev();
   }
 
   render() {
@@ -41,7 +31,6 @@ export default class Main extends React.Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      beforeChange: this.beforeChange,
     };
     return (
       <>
@@ -264,9 +253,6 @@ export default class Main extends React.Component {
                   </p>
                 </div>
                 <Slider
-                  ref={(c) => {
-                    this.slider = c;
-                  }}
                   {...curatedSettings}
                 >
                   <div className="slide-item">
@@ -376,22 +362,6 @@ export default class Main extends React.Component {
                     </div>
                   </div>
                 </Slider>
-                {/* <div style={{ textAlign: 'center' }}>
-                  <button
-                    type="button"
-                    className="button"
-                    onClick={this.previous}
-                  >
-                    <Icons shape="carousel_prev" width="34px" height="34px" viewBox="0 0 34 34" />
-                  </button>
-                  <button
-                    type="button"
-                    className="button"
-                    onClick={this.next}
-                  >
-                    <Icons shape="carousel_next" width="34px" height="34px" viewBox="0 0 34 34" />
-                  </button>
-                </div> */}
               </div>
             </div>
             <div className="board_item">
