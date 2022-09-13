@@ -381,6 +381,11 @@ function Guide() {
           <Icons shape="account" width="20px" height="20px" color="#BBBBBB" />
           <Icons shape="clock" width="20px" height="20px" />
         </div>
+        <div>
+          <Icons shape="adf" width="20px" height="20px" />
+          <Icons shape="bnb" width="20px" height="20px" />
+          <Icons shape="busd20" width="20px" height="20px" />
+        </div>
       </div>
       <div>
         <p>Arrow</p>

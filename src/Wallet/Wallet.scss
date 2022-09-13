@@ -1,12 +1,167 @@
 @import '../assets/css/Mixins.scss';
 
+.wallet {
+  min-height: 1080px;
+
+  &__wrap {
+    max-width: 1440px;
+    padding-top: 60px;
+    margin: 0 auto;
+  }
+
+  &__wrap::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+
+  &__wrap--long {
+    padding-bottom: 147px;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.wallet-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 31.6%;
+  max-width: 456px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 15px 40px 0px #BBBBBB26;
+  box-sizing: border-box;
+
+  &__title {
+    margin-top: 18px;
+    color: #000000;
+    font-size: 20px;
+    line-height: 1;
+    @include RotaB;
+    @include ellipse(1);
+  }
+
+  &__text {
+    margin-top: 7px;
+    color: #888888;
+    font-size: 14px;
+    @include AcuminproR;
+    @include ellipse(1);
+  }
+
+  &__button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  &__img {
+    width: 80px;
+    height: 80px;
+    border-radius: 24px;
+  }
+}
+
+.wallet-account {
+  width: 65.8%;
+  max-width: 948px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 15px 40px 0px #BBBBBB26;
+  box-sizing: border-box;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  .wallet-account__item + .wallet-account__item {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  &__title {
+    display: inline-block;
+    width: 340px;
+    color: #888888;
+    font-size: 16px;
+    text-align: left;
+    @include RotaB;
+  }
+
+  &__text {
+    display: inline-block;
+    width: calc(100% - 340px);
+    height: 22px;
+    font-size: 16px;
+    @include AcuminproR;
+    @include ellipse(1);
+  }
+
+  &__account {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: calc(100% - 340px);
+    padding: 15px 17px;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    text-align: right;
+    box-sizing: border-box;
+
+    p {
+      font-size: 18px;
+      @include RotaB;
+    }
+
+    svg {
+      position: absolute;
+      top: 17px;
+      left: 15px;
+    }
+  }
+
+  &__type {
+    width: 45px;
+    padding: 5px 9px;
+    background: #8888881A;
+    color: #888888;
+    font-size: 15px;
+    line-height: 1;
+    border-radius: 5px;
+    box-sizing: border-box;
+    @include RotaB;
+  }
+
+  &__number {
+    width: calc(100% - 90px);
+    margin-right: 10px;
+    @include RotaB;
+    @include ellipse(1);
+  }
+}
+
 .question-bubble {
+  position: relative;
+  line-height: 1;
+
   &__wrap {
     position: absolute;
     min-width: 210px;
-    width: 243px;
-    padding: 13px 11px;
+    padding: 13px 23px;
     color: #ffffff;
+    line-height: 18.2px;
+    letter-spacing: -.7px;
     background-color: #5F44FF;
     border-radius: 6px;
     box-shadow: 0px 5px 15px 0px #0510371A;
@@ -26,5 +181,193 @@
       content: '';
     }
   }
- 
+
+  &__mark {
+    width: 20px;
+    height: 20px;
+    background-image: url('../../public/assets/images/page/wallet/icon_question.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 14px;
+    height: 14px;
+    background-image: url('../../public/assets/images/page/wallet/icon_close.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.wallet-info {
+  width: 100%;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  &__item {
+    width: 18.4%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 15px 40px 0px #BBBBBB26;
+    box-sizing: border-box;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  &__header-text {
+    color: #888888;
+    font-size: 16px;
+    @include RotaB;
+  }
+
+  &__count-number {
+    width: calc(100% - 45px);
+    color: #000000;
+    font-size: 26px;
+    @include RotaB;
+    @include ellipse(1);
+  }
+
+  &__number {
+    color: #000000;
+    font-size: 26px;
+    @include RotaB;
+    @include ellipse(1);
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__count {
+    display: inline-block;
+    width: 45px;
+    padding: 5px 4px;
+    color: #888888;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1;
+    border-radius: 2px;
+    background: #8888881A;
+    @include RotaB;
+    @include ellipse(1);
+  }
+}
+
+.wallet-data {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    line-height: 60px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 15px 40px 0px #BBBBBB26;
+
+    ul {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    li {
+      color: #000000;
+      font-size: 18px;
+      line-height: 1;
+      text-align: center;
+      @include RotaB;
+    }
+
+    li:nth-child(1) {
+      width: 17%;
+      max-width: 255px;
+    }
+    li:nth-child(2) {
+      width: 20%;
+      max-width: 300px;
+    }
+    li:nth-child(3) {
+      width: 20%;
+      max-width: 300px;
+    }
+    li:nth-child(4) {
+      width: 10%;
+      max-width: 150px;
+    }
+    li:nth-child(5) {
+      width: 13%;
+      max-width: 190px;
+    }
+    li:nth-child(6) {
+      width: 20%;
+    }
+  } 
+
+  &__items {
+    li {  
+      display: flex;
+      align-items: center;
+      height: 80px;
+      margin-top: 15px;
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 15px 40px 0px #BBBBBB26;
+    }
+    p:nth-child(1) {
+      width: 17%;
+      max-width: 255px;
+      color: #000000;
+      font-size: 18px;
+      @include AcuminproM;
+      @include ellipse(1);
+    }
+    p:nth-child(2) {
+      width: 20%;
+      max-width: 300px;
+      color: #888888;
+      font-size: 18px;
+      @include AcuminproR;
+      @include ellipse(1);
+    }
+    p:nth-child(3) {
+      width: 20%;
+      max-width: 300px;
+      @include ellipse(1);
+    }
+    p:nth-child(4) {
+      width: 10%;
+      max-width: 150px;
+      font-size: 18px;
+      @include AcuminproR;
+      @include ellipse(1);
+    }
+    p:nth-child(5) {
+      width: 13%;
+      max-width: 190px;
+      @include ellipse(1);
+    }
+    p:nth-child(6) {
+      width: 20%;
+      color: #888888;
+      font-size: 18px;
+      @include AcuminproR;
+      @include ellipse(1);
+    }
+  }
 }
