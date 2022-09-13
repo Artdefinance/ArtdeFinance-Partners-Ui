@@ -369,6 +369,22 @@ export default class IconStyle extends React.Component {
               </>
             );
           }
+          if (shape === 'carousel_prev') {
+            return (
+              <>
+              <circle cx="17" cy="17" r="16" transform="rotate(-180 17 17)" stroke="black" />
+              <path d="M19.0002 23L20.4102 21.59L15.8302 17L20.4102 12.41L19.0002 11L13.0002 17L19.0002 23Z" fill="black" />
+              </>
+            );
+          }
+          if (shape === 'carousel_next') {
+            return (
+              <>
+              <circle cx="17" cy="17" r="16" stroke="black" />
+              <path d="M14.8983 11L13.4883 12.41L18.0683 17L13.4883 21.59L14.8983 23L20.8983 17L14.8983 11Z" fill="black" />
+              </>
+            );
+          }
           return <path d={d} fill={color} />;
         })()}
         </g>

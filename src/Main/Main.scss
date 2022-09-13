@@ -435,5 +435,134 @@
   min-height: 500px;
   .board_item {
     flex: 1;
+    width: 50%;
+    .item_inner {
+      height: calc(100% - 78px);
+    }
+  }
+}
+
+// slick slider style
+.slick-slider {
+  height: calc(100% - 24px);
+  .slick-list {
+    height: 100%;
+  }
+  .slick-track {
+    height: inherit;
+  }
+  .slick-arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    &.slick-disabled {
+      opacity: 0.3;
+    }
+    &.arrow-next {
+
+    }
+    &.arrow-prev {
+      right: 49px;
+    }
+  }
+  .slide-item {
+    .title {
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+      color: #888888;
+    }
+  }
+  .work_info {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    margin-left: 1px;
+    .figure {
+      width: 158px;
+      margin-right: 9.616%;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .name {
+      margin-bottom: 15px;
+      @include AcuminproM();
+      font-size: 18px;
+      line-height: 100%;
+    }
+    .desc {
+      display: block;
+      margin-bottom: 15px;
+      @include AcuminproR();
+      font-size: 20px;
+      line-height: 120%;
+      color: #9F9F9F;
+    }
+    .number {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px;
+      background: #F4F4F4;
+      border-radius: 5px;
+      @include AcuminproR();
+      font-size: 16px;
+      line-height: 100%;
+      color: #888888;
+    }
+  }
+  .price_info {
+    margin-bottom: 40px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    &.info-half {
+      display: flex;
+      gap: 23px;
+      > div {
+        flex: 1;
+        flex-direction: column;
+      }
+      .price_box {
+        gap: 10px;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+    .price_box {
+      display: flex;
+      justify-content: space-between;
+      background: #F4F4F4;
+      border-radius: 5px;
+      padding: 18px 30px;
+      > div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .unit {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 9px;
+        background: rgba(136, 136, 136, 0.1);
+        border-radius: 2px;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 100%;
+        color: #888888;
+      }
+      .currency {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 100%;
+      }
+      .crypto {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 100%;
+        color: #888888;
+      }
+    }
   }
 }
