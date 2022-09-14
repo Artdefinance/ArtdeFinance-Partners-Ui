@@ -285,6 +285,7 @@
       align-items: center;
       width: 100%;
     }
+
     li {
       color: #000000;
       font-size: 18px;
@@ -297,22 +298,27 @@
       width: 17%;
       max-width: 255px;
     }
+    
     li:nth-child(2) {
       width: 20%;
       max-width: 300px;
     }
+
     li:nth-child(3) {
       width: 20%;
       max-width: 300px;
     }
+
     li:nth-child(4) {
       width: 10%;
       max-width: 150px;
     }
+
     li:nth-child(5) {
       width: 13%;
       max-width: 190px;
     }
+
     li:nth-child(6) {
       width: 20%;
     }
@@ -329,6 +335,12 @@
       border-radius: 10px;
       box-shadow: 0px 15px 40px 0px #BBBBBB26;
     }
+
+    p {
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    
     p:nth-child(1) {
       width: 17%;
       max-width: 255px;
@@ -369,5 +381,86 @@
       @include AcuminproR;
       @include ellipse(1);
     }
+  }
+
+  &__text {
+    display: inline-block;
+    width: 82px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    border-radius: 5px;
+    @include RotaB;
+  }
+
+  &__text--Failed {
+    color: #888888;
+    background-color: #EEEEEE;
+  }
+
+  &__text--Succeed {
+    color: #5F44FF;
+    background: #5F44FF26;
+  }
+
+  &__text--Cancled {
+    color: #F68511;
+    background: #FFECCC;
+  }
+
+  &__filter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+
+  &__pagenation {
+    margin-top: 30px;
+    margin-bottom: 120px;
+
+    .pagenation {
+      justify-content: flex-end;
+    }
+    
+  }
+}
+
+.wallet-data--plus {
+  color: #FF3B30;
+  font-size: 18px;
+  @include AcuminproR;
+}
+
+.wallet-data--minus {
+  color: #366DFC;
+  font-size: 18px;
+  @include AcuminproR;
+}
+
+.wallet-data--normal {
+  color: #000000;
+  font-size: 18px;
+  @include AcuminproR;
+}
+
+.wallet-category {
+  &__button {
+    height: 47px;
+    color: #BBBBBB;
+    font-size: 20px;
+    line-height: 22px;
+    border-bottom: 1px solid transparent;
+    @include RotaB;
+  }
+
+  .wallet-category__button + .wallet-category__button {
+    margin-left: 40px;
+  }
+
+  &__button--active {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    @include RotaB;
   }
 }
