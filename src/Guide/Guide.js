@@ -480,6 +480,22 @@ function Guide() {
       </div>
 
       <div>
+        <h2>Radiobox</h2>
+        <div className="radio_inputs">
+          <label htmlFor="default-radio1">
+            <input type="radio" id="default-radio1" name="default-radio" />
+            <span />
+            default-radio1
+          </label>
+          <label htmlFor="default-radio2">
+            <input type="radio" id="default-radio2" name="default-radio" />
+            <span />
+            default-radio2
+          </label>
+        </div>
+      </div>
+
+      <div>
         <h2>Toast</h2>
         <ToastContainer
           autoClose={false}

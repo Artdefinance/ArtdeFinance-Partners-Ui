@@ -205,6 +205,14 @@
   .form__inputs {
     padding-bottom: 54px;
   }
+  .form__inputs-head {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    .form__title {
+      margin-bottom: 0;
+    }
+  }
   .input__input {
     height: 36px;
   }
@@ -252,6 +260,7 @@
         color: #888888;
       }
       &:before {
+        right: 15px;
         width: 0;
         height: 0;
         border-color: #DDDDDD transparent transparent; 
@@ -330,6 +339,14 @@
     @include AcuminproL();
     color: #888888;
   }
+}
+.sub__message {
+  margin-top: 4px;
+  @include AcuminproL();
+  font-size: 14px;
+  line-height: 20px;
+  color: #888888;
+  text-align: right;
 }
 // .regust__form
 

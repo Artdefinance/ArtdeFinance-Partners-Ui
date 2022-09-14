@@ -52,6 +52,8 @@
   align-items: center;
   label {
     position: relative;
+    display: flex;
+    align-items: center;
   }
   input[type=checkbox] {
     width: 0;
