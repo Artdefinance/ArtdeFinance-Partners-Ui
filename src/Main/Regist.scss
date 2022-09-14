@@ -1,0 +1,36 @@
+@import '../assets/css/Mixins.scss';
+
+.main_regist-wrap {
+  max-width: 1021px;
+  padding-bottom: 199px;
+  margin: 0 auto;
+  .head {
+    padding: 80px 0 60px;
+    text-align: center;
+    > p {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+    }
+    span {
+      display: block;
+      margin-top: 30px;
+      @include AcuminproL();
+      font-size: 18px;
+      line-height: 130%;
+      color: #888888;
+    }
+    .btn_wrap {
+      padding: 40px 0 0;
+    }
+  }
+  .btn_wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 70px 0;
+    .button {
+      width:250px;
+    }
+  }
+}
