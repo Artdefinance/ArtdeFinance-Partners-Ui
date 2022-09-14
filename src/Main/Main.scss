@@ -429,15 +429,27 @@
 }
 .dashboad_half {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: space-between;
   gap: 36px;
   min-height: 500px;
   .board_item {
     flex: 1;
-    width: 50%;
+    width: calc(50% - 36px);
     .item_inner {
       height: calc(100% - 78px);
+    }
+    .btnwrap {
+      .button {
+        width: 100%;
+      }
+    }
+  }
+  .sale_item {
+    .slick-slider {
+      .price_info {
+        margin-bottom: 20px;
+      }
     }
   }
 }

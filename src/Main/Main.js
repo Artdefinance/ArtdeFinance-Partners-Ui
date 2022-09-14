@@ -364,13 +364,13 @@ export default class Main extends React.Component {
                 </Slider>
               </div>
             </div>
-            <div className="board_item">
+            <div className="board_item sale_item">
               <div className="item_inner">
                 <div className="item_head">
                   <h2>Waiting for Sale</h2>
                 </div>
                 {/* nodata */}
-                <div className="nodata-content">
+                <div className="nodata-content displaynone">
                   <img src={nodataContent} alt="nodata" className="nodata-img" />
                   <p>
                   There are no works waiting for sale yet.
@@ -380,6 +380,57 @@ export default class Main extends React.Component {
                   form of the  work is decided and Register on the market.
                   </p>
                 </div>
+                <Slider
+                  {...curatedSettings}
+                >
+                  <div className="slide-item">
+                    <div className="work_info">
+                      <div className="figure"><img src={curationImg0} alt="work_thumnail" /></div>
+                      <div className="info">
+                        <p className="name">Vincent van Gogh, 1955Vincent van</p>
+                        <p className="desc">Congregation Leaving the Reformed Church in Nuenen, 2011</p>
+                        <p className="number">Edition #2345</p>
+                      </div>
+                    </div>
+                    <div className="price_info info-half">
+                      <div>
+                        <p className="title">Curation High Price</p>
+                        <div className="price_box">
+                          <div className="currency">
+                            1,500,000.00
+                            <span className="unit">USD</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <p className="title">Curation Low Price</p>
+                        <div className="price_box">
+                          <div className="currency">
+                            1,500,000.00
+                            <span className="unit">USD</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="price_info">
+                      <div className="price_box">
+                        <div className="currency">
+                          <Icons shape="data" width="20px" height="20px" />
+                          1,500,000.00
+                          <span className="unit">USD</span>
+                        </div>
+                        <div className="crypto">
+                          <Icons shape="busd20" width="20px" height="20px" />
+                          1,500,000.00
+                          <span className="unit">BUSD</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="btnwrap">
+                      <Button className="button button--black button--mid" content="Artist Registration" type="type1" />
+                    </div>
+                  </div>
+                </Slider>
               </div>
             </div>
           </div>
