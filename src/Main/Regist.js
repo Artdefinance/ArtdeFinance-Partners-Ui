@@ -2,6 +2,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Regist.scss';
+import {
+  Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel,
+} from 'react-accessible-accordion';
 import Button from '../Components/Button/Button';
 import Input from '../Components/Inputs/Input';
 import RadioTabButton from '../Components/Button/RadioTabButton';
@@ -127,106 +130,120 @@ export default class ArtworksRegist extends React.Component {
             before registering the work.
             </span>
           </div>
-          <div className="regist__form">
-            <div className="form__head">
-              <span>Requisite (0/7)</span>
-              <p>Partners Details</p>
-            </div>
-            <div className="form__body">
-              <div className="form__inputs">
-                <p className="form__title form__title--need">
-                Please tell us the name of the gallery you are running while working with artists.
-                </p>
-                <Input value="" placeholder="Text" />
-                <div className="warning__message">
-                  <span className="warning__text">Supporting Text</span>
-                </div>
-              </div>
+          <Accordion>
+            <AccordionItem>
+              <div className="regist__form">
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    <div className="form__head">
+                      <span>Requisite (0/7)</span>
+                      <p>Partners Details</p>
+                    </div>
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <div className="form__body">
+                    <div className="form__inputs">
+                      <p className="form__title form__title--need">
+                      Please tell us the name of the gallery
+                      you are running while working with artists.
+                      </p>
+                      <Input value="" placeholder="Text" />
+                      <div className="warning__message">
+                        <span className="warning__text">Supporting Text</span>
+                      </div>
+                    </div>
 
-              <div className="form__inputs">
-                <p className="form__title form__title--need">
-                What is the size of the artists in the gallery?
-                </p>
-                <div className="button-position">
-                  <RadioTabButton data={GallerySize} name="" widthStyle="775px" heightStyle="80px" />
-                </div>
-              </div>
+                    <div className="form__inputs">
+                      <p className="form__title form__title--need">
+                      What is the size of the artists in the gallery?
+                      </p>
+                      <div className="button-position">
+                        <RadioTabButton data={GallerySize} name="" widthStyle="775px" heightStyle="80px" />
+                      </div>
+                    </div>
 
-              <div className="form__inputs">
-                <p className="form__title form__title--need">
-                Please let me know if there is an address of a site
-                where you can introduce and view your work.
-                </p>
-                <Input value="" placeholder="Text" />
-                <div className="warning__message">
-                  <span className="warning__text">Supporting Text</span>
-                </div>
-              </div>
+                    <div className="form__inputs">
+                      <p className="form__title form__title--need">
+                      Please let me know if there is an address of a site
+                      where you can introduce and view your work.
+                      </p>
+                      <Input value="" placeholder="Text" />
+                      <div className="warning__message">
+                        <span className="warning__text">Supporting Text</span>
+                      </div>
+                    </div>
 
-              <div className="form__inputs">
-                <p className="form__title form__title--need">
-                Please provide the official email address you need when requesting assistance.
-                </p>
-                <Input value="" placeholder="Text" />
-                <div className="warning__message">
-                  <span className="warning__text">Supporting Text</span>
-                </div>
-              </div>
+                    <div className="form__inputs">
+                      <p className="form__title form__title--need">
+                      Please provide the official email address
+                      you need when requesting assistance.
+                      </p>
+                      <Input value="" placeholder="Text" />
+                      <div className="warning__message">
+                        <span className="warning__text">Supporting Text</span>
+                      </div>
+                    </div>
 
-              <div className="form__inputs">
-                <p className="form__title form__title--need">
-                Please provide the official contact information you need when requesting assistance.
-                </p>
-                <div className="form__multi">
-                  <Dropdown dropClass="nation_code" dropWidth="245px" dropHeight="36px" dropTitle="South Korea (+82)" content={nationCode} />
-                  {/* <select className="selectbox">
-                    {nationCode.map((option) => (
-                      <option
-                        key={option.value}
-                        value={option.value}
-                      >
-                        {option.name}
-                      </option>
-                    ))}
-                  </select> */}
-                  <Input value="" placeholder="Please enter without hyphens," />
-                </div>
-              </div>
+                    <div className="form__inputs">
+                      <p className="form__title form__title--need">
+                      Please provide the official contact information
+                      you need when requesting assistance.
+                      </p>
+                      <div className="form__multi">
+                        <Dropdown dropClass="nation_code" dropWidth="245px" dropHeight="36px" dropTitle="South Korea (+82)" content={nationCode} />
+                        {/* <select className="selectbox">
+                          {nationCode.map((option) => (
+                            <option
+                              key={option.value}
+                              value={option.value}
+                            >
+                              {option.name}
+                            </option>
+                          ))}
+                        </select> */}
+                        <Input value="" placeholder="Please enter without hyphens," />
+                      </div>
+                    </div>
 
-              <div className="form__inputs">
-                <p className="form__title form__title--need">
-                Is there a storage or place to store the artist&apos;s work in the gallery?
-                </p>
-                <div className="button-position">
-                  <RadioTabButton data={PersonNumber} name="" widthStyle="775px" heightStyle="80px" />
-                </div>
-              </div>
+                    <div className="form__inputs">
+                      <p className="form__title form__title--need">
+                      Is there a storage or place to store the artist&apos;s work in the gallery?
+                      </p>
+                      <div className="button-position">
+                        <RadioTabButton data={PersonNumber} name="" widthStyle="775px" heightStyle="80px" />
+                      </div>
+                    </div>
 
-              <div className="agree_check">
-                <label htmlFor="agreeChk" className="agr_chk">
-                  <input
-                    type="checkbox"
-                    id="agreeChk"
-                    name="agreeChk"
-                    value=""
-                    checked={agreechecked}
-                    onChange={this.handleAgreeChange}
-                  />
-                  <i
-                    className="ico_check"
-                    style={agreechecked ? chkboxChecked : chkboxUnChecked}
-                  />
-                  By continuing, you agree to Art de Finance’s
-                  <Link to="/gallery/regist"> Terms of Use </Link>
-                  and confirm that you have read
-                  <br />
-                  Art de Finance’s
-                  <Link to="/gallery/regist"> Privacy Policy </Link>
-                </label>
-              </div>
+                    <div className="agree_check">
+                      <label htmlFor="agreeChk" className="agr_chk">
+                        <input
+                          type="checkbox"
+                          id="agreeChk"
+                          name="agreeChk"
+                          value=""
+                          checked={agreechecked}
+                          onChange={this.handleAgreeChange}
+                        />
+                        <i
+                          className="ico_check"
+                          style={agreechecked ? chkboxChecked : chkboxUnChecked}
+                        />
+                        By continuing, you agree to Art de Finance’s
+                        <Link to="/gallery/regist"> Terms of Use </Link>
+                        and confirm that you have read
+                        <br />
+                        Art de Finance’s
+                        <Link to="/gallery/regist"> Privacy Policy </Link>
+                      </label>
+                    </div>
 
-            </div>
-          </div>
+                  </div>
+                </AccordionItemPanel>
+              </div>
+            </AccordionItem>
+          </Accordion>
+
           <div className="form__fixed">
             <Button className="button button--black button--mid" content="Comfirm" type="type1" />
           </div>

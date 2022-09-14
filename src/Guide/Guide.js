@@ -1,7 +1,12 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import './Guide.scss';
+// Carosel
 import Slider from 'react-slick';
+// Accordion
+import {
+  Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel,
+} from 'react-accessible-accordion';
 // Toast
 import { ToastContainer, toast } from 'react-toastify';
 // Dropdown
@@ -498,6 +503,41 @@ function Guide() {
           <button type="button" onClick={() => toastInfo()} className="button button--black button--mid">Toast Info Bottom Center</button>
           </p>
         </div>
+      </div>
+
+      <div>
+        <h2>Accordion</h2>
+        <Accordion>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+                  <p>What harsh truths do you prefer to ignore?</p>
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <p>
+                  Exercitation in fugiat est ut ad ea cupidatat ut in
+                  cupidatat occaecat ut occaecat consequat est minim minim
+                  esse tempor laborum consequat esse adipisicing eu
+                  reprehenderit enim.
+              </p>
+            </AccordionItemPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+                  Is free will real or just an illusion?
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <p>
+                  In ad velit in ex nostrud dolore cupidatat consectetur
+                  ea in ut nostrud velit in irure cillum tempor laboris
+                  sed adipisicing eu esse duis nulla non.
+              </p>
+            </AccordionItemPanel>
+          </AccordionItem>
+        </Accordion>
       </div>
     </div>
   );
