@@ -25,6 +25,8 @@ import AuctionRemove from './Activity/AuctionRemove';
 import StatusGuide from './Activity/StatusGuide';
 import AuctionStatus from './Activity/AuctionStatus';
 import Wallet from './Wallet/Wallet';
+import PrivacyPolicy from './Service/PrivacyPolicy';
+import TermsService from './Service/TermsService';
 
 function App() {
   return (
@@ -55,6 +57,8 @@ function App() {
         <Route path="/activity/auction/status" element={<AuctionStatus />} />
         <Route path="/activity/guide" element={<StatusGuide />} />
         <Route path="/wallet" element={<Wallet />} />
+        <Route path="/service/policy" element={<PrivacyPolicy />} />
+        <Route path="/service/terms" element={<TermsService />} />
       </Routes>
       </div>
       <Footer />
