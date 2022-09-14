@@ -5,6 +5,7 @@ import Header from './Components/Layout/Header';
 import Path from './Path';
 import Guide from './Guide/Guide';
 import Main from './Main/Main';
+import ArtworksRegist from './Main/Regist';
 import Artist from './Artist/Artist';
 import List from './Artist/List';
 import Regist from './Artist/Regist';
@@ -34,6 +35,7 @@ function App() {
         <Route path="/path" element={<Path />} />
         <Route path="/guide" element={<Guide />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/main/regist" element={<ArtworksRegist />} />
         <Route path="/artist" element={<Artist />} />
         <Route path="/artist/list" element={<List />} />
         <Route path="/artist/regist" element={<Regist />} />
