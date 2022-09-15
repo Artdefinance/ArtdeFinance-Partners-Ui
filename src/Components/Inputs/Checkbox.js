@@ -19,7 +19,7 @@ export default class Checkbox extends React.Component {
 
   render() {
     const { ischecked } = this.state;
-    const { chkId, chkName, content, chkType } = this.props;
+    const { chkId, chkName, content, chkType, disabled } = this.props;
 
     const chkboxChecked = {
       backgroundImage: 'url(/assets/images/component/default_checkbox_on.png)',
@@ -27,22 +27,31 @@ export default class Checkbox extends React.Component {
     const chkboxUnChecked = {
       backgroundImage: 'url(/assets/images/component/default_checkbox.png)',
     };
+    const disabledChecked = {
+      backgroundImage: 'url(/assets/images/component/disabled_checkbox.png)',
+    };
     return (
       <div className="checkbox_wrap">
         <label htmlFor={chkId}>
-          <input
-            type="checkbox"
-            id={chkId}
-            name={chkName}
-            value=""
-            checked={ischecked}
-            onChange={this.handleChange}
-            className={chkType}
-          />
-          <i
-            className="ico_chkbox"
-            style={ischecked ? chkboxChecked : chkboxUnChecked}
-          />
+          {disabled === 'true' ? (
+            <i className="ico_chkbox" style={disabledChecked} />
+          ) : (
+            <>
+              <input
+                type="checkbox"
+                id={chkId}
+                name={chkName}
+                value=""
+                checked={ischecked}
+                onChange={this.handleChange}
+                className={chkType}
+              />
+              <i
+                className="ico_chkbox"
+                style={ischecked ? chkboxChecked : chkboxUnChecked}
+              />
+            </>
+          )}
           {content}
         </label>
       </div>

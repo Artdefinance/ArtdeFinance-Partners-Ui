@@ -27,6 +27,7 @@ import AuctionStatus from './Activity/AuctionStatus';
 import Wallet from './Wallet/Wallet';
 import PrivacyPolicy from './Service/PrivacyPolicy';
 import TermsService from './Service/TermsService';
+import Curation from './Curation/Curation';
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/service/policy" element={<PrivacyPolicy />} />
         <Route path="/service/terms" element={<TermsService />} />
+        <Route path="/curation" element={<Curation />} />
       </Routes>
       </div>
       <Footer />

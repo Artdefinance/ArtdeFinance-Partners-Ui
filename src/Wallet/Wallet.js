@@ -459,14 +459,14 @@ export default class Wallet extends React.Component {
             <div className="wallet__list">
               <div className="wallet-data">
                 <div className="wallet-data__filter">
-                  <div className="wallet-category">
-                    <button type="button" onClick={this.categoryClick} className={categoryActive1 ? 'wallet-category__button wallet-category__button--active' : 'wallet-category__button'} value="categoryActive1">
+                  <div className="tab-category">
+                    <button type="button" onClick={this.categoryClick} className={categoryActive1 ? 'tab-category__button tab-category__button--active' : 'tab-category__button'} value="categoryActive1">
                       All
                     </button>
-                    <button type="button" onClick={this.categoryClick} className={categoryActive2 ? 'wallet-category__button wallet-category__button--active' : 'wallet-category__button'} value="categoryActive2">
+                    <button type="button" onClick={this.categoryClick} className={categoryActive2 ? 'tab-category__button tab-category__button--active' : 'tab-category__button'} value="categoryActive2">
                       Deposit
                     </button>
-                    <button type="button" onClick={this.categoryClick} className={categoryActive3 ? 'wallet-category__button wallet-category__button--active' : 'wallet-category__button'} value="categoryActive3">
+                    <button type="button" onClick={this.categoryClick} className={categoryActive3 ? 'tab-category__button tab-category__button--active' : 'tab-category__button'} value="categoryActive3">
                       Withdraw
                     </button>
                   </div>

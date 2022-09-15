@@ -446,7 +446,7 @@
   @include AcuminproR;
 }
 
-.wallet-category {
+.tab-category {
   &__button {
     height: 47px;
     color: #BBBBBB;
@@ -456,7 +456,7 @@
     @include RotaB;
   }
 
-  .wallet-category__button + .wallet-category__button {
+  .tab-category__button + .tab-category__button {
     margin-left: 40px;
   }
 
