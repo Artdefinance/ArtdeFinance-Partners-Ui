@@ -261,3 +261,122 @@
   }
 }
 
+.curation-side {
+  width: 100%;
+  padding: 50px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 0px 15px 40px 0px #BBBBBB26;
+
+  &__img {
+    display: inline-block;
+    width: 460px;
+    height: 270px;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__more {
+    display: flex;
+    margin: 20px auto 0;
+    color: #000000;
+    font-size: 15px;
+    line-height: 1;
+    text-align: center;
+    @include AcuminproL;
+  }
+
+  &__list {
+    margin-top: 40px;
+  }
+
+  &__item {
+    display: flex;
+    text-align: left;
+  }
+
+  &__item+&__item {
+    margin-top: 23.5px;
+  }
+
+  &__title {
+    width: 180px;
+    color: #888888;
+    font-size: 16px;
+    @include RotaB;
+  }
+
+  &__text {
+    width: calc(100% - 180px);
+    font-size: 16px;
+    line-height: 20px;
+    white-space: pre-line;
+    @include AcuminproL;
+    @include ellipse(2);
+  }
+
+  &__result {
+    margin-top: 17px;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(178.21deg, #5F44FF 50%, #9482FF 113.28%);
+    box-shadow: 2px 2px 3px 0px rgba(174, 159, 255, 1) inset;
+    box-sizing: border-box;
+
+    div:nth-child(3) > p{
+      font-size: 20px;
+    }
+
+    div + div {
+      margin-top: 12px;
+    }
+  }
+
+  &__result-title {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: left;
+    @include RotaB;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    p {
+      width: 100%;
+      color: #ffffff;
+      font-size: 30px;
+      line-height: 1;
+      text-align: right;
+      @include RotaB;
+      @include ellipse(1);
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 21px;
+      margin-left: 12px;
+      color: #ffffff;
+      font-size: 15px;
+      line-height: 1;
+      background: rgba(241, 203, 255, 0.2);
+      border-radius: 2px;
+      @include RotaB;
+    }
+  }
+
+
+
+}
+
