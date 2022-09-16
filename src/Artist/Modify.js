@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import './Artist.scss';
 import ArtistList from './ArtistList';
 import Button from '../Components/Button/Button';
 import ButtonGray from '../Components/Button/ButtonGray';
 import CountryDropdown from '../Components/Dropdown/CountryDropdown';
+import FileDragDrop from '../Components/FileDragDrop/FileDragDrop';
 import Icons from '../Components/Icons/Icons';
 import Input from '../Components/Inputs/Input';
-import FileDragDrop from '../Components/FileDragDrop/FileDragDrop';
 
 export default class Regist extends React.Component {
   constructor(props) {
@@ -16,9 +17,18 @@ export default class Regist extends React.Component {
     this.state = {
       fileImage: '/assets/images/page/artist/img_profile_view.png',
       totalByte: 0,
+      isToggleOn1: false,
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.checkByte = this.checkByte.bind(this);
+    this.clickClose = this.clickClose.bind(this);
+  }
+
+  handleClick(e) {
+    this.setState((prevState) => ({
+      [e.target.value]: !prevState[e.target.value],
+    }));
   }
 
   handleChange(e) {
@@ -42,8 +52,24 @@ export default class Regist extends React.Component {
     }));
   }
 
+  clickClose(e) {
+    this.setState(() => ({
+      [e.target.value]: false,
+    }));
+  }
+
   render() {
-    const { fileImage, totalByte } = this.state;
+    const { fileImage, totalByte, isToggleOn1 } = this.state;
+
+    const style = {
+      open: {
+        opacity: 1,
+        y: 0,
+        transition: { type: 'spring', stiffness: 300, damping: 24 },
+      },
+      closed: { opacity: 0, y: 20, transition: { duration: 0.2 }, zIndex: -1 },
+    };
+
     const ExampleContent1 = [
       {
         id: '1',
@@ -90,9 +116,7 @@ export default class Regist extends React.Component {
                 </div>
               </div>
               <div className="side-regist__inputs">
-                <p className="side-regist__title">
-                  Artist Name
-                </p>
+                <p className="side-regist__title">Artist Name</p>
                 <Input name="artist" disabled="true" placeholder="Content" />
                 <div className="side-regist__message">
                   <Icons shape="warning_fill" color="#FF3B30" />
@@ -100,9 +124,7 @@ export default class Regist extends React.Component {
                 </div>
               </div>
               <div className="side-regist__inputs">
-                <p className="side-regist__title">
-                  ID
-                </p>
+                <p className="side-regist__title">ID</p>
                 <Input name="ID" placeholder="Content" getValue="Content" />
                 <div className="side-regist__message">
                   <Icons shape="warning_fill" color="#FF3B30" />
@@ -110,17 +132,30 @@ export default class Regist extends React.Component {
                 </div>
               </div>
               <div className="side-regist__inputs side-regist__inputs--half">
-                <p className="side-regist__title side-regist__title--need side-regist__title--mark">
+                <div className="side-regist__title side-regist__title--need side-regist__title--mark">
                   Birth
-                  <button type="button">
-                    <Icons
-                      shape="question"
-                      width="21px"
-                      height="20px"
-                      color="#366DFC"
+                  <button
+                    type="button"
+                    className="question-bubble__mark"
+                    onClick={this.handleClick}
+                    value="isToggleOn1"
+                  />
+                  <motion.div
+                    animate={isToggleOn1 === true ? style.open : style.closed}
+                    className="question-bubble__wrap"
+                    style={{ top: '-80px', left: '-85px' }}
+                  >
+                    아직 작가가 살아있다면
+                    <br />
+                    태어난 해만 입력해 주세요
+                    <button
+                      type="button"
+                      onClick={this.clickClose}
+                      className="question-bubble__close"
+                      value="isToggleOn1"
                     />
-                  </button>
-                </p>
+                  </motion.div>
+                </div>
                 <div className="side-regist__box">
                   <input
                     type="text"
