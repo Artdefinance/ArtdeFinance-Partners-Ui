@@ -28,6 +28,7 @@ import Wallet from './Wallet/Wallet';
 import PrivacyPolicy from './Service/PrivacyPolicy';
 import TermsService from './Service/TermsService';
 import Curation from './Curation/Curation';
+import CurationView from './Curation/View';
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
         <Route path="/service/policy" element={<PrivacyPolicy />} />
         <Route path="/service/terms" element={<TermsService />} />
         <Route path="/curation" element={<Curation />} />
+        <Route path="/curation/view" element={<CurationView />} />
       </Routes>
       </div>
       <Footer />
