@@ -4,6 +4,15 @@
   max-width: 1021px;
   padding-bottom: 199px;
   margin: 0 auto;
+  hr {
+    display: block;
+    width: 100%;
+    height: 9px;
+    background-color: #F5F5F5;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.05);
+    border: 0;
+    margin: 0;
+  }
   .head {
     padding: 80px 0 60px;
     text-align: center;
@@ -93,9 +102,16 @@
   }
 
   .regist__form {
+    background-color: transparent;
+    .form__head {
+      border-bottom: 0;
+    }
     .form__title {
       display: inline-flex;
       align-items: center;
+    }
+    .form__body {
+      border-top: 1px solid #EEEEEE;
     }
     .question-bubble {
       position: absolute;
@@ -116,5 +132,16 @@
         margin-top: 5px;
       }
     }
+  }
+
+  .accordion__item {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 15px 40px rgba(187, 187, 187, 0.15);
+    border-radius: 10px;
+  }
+  
+  textarea {
+    margin-top: 0;
   }
 }

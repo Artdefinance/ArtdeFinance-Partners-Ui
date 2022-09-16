@@ -66,7 +66,7 @@ export default class FileDragDrop extends React.Component {
               name="file"
               types={fileTypes}
               maxSize={150}
-              multiple
+              multiple={true}
             />
             <div className="drag-drop__content">
               <i style={imgStyle} />

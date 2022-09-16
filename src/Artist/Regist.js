@@ -171,14 +171,16 @@ export default class Regist extends React.Component {
               </div>
               <div className="side-regist__inputs side-regist__inputs--error">
                 <p className="side-regist__title">Biography</p>
-                <textarea
-                  placeholder="Type your contents here."
-                  onKeyUp={this.checkByte}
-                  maxLength={2000}
-                />
-                <div className="side-regist__text">
-                  <p>{totalByte}</p>
-                  <p>/2000 byte</p>
+                <div className="textarea_box">
+                  <textarea
+                    placeholder="Type your contents here."
+                    onKeyUp={this.checkByte}
+                    maxLength={2000}
+                  />
+                  <div className="byte__check">
+                    <p>{totalByte}</p>
+                    <p>/2000 byte</p>
+                  </div>
                 </div>
                 <div className="side-regist__message">
                   <Icons shape="warning_fill" color="#FF3B30" />

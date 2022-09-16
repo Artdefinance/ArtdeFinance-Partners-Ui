@@ -469,6 +469,36 @@ function Guide() {
         <h2>Input</h2>
         <Input name="artist" disabled="true" placeholder="Content" />
         <Input name="ID" placeholder="Content" />
+        <br />
+
+        <h2>Textarea</h2>
+        <div>
+          <div className="textarea_box">
+            <textarea
+              placeholder="Type your contents here."
+              maxLength={2000}
+            />
+            <div className="byte__check">
+              <p>0</p>
+              <p>/2000 byte</p>
+            </div>
+          </div>
+        </div>
+        <div className="form__error">
+          <div className="form__title">
+          form__title
+          </div>
+          <div className="textarea_box">
+            <textarea
+              placeholder="Type your contents here."
+              maxLength={2000}
+            />
+            <div className="byte__check">
+              <p>0</p>
+              <p>/2000 byte</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div>

@@ -6,6 +6,7 @@ import './Regist.scss';
 import {
   Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel,
 } from 'react-accessible-accordion';
+import FileDragDrop from '../Components/FileDragDrop/FileDragDrop';
 import Button from '../Components/Button/Button';
 import Input from '../Components/Inputs/Input';
 import Checkbox from '../Components/Inputs/Checkbox';
@@ -21,9 +22,11 @@ export default class ArtworksRegist extends React.Component {
       isToggleOn2: false,
       isToggleOn3: false,
       isToggleOn4: false,
+      totalByte: 0,
     };
     this.handleClick = this.handleClick.bind(this);
     this.clickClose = this.clickClose.bind(this);
+    this.checkByte = this.checkByte.bind(this);
   }
 
   handleClick(e) {
@@ -35,6 +38,21 @@ export default class ArtworksRegist extends React.Component {
   clickClose(e) {
     this.setState(() => ({
       [e.target.value]: false,
+    }));
+  }
+
+  checkByte(e) {
+    const message = e.target.value;
+    let currentBytes = 0;
+    let totalBytes = 0;
+
+    for (let i = 0; i < message.length; i += 1) {
+      currentBytes = message.charCodeAt(i);
+      if (currentBytes > 128) totalBytes += 2;
+      else totalBytes += 1;
+    }
+    this.setState(() => ({
+      totalByte: totalBytes,
     }));
   }
 
@@ -67,7 +85,7 @@ export default class ArtworksRegist extends React.Component {
       },
     ];
 
-    const { isToggleOn1, isToggleOn2, isToggleOn3, isToggleOn4 } = this.state;
+    const { isToggleOn1, isToggleOn2, isToggleOn3, isToggleOn4, totalByte } = this.state;
 
     const style = {
       open: {
@@ -93,8 +111,8 @@ export default class ArtworksRegist extends React.Component {
             </span>
           </div>
           <Accordion>
-            <AccordionItem>
-              <div className="regist__form">
+            <div className="regist__form">
+              <AccordionItem>
                 <AccordionItemHeading>
                   <AccordionItemButton>
                     <div className="form__head">
@@ -311,8 +329,160 @@ export default class ArtworksRegist extends React.Component {
                     </div>
                   </div>
                 </AccordionItemPanel>
-              </div>
-            </AccordionItem>
+              </AccordionItem>
+              <AccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    <div className="form__head">
+                      <span>Requisite (0/7)</span>
+                      <p>Artwork Details</p>
+                    </div>
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <div className="form__body">
+                    <div className="form__inputs">
+                      <div className="form__title form__title--need">
+                        Artwork(Main)
+                        <div className="question-bubble">
+                          <button
+                            type="button"
+                            onClick={this.handleClick}
+                            className="question-bubble__mark"
+                            value="isToggleOn2"
+                          />
+                          <motion.div
+                            animate={
+                              isToggleOn2 === true ? style.open : style.closed
+                            }
+                            className="question-bubble__wrap"
+                            style={{ top: '-85px', left: '-115px' }}
+                          >
+                            큐레이션 또는 마켓 플레이스에서 리스트로 보여지며, NFT로 저장되는 이미지입니다.
+                            <button
+                              type="button"
+                              onClick={this.clickClose}
+                              className="question-bubble__close"
+                              value="isToggleOn2"
+                            />
+                          </motion.div>
+                        </div>
+                      </div>
+                      <div className="side-regist__drag-drop">
+                        <FileDragDrop />
+                      </div>
+                    </div>
+                    <div className="form__inputs">
+                      <div className="form__title form__title--need">
+                        Artwork(Sub)
+                        <div className="question-bubble">
+                          <button
+                            type="button"
+                            onClick={this.handleClick}
+                            className="question-bubble__mark"
+                            value="isToggleOn2"
+                          />
+                          <motion.div
+                            animate={
+                              isToggleOn2 === true ? style.open : style.closed
+                            }
+                            className="question-bubble__wrap"
+                            style={{ top: '-85px', left: '-115px' }}
+                          >
+                            작품의 측면이나 다양한 각도에서 촬영한 이미지를 추가할 수 있습니다.
+                            <button
+                              type="button"
+                              onClick={this.clickClose}
+                              className="question-bubble__close"
+                              value="isToggleOn2"
+                            />
+                          </motion.div>
+                        </div>
+                      </div>
+                      <div className="side-regist__drag-drop">
+                        <FileDragDrop />
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div className="form__body">
+                    <div className="form__inputs">
+                      <div className="form__title form__title--need">
+                        Condition
+                        <div className="question-bubble">
+                          <button
+                            type="button"
+                            onClick={this.handleClick}
+                            className="question-bubble__mark"
+                            value="isToggleOn2"
+                          />
+                          <motion.div
+                            animate={
+                              isToggleOn2 === true ? style.open : style.closed
+                            }
+                            className="question-bubble__wrap"
+                            style={{ top: '-85px', left: '-115px' }}
+                          >
+                            작품의 컨디션 또는 상태를 입력해주세요.
+                            <button
+                              type="button"
+                              onClick={this.clickClose}
+                              className="question-bubble__close"
+                              value="isToggleOn2"
+                            />
+                          </motion.div>
+                        </div>
+                      </div>
+                      <Input value="" placeholder="Text" />
+                      <div className="warning__message">
+                        <span className="warning__text">Supporting Text</span>
+                      </div>
+                    </div>
+                    <div className="form__inputs form__error">
+                      <div className="form__title form__title--need">
+                        Work Introduction
+                        <div className="question-bubble">
+                          <button
+                            type="button"
+                            onClick={this.handleClick}
+                            className="question-bubble__mark"
+                            value="isToggleOn2"
+                          />
+                          <motion.div
+                            animate={
+                              isToggleOn2 === true ? style.open : style.closed
+                            }
+                            className="question-bubble__wrap"
+                            style={{ top: '-85px', left: '-115px' }}
+                          >
+                            작가의 작품에 대한 의도나 작품을 잘 표현할 수 있는 내용으로 작성을 해주세요.
+                            <br />
+                            내용은 2,000 Byte 이내로만 작성 가능합니다.
+                            <button
+                              type="button"
+                              onClick={this.clickClose}
+                              className="question-bubble__close"
+                              value="isToggleOn2"
+                            />
+                          </motion.div>
+                        </div>
+                      </div>
+                      <div className="textarea_box">
+                        <textarea
+                          placeholder="Type your contents here."
+                          onKeyUp={this.checkByte}
+                          maxLength={2000}
+                        />
+                        <div className="byte__check">
+                          <p>{totalByte}</p>
+                          <p>/2000 byte</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionItemPanel>
+              </AccordionItem>
+            </div>
           </Accordion>
 
           <div className="form__fixed">
