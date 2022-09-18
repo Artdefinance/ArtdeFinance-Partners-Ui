@@ -169,16 +169,23 @@
       @include AcuminproL();
     }
   }
-  .form__fixed {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: flex-end;
-    background-color: #ffffff;
-    padding: 20px;
-    border-top: 1px solid #BBBBBB;
+}
+.form__fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #ffffff;
+  padding: 20px;
+  border-top: 1px solid #BBBBBB;
+  &.form_fixed-multi {
+    justify-content:space-between;
+    > div {
+      display: flex;
+      gap: 15px;
+    }
   }
 }
 // .regist_wrap

@@ -369,7 +369,7 @@ export default class ArtworksRegist extends React.Component {
                         </div>
                       </div>
                       <div className="side-regist__drag-drop">
-                        <FileDragDrop />
+                        <FileDragDrop multiple="false" />
                       </div>
                     </div>
                     <div className="form__inputs">
@@ -400,7 +400,7 @@ export default class ArtworksRegist extends React.Component {
                         </div>
                       </div>
                       <div className="side-regist__drag-drop">
-                        <FileDragDrop />
+                        <FileDragDrop multiple="multiple" />
                       </div>
                     </div>
                   </div>
@@ -438,6 +438,7 @@ export default class ArtworksRegist extends React.Component {
                         <span className="warning__text">Supporting Text</span>
                       </div>
                     </div>
+                    {/* <div className="form__inputs"> */}
                     <div className="form__inputs form__error">
                       <div className="form__title form__title--need">
                         Work Introduction
@@ -479,14 +480,69 @@ export default class ArtworksRegist extends React.Component {
                         </div>
                       </div>
                     </div>
+
+                    <div className="form__inputs">
+                      <div className="form__title form__title--need">
+                        Certificate of Authenticity
+                        <div className="question-bubble">
+                          <button
+                            type="button"
+                            onClick={this.handleClick}
+                            className="question-bubble__mark"
+                            value="isToggleOn2"
+                          />
+                          <motion.div
+                            animate={
+                              isToggleOn2 === true ? style.open : style.closed
+                            }
+                            className="question-bubble__wrap"
+                            style={{ top: '-85px', left: '-115px' }}
+                          >
+                            작가 또는 갤러리에서 보증하는 작품의 진품 인증서를 등록해주세요.
+                            <br />
+                            등록된 진품 인증서는 NFT로 저장되어 작품을 소유한 사람만 확인이 가능합니다.
+                            <button
+                              type="button"
+                              onClick={this.clickClose}
+                              className="question-bubble__close"
+                              value="isToggleOn2"
+                            />
+                          </motion.div>
+                        </div>
+                      </div>
+                      <div className="side-regist__drag-drop">
+                        <FileDragDrop multiple="multiple" />
+                      </div>
+                    </div>
+                  </div>
+                </AccordionItemPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    <div className="form__head">
+                      <p>Exhibition History</p>
+                    </div>
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <div className="form__body">
+                    Exhibition History
                   </div>
                 </AccordionItemPanel>
               </AccordionItem>
             </div>
           </Accordion>
 
-          <div className="form__fixed">
-            <Button className="button button--black button--mid" content="Comfirm" type="type1" />
+          <div className="form__fixed form_fixed-multi">
+            <div>
+              <Button className="button button--gray-line button--mid" content="back" type="type1" />
+            </div>
+            <div>
+              <Button className="button button--black-line button--mid" content="Temporary Storage" type="type1" />
+              <Button className="button button--black button--mid" content="Comfirm" type="type1" />
+            </div>
           </div>
         </div>
       </div>

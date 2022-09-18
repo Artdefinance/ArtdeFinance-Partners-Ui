@@ -473,6 +473,9 @@ function Guide() {
 
         <h2>Textarea</h2>
         <div>
+          <div className="form__title">
+          form default
+          </div>
           <div className="textarea_box">
             <textarea
               placeholder="Type your contents here."
@@ -486,7 +489,7 @@ function Guide() {
         </div>
         <div className="form__error">
           <div className="form__title">
-          form__title
+          form error case
           </div>
           <div className="textarea_box">
             <textarea

@@ -205,7 +205,7 @@ export default class Regist extends React.Component {
                   Up to 2000Bytes can be registered.
                 </span>
               </div>
-              <div className="side-regist__inputs side-regist__inputs--error">
+              <div className="side-regist__inputs">
                 <p className="side-regist__title">Biography</p>
                 <div className="textarea_box">
                   <textarea

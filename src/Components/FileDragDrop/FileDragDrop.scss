@@ -18,8 +18,13 @@
   }
 
   &__content {
-    padding-top: 32px;
+    // padding-top: 32px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
+    height:100%;
 
     i {
       display: inline-block;
@@ -109,6 +114,12 @@
     right: 0;
   }
 
+  .file-drop {
+    height: 100%;
+  }
+  .file-drop-target {
+    height: inherit;
+  }
 }
 
 .drag-drop.active {
