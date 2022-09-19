@@ -534,6 +534,12 @@ export default class ArtworksRegist extends React.Component {
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                   <div className="form__body">
+                    <div className="sortable_head">
+                      <div className="year">Years</div>
+                      <div className="location">Location</div>
+                      <div className="country">Country</div>
+                      <div className="del"><span className="a11y">delete</span></div>
+                    </div>
                     <div className="sortable_wrap exhibition_history">
                       <Sortable
                         data={ExhibitionHistory.map((i) => (
