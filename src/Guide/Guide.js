@@ -9,6 +9,8 @@ import {
 } from 'react-accessible-accordion';
 // Toast
 import { ToastContainer, toast } from 'react-toastify';
+// Sortable
+import Sortable from 'react-sortable-list';
 // Dropdown
 import Dropdown from '../Components/Dropdown/Dropdown';
 import DateDropdown from '../Components/Dropdown/DateDropdown';
@@ -228,6 +230,11 @@ function Guide() {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  const soratableData = [
+    { id: 1, year: '2021', Location: 'Artdefinance GalleryArtdefinance GalleryArtdefinance GalleryArtdefinance GalleryArtdefinance Gallery', Country: 'South KoreaSouth KoreaSouth KoreaSouth KoreaSouth Korea.' },
+    { id: 2, year: '2020', Location: 'Artdefinance Gallery ', Country: 'South KoreaSouth KoreaSouth KoreaSouth KoreaSouth Korea.' },
+    { id: 3, year: '2017', Location: 'Artdefinance Gallery ', Country: 'South KoreaSouth KoreaSouth KoreaSouth KoreaSouth Korea.' },
+  ];
 
   return (
     <div className="guide">
@@ -588,6 +595,25 @@ function Guide() {
           </AccordionItem>
         </Accordion>
       </div>
+
+      <div>
+        <h2>Sortable List</h2>
+        <div className="sortable_wrap">
+          <Sortable
+            data={soratableData.map((i) => (
+              <div className="placeholder">
+                <div>{i.year}</div>
+                <div>{i.Location}</div>
+                <div>{i.Country}</div>
+                <div className="del">
+                  <button type="button">delete</button>
+                </div>
+              </div>
+            ))}
+          />
+        </div>
+      </div>
+
     </div>
   );
 }

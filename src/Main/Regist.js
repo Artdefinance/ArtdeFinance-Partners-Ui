@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Sortable from 'react-sortable-list';
 import './Regist.scss';
 import {
   Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel,
@@ -95,6 +95,12 @@ export default class ArtworksRegist extends React.Component {
       },
       closed: { opacity: 0, y: 20, transition: { duration: 0.2 }, zIndex: -1 },
     };
+
+    const ExhibitionHistory = [
+      { id: 1, year: '2021', Location: 'Artdefinance GalleryArtdefinance GalleryArtdefinance GalleryArtdefinance GalleryArtdefinance Gallery', Country: 'South KoreaSouth KoreaSouth KoreaSouth KoreaSouth Korea.' },
+      { id: 2, year: '2020', Location: 'Artdefinance Gallery ', Country: 'South KoreaSouth KoreaSouth KoreaSouth KoreaSouth Korea.' },
+      { id: 3, year: '2017', Location: 'Artdefinance Gallery ', Country: 'South KoreaSouth KoreaSouth KoreaSouth KoreaSouth Korea.' },
+    ];
 
     return (
       <div className="main_regist">
@@ -528,7 +534,20 @@ export default class ArtworksRegist extends React.Component {
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                   <div className="form__body">
-                    Exhibition History
+                    <div className="sortable_wrap exhibition_history">
+                      <Sortable
+                        data={ExhibitionHistory.map((i) => (
+                          <div className="placeholder">
+                            <div className="year">{i.year}</div>
+                            <div className="location">{i.Location}</div>
+                            <div className="country">{i.Country}</div>
+                            <div className="del">
+                              <button type="button">delete</button>
+                            </div>
+                          </div>
+                        ))}
+                      />
+                    </div>
                   </div>
                 </AccordionItemPanel>
               </AccordionItem>

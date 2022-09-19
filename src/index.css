@@ -914,3 +914,8 @@ html, body {
   height: 20px;
   vertical-align: middle;
 }
+
+/* sortable */
+.sortable_wrap > div ul li {background: transparent;}
+.sortable_wrap > div ul li .placeholder:before {display: none;}
+.sortable_wrap > div ul li .placeholder {display: flex;background:transparent;}

@@ -273,7 +273,7 @@ export default class Curation extends React.Component {
               data === true
               ? (
                 <>
-                  <div className={isToggleOn ? 'curation-list curation-list--active' : 'curation-list' }>
+                  <div className={isToggleOn ? 'curation-list curation-list--active' : 'curation-list'}>
                     {ExampleData.map((items) => (
                       <Link to="/" className="curation-list__item" key={items.id}>
                         <span className="curation-list__img">

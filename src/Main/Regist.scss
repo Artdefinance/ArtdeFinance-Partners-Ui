@@ -144,4 +144,22 @@
   textarea {
     margin-top: 0;
   }
+
+  .exhibition_history {
+    max-width: 774px;
+    .placeholder {
+      .year {
+        width: 10%; 
+      }
+      .location {
+        width: 20%;
+      }
+      .country {
+        width: 20%;
+      }
+      .del {
+        width: 40px;
+      }
+    }
+  }
 }
