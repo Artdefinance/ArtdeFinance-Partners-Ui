@@ -548,7 +548,7 @@ export default class ArtworksRegist extends React.Component {
                             <div className="location">{i.Location}</div>
                             <div className="country">{i.Country}</div>
                             <div className="del">
-                              <button type="button">delete</button>
+                              <button type="button"><Icons shape="close_small" color="#BBBBBB" /></button>
                             </div>
                           </div>
                         ))}

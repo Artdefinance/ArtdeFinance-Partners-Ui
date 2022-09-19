@@ -274,6 +274,8 @@ function Guide() {
           </Slider>
         </div>
       </div>
+      {/* carousel */}
+
       <div className="buttons">
         <h2>button</h2>
         <div className="button-position">
@@ -393,7 +395,7 @@ function Guide() {
         </div>
         <div>
           <p>SIZE 24</p>
-          <Icons shape="close" width="24px" height="24px" color="#555555" />
+          <Icons shape="close" width="24px" height="24px" />
           <Icons shape="search" width="24px" height="24px" />
           <Icons shape="check" width="24px" height="24px" />
           <Icons shape="refresh" width="24px" height="24px" />
@@ -472,6 +474,8 @@ function Guide() {
         <p>SIZE 16</p>
         <Icons shape="busd" />
       </div>
+      {/* Icons */}
+
       <div>
         <h2>Input</h2>
         <Input name="artist" disabled="true" placeholder="Content" />
@@ -510,6 +514,7 @@ function Guide() {
           </div>
         </div>
       </div>
+      {/* Input */}
 
       <div>
         <h2>Checkbox</h2>
@@ -518,6 +523,7 @@ function Guide() {
           content="test"
         />
       </div>
+      {/* Checkbox */}
 
       <div>
         <h2>Radiobox</h2>
@@ -534,6 +540,7 @@ function Guide() {
           </label>
         </div>
       </div>
+      {/* Radiobox */}
 
       <div>
         <h2>Toast</h2>
@@ -560,6 +567,7 @@ function Guide() {
           </p>
         </div>
       </div>
+      {/* Toast */}
 
       <div>
         <h2>Accordion</h2>
@@ -595,6 +603,7 @@ function Guide() {
           </AccordionItem>
         </Accordion>
       </div>
+      {/* Accordion */}
 
       <div>
         <h2>Sortable List</h2>
@@ -613,6 +622,7 @@ function Guide() {
           />
         </div>
       </div>
+      {/* Sortable */}
 
     </div>
   );

@@ -147,20 +147,40 @@
 
   .sortable_head {
     display: flex;
-    padding: 20px 0 35px;
+    padding: 10px 0 15px;
     border-top: 1px solid #DDDDDD;
     > div {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 80px;
+      padding-left: 20px;
       font-weight: 400;
       font-size: 18px;
       line-height: 100%;
       color: #888888;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        width:1px;
+        height: 60px;
+        border-left: 1px dashed #dddddd;
+      }
     }
     .year {
-      width: 10%; 
+      width: 15%; 
+      padding-left: 0;
+      font-size: 18px;
+      justify-content: center;
       text-align: center;
+      &:before {
+        display: none;
+      }
     }
     .location {
-      width: calc(60% - 40px);
+      width: calc(55% - 40px);
     }
     .country {
       width: 30%;
@@ -168,6 +188,9 @@
     .del {
       width: 40px;
       text-align: center;
+      &:before {
+        display: none;
+      }
     }
   }
   .exhibition_history {
@@ -180,12 +203,38 @@
       }
     }
     .placeholder {
+      > div {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 80px;
+        padding-left: 20px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        color: #000000;
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          display: inline-block;
+          width:1px;
+          height: 60px;
+          border-left: 1px dashed #dddddd;
+        }
+      }
       .year {
-        width: 10%; 
+        width: 15%; 
+        padding-left: 0;
+        font-size: 18px;
+        justify-content: center;
         text-align: center;
+        &:before {
+          display: none;
+        }
       }
       .location {
-        width: calc(60% - 40px);
+        width: calc(55% - 40px);
       }
       .country {
         width: 30%;
@@ -193,6 +242,9 @@
       .del {
         width: 40px;
         text-align: center;
+        &:before {
+          display: none;
+        }
       }
     }
   }

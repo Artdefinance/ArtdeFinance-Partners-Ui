@@ -161,8 +161,8 @@ export default class IconStyle extends React.Component {
           if (shape === 'close_small') {
             return (
               <>
-              <path d="M17 8L8 17" stroke="#555555" strokeWidth="1.5" />
-              <path d="M8 8L17 17" stroke="#555555" strokeWidth="1.5" />
+              <path d="M17 8L8 17" stroke={color} strokeWidth="1.5" />
+              <path d="M8 8L17 17" stroke={color} strokeWidth="1.5" />
               </>
             );
           }
