@@ -1,5 +1,5 @@
-import './StatusBar.scss';
 import Slider from '@material-ui/core/Slider';
+import './StatusBar.scss';
 
 export default function StatusBar() {
   return (

@@ -1,63 +1,66 @@
 @import "../../assets/css/Mixins.scss";
 
-.MuiSlider-root {
-  height: 8px;
-  padding: 0;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  background-color: #F4F4F4;
-}
+.curation-evaluation__list {
 
-.MuiSlider-track {
-  height: 8px;
-  background-color: #5F44FF;
-  border-radius: 5px;
+  .MuiSlider-root {
+    height: 8px;
+    padding: 0;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    background-color: #F4F4F4;
+  }
+  
+  .MuiSlider-track {
+    height: 8px;
+    background-color: #5F44FF;
+    border-radius: 5px;
+  }
+  
+  .makeStyles-rail-54 {
+    height: 8px;
+    border-radius: 5px;
+  }
+  
+  * >.makeStyles-mark-53 {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .MuiSlider-rail {
+    background-color: #F4F4F4;
+  }
+  
+  .MuiSlider-markActive {
+    background-color: #5F44FF !important;
+  }
+  
+  .MuiSlider-mark {
+    width: 8px;
+    height: 8px;
+    margin-left: -3px;
+    border-radius: 50%;
+    background-color: #DDDDDD;
+  }
+  
+  .MuiSlider-thumb {
+    width: 26px;
+    height: 26px;
+    margin-top: -9px;
+    margin-left: -12px;
+    border-radius: 50%;
+    background: linear-gradient(178.21deg, #5F44FF 50%, #9482FF 113.28%),
+    linear-gradient(98.1deg, #B1A3FF 1.81%, rgba(177, 163, 255, 0) 32.12%, rgba(177, 163, 255, 0) 68.9%, #5B49C0 93.75%);
+    border: 2px solid;
+    border-image-source: linear-gradient(98.1deg, #B1A3FF 1.81%, rgba(177, 163, 255, 0) 32.12%, rgba(177, 163, 255, 0) 68.9%, #5B49C0 93.75%);
+  }
+  
+  .MuiSlider-markLabel {
+    color: #DDDDDD;
+    @include RotaB;
+  }
+  
+  .MuiSlider-markLabelActive {
+    color: #000000 !important;
+  }
+  
 }
-
-.makeStyles-rail-54 {
-  height: 8px;
-  border-radius: 5px;
-}
-
-* >.makeStyles-mark-53 {
-  width: 8px;
-  height: 8px;
-}
-
-.MuiSlider-rail {
-  background-color: #F4F4F4;
-}
-
-.MuiSlider-markActive {
-  background-color: #5F44FF !important;
-}
-
-.MuiSlider-mark {
-  width: 8px;
-  height: 8px;
-  margin-left: -3px;
-  border-radius: 50%;
-  background-color: #DDDDDD;
-}
-
-.MuiSlider-thumb {
-  width: 26px;
-  height: 26px;
-  margin-top: -9px;
-  margin-left: -12px;
-  border-radius: 50%;
-  background: linear-gradient(178.21deg, #5F44FF 50%, #9482FF 113.28%),
-  linear-gradient(98.1deg, #B1A3FF 1.81%, rgba(177, 163, 255, 0) 32.12%, rgba(177, 163, 255, 0) 68.9%, #5B49C0 93.75%);
-  border: 2px solid;
-  border-image-source: linear-gradient(98.1deg, #B1A3FF 1.81%, rgba(177, 163, 255, 0) 32.12%, rgba(177, 163, 255, 0) 68.9%, #5B49C0 93.75%);
-}
-
-.MuiSlider-markLabel {
-  color: #DDDDDD;
-  @include RotaB;
-}
-
-.MuiSlider-markLabelActive {
-  color: #000000 !important;
-}
-
