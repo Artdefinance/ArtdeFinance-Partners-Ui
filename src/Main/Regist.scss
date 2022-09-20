@@ -145,6 +145,20 @@
     margin-top: 0;
   }
 
+  .btn_addhistory {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    color: #5F44FF;
+    span {
+      font-weight: inherit;
+      font-size: inherit;
+      margin-left: 6px;
+    }
+  }
+
   .sortable_head {
     display: flex;
     padding: 10px 0 15px;
@@ -193,6 +207,7 @@
       }
     }
   }
+
   .exhibition_history {
     max-width: 774px;
     border-top: 1px solid #DDDDDD;
@@ -200,6 +215,8 @@
       li {
         padding:10px 0 15px;
         border-bottom: 1px solid #DDDDDD;
+        &.placeholder {
+        }
       }
     }
     .placeholder {

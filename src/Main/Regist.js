@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { motion } from 'framer-motion';
-import Sortable from 'react-sortable-list';
+import SortableList from 'react-sortable-list';
 import './Regist.scss';
 import {
   Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel,
@@ -534,6 +534,12 @@ export default class ArtworksRegist extends React.Component {
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                   <div className="form__body">
+                    <div className="form_util">
+                      <button type="button" className="btn_addhistory">
+                        <Icons shape="plus" width="24px" height="24px" color="#5F44FF" />
+                        <span>Add to History</span>
+                      </button>
+                    </div>
                     <div className="sortable_head">
                       <div className="year">Years</div>
                       <div className="location">Location</div>
@@ -541,7 +547,7 @@ export default class ArtworksRegist extends React.Component {
                       <div className="del"><span className="a11y">delete</span></div>
                     </div>
                     <div className="sortable_wrap exhibition_history">
-                      <Sortable
+                      <SortableList
                         data={ExhibitionHistory.map((i) => (
                           <div className="placeholder">
                             <div className="year">{i.year}</div>
