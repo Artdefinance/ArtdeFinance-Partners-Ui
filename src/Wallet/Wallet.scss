@@ -63,9 +63,20 @@
   }
 
   &__img {
-    width: 80px;
-    height: 80px;
-    border-radius: 24px;
+    position: relative;
+    width: 68px;
+    height: 68px;
+    margin: 0 auto;
+    border-radius: 20px;
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      object-fit: cover;
+    }
   }
 }
 
