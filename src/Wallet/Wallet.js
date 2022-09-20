@@ -192,11 +192,12 @@ export default class Wallet extends React.Component {
             <div className="wallet__box">
               <div className="wallet-profile">
                 <div className="wallet-profile__wrap">
-                  <img
-                    src="/assets/images/page/artist/img_profile_view.png"
-                    alt="프로필 이미지"
-                    className="wallet-profile__img"
-                  />
+                  <div className="wallet-profile__img">
+                    <img
+                      src="/assets/images/page/artist/img_profile_view.png"
+                      alt="프로필 이미지"
+                    />
+                  </div>
                   <p className="wallet-profile__title">
                     Art de finance gallery labs
                   </p>

@@ -2,6 +2,8 @@ import React from 'react';
 import './Curation.scss';
 import BreadCrumbs from '../Components/BreadCrumbs.js/BreadCrumbs';
 import Side from './Side';
+import About from './About';
+import Evaluation from './Evaluation';
 
 export default class Curation extends React.Component {
   constructor(props) {
@@ -21,9 +23,10 @@ export default class Curation extends React.Component {
                   content2="(Vincent can Gogh Tauba Auerbach Ryan Trecartin)"
                 />
                 <Side />
+                <About />
               </div>
               <div className="activity-item--right">
-                ddd
+                <Evaluation />
               </div>
             </div>
           </div>

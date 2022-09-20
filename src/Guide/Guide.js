@@ -452,6 +452,7 @@ function Guide() {
           <Icons shape="adf" width="20px" height="20px" />
           <Icons shape="bnb" width="20px" height="20px" />
           <Icons shape="busd20" width="20px" height="20px" />
+          <Icons shape="data-small--gray" />
         </div>
       </div>
       <div>

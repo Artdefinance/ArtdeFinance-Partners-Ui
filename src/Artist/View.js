@@ -19,10 +19,12 @@ function View() {
           </div>
           <div className="side-view__content">
             <div className="side-view__content-wrap">
-              <img
-                src="/assets/images/page/artist/img_profile_view.png"
-                alt="프로필 이미지"
-              />
+              <div className="side-view__img">
+                <img
+                  src="/assets/images/page/artist/img_profile_view.png"
+                  alt="프로필 이미지"
+                />
+              </div>
               <div>
                 <p className="side-view__title">
                   Vincent van Gogh, 1955Vincent vanVincent van Gogh

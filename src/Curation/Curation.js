@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Curation.scss';
 import Checkbox from '../Components/Inputs/Checkbox';
 import Dropdown from '../Components/Dropdown/Dropdown';
+import Icons from '../Components/Icons/Icons';
 import Pagenation from '../Components/Pagenation/Pagenation';
 
 export default class Curation extends React.Component {
@@ -276,6 +277,13 @@ export default class Curation extends React.Component {
                   <div className={isToggleOn ? 'curation-list curation-list--active' : 'curation-list'}>
                     {ExampleData.map((items) => (
                       <Link to="/" className="curation-list__item" key={items.id}>
+                        <p className="curation_time-tag">
+                          <Icons shape="clock" width="20px" height="20px" />
+                          <span>180d</span>
+                          <span>17h</span>
+                          <span>38m</span>
+                          <span>52s</span>
+                        </p>
                         <span className="curation-list__img">
                           <span style={{ backgroundImage: `url(${items.bg})` }} />
                         </span>
