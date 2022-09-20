@@ -59,27 +59,27 @@ export default class ArtworksRegist extends React.Component {
   render() {
     const artistList = [
       {
-        id: '1',
+        id: 1,
         value: 'Vincent van Gogh',
         title: 'Vincent van Gogh',
       },
       {
-        id: '2',
+        id: 2,
         value: 'Paul Gauguin',
         title: 'Paul Gauguin',
       },
       {
-        id: '3',
+        id: 3,
         value: 'Henri Émile Benoît Matisse',
         title: 'Henri Émile Benoît Matisse',
       },
       {
-        id: '4',
+        id: 4,
         value: 'Pablo Ruiz Picasso',
         title: 'Pablo Ruiz Picasso',
       },
       {
-        id: '5',
+        id: 5,
         value: 'Frida Kahlo de Rivera',
         title: 'Frida Kahlo de Rivera',
       },
@@ -554,7 +554,9 @@ export default class ArtworksRegist extends React.Component {
                             <div className="location">{i.Location}</div>
                             <div className="country">{i.Country}</div>
                             <div className="del">
-                              <button type="button"><Icons shape="close_small" color="#BBBBBB" /></button>
+                              <button type="button">
+                                <Icons shape="close_small" color="#BBBBBB" />
+                              </button>
                             </div>
                           </div>
                         ))}

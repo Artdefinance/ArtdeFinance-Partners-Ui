@@ -1,0 +1,42 @@
+diff --git a/node_modules/react-sortable-list/lib/SortableList.js b/node_modules/react-sortable-list/lib/SortableList.js
+index ea73cef..92db817 100644
+--- a/node_modules/react-sortable-list/lib/SortableList.js
++++ b/node_modules/react-sortable-list/lib/SortableList.js
+@@ -70,7 +70,6 @@ function (_Component) {
+    * On drag start, set data.
+    **/
+ 
+-
+   _createClass(SortableList, [{
+     key: "dragStart",
+     value: function dragStart(e) {
+@@ -86,7 +85,7 @@ function (_Component) {
+     key: "dragEnd",
+     value: function dragEnd(e) {
+       this.dragged.style.display = 'block';
+-      this.dragged.parentNode.removeChild(this.state.placeholder);
++      // this.dragged.parentNode.removeChild(this.state.placeholder);
+       var data = this.state.data;
+       var from = Number(this.dragged.dataset.id);
+       var to = Number(this.over.dataset.id);
+@@ -106,6 +105,7 @@ function (_Component) {
+     value: function dragOver(e) {
+       e.preventDefault();
+       this.dragged.style.display = 'none';
++      this.dragged.style.background = 'red';
+       if (e.target.className == 'placeholder') return;
+       this.over = e.target;
+       var relY = e.clientY - this.over.offsetTop;
+diff --git a/node_modules/react-sortable-list/src/SortableList.js b/node_modules/react-sortable-list/src/SortableList.js
+index 4886b24..8a449d7 100644
+--- a/node_modules/react-sortable-list/src/SortableList.js
++++ b/node_modules/react-sortable-list/src/SortableList.js
+@@ -27,7 +27,7 @@ export default class SortableList extends Component {
+    **/
+   dragEnd(e) {
+     this.dragged.style.display = 'block'
+-    this.dragged.parentNode.removeChild(this.state.placeholder)
++    // this.dragged.parentNode.removeChild(this.state.placeholder)
+     let data = this.state.data
+     let from = Number(this.dragged.dataset.id)
+     let to = Number(this.over.dataset.id)

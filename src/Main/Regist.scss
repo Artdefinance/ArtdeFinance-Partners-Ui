@@ -113,6 +113,9 @@
     .form__body {
       border-top: 1px solid #EEEEEE;
     }
+    .form_util {
+      margin-bottom: 12px;
+    }
     .question-bubble {
       position: absolute;
       right: -27px;
@@ -158,6 +161,7 @@
       margin-left: 6px;
     }
   }
+
 
   .sortable_head {
     display: flex;
@@ -216,6 +220,8 @@
         padding:10px 0 15px;
         border-bottom: 1px solid #DDDDDD;
         &.placeholder {
+          padding: 0;
+          border: 0;
         }
       }
     }
