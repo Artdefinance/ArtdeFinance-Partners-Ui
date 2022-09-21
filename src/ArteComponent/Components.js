@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
-import './Guide.scss';
+import './ArteComponent.scss';
 // Carosel
 import Slider from 'react-slick';
 // Accordion
@@ -30,7 +30,7 @@ import Icons from '../Components/Icons/Icons';
 import Input from '../Components/Inputs/Input';
 import Checkbox from '../Components/Inputs/Checkbox';
 
-function Guide() {
+function ArteComponents() {
   const ExampleContent1 = [
     {
       id: '1',
@@ -475,6 +475,10 @@ function Guide() {
         <p>SIZE 16</p>
         <Icons shape="busd" />
       </div>
+      <div>
+        <p>SIZE 14</p>
+        <Icons shape="binance" />
+      </div>
       {/* Icons */}
 
       <div>
@@ -629,4 +633,4 @@ function Guide() {
   );
 }
 
-export default Guide;
+export default ArteComponents;

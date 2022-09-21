@@ -14,11 +14,11 @@ function Path() {
           </thead>
           <tbody>
             <tr>
-              <td>component guide</td>
+              <td>arte components</td>
               <td>-</td>
               <td>
-              <Link to="/guide">
-                /guide
+              <Link to="/artecomponents">
+                /artecomponents
               </Link>
               </td>
             </tr>

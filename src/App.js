@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './Components/Layout/Footer';
 import Header from './Components/Layout/Header';
 import Path from './Path';
-import Guide from './Guide/Guide';
+import ArteComponents from './ArteComponent/Components';
 import Main from './Main/Main';
 import ArtworksRegist from './Main/Regist';
 import Artist from './Artist/Artist';
@@ -37,7 +37,7 @@ function App() {
       <div className="app-container">
       <Routes>
         <Route path="/path" element={<Path />} />
-        <Route path="/guide" element={<Guide />} />
+        <Route path="/artecomponents" element={<ArteComponents />} />
         <Route path="/main" element={<Main />} />
         <Route path="/main/regist" element={<ArtworksRegist />} />
         <Route path="/artist" element={<Artist />} />

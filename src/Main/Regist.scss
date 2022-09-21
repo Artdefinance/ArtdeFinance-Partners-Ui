@@ -353,5 +353,171 @@
       height: 240px;
       overflow-y: auto;
     }
+    .row_items {
+      display: flex;
+      min-height: 24px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-right: 30px;
+      border-bottom: 1px solid #EEEEEE;
+      font-size: 16px;
+      line-height: 100%;
+      &:first-child {
+        padding-top: 0;
+      }
+      .year {
+        width: 10%;
+        font-weight: 700;
+        color: #888888;
+      }
+      .content {
+        width: 70%;
+        @include AcuminproL();
+      }
+      .location {
+        width: 20%;
+        margin-top: 2px;
+        font-size: 12px;
+        color: #BBBBBB;
+        line-height: 1;
+        text-align: right;
+        @include AcuminproR();
+      }
+    }
+  }
+  .registration_detail {
+    .dialog_regist-head {
+      position: relative;
+      padding: 40px 0 36px;
+      border-bottom: 1px solid #EEEEEE;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 100%;
+      text-align: center;
+      .btn_delete {
+        position: absolute;
+        right: 38px;
+        top: 38px;
+      }
+    }
+  }
+  .dialog_regist-cont {
+    padding: 40px 25px;
+    .desc {
+      width: 73%;
+      margin: 0 auto;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 120%;
+      text-align: center;
+    }
+    .suggest_price {
+      margin-top: 40px;
+      padding: 30px 25px;
+      background: #F9F9F9;
+      border-radius: 10px;
+      .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        color: #888888;
+      }
+    }
+    .rate_exchange {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #888888;
+      @include AcuminproR();
+    }
+    .crypto_currency {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 8px;
+      font-weight: 700;
+      font-size: 16px;
+      color: #888888;
+      svg {
+        margin-right: 6px;
+      }
+      span {
+        margin-left: 10px;
+        font-weight: inherit;
+        font-size: inherit;
+        color: inherit;
+      }
+    }
+    .price_box {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 25px;
+      border: 1px solid #DDDDDD;
+      border-radius: 5px;
+      background-color: #ffffff;
+      .input {
+        flex: 1;
+      }
+      .unit {
+        display: inline-block;
+        padding: 5px 9px;
+        background: rgba(136, 136, 136, 0.1);
+        border-radius: 2px;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 100%;
+        color: #888888;
+      }
+    }
+    .input__input {
+      height: auto;
+      line-height:normal;
+      border: 0;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 36px;
+      text-align: right;
+    }
+
+    .nft_infomation {
+      margin: 30px 0 40px;
+      .info {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+        text-align: center;
+      }
+    }
+    .waller_addr {
+      margin: 20px 0;
+      text-align: center;
+      > p {
+        margin-bottom: 10px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        color: #555555;
+      }
+      .addr_text {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        padding-left: 55px;
+        padding-right: 55px;
+        background: #888888;
+        border-radius: 5px;
+        font-size: 15px;
+        color: #FFFFFF;
+        @include AcuminproR();
+      }
+    }
   }
 }
