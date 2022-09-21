@@ -6,6 +6,7 @@
   background: rgba(187, 187, 187, 0.06);
   border-radius: 5px;
   border: 1px dashed #DDDDDD;
+  margin-bottom: 15px;
 
   label {
     position: absolute;
@@ -15,6 +16,20 @@
     padding: 0;
     margin: 0;
     border: none;
+  }
+
+  &.dropbox_disabled {
+    filter: grayscale(50%) !important;
+    p {
+      filter: grayscale(100%) !important;
+      opacity: 50% !important;
+    }
+  }
+  &.multiple_container {
+    height: 100px;
+    .drop_icon {
+      display: none;
+    }
   }
 
   &__content {
@@ -32,6 +47,7 @@
       height: 38px;
     }
   }
+
 
   &__title {
     padding: 11px 0 8px;
@@ -55,6 +71,7 @@
 
   &__box {
     display: flex;
+    align-items: center;
     background-color: transparent;
   }
 
@@ -62,11 +79,13 @@
     display: flex;
     position: relative;
     justify-content: space-between;
+    padding: 20px 24px;
 
     i {
       display: inline-block;
-      width: 20px;
-      height: 25px;
+      width: 32px;
+      height: 32px;
+      vertical-align: middle;
     }
 
     p {
@@ -88,26 +107,43 @@
       line-height: 25px;
       @include RotaR;
     }
-  }
 
-  .preview {
-    display: flex;
-    align-items: center;
-    color: #5F44FF;
-    font-size: 14px;
-    @include RotaB;
-
-    &::before {
-      display: inline-block;
-      width: 3px;
-      height: 3px;
-      margin-left: 10px;
-      margin-right: 10px;
-      border-radius: 50%;
-      background-color: #5F44FF;
-      content: '';
+    &.single__item {
+      border: 1px solid #DDDDDD;
+      border-radius: 5px;
+    }
+    &.error__item {
+      position: relative;
+      .error_text {
+        position: absolute;
+        bottom: -5px;
+        left: 25px;
+        font-size: 12px;
+        line-height: 12px;
+        color: #FF3B30;
+        @include AcuminproR();
+      }
+    }
+    .preview {
+      display: flex;
+      align-items: center;
+      color: #5F44FF;
+      font-size: 14px;
+      @include RotaB;
+  
+      &::before {
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 50%;
+        background-color: #5F44FF;
+        content: '';
+      }
     }
   }
+
 
   .trash {
     position: absolute;

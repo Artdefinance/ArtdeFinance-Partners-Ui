@@ -407,6 +407,7 @@ function ArteComponents() {
           <Icons shape="share" />
           <Icons shape="trash" />
           <Icons shape="close-circle" />
+          <Icons shape="close-circle-bk" />
         </div>
         <div>
           <Icons shape="exclama" color="#000000" />
