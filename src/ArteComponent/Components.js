@@ -398,6 +398,7 @@ function ArteComponents() {
           <Icons shape="close" width="24px" height="24px" />
           <Icons shape="search" width="24px" height="24px" />
           <Icons shape="check" width="24px" height="24px" />
+          <Icons shape="check" width="24px" height="24px" color="#ffffff" />
           <Icons shape="refresh" width="24px" height="24px" />
           <Icons shape="plus" width="24px" height="24px" />
           <Icons shape="flag" width="24px" height="24px" />

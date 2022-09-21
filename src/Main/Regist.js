@@ -612,6 +612,7 @@ export default class ArtworksRegist extends React.Component {
               <Button pressFucn={this.openDialog} value="open" className="button button--black button--mid" content="Comfirm" type="type1" />
             </div>
           </div>
+          {/* full dialog */}
           <Dialog
             fullScreen
             open={Boolean(open)}
@@ -817,6 +818,31 @@ export default class ArtworksRegist extends React.Component {
               </div>
             </div>
           </Dialog>
+          {/* full dialog */}
+          <div className="minting_status">
+            <div className="status_wrap">
+              <p className="title">NFT Minting</p>
+              <div className="status_bar-wrap">
+                <div className="bar_inner">
+                10
+                </div>
+              </div>
+              <div className="status_bar-divi">
+                <p className="checked">
+                  <Icons shape="check" width="24px" height="24px" color="#ffffff" />
+                  Start
+                </p>
+                <p>
+                  <Icons shape="check" width="24px" height="24px" color="#ffffff" />
+                  Minting
+                </p>
+                <p>
+                  <Icons shape="check" width="24px" height="24px" color="#ffffff" />
+                  Complete
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
