@@ -20,15 +20,9 @@
 
   &.dropbox_disabled {
     filter: grayscale(50%) !important;
-    p {
+    p, i {
       filter: grayscale(100%) !important;
       opacity: 50% !important;
-    }
-  }
-  &.multiple_container {
-    height: 100px;
-    .drop_icon {
-      display: none;
     }
   }
 
@@ -80,6 +74,8 @@
     position: relative;
     justify-content: space-between;
     padding: 20px 24px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
 
     i {
       display: inline-block;
@@ -109,8 +105,6 @@
     }
 
     &.single__item {
-      border: 1px solid #DDDDDD;
-      border-radius: 5px;
     }
     &.error__item {
       position: relative;
@@ -155,6 +149,20 @@
   }
   .file-drop-target {
     height: inherit;
+  }
+}
+
+.drag-drop_container {
+  &.multiple_container {
+    .drag-drop {
+      height: 100px;
+    }
+    .drop_icon {
+      display: none;
+    }
+    .drag-drop__item {
+      border: 0;
+    }
   }
 }
 

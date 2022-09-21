@@ -49,10 +49,9 @@ export default function FileDragDrop({
   };
 
   return (
-    <div className="drag-drop_container">
+    <div className={`drag-drop_container ${boxTypeClass}`}>
       {/* <div className="drag-drop dropbox_disabled"> */}
-      {/* <div className="drag-drop multiple_container"> */}
-      <div className={`drag-drop ${boxTypeClass}`}>
+      <div className="drag-drop">
         <FileDrop onTargetClick={filePicker} onDrop={(f) => fileHandler(f)}>
           <div className="drag-drop__content">
             <i style={fileContainer} className="drop_icon" />
@@ -96,22 +95,6 @@ export default function FileDragDrop({
                 <span className="a11y">휴지통으로 이동</span>
               </button>
             </div>
-            {/* <div className="drag-drop__item single__item">
-              <div className="drag-drop__box">
-                <i style={fileDefault} />
-                <p>{file.name}</p>
-                <span>
-                  (
-                  {file.size}
-                  KB
-                  )
-                </span>
-              </div>
-              <button type="button" className="trash">
-                <Icons shape="trash" color="#BBBBBB" />
-                <span className="a11y">휴지통으로 이동</span>
-              </button>
-            </div> */}
             {/* <div className="drag-drop__item error__item">
               <div className="drag-drop__box">
                 <i style={fileError} />
