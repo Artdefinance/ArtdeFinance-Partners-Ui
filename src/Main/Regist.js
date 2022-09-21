@@ -410,7 +410,7 @@ export default class ArtworksRegist extends React.Component {
                         </div>
                       </div>
                       <div className="side-regist__drag-drop">
-                        <FileDragDrop />
+                        <FileDragDrop boxType="multiple_container" />
                       </div>
                     </div>
                     <div className="form__inputs">
@@ -441,7 +441,7 @@ export default class ArtworksRegist extends React.Component {
                         </div>
                       </div>
                       <div className="side-regist__drag-drop">
-                        <FileDragDrop multiple="multiple" />
+                        <FileDragDrop boxTypeClass="multiple_container" />
                       </div>
                     </div>
                   </div>
@@ -552,7 +552,7 @@ export default class ArtworksRegist extends React.Component {
                         </div>
                       </div>
                       <div className="side-regist__drag-drop">
-                        <FileDragDrop type="multiple_container" />
+                        <FileDragDrop boxType="multiple_container" />
                       </div>
                     </div>
                   </div>

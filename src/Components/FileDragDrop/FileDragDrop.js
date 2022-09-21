@@ -1,9 +1,12 @@
+/* eslint-disable react/prop-types */
 import React, { useRef, useState } from 'react';
 import { FileDrop } from 'react-file-drop';
 import './FileDragDrop.scss';
 import Icons from '../Icons/Icons';
 
-export default function FileDragDrop() {
+export default function FileDragDrop({
+  boxTypeClass,
+}) {
   const inputRef = useRef();
   const [filenames, setNames] = useState([]);
 
@@ -49,7 +52,7 @@ export default function FileDragDrop() {
     <div className="drag-drop_container">
       {/* <div className="drag-drop dropbox_disabled"> */}
       {/* <div className="drag-drop multiple_container"> */}
-      <div className="drag-drop">
+      <div className={`drag-drop ${boxTypeClass}`}>
         <FileDrop onTargetClick={filePicker} onDrop={(f) => fileHandler(f)}>
           <div className="drag-drop__content">
             <i style={fileContainer} className="drop_icon" />
