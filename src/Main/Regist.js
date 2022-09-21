@@ -25,6 +25,7 @@ export default class ArtworksRegist extends React.Component {
       isToggleOn4: false,
       totalByte: 0,
       open: false,
+      dummyImg: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
     };
     this.handleClick = this.handleClick.bind(this);
     this.clickClose = this.clickClose.bind(this);
@@ -100,7 +101,7 @@ export default class ArtworksRegist extends React.Component {
 
     const {
       isToggleOn1, isToggleOn2, isToggleOn3,
-      isToggleOn4, totalByte, open,
+      isToggleOn4, totalByte, open, dummyImg,
     } = this.state;
 
     const style = {
@@ -598,7 +599,155 @@ export default class ArtworksRegist extends React.Component {
             open={Boolean(open)}
             onClose={this.handleClose}
           >
-            <div className="dialog_wrap">Dialog contents</div>
+            <div className="dialog_wrap artworkregist_dialog">
+              <div className="dialog_left">
+                <div className="dialog_box dialog_detailarea">
+                  <div className="detail_artimage"><img src={dummyImg} alt="dummyimg" /></div>
+                  <button type="button" className="btn_expanding">
+                    <Icons shape="expand" />
+                    <span>View Image</span>
+                  </button>
+                  {/*  */}
+                  <div className="detail_info">
+                    <dl className="info_items">
+                      <dt>Artist</dt>
+                      <dd>Vincent van Gogh Tauba Auerbach Ryan Trecartin</dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Title</dt>
+                      <dd>Two Paintings (from the Paintings series) Spring Flowers</dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Creation Year</dt>
+                      <dd>2001</dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Edition</dt>
+                      <dd>#3547A</dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Medium</dt>
+                      <dd>Screenprint in colors on Saunders Waterford 425gsm pape</dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Artist Sign</dt>
+                      <dd>Include Signed</dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Dimensions</dt>
+                      <dd>
+                        W 203.2 × D 203.2 cm x H 203.2 cm
+                        <br />
+                        (80 × 80 × 80 in.)
+                      </dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Edition</dt>
+                      <dd>#3547A</dd>
+                    </dl>
+                  </div>
+                  {/*  */}
+                </div>
+                <div className="dialog_box dialog_exhibihistory">
+                  <p className="row_title">ExhibitionHistory</p>
+                  <div className="row_scroll">
+                    {ExhibitionHistory.map((i) => (
+                      <div className="row_items">
+                        <p className="year">{i.year}</p>
+                        <p className="content">{i.Location}</p>
+                        <p className="location">
+                          {i.Country}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="dialog_right">
+                <div className="dialog_box registration_detail">
+                  <div className="dialog_regist-head">
+                    Artworks Registration
+                    <button type="button" className="btn_delete">
+                      <Icons shape="trash" />
+                      <span className="a11y">Delete</span>
+                    </button>
+                  </div>
+                  <div className="dialog_regist-cont">
+                    <p className="desc">
+                    After setting the expected price for the artist&lsquo;s work,
+                    each art expert&lsquo;s curation and Participants&lsquo;
+                    DAO voting determines the final value of the work.
+                    <br />
+                    After voting, you can choose the form of sale
+                    (Auction or List Price).
+                    <br />
+                    You can choose to register on the market.
+                    </p>
+                    <div className="suggest_price">
+                      <div className="title">
+                        Suggested Price
+                        <div className="question-bubble">
+                          <button
+                            type="button"
+                            onClick={this.handleClick}
+                            className="question-bubble__mark"
+                            value="isToggleOn1"
+                          />
+                          <motion.div
+                            animate={
+                              isToggleOn1 === true ? style.open : style.closed
+                            }
+                            className="question-bubble__wrap"
+                            style={{ top: '-85px', left: '-115px' }}
+                          >
+                            작품의 예상 가격을 USD 기준으로 입력해주세요.
+                            <button
+                              type="button"
+                              onClick={this.clickClose}
+                              className="question-bubble__close"
+                              value="isToggleOn1"
+                            />
+                          </motion.div>
+                        </div>
+                      </div>
+                      <div className="rate_exchange">
+                        <p>1USDT = $3.765</p>
+                        <p>
+                          <span>22/06/2022</span>
+                          <span>16 : 18 : 23 (UTC+3) Last Updates</span>
+                        </p>
+                      </div>
+                      <div className="price_box">
+                        <Icons shape="data" width="20px" height="20px" />
+                        <Input value="1,500,000.00" />
+                        <span className="unit">USD</span>
+                      </div>
+                      <div className="crypto_currency">
+                        <Icons shape="binance" width="14px" height="14px" viewBox="0 0 14 14" />
+                        0.00
+                        <span className="unit">USDT</span>
+                      </div>
+                      {/* <div className="warning__message type__error">
+                        <Icons shape="warning" color="#FF3B30" />
+                        <span className="warning__text">
+                          Supporting Text
+                        </span>
+                      </div> */}
+                      <div className="nft_infomation">
+                        <p className="info">Please check the information of the work before NFT minting once more!</p>
+                        <div className="waller_addr">
+                          <p>NFT Minted wallet address</p>
+                          <div className="addr_text">
+                            0xb932a70A57673d89f4acfFBE830E8ed7f75Fb9e0
+                          </div>
+                          <div className="bubble bubble-top-right">This is tooltip content. Seamlessly formulate magnetic methodologies with go forward deliverables.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </Dialog>
         </div>
       </div>

@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import '../../Guide/Guide.scss';
 import './Dropdown.scss';
 
 export default class CountryDropdown extends React.Component {

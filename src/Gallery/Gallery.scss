@@ -339,6 +339,11 @@
 }
 .warning__message {
   margin-top: 4px;
+  &.type__error {
+    .warning__text {
+      color:#FF3B30;
+    }
+  }
   .warning__text {
     font-weight: 400;
     font-size: 14px;

@@ -932,5 +932,5 @@ body .MuiDialog-paperFullScreen {
 .dialog_wrap {
   width: 100%;
   max-width: 1440px;
-  margin: 81px auto 0;
+  margin: 81px auto 115px;
 }
