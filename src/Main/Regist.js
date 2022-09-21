@@ -25,6 +25,7 @@ export default class ArtworksRegist extends React.Component {
       isToggleOn4: false,
       totalByte: 0,
       open: false,
+      dummyImg: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
     };
     this.handleClick = this.handleClick.bind(this);
     this.clickClose = this.clickClose.bind(this);
@@ -100,7 +101,7 @@ export default class ArtworksRegist extends React.Component {
 
     const {
       isToggleOn1, isToggleOn2, isToggleOn3,
-      isToggleOn4, totalByte, open,
+      isToggleOn4, totalByte, open, dummyImg,
     } = this.state;
 
     const style = {
@@ -598,7 +599,66 @@ export default class ArtworksRegist extends React.Component {
             open={Boolean(open)}
             onClose={this.handleClose}
           >
-            <div className="dialog_wrap">Dialog contents</div>
+            <div className="dialog_wrap artworkregist_dialog">
+              <div className="dialog_left">
+                <div className="dialog_box dialog_detailarea">
+                  <div className="detail_artimage"><img src={dummyImg} alt="dummyimg" /></div>
+                  <button type="button" className="btn_expanding">
+                    <Icons shape="expand" />
+                    <span>View Image</span>
+                  </button>
+                  {/*  */}
+                  <div className="detail_info">
+                    <dl className="info_items">
+                      <dt>Artist</dt>
+                      <dd>Vincent van Gogh Tauba Auerbach Ryan Trecartin</dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Title</dt>
+                      <dd>Two Paintings (from the Paintings series) Spring Flowers</dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Creation Year</dt>
+                      <dd>2001</dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Edition</dt>
+                      <dd>#3547A</dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Medium</dt>
+                      <dd>Screenprint in colors on Saunders Waterford 425gsm pape</dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Artist Sign</dt>
+                      <dd>Include Signed</dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Dimensions</dt>
+                      <dd>
+                        W 203.2 × D 203.2 cm x H 203.2 cm
+                        <br />
+                        (80 × 80 × 80 in.)
+                      </dd>
+                    </dl>
+                    <dl className="info_items">
+                      <dt>Edition</dt>
+                      <dd>#3547A</dd>
+                    </dl>
+                  </div>
+                  {/*  */}
+                </div>
+                <div className="dialog_box dialog_exhibihistory">
+                  <p className="row_title">ExhibitionHistory</p>
+                  <div className="row_scroll">
+                    <div className="row_items">
+                      <p className="year">2012</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="dialog_right">2</div>
+            </div>
           </Dialog>
         </div>
       </div>
