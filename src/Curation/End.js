@@ -5,7 +5,7 @@ import Side from './Side';
 import About from './About';
 import Evaluation from './Evaluation';
 
-export default class Curation extends React.Component {
+export default class End extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -26,7 +26,7 @@ export default class Curation extends React.Component {
                 <About />
               </div>
               <div className="activity-item--right">
-                <Evaluation />
+                <Evaluation disabled />
               </div>
             </div>
           </div>

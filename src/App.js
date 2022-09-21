@@ -29,7 +29,7 @@ import PrivacyPolicy from './Service/PrivacyPolicy';
 import TermsService from './Service/TermsService';
 import Curation from './Curation/Curation';
 import CurationView from './Curation/View';
-import CurationList from './Curation/List';
+import CurationEnd from './Curation/End';
 
 function App() {
   return (
@@ -64,7 +64,7 @@ function App() {
         <Route path="/service/terms" element={<TermsService />} />
         <Route path="/curation" element={<Curation />} />
         <Route path="/curation/view" element={<CurationView />} />
-        <Route path="/curation/list" element={<CurationList />} />
+        <Route path="/curation/end" element={<CurationEnd />} />
       </Routes>
       </div>
       <Footer />

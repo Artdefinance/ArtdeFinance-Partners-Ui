@@ -207,7 +207,7 @@ function Path() {
             </tr>
             {/* wallet  */}
             <tr>
-              <td>-</td>
+              <td>Wallet</td>
               <td>wallet</td>
               <td>
               <Link to="/wallet">
@@ -231,6 +231,33 @@ function Path() {
               <td>
               <Link to="/service/terms">
                 /service/terms
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>Curation</td>
+              <td>Curation List_1</td>
+              <td>
+              <Link to="/curation">
+                /curation
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>Curation_1</td>
+              <td>
+              <Link to="/curation/view">
+                /curation/view
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>Curation_2</td>
+              <td>
+              <Link to="/curation/end">
+                /curation/end
               </Link>
               </td>
             </tr>
