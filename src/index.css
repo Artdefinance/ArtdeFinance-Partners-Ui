@@ -919,3 +919,18 @@ html, body {
 .sortable_wrap > div ul li {background: transparent;}
 .sortable_wrap > div ul li .placeholder:before {display: none;}
 .sortable_wrap > div ul li .placeholder {display: flex;background:transparent;}
+
+/* dialog */
+body .MuiDialog-scrollPaper {
+  align-items: flex-end;
+}
+body .MuiDialog-paperFullScreen {
+  height: 90vh;
+  background-color: #FAFAFA;
+  border-radius: 20px 20px 0px 0px;
+}
+.dialog_wrap {
+  width: 100%;
+  max-width: 1440px;
+  margin: 81px auto 0;
+}

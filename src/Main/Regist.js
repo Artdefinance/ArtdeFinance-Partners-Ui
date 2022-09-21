@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SortableList from 'react-sortable-list';
+import Dialog from '@material-ui/core/Dialog';
 import './Regist.scss';
 import {
   Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel,
@@ -23,16 +24,28 @@ export default class ArtworksRegist extends React.Component {
       isToggleOn3: false,
       isToggleOn4: false,
       totalByte: 0,
+      open: false,
     };
     this.handleClick = this.handleClick.bind(this);
     this.clickClose = this.clickClose.bind(this);
     this.checkByte = this.checkByte.bind(this);
+    this.openDialog = this.openDialog.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   handleClick(e) {
     this.setState((prevState) => ({
       [e.target.value]: !prevState[e.target.value],
     }));
+  }
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
+  openDialog(e) {
+    this.setState({ open: true });
+    // this.setState({ open: e.target.value });
   }
 
   clickClose(e) {
@@ -85,7 +98,10 @@ export default class ArtworksRegist extends React.Component {
       },
     ];
 
-    const { isToggleOn1, isToggleOn2, isToggleOn3, isToggleOn4, totalByte } = this.state;
+    const {
+      isToggleOn1, isToggleOn2, isToggleOn3,
+      isToggleOn4, totalByte, open,
+    } = this.state;
 
     const style = {
       open: {
@@ -574,9 +590,16 @@ export default class ArtworksRegist extends React.Component {
             </div>
             <div>
               <Button className="button button--black-line button--mid" content="Temporary Storage" type="type1" />
-              <Button className="button button--black button--mid" content="Comfirm" type="type1" />
+              <Button pressFucn={this.openDialog} value="open" className="button button--black button--mid" content="Comfirm" type="type1" />
             </div>
           </div>
+          <Dialog
+            fullScreen
+            open={Boolean(open)}
+            onClose={this.handleClose}
+          >
+            <div className="dialog_wrap">Dialog contents</div>
+          </Dialog>
         </div>
       </div>
     );
