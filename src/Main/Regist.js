@@ -598,7 +598,7 @@ export default class ArtworksRegist extends React.Component {
             open={Boolean(open)}
             onClose={this.handleClose}
           >
-            <div>Dialog</div>
+            <div className="dialog_wrap">Dialog contents</div>
           </Dialog>
         </div>
       </div>
