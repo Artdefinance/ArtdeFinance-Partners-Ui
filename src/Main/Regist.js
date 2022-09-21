@@ -3,12 +3,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SortableList from 'react-sortable-list';
 import Dialog from '@material-ui/core/Dialog';
+import { ToastContainer, toast } from 'react-toastify';
 import './Regist.scss';
 import {
   Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel,
 } from 'react-accessible-accordion';
 import FileDragDrop from '../Components/FileDragDrop/FileDragDrop';
 import Button from '../Components/Button/Button';
+import ButtonGray from '../Components/Button/ButtonGray';
 import Input from '../Components/Inputs/Input';
 import Checkbox from '../Components/Inputs/Checkbox';
 import RadioButton from '../Components/Button/RadioButton';
@@ -23,6 +25,7 @@ export default class ArtworksRegist extends React.Component {
       isToggleOn2: false,
       isToggleOn3: false,
       isToggleOn4: false,
+      isToggleOn5: false,
       totalByte: 0,
       open: false,
       dummyImg: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
@@ -35,6 +38,7 @@ export default class ArtworksRegist extends React.Component {
   }
 
   handleClick(e) {
+    console.log(e.target.value);
     this.setState((prevState) => ({
       [e.target.value]: !prevState[e.target.value],
     }));
@@ -101,7 +105,8 @@ export default class ArtworksRegist extends React.Component {
 
     const {
       isToggleOn1, isToggleOn2, isToggleOn3,
-      isToggleOn4, totalByte, open, dummyImg,
+      isToggleOn4, isToggleOn5,
+      totalByte, open, dummyImg,
     } = this.state;
 
     const style = {
@@ -118,6 +123,19 @@ export default class ArtworksRegist extends React.Component {
       { id: 2, year: '2020', Location: 'Artdefinance Gallery ', Country: 'South KoreaSouth KoreaSouth KoreaSouth KoreaSouth Korea.' },
       { id: 3, year: '2017', Location: 'Artdefinance Gallery ', Country: 'South KoreaSouth KoreaSouth KoreaSouth KoreaSouth Korea.' },
     ];
+
+    function toastSuccess() {
+      toast(
+        <div className="toastify__custom">
+          <Icons shape="checkbox" color="#ffffff" />
+          Two line text string with two actions. One to two lines is preferable on mobile and tablet
+        </div>,
+        {
+          position: 'bottom-center',
+          className: 'toast__custom-success',
+        },
+      );
+    }
 
     return (
       <div className="main_regist">
@@ -599,6 +617,10 @@ export default class ArtworksRegist extends React.Component {
             open={Boolean(open)}
             onClose={this.handleClose}
           >
+            <div className="dialog_close" onClick={this.handleClose}>
+              <Icons shape="close" width="24px" height="24px" />
+              <span className="a11y">close</span>
+            </div>
             <div className="dialog_wrap artworkregist_dialog">
               <div className="dialog_left">
                 <div className="dialog_box dialog_detailarea">
@@ -735,14 +757,60 @@ export default class ArtworksRegist extends React.Component {
                       </div> */}
                       <div className="nft_infomation">
                         <p className="info">Please check the information of the work before NFT minting once more!</p>
-                        <div className="waller_addr">
+                        <div className="waller_addr bubble-position">
                           <p>NFT Minted wallet address</p>
                           <div className="addr_text">
                             0xb932a70A57673d89f4acfFBE830E8ed7f75Fb9e0
+                            <button
+                              type="button"
+                              onClick={this.handleClick}
+                              className="btn_bubbleshow"
+                              value="isToggleOn5"
+                            />
                           </div>
-                          <div className="bubble bubble-top-right">This is tooltip content. Seamlessly formulate magnetic methodologies with go forward deliverables.</div>
+                          {isToggleOn5 ? (
+                            <div className="bubble bubble-top-right">
+                            NFTs are stored with the wallet address you log in to.
+                            Stored NFTs can be moved to another wallet address,
+                            but Curation and market registration are not possible,
+                            so please check the wallet address to be stored again.
+                            Once the information of the work is stored with NFT,
+                            it cannot be canceled or deleted afterwards.
+                            </div>
+                          ) : null}
                         </div>
                       </div>
+                    </div>
+                    <div className="bottom_info">
+                      <p className="text">
+                      Minting work information with NFT on the blockchain
+                      <br />
+                      network A certain fee is charged for executing
+                      a transaction or smart contract.
+                      <br />
+                      If there is not enough balance such as fees in the account wallet,
+                      NFT minting is not possible.
+                      <br />
+                      Before minting, please make sure you have enough balance to pay the fee.
+                      </p>
+                      <p className="text">
+                      As a platform provider, ADF Labs Co., Ltd.
+                      is a platform provider for curators, voters, and collectors.
+                      <br />
+                      Works, artwork information provided in
+                      all participation processes and art transactions,
+                      The responsibility and responsibility
+                      for the transaction rests with the gallery.
+                      </p>
+                    </div>
+                    <div className="btn_wrap">
+                      <ToastContainer
+                        autoClose={false}
+                        closeOnClick
+                        rtl={false}
+                      />
+                      <ButtonGray className="button button--gray-line button--mid" content="Back" />
+                      <Button pressFucn={() => toastSuccess()} className="button button--black button--mid" content="Confirm" type="type1" />
                     </div>
                   </div>
                 </div>

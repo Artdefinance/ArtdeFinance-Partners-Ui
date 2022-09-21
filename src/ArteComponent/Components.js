@@ -237,7 +237,7 @@ function ArteComponents() {
   ];
 
   return (
-    <div className="guide">
+    <div className="artecomponents">
       <link
         rel="stylesheet"
         type="text/css"
