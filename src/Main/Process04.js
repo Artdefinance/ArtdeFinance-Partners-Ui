@@ -1,8 +1,15 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './Process.scss';
+import { motion } from 'framer-motion';
+import Dialog from '@material-ui/core/Dialog';
+import { ToastContainer, toast } from 'react-toastify';
+import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
+import Input from '../Components/Inputs/Input';
 import BreadCrumbs from '../Components/BreadCrumbs.js/BreadCrumbs';
 import Icons from '../Components/Icons/Icons';
+import Button from '../Components/Button/Button';
 
 export default class Process04 extends React.Component {
   constructor(props) {
@@ -10,9 +17,27 @@ export default class Process04 extends React.Component {
     this.state = {
       isToggleOn: false,
       isToggleOn2: false,
+      open: false,
+      dummyImg: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
+      tabvalue: 0,
+      subtabvalue: null,
     };
     this.onClickHandler = this.onClickHandler.bind(this);
     this.onClickHandler2 = this.onClickHandler2.bind(this);
+    this.openDialog = this.openDialog.bind(this);
+    this.handleSubtabChange = this.handleSubtabChange.bind(this);
+  }
+
+  handleTabChange = (e, tabvalue) => {
+    console.log(tabvalue);
+    this.setState({ tabvalue });
+  };
+
+  handleSubtabChange(e) {
+    e.preventDefault();
+    const subtabvalue = e.target.getAttribute('data');
+    console.log(subtabvalue);
+    this.setState({ subtabvalue });
   }
 
   onClickHandler() {
@@ -27,9 +52,22 @@ export default class Process04 extends React.Component {
     }));
   }
 
+  openDialog(e) {
+    this.setState({ open: true });
+  }
+
   render() {
     const backgroundStyle = ['/assets/images/page/main/img_piece.png'];
     const { isToggleOn, isToggleOn2 } = this.state;
+    const { open, dummyImg, tabvalue, subtabvalue } = this.state;
+    const style = {
+      open: {
+        opacity: 1,
+        y: 0,
+        transition: { type: 'spring', stiffness: 300, damping: 24 },
+      },
+      closed: { opacity: 0, y: 20, transition: { duration: 0.2 }, zIndex: -1 },
+    };
     const nftDatas = [
       {
         id: '1',
@@ -178,6 +216,102 @@ export default class Process04 extends React.Component {
               </div>
             </div>
           </div>
+
+          <Button pressFucn={this.openDialog} value="open" className="button button--black button--mid" content="Comfirm" type="type1" />
+
+          {/* full dialog */}
+          <Dialog
+            fullScreen
+            open={Boolean(open)}
+            onClose={this.handleClose}
+          >
+            <div className="dialog_close" onClick={this.handleClose}>
+              <Icons shape="close" width="24px" height="24px" />
+              <span className="a11y">close</span>
+            </div>
+            <div className="dialog_wrap artworkprocess04_dialog">
+              <Tabs value={tabvalue} onChange={this.handleTabChange}>
+                <Tab label="Exhibition History" />
+                <Tab label="Curation Result" />
+                <Tab label="DAO Voting Result" />
+              </Tabs>
+              {tabvalue === 0 && (
+              <div className="tab_panel dialog_panel">
+                <div className="panel_half">
+                  <div className="panel_box">
+                    <div className="curator_name">
+                      <span>Curator</span>
+                      <p>Artdefinance Reality sub labs galler Artdefinance</p>
+                    </div>
+                    <div className="price_area">
+                      <div className="price_box">
+                        <p>Curation Price</p>
+                        <div className="price">
+                          1,800,000.00
+                          <span className="unit">USD</span>
+                        </div>
+                      </div>
+                      <div className="price_box">
+                        <p>Expected Value</p>
+                        <div className="price">
+                          1,800,000.00
+                          <span className="unit">USD</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="util_area">
+                      <div>
+                        <button type="button" className="btn_showmore">
+                          Show Info more
+                        </button>
+                      </div>
+                      <div className="period">
+                        Expected Value after
+                        <span>3</span>
+                        years
+                      </div>
+                    </div>
+
+                    <div className="more_area">
+                      <div className="tab_list">
+                        <button type="button" onClick={this.handleSubtabChange}>
+                          <span data="subtab_box1">Artwork Status</span>
+                        </button>
+                        <button type="button" onClick={this.handleSubtabChange}>
+                          <span data="subtab_box2">Artwork Info</span>
+                        </button>
+                      </div>
+                      <div className="tab_contents">
+                        {subtabvalue === 'subtab_box1' && (
+                        <div className="tab_box">
+                          Artwork Status
+                        </div>
+                        )}
+                        {subtabvalue === 'subtab_box2' && (
+                        <div className="tab_box">
+                          Artwork Info
+                        </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="panel_half">
+                  <div className="panel_box">
+                    1234
+                  </div>
+                </div>
+              </div>
+              )}
+              {tabvalue === 1 && (
+                <div className="tab_panel">Item Two</div>
+              )}
+              {tabvalue === 2 && (
+                <div className="tab_panel">Item Three</div>
+              )}
+            </div>
+          </Dialog>
+
         </div>
       </div>
     );

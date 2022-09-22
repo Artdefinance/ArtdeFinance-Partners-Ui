@@ -205,3 +205,121 @@
     }
   }
 }
+
+.artworkprocess04_dialog {
+  .MuiTabs-root {
+    .MuiTabs-indicator {
+      background-color: #000000;
+    }
+    .MuiTabs-scroller {
+      margin-bottom: 40px;
+    }
+  }
+  .dialog_panel {
+    display: flex;
+    justify-content: space-between;
+    gap: 36px;
+  }
+  .panel_half {
+    flex: 1;
+  }
+  .panel_box {
+    background: #FFFFFF;
+    box-shadow: 0px 15px 40px rgba(187, 187, 187, 0.15);
+    border-radius: 10px;
+    padding: 40px 50px;
+  }
+  .curator_name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    span {
+      width: 15%;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 100%;
+      color: #888888;
+    }
+    p {
+      width: 85%;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 110%;
+      color: #000000;
+    }
+  }
+  .price_area {
+    display: flex;
+    justify-content: space-between;
+    gap: 36px;
+    height: 89px;
+    .price_box {
+      flex: 1;
+      padding: 0 15px 10px;
+      background: #F4F4F4;
+      border-radius: 5px;
+      > p {
+        display: flex;
+        align-items: center;
+        height:38px;
+        margin-bottom: 13px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        color: #888888;
+      }
+      .price {
+        display: flex;
+        justify-content: flex-end;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 100%;
+      }
+      .unit {
+        display: inline-flex;
+        padding: 5px;
+        margin-left: 6px;
+        background: rgba(136, 136, 136, 0.1);
+        border-radius: 2px;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 100%;
+        color: #888888;
+      }
+    }
+  }
+  .util_area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    .btn_showmore {
+      font-size: 14px;
+      line-height: 100%;
+      color: #888888;
+      @include AcuminproR();
+    }
+    .period {
+      font-size: 14px;
+      line-height: 100%;
+      color: #555555;
+      @include AcuminproR();
+      span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        background: #F4F4F4;
+        border-radius: 5px;
+        margin-left: 8px;
+        margin-right: 7px;
+        font-weight: 700;
+        font-size: 21px;
+        line-height: 100%;
+        color: #555555;
+        vertical-align: middle;
+      }
+    }
+  }
+}

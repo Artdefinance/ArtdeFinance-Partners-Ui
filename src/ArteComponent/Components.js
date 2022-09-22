@@ -264,7 +264,7 @@ function ArteComponents() {
           {/*
             탭 컴포넌트 상위 클래스를 지정하여 커스텀 한다.
             - Tab Components 최상위 클래스 : .MuiTabs-root
-            - 언더라인 클래스 : .MuiTabs-root .PrivateTabIndicator-colorSecondary-3
+            - 언더라인 클래스 : .MuiTabs-root .MuiTabs-indicator
             - 탭 클래스 : .MuiTabs-root .MuiButtonBase-root
           */}
           <Tabs value={value} onChange={handleTabChange}>
