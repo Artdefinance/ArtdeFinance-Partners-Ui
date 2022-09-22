@@ -920,7 +920,7 @@ html, body {
 .sortable_wrap > div ul li .placeholder:before {display: none;}
 .sortable_wrap > div ul li .placeholder {display: flex;background:transparent;}
 
-/* dialog */
+/* material dialog */
 body .MuiDialog-scrollPaper {
   align-items: flex-end;
 }
@@ -949,3 +949,7 @@ body .MuiDialog-paperFullScreen .dialog_close {
   margin: 81px auto 115px;
 }
 
+/* material tab */
+.MuiTabs-root .PrivateTabIndicator-colorSecondary-3 {
+  background-color: #000000;
+}
