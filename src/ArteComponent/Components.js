@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
 import './ArteComponent.scss';
 // Carosel
 import Slider from 'react-slick';
@@ -11,6 +12,8 @@ import {
 import { ToastContainer, toast } from 'react-toastify';
 // Sortable
 import Sortable from 'react-sortable-list';
+import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
 // Dropdown
 import Dropdown from '../Components/Dropdown/Dropdown';
 import DateDropdown from '../Components/Dropdown/DateDropdown';
@@ -236,6 +239,11 @@ function ArteComponents() {
     { id: 3, year: '2017', Location: 'Artdefinance Gallery ', Country: 'South KoreaSouth KoreaSouth KoreaSouth KoreaSouth Korea.' },
   ];
 
+  const [value, setValue] = React.useState(0);
+  const handleTabChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <div className="artecomponents">
       <link
@@ -249,6 +257,32 @@ function ArteComponents() {
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
+
+      <div>
+        <h2>tab</h2>
+        <div>
+          {/*
+            탭 컴포넌트 상위 클래스를 지정하여 커스텀 한다.
+            - Tab Components 최상위 클래스 : .MuiTabs-root
+            - 언더라인 클래스 : .MuiTabs-root .PrivateTabIndicator-colorSecondary-3
+            - 탭 클래스 : .MuiTabs-root .MuiButtonBase-root
+          */}
+          <Tabs value={value} onChange={handleTabChange}>
+            <Tab label="Item One" />
+            <Tab label="Item Two" />
+            <Tab label="Item Three" />
+          </Tabs>
+          {value === 0 && (
+            <div className="tab_panel" style={{ display: 'block' }}>Item One</div>
+          )}
+          {value === 1 && (
+            <div className="tab_panel">Item Two</div>
+          )}
+          {value === 2 && (
+            <div className="tab_panel">Item Three</div>
+          )}
+        </div>
+      </div>
       <div>
         <h2>carousel</h2>
         <div>
