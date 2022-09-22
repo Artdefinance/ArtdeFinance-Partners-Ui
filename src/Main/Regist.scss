@@ -598,6 +598,12 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
+  &.open {
+    display: flex;
+  }
+  &.hidden {
+    display: none;
+  }
   .status_wrap {
     width: 100%;
     max-width: 760px;
@@ -622,6 +628,24 @@
       background: linear-gradient(180deg, #CECECE 0%, #FFFFFF 100%);
       box-shadow: inset 3px 2px 8px rgba(20, 20, 20, 0.25);
       border-radius: 100px;
+    }
+  }
+  .gauge_bar {
+    position: relative;
+    // display: inline-block;
+    height: 100%;
+    background: linear-gradient(270.13deg, #5F44FF 1.66%, #7C66FF 44.79%, #E7C0FF 76.25%, #FFFFFF 99.09%);
+    box-shadow: 14px 0px 20px rgba(95, 68, 255, 0.37), inset 0px -2px 3px rgba(115, 94, 238, 0.35), inset -1px 3px 5px rgba(235, 202, 255, 0.65);
+    border-radius: 100px;
+    span {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      @include translate(0, -50%);
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+      color: #FFFFFF;
     }
   }
   .status_bar-divi {

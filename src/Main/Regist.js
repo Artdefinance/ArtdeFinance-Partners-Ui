@@ -818,13 +818,18 @@ export default class ArtworksRegist extends React.Component {
               </div>
             </div>
           </Dialog>
-          {/* full dialog */}
-          <div className="minting_status">
+
+          {/*
+          minting status full screen
+          활성화 : minting_status open
+          비활성화 : minting_status hidden
+          */}
+          <div className="minting_status hidden">
             <div className="status_wrap">
               <p className="title">NFT Minting</p>
               <div className="status_bar-wrap">
                 <div className="bar_inner">
-                10
+                  <p className="gauge_bar" style={{ width: '56%' }}><span>56%</span></p>
                 </div>
               </div>
               <div className="status_bar-divi">
@@ -832,7 +837,7 @@ export default class ArtworksRegist extends React.Component {
                   <Icons shape="check" width="24px" height="24px" color="#ffffff" />
                   Start
                 </p>
-                <p>
+                <p className="checked">
                   <Icons shape="check" width="24px" height="24px" color="#ffffff" />
                   Minting
                 </p>
@@ -843,6 +848,7 @@ export default class ArtworksRegist extends React.Component {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     );
