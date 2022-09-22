@@ -5,7 +5,7 @@ import Icons from '../Icons/Icons';
 
 export default class BreadCrumbs extends React.Component {
   render() {
-    const { content1, content2 } = this.props;
+    const { content1, content2, content3 } = this.props;
     return (
       <div className="breadcrumbs">
         <div className="breadcrumbs__list">
@@ -14,6 +14,12 @@ export default class BreadCrumbs extends React.Component {
           <p>{content1}</p>
           <Icons shape="arrow-right" width="24px" height="24px" />
           <p>{content2}</p>
+          {content3 ? (
+            <>
+              <Icons shape="arrow-right" width="24px" height="24px" />
+              <p>{content3}</p>
+            </>
+          ) : null}
         </div>
       </div>
     );

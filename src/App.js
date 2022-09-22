@@ -6,7 +6,8 @@ import Path from './Path';
 import ArteComponents from './ArteComponent/Components';
 import Main from './Main/Main';
 import ArtworksRegist from './Main/Regist';
-import ArtworksProgress from './Main/Progress';
+import ArtworksProcess01 from './Main/Process01';
+import ArtworksList from './Main/List';
 import Artist from './Artist/Artist';
 import List from './Artist/List';
 import Regist from './Artist/Regist';
@@ -41,8 +42,9 @@ function App() {
         <Route path="/path" element={<Path />} />
         <Route path="/artecomponents" element={<ArteComponents />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/main/artworks/list" element={<ArtworksList />} />
         <Route path="/main/artworks/regist" element={<ArtworksRegist />} />
-        <Route path="/main/artworks/progress" element={<ArtworksProgress />} />
+        <Route path="/main/artworks/process01" element={<ArtworksProcess01 />} />
         <Route path="/artist" element={<Artist />} />
         <Route path="/artist/list" element={<List />} />
         <Route path="/artist/regist" element={<Regist />} />

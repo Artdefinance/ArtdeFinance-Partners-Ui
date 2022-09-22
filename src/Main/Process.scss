@@ -1,0 +1,207 @@
+@import '../assets/css/Mixins.scss';
+
+.main-process {
+  &__wrap {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs {
+    margin-top: 15px;
+  }
+}
+
+.main-about {
+  width: 31.6%;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 32px 30px 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p:nth-of-type(1) {
+      color: #000000;
+      font-size: 18px;
+      line-height: 20px;
+      @include AcuminproM;
+      @include ellipse(2);
+    }
+
+    p:nth-of-type(2) {
+      margin-top: 5px;
+      color: #868686;
+      font-size: 14px;
+      @include AcuminproR;
+      @include ellipse(1);
+    }
+  }
+
+  &__text {
+    width: calc(100% - 79px);
+  }
+
+  &__img {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    border-radius: 24px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+  }
+
+  &__piece {
+    width: 140px;
+    height: 160px;
+    margin-right: 35px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &__description {
+    width: calc(100% - 175px);
+  }
+
+  &__date {
+    color: #555555;
+    font-size: 14px;
+    line-height: 19px;
+    @include AcuminproM;
+    @include ellipse(1);
+  }
+
+  &__title {
+    color: #555555;
+    font-size: 14px;
+    line-height: 19px;
+    @include AcuminproM;
+    @include ellipse(2);
+  }
+
+  &__numbering {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 5px 3px;
+    color: #888888;
+    font-size: 14px;
+    line-height: 1;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    box-sizing: border-box;
+    @include AcuminproR;
+  }
+
+  &__thing {
+    margin-top: 5px;
+    color: #888888;
+    font-size: 14px;
+    @include AcuminproR;
+    @include ellipse(1);
+  }
+
+  &__size {
+    color: #888888;
+    font-size: 14px;
+    @include AcuminproR;
+    @include ellipse(1);
+  }
+
+  .activity-info {
+    padding: 0;
+    box-shadow: none;
+
+    div:nth-of-type(2) .activity-info__content {
+      border-bottom: none;
+    }
+
+    .activity-info__content button {
+      margin-top: 15px;
+      margin-bottom: 25px;
+      color: #366DFC;
+      font-size: 16px;
+      @include AcuminproM;
+    }
+
+    .activity-info__item:last-child {
+      padding-bottom: 30px;
+    }
+  }
+}
+
+.main-side {
+  width: 31.6%;
+
+  &__result {
+    margin-top: 17px;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(178.21deg, #5F44FF 50%, #9482FF 113.28%);
+    box-shadow: 2px 2px 3px 0px rgba(174, 159, 255, 1) inset;
+    box-sizing: border-box;
+
+    div:nth-child(3)>p {
+      font-size: 20px;
+    }
+
+    div+div {
+      margin-top: 12px;
+    }
+  }
+
+  &__result-title {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: left;
+    @include RotaB;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    p {
+      width: 100%;
+      color: #ffffff;
+      font-size: 30px;
+      line-height: 1;
+      text-align: right;
+      @include RotaB;
+      @include ellipse(1);
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 21px;
+      margin-left: 12px;
+      color: #ffffff;
+      font-size: 15px;
+      line-height: 1;
+      background: rgba(241, 203, 255, 0.2);
+      border-radius: 2px;
+      @include RotaB;
+    }
+  }
+}
