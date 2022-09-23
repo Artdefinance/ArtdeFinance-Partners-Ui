@@ -6,10 +6,10 @@ import Dialog from '@material-ui/core/Dialog';
 import { ToastContainer, toast } from 'react-toastify';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
-import Input from '../Components/Inputs/Input';
 import BreadCrumbs from '../Components/BreadCrumbs/BreadCrumbs';
 import Icons from '../Components/Icons/Icons';
 import Button from '../Components/Button/Button';
+import ArtworkStatus from './ArtworkStatus';
 
 export default class Process04 extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ export default class Process04 extends React.Component {
       open: false,
       dummyImg: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
       tabvalue: 0,
-      subtabvalue: null,
+      subtabvalue: 'subtab_box1',
     };
     this.onClickHandler = this.onClickHandler.bind(this);
     this.onClickHandler2 = this.onClickHandler2.bind(this);
@@ -274,17 +274,27 @@ export default class Process04 extends React.Component {
 
                     <div className="more_area">
                       <div className="tab_list">
-                        <button type="button" onClick={this.handleSubtabChange}>
+                        <button
+                          type="button"
+                          onClick={this.handleSubtabChange}
+                          role="tab"
+                          className={subtabvalue === 'subtab_box1' ? 'tab_button active' : 'tab_button '}
+                        >
                           <span data="subtab_box1">Artwork Status</span>
                         </button>
-                        <button type="button" onClick={this.handleSubtabChange}>
+                        <button
+                          type="button"
+                          onClick={this.handleSubtabChange}
+                          role="tab"
+                          className={subtabvalue === 'subtab_box2' ? 'tab_button active' : 'tab_button '}
+                        >
                           <span data="subtab_box2">Artwork Info</span>
                         </button>
                       </div>
                       <div className="tab_contents">
                         {subtabvalue === 'subtab_box1' && (
                         <div className="tab_box">
-                          Artwork Status
+                          <ArtworkStatus />
                         </div>
                         )}
                         {subtabvalue === 'subtab_box2' && (
