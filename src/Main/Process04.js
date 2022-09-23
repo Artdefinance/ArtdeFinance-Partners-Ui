@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import Input from '../Components/Inputs/Input';
-import BreadCrumbs from '../Components/BreadCrumbs.js/BreadCrumbs';
+import BreadCrumbs from '../Components/BreadCrumbs/BreadCrumbs';
 import Icons from '../Components/Icons/Icons';
 import Button from '../Components/Button/Button';
 

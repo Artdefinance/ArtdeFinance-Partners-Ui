@@ -1,6 +1,6 @@
 import React from 'react';
 import './Curation.scss';
-import BreadCrumbs from '../Components/BreadCrumbs.js/BreadCrumbs';
+import BreadCrumbs from '../Components/BreadCrumbs/BreadCrumbs';
 import Side from './Side';
 import About from './About';
 import Evaluation from './Evaluation';
