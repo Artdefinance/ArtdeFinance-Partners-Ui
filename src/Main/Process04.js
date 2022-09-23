@@ -21,11 +21,13 @@ export default class Process04 extends React.Component {
       dummyImg: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
       tabvalue: 0,
       subtabvalue: 'subtab_box1',
+      show: [true, true, true],
     };
     this.onClickHandler = this.onClickHandler.bind(this);
     this.onClickHandler2 = this.onClickHandler2.bind(this);
     this.openDialog = this.openDialog.bind(this);
     this.handleSubtabChange = this.handleSubtabChange.bind(this);
+    // this.handleShowHide = this.handleShowHide.bind(this);
   }
 
   handleTabChange = (e, tabvalue) => {
@@ -36,9 +38,15 @@ export default class Process04 extends React.Component {
   handleSubtabChange(e) {
     e.preventDefault();
     const subtabvalue = e.target.getAttribute('data');
-    console.log(subtabvalue);
     this.setState({ subtabvalue });
   }
+
+  // handleShowHide(e) {
+  //   const id = e.target.name;
+  //   this.setState((prevState) => ({
+  //     id: !prevState.id,
+  //   }));
+  // }
 
   onClickHandler() {
     this.setState((prevState) => ({
@@ -59,7 +67,7 @@ export default class Process04 extends React.Component {
   render() {
     const backgroundStyle = ['/assets/images/page/main/img_piece.png'];
     const { isToggleOn, isToggleOn2 } = this.state;
-    const { open, dummyImg, tabvalue, subtabvalue } = this.state;
+    const { open, dummyImg, tabvalue, subtabvalue, show, handleShowHide } = this.state;
     const style = {
       open: {
         opacity: 1,
@@ -261,7 +269,12 @@ export default class Process04 extends React.Component {
                     </div>
                     <div className="util_area">
                       <div>
-                        <button type="button" className="btn_showmore">
+                        <button
+                          type="button"
+                          name="sub_box1"
+                          onClick={() => this.handleShowHide(0)}
+                          className="btn_showmore"
+                        >
                           Show Info more
                         </button>
                       </div>
@@ -272,38 +285,40 @@ export default class Process04 extends React.Component {
                       </div>
                     </div>
 
-                    <div className="more_area">
-                      <div className="tab_list">
-                        <button
-                          type="button"
-                          onClick={this.handleSubtabChange}
-                          role="tab"
-                          className={subtabvalue === 'subtab_box1' ? 'tab_button active' : 'tab_button '}
-                        >
-                          <span data="subtab_box1">Artwork Status</span>
-                        </button>
-                        <button
-                          type="button"
-                          onClick={this.handleSubtabChange}
-                          role="tab"
-                          className={subtabvalue === 'subtab_box2' ? 'tab_button active' : 'tab_button '}
-                        >
-                          <span data="subtab_box2">Artwork Info</span>
-                        </button>
-                      </div>
-                      <div className="tab_contents">
-                        {subtabvalue === 'subtab_box1' && (
-                        <div className="tab_box">
-                          <ArtworkStatus />
+                    {show[0] && (
+                      <div className="more_area">
+                        <div className="tab_list">
+                          <button
+                            type="button"
+                            onClick={this.handleSubtabChange}
+                            role="tab"
+                            className={subtabvalue === 'subtab_box1' ? 'tab_button active' : 'tab_button '}
+                          >
+                            <span data="subtab_box1">Artwork Status</span>
+                          </button>
+                          <button
+                            type="button"
+                            onClick={this.handleSubtabChange}
+                            role="tab"
+                            className={subtabvalue === 'subtab_box2' ? 'tab_button active' : 'tab_button '}
+                          >
+                            <span data="subtab_box2">Artwork Info</span>
+                          </button>
                         </div>
-                        )}
-                        {subtabvalue === 'subtab_box2' && (
-                        <div className="tab_box">
-                          Artwork Info
+                        <div className="tab_contents">
+                          {subtabvalue === 'subtab_box1' && (
+                          <div className="tab_box">
+                            <ArtworkStatus />
+                          </div>
+                          )}
+                          {subtabvalue === 'subtab_box2' && (
+                          <div className="tab_box">
+                            Artwork Info
+                          </div>
+                          )}
                         </div>
-                        )}
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
                 <div className="panel_half">
