@@ -10,7 +10,7 @@ export default class StatusBar extends React.Component {
   }
 
   render() {
-    const { step } = this.props;
+    const { step, disabled } = this.props;
     return (
       <div>
         {step ? (
@@ -23,6 +23,7 @@ export default class StatusBar extends React.Component {
             }))}
             min={1}
             max={10}
+            disabled={disabled}
           />
         ) : (
           <Slider
@@ -34,6 +35,7 @@ export default class StatusBar extends React.Component {
             }))}
             min={1}
             max={10}
+            disabled={disabled}
           />
         )}
       </div>
