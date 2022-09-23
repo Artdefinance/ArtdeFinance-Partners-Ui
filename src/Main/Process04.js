@@ -6,7 +6,7 @@ import Dialog from '@material-ui/core/Dialog';
 import { ToastContainer, toast } from 'react-toastify';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
-import BreadCrumbs from '../Components/BreadCrumbs.js/BreadCrumbs';
+import BreadCrumbs from '../Components/BreadCrumbs/BreadCrumbs';
 import Icons from '../Components/Icons/Icons';
 import Button from '../Components/Button/Button';
 import ArtworkStatus from './ArtworkStatus';

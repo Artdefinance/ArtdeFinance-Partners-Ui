@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import './Activity.scss';
 import Button from '../Components/Button/Button';
-import BreadCrumbs from '../Components/BreadCrumbs.js/BreadCrumbs';
+import BreadCrumbs from '../Components/BreadCrumbs/BreadCrumbs';
 import Icons from '../Components/Icons/Icons';
 import Info from './Info';
 import Side from './Side';
