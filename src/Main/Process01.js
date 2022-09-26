@@ -7,6 +7,7 @@ import Dialog from '@material-ui/core/Dialog';
 import BreadCrumbs from '../Components/BreadCrumbs/BreadCrumbs';
 import Button from '../Components/Button/Button';
 import Icons from '../Components/Icons/Icons';
+import ProcessResultPop from './ProcessResultPop';
 
 export default class Process01 extends React.Component {
   constructor(props) {
@@ -341,58 +342,13 @@ export default class Process01 extends React.Component {
             </div>
           </div>
         </div>
+
         <Dialog fullScreen open={Boolean(open)} onClose={this.handleClose}>
           <div className="dialog_close" onClick={this.handleClose}>
             <Icons shape="close" width="24px" height="24px" />
             <span className="a11y">close</span>
           </div>
-          <div className="dialog_wrap artworkprocess01_dialog">
-            <Tabs value={value} onChange={this.handleTabChange}>
-              <Tab label="Exhibition History" />
-              <Tab label="DAO Voting Result" />
-              <Tab label="Curation Result" />
-            </Tabs>
-            <div className="dialog__content">
-              <ul>
-                <li>Years</li>
-                <li>Location</li>
-                <li>Country</li>
-              </ul>
-              {value === 0 && (
-                <ul>
-                  {listData.map((item) => (
-                    <li key={item.id}>
-                      <p>{item.years}</p>
-                      <p>{item.location}</p>
-                      <p>{item.country}</p>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {value === 1 && (
-                <ul>
-                  {listData.map((item) => (
-                    <li key={item.id}>
-                      <p>{item.years}</p>
-                      <p>{item.location}</p>
-                      <p>{item.country}</p>
-                    </li>
-                  ))}
-                </ul>
-              )}
-               {value === 2 && (
-                <ul>
-                  {listData.map((item) => (
-                    <li key={item.id}>
-                      <p>{item.years}</p>
-                      <p>{item.location}</p>
-                      <p>{item.country}</p>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </div>
+          <ProcessResultPop />
         </Dialog>
       </div>
     );
