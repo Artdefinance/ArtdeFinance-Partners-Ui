@@ -8,7 +8,7 @@ import BreadCrumbs from '../Components/BreadCrumbs/BreadCrumbs';
 import Button from '../Components/Button/Button';
 import Icons from '../Components/Icons/Icons';
 import ProcessResultPop from './ProcessResultPop';
-import Status from './Status';
+import ProcessStatus from './ProcessStatus';
 
 export default class Process01 extends React.Component {
   constructor(props) {
@@ -22,7 +22,6 @@ export default class Process01 extends React.Component {
     this.onClickHandler = this.onClickHandler.bind(this);
     this.onClickHandler2 = this.onClickHandler2.bind(this);
     this.handleTabChange = this.handleTabChange.bind(this);
-    this.handleClose = this.handleClose.bind(this);
     this.openDialog = this.openDialog.bind(this);
   }
 
@@ -44,7 +43,7 @@ export default class Process01 extends React.Component {
     }));
   };
 
-  handleClose = () => {
+  closeDialog = () => {
     this.setState({ open: false });
   };
 
@@ -308,7 +307,7 @@ export default class Process01 extends React.Component {
             <div className="main-process--second">
               <div className="main-step">
                 <p className="main-step__main-title">Curation Process</p>
-                <Status step="1" />
+                <ProcessStatus step="1" />
                 <ul>
                   <li>
                     NFT Minted
@@ -342,8 +341,9 @@ export default class Process01 extends React.Component {
           </div>
         </div>
 
-        <Dialog fullScreen open={Boolean(open)} onClose={this.handleClose}>
-          <div className="dialog_close" onClick={this.handleClose}>
+        {/* process full dialog */}
+        <Dialog fullScreen open={Boolean(open)} onClose={this.closeDialog}>
+          <div className="dialog_close" onClick={this.closeDialog}>
             <Icons shape="close" width="24px" height="24px" />
             <span className="a11y">close</span>
           </div>

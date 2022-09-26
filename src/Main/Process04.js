@@ -1,16 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './Process.scss';
-import { motion } from 'framer-motion';
 import Dialog from '@material-ui/core/Dialog';
-import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
-import { ToastContainer, toast } from 'react-toastify';
-import Tab from '@material-ui/core/Tab';
-import Tabs from '@material-ui/core/Tabs';
 import BreadCrumbs from '../Components/BreadCrumbs/BreadCrumbs';
 import Icons from '../Components/Icons/Icons';
 import Button from '../Components/Button/Button';
-import ArtworkStatus from './ArtworkStatus';
+import ProcessResultPop from './ProcessResultPop';
 
 export default class Process04 extends React.Component {
   constructor(props) {
@@ -20,24 +15,10 @@ export default class Process04 extends React.Component {
       isToggleOn2: false,
       open: false,
       dummyImg: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
-      tabvalue: 0,
-      subtabvalue: 'subtab_box1',
     };
     this.onClickHandler = this.onClickHandler.bind(this);
     this.onClickHandler2 = this.onClickHandler2.bind(this);
     this.openDialog = this.openDialog.bind(this);
-    this.handleSubtabChange = this.handleSubtabChange.bind(this);
-  }
-
-  handleTabChange = (e, tabvalue) => {
-    console.log(tabvalue);
-    this.setState({ tabvalue });
-  };
-
-  handleSubtabChange(e) {
-    e.preventDefault();
-    const subtabvalue = e.target.getAttribute('data');
-    this.setState({ subtabvalue });
   }
 
   onClickHandler() {
@@ -52,6 +33,10 @@ export default class Process04 extends React.Component {
     }));
   }
 
+  closeDialog = () => {
+    this.setState({ open: false });
+  };
+
   openDialog(e) {
     this.setState({ open: true });
   }
@@ -59,7 +44,7 @@ export default class Process04 extends React.Component {
   render() {
     const backgroundStyle = ['/assets/images/page/main/img_piece.png'];
     const { isToggleOn, isToggleOn2 } = this.state;
-    const { open, dummyImg, tabvalue, subtabvalue, show, handleShowHide } = this.state;
+    const { open, dummyImg } = this.state;
     const style = {
       open: {
         opacity: 1,
@@ -219,318 +204,13 @@ export default class Process04 extends React.Component {
 
           <Button pressFucn={this.openDialog} value="open" className="button button--black button--mid" content="Comfirm" type="type1" />
 
-          {/* full dialog */}
-          <Dialog
-            fullScreen
-            open={Boolean(open)}
-            onClose={this.handleClose}
-          >
-            <div className="dialog_close" onClick={this.handleClose}>
+          {/* process full dialog */}
+          <Dialog fullScreen open={Boolean(open)} onClose={this.closeDialog}>
+            <div className="dialog_close" onClick={this.closeDialog}>
               <Icons shape="close" width="24px" height="24px" />
               <span className="a11y">close</span>
             </div>
-            <div className="dialog_wrap artworkprocess04_dialog">
-              <Tabs value={tabvalue} onChange={this.handleTabChange}>
-                <Tab label="Exhibition History" />
-                <Tab label="Curation Result" />
-                <Tab label="DAO Voting Result" />
-              </Tabs>
-              {tabvalue === 0 && (
-              <div className="tab_panel dialog_panel">
-                <div className="panel_half">
-                  <div className="panel_box">
-                    <div className="curator_name">
-                      <span>Curator</span>
-                      <p>Artdefinance Reality sub labs galler Artdefinance</p>
-                    </div>
-                    <div className="price_area">
-                      <div className="price_box">
-                        <p>Curation Price</p>
-                        <div className="price">
-                          1,800,000.00
-                          <span className="unit">USD</span>
-                        </div>
-                      </div>
-                      <div className="price_box">
-                        <p>Expected Value</p>
-                        <div className="price">
-                          1,800,000.00
-                          <span className="unit">USD</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordion_wrap">
-                      <Accordion>
-                        <AccordionSummary>
-                          <div className="util_area">
-                            <div>
-                              <button
-                                type="button"
-                                name="sub_box1"
-                                onClick={() => this.handleShowHide(0)}
-                                className="btn_showmore"
-                              >
-                                Show Info more
-                              </button>
-                            </div>
-                            <div className="period">
-                              Expected Value after
-                              <span>3</span>
-                              years
-                            </div>
-                          </div>
-                        </AccordionSummary>
-                        <AccordionDetails className="accordion_detail">
-                          <div className="more_area">
-                            <div className="tab_list">
-                              <button
-                                type="button"
-                                onClick={this.handleSubtabChange}
-                                role="tab"
-                                className={subtabvalue === 'subtab_box1' ? 'tab_button active' : 'tab_button '}
-                              >
-                                <span data="subtab_box1">Artwork Status</span>
-                              </button>
-                              <button
-                                type="button"
-                                onClick={this.handleSubtabChange}
-                                role="tab"
-                                className={subtabvalue === 'subtab_box2' ? 'tab_button active' : 'tab_button '}
-                              >
-                                <span data="subtab_box2">Artwork Info</span>
-                              </button>
-                            </div>
-                            <div className="tab_contents">
-                              {subtabvalue === 'subtab_box1' && (
-                              <div className="tab_box">
-                                <ArtworkStatus />
-                              </div>
-                              )}
-                              {subtabvalue === 'subtab_box2' && (
-                              <div className="tab_box">
-                                <p>
-                                Born in 1979, Jisan Ahn studied plastic art at
-                                Korea National University of Arts and has a degree
-                                with paintings at Frank Mohr International in the Netherlands.
-                                He debuted in the Netherlands first while he was staying
-                                in Rijks akademie residency for 2 years from 2013.
-                                European Art Scene started paying attention to him
-                                after his solo exhibition at Galerie Bart/Born in 1979,
-                                Jisan Ahn studied plastic art at Korea National University of Arts
-                                and has a degree with paintings at
-                                Frank Mohr International in the Netherlands.
-                                He debuted in the Netherlands first while he was staying
-                                in Rijks akademie residency for 2 years from 2013.
-                                European Art Scene started paying attention
-                                to him after his solo exhibition at Galerie Bart/
-                                </p>
-                              </div>
-                              )}
-                            </div>
-                          </div>
-                        </AccordionDetails>
-                      </Accordion>
-                    </div>
-                  </div>
-
-                  <div className="panel_box">
-                    <div className="curator_name">
-                      <span>Curator</span>
-                      <p>Artdefinance Reality sub labs galler Artdefinance</p>
-                    </div>
-                    <div className="price_area">
-                      <div className="price_box">
-                        <p>Curation Price</p>
-                        <div className="price">
-                          1,800,000.00
-                          <span className="unit">USD</span>
-                        </div>
-                      </div>
-                      <div className="price_box">
-                        <p>Expected Value</p>
-                        <div className="price">
-                          1,800,000.00
-                          <span className="unit">USD</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordion_wrap">
-                      <Accordion className="accordion_wrap">
-                        <AccordionSummary>
-                          <div className="util_area">
-                            <div>
-                              <button
-                                type="button"
-                                name="sub_box1"
-                                onClick={() => this.handleShowHide(0)}
-                                className="btn_showmore"
-                              >
-                                Show Info more
-                              </button>
-                            </div>
-                            <div className="period">
-                              Expected Value after
-                              <span>3</span>
-                              years
-                            </div>
-                          </div>
-                        </AccordionSummary>
-                        <AccordionDetails className="accordion_detail">
-                          <div className="more_area">
-                            <div className="tab_list">
-                              <button
-                                type="button"
-                                onClick={this.handleSubtabChange}
-                                role="tab"
-                                className={subtabvalue === 'subtab_box1' ? 'tab_button active' : 'tab_button '}
-                              >
-                                <span data="subtab_box1">Artwork Status</span>
-                              </button>
-                              <button
-                                type="button"
-                                onClick={this.handleSubtabChange}
-                                role="tab"
-                                className={subtabvalue === 'subtab_box2' ? 'tab_button active' : 'tab_button '}
-                              >
-                                <span data="subtab_box2">Artwork Info</span>
-                              </button>
-                            </div>
-                            <div className="tab_contents">
-                              {subtabvalue === 'subtab_box1' && (
-                              <div className="tab_box">
-                                <ArtworkStatus />
-                              </div>
-                              )}
-                              {subtabvalue === 'subtab_box2' && (
-                              <div className="tab_box">
-                                <p>
-                                Born in 1979, Jisan Ahn studied plastic art at
-                                Korea National University of Arts and has a degree
-                                with paintings at Frank Mohr International in the Netherlands.
-                                He debuted in the Netherlands first while he was staying
-                                in Rijks akademie residency for 2 years from 2013.
-                                European Art Scene started paying attention to him
-                                after his solo exhibition at Galerie Bart/Born in 1979,
-                                Jisan Ahn studied plastic art at Korea National University of Arts
-                                and has a degree with paintings at
-                                Frank Mohr International in the Netherlands.
-                                He debuted in the Netherlands first while he was staying
-                                in Rijks akademie residency for 2 years from 2013.
-                                European Art Scene started paying attention
-                                to him after his solo exhibition at Galerie Bart/
-                                </p>
-                              </div>
-                              )}
-                            </div>
-                          </div>
-                        </AccordionDetails>
-                      </Accordion>
-                    </div>
-                  </div>
-                </div>
-                <div className="panel_half">
-                  <div className="panel_box">
-                    <div className="curator_name">
-                      <span>Curator</span>
-                      <p>Artdefinance Reality sub labs galler Artdefinance</p>
-                    </div>
-                    <div className="price_area">
-                      <div className="price_box">
-                        <p>Curation Price</p>
-                        <div className="price">
-                          1,800,000.00
-                          <span className="unit">USD</span>
-                        </div>
-                      </div>
-                      <div className="price_box">
-                        <p>Expected Value</p>
-                        <div className="price">
-                          1,800,000.00
-                          <span className="unit">USD</span>
-                        </div>
-                      </div>
-                    </div>
-                    <Accordion>
-                      <AccordionSummary>
-                        <div className="util_area">
-                          <div>
-                            <button
-                              type="button"
-                              name="sub_box1"
-                              onClick={() => this.handleShowHide(0)}
-                              className="btn_showmore"
-                            >
-                              Show Info more
-                            </button>
-                          </div>
-                          <div className="period">
-                            Expected Value after
-                            <span>3</span>
-                            years
-                          </div>
-                        </div>
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        <div className="more_area">
-                          <div className="tab_list">
-                            <button
-                              type="button"
-                              onClick={this.handleSubtabChange}
-                              role="tab"
-                              className={subtabvalue === 'subtab_box1' ? 'tab_button active' : 'tab_button '}
-                            >
-                              <span data="subtab_box1">Artwork Status</span>
-                            </button>
-                            <button
-                              type="button"
-                              onClick={this.handleSubtabChange}
-                              role="tab"
-                              className={subtabvalue === 'subtab_box2' ? 'tab_button active' : 'tab_button '}
-                            >
-                              <span data="subtab_box2">Artwork Info</span>
-                            </button>
-                          </div>
-                          <div className="tab_contents">
-                            {subtabvalue === 'subtab_box1' && (
-                            <div className="tab_box">
-                              <ArtworkStatus />
-                            </div>
-                            )}
-                            {subtabvalue === 'subtab_box2' && (
-                            <div className="tab_box">
-                              <p>
-                              Born in 1979, Jisan Ahn studied plastic art at
-                              Korea National University of Arts and has a degree
-                              with paintings at Frank Mohr International in the Netherlands.
-                              He debuted in the Netherlands first while he was staying
-                              in Rijks akademie residency for 2 years from 2013.
-                              European Art Scene started paying attention to him
-                              after his solo exhibition at Galerie Bart/Born in 1979,
-                              Jisan Ahn studied plastic art at Korea National University of Arts
-                              and has a degree with paintings at
-                              Frank Mohr International in the Netherlands.
-                              He debuted in the Netherlands first while he was staying
-                              in Rijks akademie residency for 2 years from 2013.
-                              European Art Scene started paying attention
-                              to him after his solo exhibition at Galerie Bart/
-                              </p>
-                            </div>
-                            )}
-                          </div>
-                        </div>
-                      </AccordionDetails>
-                    </Accordion>
-                  </div>
-                </div>
-              </div>
-              )}
-              {tabvalue === 1 && (
-                <div className="tab_panel">Item Two</div>
-              )}
-              {tabvalue === 2 && (
-                <div className="tab_panel">Item Three</div>
-              )}
-            </div>
+            <ProcessResultPop />
           </Dialog>
 
         </div>

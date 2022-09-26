@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint lines-between-class-members: ["error", "never"] */
 import React from 'react';
-import './Status.scss';
+import './ProcessStatus.scss';
 
 export default class Status extends React.Component {
   constructor(props) {
