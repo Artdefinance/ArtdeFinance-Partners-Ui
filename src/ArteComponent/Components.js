@@ -6,8 +6,10 @@ import './ArteComponent.scss';
 import Slider from 'react-slick';
 // Accordion
 import {
-  Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel,
-} from 'react-accessible-accordion';
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from '@material-ui/core';
 // Toast
 import { ToastContainer, toast } from 'react-toastify';
 // Sortable
@@ -613,35 +615,44 @@ function ArteComponents() {
       <div>
         <h2>Accordion</h2>
         <Accordion>
-          <AccordionItem>
-            <AccordionItemHeading>
-              <AccordionItemButton>
-                  <p>What harsh truths do you prefer to ignore?</p>
-              </AccordionItemButton>
-            </AccordionItemHeading>
-            <AccordionItemPanel>
-              <p>
-                  Exercitation in fugiat est ut ad ea cupidatat ut in
-                  cupidatat occaecat ut occaecat consequat est minim minim
-                  esse tempor laborum consequat esse adipisicing eu
-                  reprehenderit enim.
-              </p>
-            </AccordionItemPanel>
-          </AccordionItem>
-          <AccordionItem>
-            <AccordionItemHeading>
-              <AccordionItemButton>
-                  Is free will real or just an illusion?
-              </AccordionItemButton>
-            </AccordionItemHeading>
-            <AccordionItemPanel>
-              <p>
-                  In ad velit in ex nostrud dolore cupidatat consectetur
-                  ea in ut nostrud velit in irure cillum tempor laboris
-                  sed adipisicing eu esse duis nulla non.
-              </p>
-            </AccordionItemPanel>
-          </AccordionItem>
+          <AccordionSummary>
+            <p>This is the summary</p>
+          </AccordionSummary>
+          <AccordionDetails>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar
+              sapien et ligula ullamcorper malesuada proin libero nunc consequat.
+              Mauris sit amet massa vitae. Varius duis at consectetur lorem donec
+              massa sapien faucibus. Commodo nulla facilisi nullam vehicula ipsum
+              a arcu cursus. Libero volutpat sed cras ornare arcu dui vivamus
+              arcu. Mi eget mauris pharetra et ultrices. Vel risus commodo viverra
+              maecenas accumsan lacus vel facilisis volutpat. Sodales neque
+              sodales ut etiam. Phasellus vestibulum lorem sed risus ultricies
+              tristique. Dui ut ornare lectus sit amet est. Risus sed vulputate
+              odio ut enim blandit. Vel pretium lectus quam id.
+            </p>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary>
+            <p>This is the summary</p>
+          </AccordionSummary>
+          <AccordionDetails>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar
+              sapien et ligula ullamcorper malesuada proin libero nunc consequat.
+              Mauris sit amet massa vitae. Varius duis at consectetur lorem donec
+              massa sapien faucibus. Commodo nulla facilisi nullam vehicula ipsum
+              a arcu cursus. Libero volutpat sed cras ornare arcu dui vivamus
+              arcu. Mi eget mauris pharetra et ultrices. Vel risus commodo viverra
+              maecenas accumsan lacus vel facilisis volutpat. Sodales neque
+              sodales ut etiam. Phasellus vestibulum lorem sed risus ultricies
+              tristique. Dui ut ornare lectus sit amet est. Risus sed vulputate
+              odio ut enim blandit. Vel pretium lectus quam id.
+            </p>
+          </AccordionDetails>
         </Accordion>
       </div>
       {/* Accordion */}
