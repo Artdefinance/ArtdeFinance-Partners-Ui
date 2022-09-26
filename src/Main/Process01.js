@@ -8,6 +8,7 @@ import BreadCrumbs from '../Components/BreadCrumbs/BreadCrumbs';
 import Button from '../Components/Button/Button';
 import Icons from '../Components/Icons/Icons';
 import ProcessResultPop from './ProcessResultPop';
+import Status from './Status';
 
 export default class Process01 extends React.Component {
   constructor(props) {
@@ -38,7 +39,7 @@ export default class Process01 extends React.Component {
   }
 
   handleTabChange = (event, newValue) => {
-    this.setState((prevState) => ({
+    this.setState(() => ({
       value: newValue,
     }));
   };
@@ -47,7 +48,7 @@ export default class Process01 extends React.Component {
     this.setState({ open: false });
   };
 
-  openDialog(e) {
+  openDialog() {
     this.setState({ open: true });
   }
 
@@ -306,10 +307,8 @@ export default class Process01 extends React.Component {
             </div>
             <div className="main-process--second">
               <div className="main-step">
-                <img
-                  src="/assets/images/page/main/img_status_1.png"
-                  alt="단계별 프로세스 이미지"
-                />
+                <p className="main-step__main-title">Curation Process</p>
+                <Status step="1" />
                 <ul>
                   <li>
                     NFT Minted
