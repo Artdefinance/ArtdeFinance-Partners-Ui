@@ -1,19 +1,23 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './Process.scss';
+import { motion } from 'framer-motion';
 import BreadCrumbs from '../Components/BreadCrumbs/BreadCrumbs';
 import Button from '../Components/Button/Button';
 import ProcessStatus from './ProcessStatus';
 import SummaryTab from './SummaryTab';
+import CheckButton from '../Components/Button/CheckButton';
 
-export default class Process01 extends React.Component {
+export default class Process02 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isToggleOn: false,
+      isToggleOn1: false,
       isToggleOn2: false,
-      open: false,
     };
+    this.bubbleOpen = this.bubbleOpen.bind(this);
+    this.bubbleClose = this.bubbleClose.bind(this);
     this.onClickHandler = this.onClickHandler.bind(this);
     this.onClickHandler2 = this.onClickHandler2.bind(this);
   }
@@ -30,9 +34,21 @@ export default class Process01 extends React.Component {
     }));
   }
 
+  bubbleOpen(e) {
+    this.setState((prevState) => ({
+      [e.target.value]: !prevState[e.target.value],
+    }));
+  }
+
+  bubbleClose(e) {
+    this.setState(() => ({
+      [e.target.value]: false,
+    }));
+  }
+
   render() {
     const backgroundStyle = ['/assets/images/page/main/img_piece.png'];
-    const { isToggleOn, isToggleOn2, open } = this.state;
+    const { isToggleOn, isToggleOn1, isToggleOn2 } = this.state;
     const nftDatas = [
       {
         id: '1',
@@ -44,50 +60,15 @@ export default class Process01 extends React.Component {
       },
     ];
 
-    const listData = [
-      {
-        id: '1',
-        years: '2012',
-        position: 'Park Avenue Armory, New York City',
-        location: 'Los Angeles Institute of Contemporary British Museum,British Los Angeles Institute of ContemporaryLos Angeles Institute of ContemporaryLos Angeles Institute of',
-        country: 'Los Angeles, CaliforniaLos Angeles, CaliforniaLos Angeles, California',
+    const style = {
+      open: {
+        opacity: 1,
+        y: 0,
+        transition: { type: 'spring', stiffness: 300, damping: 24 },
       },
-      {
-        id: '2',
-        years: '2012',
-        position: 'Park Avenue Armory, New York City',
-        location: 'Los Angeles Institute of Contemporary British Museum,British Los Angeles Institute of ContemporaryLos Angeles Institute of ContemporaryLos Angeles Institute of',
-        country: 'Los Angeles, CaliforniaLos Angeles, CaliforniaLos Angeles, California',
-      },
-      {
-        id: '3',
-        years: '2012',
-        position: 'Park Avenue Armory, New York City',
-        location: 'Los Angeles Institute of Contemporary British Museum,British Los Angeles Institute of ContemporaryLos Angeles Institute of ContemporaryLos Angeles Institute of',
-        country: 'Los Angeles, CaliforniaLos Angeles, CaliforniaLos Angeles, California',
-      },
-      {
-        id: '4',
-        years: '2012',
-        position: 'Park Avenue Armory, New York City',
-        location: 'Los Angeles Institute of Contemporary British Museum,British Los Angeles Institute of ContemporaryLos Angeles Institute of ContemporaryLos Angeles Institute of',
-        country: 'Los Angeles, CaliforniaLos Angeles, CaliforniaLos Angeles, California',
-      },
-      {
-        id: '5',
-        years: '2012',
-        position: 'Park Avenue Armory, New York City',
-        location: 'Los Angeles Institute of Contemporary British Museum,British Los Angeles Institute of ContemporaryLos Angeles Institute of ContemporaryLos Angeles Institute of',
-        country: 'Los Angeles, CaliforniaLos Angeles, CaliforniaLos Angeles, California',
-      },
-      {
-        id: '6',
-        years: '2012',
-        position: 'Park Avenue Armory, New York City',
-        location: 'Los Angeles Institute of Contemporary British Museum,British Los Angeles Institute of ContemporaryLos Angeles Institute of ContemporaryLos Angeles Institute of',
-        country: 'Los Angeles, CaliforniaLos Angeles, CaliforniaLos Angeles, California',
-      },
-    ];
+      closed: { opacity: 0, y: 20, transition: { duration: 0.2 }, zIndex: -1 },
+    };
+
     return (
       <div className="main-process">
         <div className="main-process__wrap">
@@ -235,7 +216,7 @@ export default class Process01 extends React.Component {
             <div className="main-process--second">
               <div className="main-step">
                 <p className="main-step__main-title">Curation Process</p>
-                <ProcessStatus step="1" />
+                <ProcessStatus step="2" />
                 <ul>
                   <li>
                     NFT Minted
@@ -247,22 +228,75 @@ export default class Process01 extends React.Component {
                   <li>Dao Voted</li>
                 </ul>
               </div>
-              <div className="main-description">
-                <div>
-                  <p className="main-description__title">
-                    Your artwork’s NFT has been minted.
-                  </p>
-                  <p className="main-description__text">
-                    The artwork&apos;s information and certificate of
-                    authenticity are securely stored in the blockchain.
+              <div className="main-description curating_setting">
+                <div className="setting_head">Curating Setting</div>
+                <div className="setting_summary">
+                  <p className="title">We start curating the registered works.</p>
+                  <p className="desc">
+                    After selecting the value for the work, the final sale is up to you.
                     <br />
-                    Curate the value of your work with an expert right now.
+                    <br />
+                    From curation to DAO voting process Artwork registration fee must be paid.
+                    The registration fee is for work curation and value selection.
+                    Used to provide services.
+                    <br />
+                    <br />
+                    The curation requires at least 3 people to participate,
+                    but DAO voting will proceed. If the number of participants
+                    in the curation is less than 3, the registration fee paid
+                    Refunds will be processed immediately
                   </p>
-                  <Button
-                    className="button button--black button--mid"
-                    content="Curating Setting"
-                    type="type1"
-                  />
+                </div>
+                <div className="setting_inner">
+                  <div className="fee_area">
+                    <div className="ti question-bubble">
+                      <button
+                        type="button"
+                        onClick={this.bubbleOpen}
+                        value="isToggleOn1"
+                        className="fee_info"
+                      >
+                      Registration Fee
+                      </button>
+                      <motion.div
+                        animate={
+                          isToggleOn1 === true ? style.open : style.closed
+                        }
+                        className="question-bubble__wrap"
+                        style={{ top: '-75px', left: '-40px' }}
+                      >
+                        <p>Registration is free during the promotion period.</p>
+                      </motion.div>
+                    </div>
+                    <div className="price">
+                      <span className="unit">ADF</span>
+                      <p className="fee">0,000</p>
+                      <p className="disc">300.00</p>
+                    </div>
+                  </div>
+                  <div className="promo_period">
+                    <span>Remaining Promotion Period</span>
+                    <p>06/02/2022 14:32</p>
+                  </div>
+
+                  <CheckButton content="Approve" widthStyle="847px" heightStyle="80px" />
+
+                  <div className="period_set">
+                    <div className="period_head">
+                      <p>Please set the period for the curation of the work.</p>
+                      <span>
+                        The curation runs for 7 days.
+                        <br />
+                        From the setting date when curation starts
+                        The end date is automatically set to 7 days.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="btn_wrap">
+                    <Button className="button button--black button--mid" content="Curating Start" disabled="true" />
+                    <Button className="button button--black button--mid" content="Curating Start" />
+                  </div>
                 </div>
               </div>
             </div>

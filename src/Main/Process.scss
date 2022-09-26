@@ -3,7 +3,7 @@
 .main-process {
   &__wrap {
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 0 auto 65px;
   }
 
   .breadcrumbs {
@@ -42,6 +42,7 @@
       color: #000000;
       font-size: 18px;
       line-height: 20px;
+      padding-bottom: 3px;
       @include AcuminproM;
       @include ellipse(2);
     }
@@ -226,9 +227,9 @@
     align-items: center;
     justify-content: center;
     min-width: auto;
-    width: 33.3%;
+    flex: 1;
     height: 81px;
-    padding: 0px 33px;
+    padding: 0px 25px;
     color: #BBBBBB;
     font-size: 18px;
     line-height: 18px;
@@ -238,7 +239,7 @@
 
     .MuiTab-wrapper {
       line-height: 18px;
-      word-break: break-all;
+      word-break: keep-all;
       @include RotaB;
     }
   }
@@ -247,8 +248,6 @@
   .PrivateTabIndicator-root-5 {
     display: none;
   }
-  
-
   .MuiButtonBase-root.Mui-selected {
     color: #000000;
     background-color: #ffffff;
@@ -258,11 +257,23 @@
 
   .tab_panel {
     width: 100%;
-    padding: 30px;
+    height: 100%;
+    max-height: 440px;
+    padding: 20px;
     background-color: #ffffff;
     box-shadow: 0px 15px 40px 0px #BBBBBB26;
     box-sizing: border-box;
+    overflow-y: auto;
 
+    button {
+      margin-left: calc(100% - 65px);
+      color: #5F44FF;
+      font-size: 16px;
+      line-height: 1;
+      @include RotaSB;
+    }
+  }
+  .history_list {
     li {
       display: flex;
       padding-top: 15px;
@@ -286,18 +297,137 @@
 
     p:nth-child(2) {
       width: calc(100% - 77px);
+      padding-bottom: 2px;
       color: #000000;
       font-size: 16px;
       @include AcuminproL;
       @include ellipse(1);
     }
-
-    button {
-      margin-left: calc(100% - 65px);
-      color: #5F44FF;
+  }
+  .dao_list {
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #EEEEEE;
+    &:last-of-type {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    dt {
+      margin-bottom: 20px;
+      font-weight: 700;
       font-size: 16px;
-      line-height: 1;
-      @include RotaSB;
+      line-height: 110%;
+      span {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 100%;
+        color: #888888;
+      }
+    }
+    .price_box {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      > p {
+        width: 80px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 100%;
+        color: #888888;
+      }
+      .price {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: calc(100% - 80px);
+        background-color: #F4F4F4;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 100%;
+      }
+      .unit {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 9px;
+        margin-left: 5px;
+        background: rgba(136, 136, 136, 0.1);
+        border-radius: 2px;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 100%;
+        color: #888888;
+      }
+    }
+  }
+  .curation_result {
+    .items {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #EEEEEE;
+      &:first-of-type {
+        padding-top: 0;
+      }
+      &:last-of-type {
+        border-bottom: 0;
+      }
+    }
+    .rate {
+      display: flex;
+      padding-bottom: 0;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 100%;
+    }
+    .ico_rate {
+      display: inline-block;
+      width: 62px;
+      height: 62px;
+      margin-top: -8px;
+      background: {
+        image: url('../../public/assets/images/icons/ico_votingrate.png');
+        repeat: no-repeat;
+        position: 0 0;
+        size: 62px;
+      };
+      vertical-align: middle;
+    }
+    .item_line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 7px 0 8px;
+      dt {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        color: #888888;
+      }
+      dd {
+        font-size: 15px;
+      }
+      .price {
+        font-weight: 800;
+        font-size: 26px;
+        line-height: 100%;
+      }
+      .unit {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 9px;
+        margin-left: 5px;
+        background: rgba(136, 136, 136, 0.1);
+        border-radius: 2px;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 100%;
+        color: #888888;
+      }
     }
   }
 }
@@ -398,6 +528,164 @@
     font-size: 14px;
     line-height: 1;
     @include AcuminproR;
+  }
+}
+
+.curating_setting {
+  display: block;
+  height: auto;
+  justify-content: flex-start;
+  padding-bottom: 50px;
+  .setting_head {
+    width: 100%;
+    padding: 30px 0;
+    border-bottom: 1px solid #EEEEEE;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+  }
+  .setting_summary {
+    display: flex;
+    padding: 40px;
+    .title {
+      width: 30%;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 120%;
+    }
+    .desc {
+      width: 70%;
+      padding-left: 50px;
+      font-size: 16px;
+      line-height: 130%;
+      @include AcuminproL;
+      color: #555555;
+    }
+  }
+  .setting_inner {
+    margin: 35px 50px;
+  }
+  .fee_area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 30px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #000000;
+    .fee_info {
+      width: auto;
+      height: auto;
+      margin: 0;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+      color:#ffffff;
+    }
+    .question-bubble__wrap {
+      min-width: auto;
+      min-width: 353px;
+      min-height: 78px;
+      background: transparent;
+      background: {
+        image: url('../../public/assets/images/icons/bg_bubble_box.png');
+        repeat: no-repeat;
+        position: 0 0;
+        size: cover;
+      };
+      box-shadow: none;
+      padding: 0;
+      &:after {
+        display: none;
+      }
+      p {
+        height: 24px;
+        margin-top: 20px;
+        margin-left: 25px;
+        margin-right: 25px;
+        font-size: 14px;
+        color: #366DFC;
+        @include AcuminproR;
+        overflow: hidden;
+      }
+    }
+    .price {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      .fee {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 100%;
+      }
+      .disc {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+        color: #888888;
+        text-decoration: line-through;
+      }
+    }
+    .unit {
+      display: inline-flex;
+      padding: 5px;
+      margin-left: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 100%;
+    }
+  }
+  .promo_period {
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+    span {
+      margin-right: 20px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+      color: #888888;
+    }
+    p {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 100%;
+    }
+  }
+  .period_set {
+    padding: 40px 37px;
+    margin-top: 40px;
+    background: #F9F9F9;
+    border-radius: 10px;
+    .period_head {
+      padding-bottom: 40px;
+      text-align: center;
+      p {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+      }
+      span {
+        display: block;
+        margin-top: 15px;
+        font-size: 16px;
+        line-height: 120%;
+        @include AcuminproL;
+        color: #555555;
+      }
+    }
+  }
+  .btn_wrap {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .btn {
+    margin: 0 auto;
   }
 }
 

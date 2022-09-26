@@ -51,7 +51,16 @@ function Path() {
             </tr>
             <tr>
               <td>-</td>
-              <td>Progress</td>
+              <td>-</td>
+              <td>
+              <Link to="/main/artworks/process02">
+                /main/artworks/process02
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
               <td>
               <Link to="/main/artworks/process04">
                 /main/artworks/process04
