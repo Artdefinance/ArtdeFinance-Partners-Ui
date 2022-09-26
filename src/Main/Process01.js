@@ -307,7 +307,7 @@ export default class Process01 extends React.Component {
             <div className="main-process--second">
               <div className="main-step">
                 <p className="main-step__main-title">Curation Process</p>
-                <Status step="5" />
+                <Status step="1" />
                 <ul>
                   <li>
                     NFT Minted
