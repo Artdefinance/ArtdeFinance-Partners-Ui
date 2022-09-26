@@ -920,6 +920,32 @@ html, body {
 .sortable_wrap > div ul li .placeholder:before {display: none;}
 .sortable_wrap > div ul li .placeholder {display: flex;background:transparent;}
 
+/* material reset */
+body .MuiAccordionSummary-content {margin: 0;}
+body .MuiAccordion-rounded:first-child {border-radius: 0;}
+body .MuiAccordion-rounded:last-child {border-radius: 0;}
+
+/* material accordion */
+body .MuiAccordion-root:before {display: none;}
+body .MuiAccordion-root.accordion__item .MuiButtonBase-root:after {
+  content: '';
+  position: absolute;
+  right: 35px; 
+  top: 48%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  transform: rotate(135deg);
+}
+body .MuiAccordion-root.accordion__item .MuiButtonBase-root[aria-expanded=true]:after {
+  transform: rotate(315deg);
+}
+body .MuiAccordionDetails-root {display: block;padding: 0;}
+body .MuiAccordionSummary-root {padding: 0;min-height: auto;}
+body .MuiAccordionSummary-content.Mui-expanded {padding:0; margin: 0;}
+
 /* material dialog */
 body .MuiDialog-scrollPaper {
   align-items: flex-end;
