@@ -48,7 +48,6 @@ export default class ArtworksRegist extends React.Component {
 
   openDialog(e) {
     this.setState({ open: true });
-    // this.setState({ open: e.target.value });
   }
 
   clickClose(e) {
