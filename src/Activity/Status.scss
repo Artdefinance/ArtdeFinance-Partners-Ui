@@ -7,12 +7,15 @@
   &::before {
     display: block;
     position: absolute;
-    width: 100%;
-    height: 48px;
+    top: 20px;
+    left: 30px;
+    width: calc(100% - 40px);
+    height: 5px;
     background-image: url('../../public/assets/images/page/activity/img_status.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    z-index: 9;
     content: '';
   }
 
@@ -35,7 +38,43 @@
     @include RotaB;
   }
 
+  span {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 0;
+    height: 5px;
+    background: linear-gradient(180deg, #5F44FF 64.89%, #5F44FF 100%);
+    transition: .5s ease-in-out;
+    z-index: 99;
+    content: '';
+  }
+
+  .step1 {
+    span {
+      left: 0;
+    }
+
+    &::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 48px;
+      background-image: url('../../public/assets/images/page/activity/img_status_1.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 999;
+      content: '';
+    }
+  }
+
   .step2 {
+    span {
+      left: -120px;
+    }
+ 
     &::after {
       display: block;
       position: absolute;
@@ -45,11 +84,17 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
+      z-index: 999;
       content: '';
     }
   }
 
   .step3 {
+    span {
+      left: -300px;
+    }
+ 
+
     &::after {
       display: block;
       position: absolute;
@@ -59,11 +104,16 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
+      z-index: 999;
       content: '';
     }
   }
 
   .step4 {
+    span {
+      left: -500px;
+    }
+
     &::after {
       display: block;
       position: absolute;
@@ -73,6 +123,7 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
+      z-index: 999;
       content: '';
     }
   }
