@@ -10,7 +10,7 @@ import ProcessStatus from './ProcessStatus';
 import SummaryTab from './SummaryTab';
 import ProcessAnimation from './ProcessAnimation';
 
-function Process04() {
+function Process05() {
   return (
     <div className="main-process">
       <div className="main-process__wrap">
@@ -28,7 +28,7 @@ function Process04() {
             <div>
               <div className="main-step">
                 <p className="main-step__main-title">Curation Process</p>
-                <ProcessStatus step="3" />
+                <ProcessStatus step="4" />
                 <ul>
                   <li>
                     NFT Minted
@@ -42,22 +42,16 @@ function Process04() {
                     Curated
                     <span>4/13/2022 16:32</span>
                   </li>
-                  <li>Dao Voting</li>
+                  <li>
+                    Dao Voting
+                    <span>4/13/2022 16:32</span>
+                  </li>
                   <li>Dao Voted</li>
                 </ul>
               </div>
               <div className="main-description">
-                <div className="main-description__alert main-description__alert2">
-                  <img
-                    src="/assets/images/page/main/icon_checking.png"
-                    alt="체크 아이콘"
-                  />
-                  <p>
-                    The Curation for the work has been completed!
-                  </p>
-                </div>
                 <div>
-                  <ProcessAnimation values={[0, 100]} length="2">
+                  <ProcessAnimation values={[0, 20]} length="2">
                     {(percentage) => (
                       <CircularProgressbar
                         value={percentage}
@@ -70,12 +64,13 @@ function Process04() {
                     )}
                   </ProcessAnimation>
                   <p className="main-description__title">
-                    The curation for the work has been completed!
+                    DAO voting for the work is now in progress.
                   </p>
                   <p className="main-description__text">
-                    Your work has been curated by experts.
+                    DAO voting progress for a more fair evaluation with the
+                    opinions of each professional curator.
                     <br />
-                    DAO voting is now conducted for a more fair evaluation.
+                    Votes will vote for better results in value judgments.
                   </p>
                   <Button
                     className="button button--black button--mid"
@@ -93,4 +88,4 @@ function Process04() {
   );
 }
 
-export default Process04;
+export default Process05;

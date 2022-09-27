@@ -567,6 +567,11 @@
     text-decoration: line-through;
     @include RotaB;
   }
+
+  &__img {
+    width: 158px;
+    margin-top: -20px;
+  }
 }
 
 .main-step {

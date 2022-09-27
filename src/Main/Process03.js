@@ -22,19 +22,6 @@ function Process03() {
         <div className="main-process__box">
           <div className="main-process--first">
             <About />
-            <div className="main-side">
-              <div className="main-side__result">
-                <p className="main-side__result-title">Suggested Price</p>
-                <div className="main-side__box">
-                  <p>1,500,000.00</p>
-                  <span>USD</span>
-                </div>
-                <div className="main-side__box">
-                  <p>1,500,000.00</p>
-                  <span>BUSD</span>
-                </div>
-              </div>
-            </div>
             <SummaryTab />
           </div>
           <div className="main-process--second">

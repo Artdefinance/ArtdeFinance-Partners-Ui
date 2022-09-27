@@ -1,16 +1,13 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './Process.scss';
-import 'react-circular-progressbar/dist/styles.css';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import About from './About';
 import BreadCrumbs from '../Components/BreadCrumbs/BreadCrumbs';
 import Button from '../Components/Button/Button';
 import ProcessStatus from './ProcessStatus';
 import SummaryTab from './SummaryTab';
-import ProcessAnimation from './ProcessAnimation';
 
-function Process04() {
+function Process06() {
   return (
     <div className="main-process">
       <div className="main-process__wrap">
@@ -28,7 +25,7 @@ function Process04() {
             <div>
               <div className="main-step">
                 <p className="main-step__main-title">Curation Process</p>
-                <ProcessStatus step="3" />
+                <ProcessStatus step="5" />
                 <ul>
                   <li>
                     NFT Minted
@@ -42,46 +39,33 @@ function Process04() {
                     Curated
                     <span>4/13/2022 16:32</span>
                   </li>
-                  <li>Dao Voting</li>
-                  <li>Dao Voted</li>
+                  <li>
+                    Dao Voting
+                    <span>4/13/2022 16:32</span>
+                  </li>
+                  <li>
+                    Dao Voted
+                    <span>4/13/2022 16:32</span>
+                  </li>
                 </ul>
               </div>
               <div className="main-description">
-                <div className="main-description__alert main-description__alert2">
-                  <img
-                    src="/assets/images/page/main/icon_checking.png"
-                    alt="체크 아이콘"
-                  />
-                  <p>
-                    The Curation for the work has been completed!
-                  </p>
-                </div>
                 <div>
-                  <ProcessAnimation values={[0, 100]} length="2">
-                    {(percentage) => (
-                      <CircularProgressbar
-                        value={percentage}
-                        text={`${percentage}%`}
-                        styles={buildStyles({
-                          rotation: 0.5 - (1 - percentage / 100) / 5,
-                          color: '#5F44FF',
-                        })}
-                      />
-                    )}
-                  </ProcessAnimation>
+                  <img src="/assets/images/page/main/img_books.png" alt="북 이미지" className="main-description__img" />
                   <p className="main-description__title">
-                    The curation for the work has been completed!
+                    All curation and voting for the work has ended!
                   </p>
                   <p className="main-description__text">
-                    Your work has been curated by experts.
+                    DIn the selection of the value of the work, all processes
+                    were carried out in a transparent manner.
                     <br />
-                    DAO voting is now conducted for a more fair evaluation.
+                    Now decide which
+                    type to register on the market bassed on the fair outcome.
                   </p>
                   <Button
                     className="button button--black button--mid"
                     content="Sell in Marketplace"
                     type="type1"
-                    disabled="true"
                   />
                 </div>
               </div>
@@ -93,4 +77,4 @@ function Process04() {
   );
 }
 
-export default Process04;
+export default Process06;
