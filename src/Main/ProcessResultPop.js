@@ -9,7 +9,6 @@ export default class ProcessResultPop extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false,
       tabvalue: 0,
       subtabvalue: 'subtab_box1',
     };
@@ -17,7 +16,6 @@ export default class ProcessResultPop extends React.Component {
   }
 
   handleTabChange = (e, tabvalue) => {
-    console.log(tabvalue);
     this.setState({ tabvalue });
   };
 
@@ -28,7 +26,7 @@ export default class ProcessResultPop extends React.Component {
   }
 
   render() {
-    const { tabvalue, subtabvalue, open } = this.state;
+    const { tabvalue, subtabvalue } = this.state;
     const listData = [
       {
         id: '1',

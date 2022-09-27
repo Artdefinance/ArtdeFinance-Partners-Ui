@@ -3,7 +3,7 @@
 import React from 'react';
 import './ProcessStatus.scss';
 
-export default class Status extends React.Component {
+export default class ProcessStatus extends React.Component {
   constructor(props) {
     super(props);
     this.inputRef1 = React.createRef();

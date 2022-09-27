@@ -1,0 +1,21 @@
+@import '../assets/css/Mixins.scss';
+
+.CircularProgressbar {
+  width: 92px;
+  height: 92px;
+}
+
+.CircularProgressbar-text {
+  font-size: 24px !important; 
+  @include RotaB;
+}
+
+.CircularProgressbar-path {
+  stroke: #5F44FF !important;
+  filter: drop-shadow(0px 0px 3px #B3A6FF);
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+  fill: #5F44FF !important;
+}
+
