@@ -118,12 +118,13 @@ export default class Process07 extends React.Component {
                         <RadioButton
                           content="Register on the market Start selling."
                           value="option1"
-                          name="option1"
+                          name="option"
                         />
                         <RadioButton
                           content="No, work. I will not sell"
                           value="option2"
-                          name="option2"
+                          name="option"
+                          pressFucn={() => this.openDialog()}
                         />
                       </div>
                       <p className="main-regist__description">

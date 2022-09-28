@@ -19,26 +19,28 @@ export default class RadioButton extends React.Component {
 
   render() {
     const { selected } = this.state;
-    const { value, content, widthStyle } = this.props;
+    const { value, name, content, widthStyle, pressFucn } = this.props;
     const radioStyle = {
       width: widthStyle,
     };
     return (
-      <div className="radio-button">
+      <div
+        onClick={() => {
+          if (pressFucn !== undefined) {
+            pressFucn();
+          }
+        }}
+        className="radio-button"
+      >
         <label htmlFor={value} className="radio-button__label" style={radioStyle}>
           <input
             type="radio"
             className="radio-button__button"
-            name="radio"
+            name={`radio-${name}`}
+            id={value}
             value={value}
             style={radioStyle}
-            checked={selected === value}
-            onClick={ () => {
-              this.handleChange()
-              if (pressFucn !== undefined) {
-                pressFucn();
-              }
-            } }
+            onChange={this.handleChange}
           />
           <span>{content}</span>
         </label>

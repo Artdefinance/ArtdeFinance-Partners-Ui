@@ -200,7 +200,7 @@ export default class ArtworksRegist extends React.Component {
                     </div>
                     <div className="button-position">
                       <RadioButton content="Default" value="option1" name="option1" widthStyle="368px" />
-                      <RadioButton content="Default" value="option2" name="option2" widthStyle="368px" />
+                      <RadioButton content="Default" value="option2" name="option1" widthStyle="368px" />
                     </div>
                   </div>
 
@@ -286,8 +286,8 @@ export default class ArtworksRegist extends React.Component {
                       </div>
                     </div>
                     <div className="button-position">
-                      <RadioButton content="Include Signed" value="option2-1" name="option2-1" widthStyle="368px" />
-                      <RadioButton content="Unsigned" value="option2-2" name="option2-2" widthStyle="368px" />
+                      <RadioButton content="Include Signed" value="option2-1" name="option2" widthStyle="368px" />
+                      <RadioButton content="Unsigned" value="option2-2" name="option2" widthStyle="368px" />
                     </div>
                   </div>
 

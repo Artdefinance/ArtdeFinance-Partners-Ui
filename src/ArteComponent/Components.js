@@ -335,8 +335,8 @@ function ArteComponents() {
           <ButtonFill className="button button--fill button--big" content="Button" />
         </div>
         <div className="button-position">
-          <RadioButton content="Default" value="option1" name="option1" widthStyle="368px" />
-          <RadioButton content="Default" value="option2" name="option2" widthStyle="368px" />
+          <RadioButton content="Default" value="option1" name="sample" widthStyle="368px" />
+          <RadioButton content="Default" value="option2" name="sample" widthStyle="368px" />
         </div>
         <div className="button-position">
           <RadioTabButton data={ExampleContent5} widthStyle="646px" heightStyle="80px" />
