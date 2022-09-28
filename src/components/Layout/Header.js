@@ -25,7 +25,25 @@ function Header() {
             <span className="cnt">32</span>
             <Icons shape="notice" />
           </Link>
-          <Button className="button button--black button--default" content="Connet to Wallet" type="type1" />
+
+          {/* 로그인후 */}
+          <button type="button" className="user">
+            <p className="profile">
+              <img src={`${process.env.PUBLIC_URL}/assets/images/page/artist/img_profile_view.png`} alt="사용자프로필" />
+            </p>
+            <span>0x5423...432d......</span>
+          </button>
+          <button type="button" className="btn_logout">
+            <Icons shape="logout" />
+          </button>
+          {/* 로그인전 */}
+          {/*
+          <Button
+            className="button button--black button--default"
+            content="Connet to Wallet"
+            type="type1"
+          />
+          */}
         </div>
       </div>
     </div>

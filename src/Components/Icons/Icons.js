@@ -419,6 +419,14 @@ export default class IconStyle extends React.Component {
               />
             );
           }
+          if (shape === 'logout') {
+            return (
+              <>
+              <path d="M12 4H4C3.44772 4 3 4.44772 3 5V19C3 19.5523 3.44772 20 4 20H12" stroke="#BBBBBB" strokeWidth="2" />
+              <path d="M7 12H20M20 12L15.5 7.5M20 12L15.5 16.5" stroke="#BBBBBB" strokeWidth="2" />
+              </>
+            );
+          }
           return <path d={d} fill={color} />;
         })()}
         </g>

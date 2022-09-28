@@ -460,6 +460,7 @@ function ArteComponents() {
           <Icons shape="addcircle" />
           <Icons shape="download" />
           <Icons shape="exclama24" color="#366DFC" />
+              <Icons shape="logout" />
         </div>
         <div>
           <Icons shape="close_small" />

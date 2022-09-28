@@ -1,3 +1,5 @@
+@import "../../assets/css/Mixins.scss";
+
 .head_wrap {
 	// min-width: 1240px;
   // max-width: 1440px;
@@ -76,5 +78,33 @@
       line-height: 10px;
       color: #ffffff;
     }
+  }
+  .user {
+    display: flex;
+    align-items: center;
+    width: 140px;
+    height: 45px;
+    border: 1px solid #000000;
+    border-radius: 100px;
+    .profile {
+      width: 45px;
+      height: 45px;
+      border: 1px solid #000000;
+      border-radius: 100%;
+      margin-left: -1px;
+      margin-right: 2px;
+      overflow: hidden;
+    }
+    span {
+      width: 80px;
+      font-size: 13px;
+      line-height: 100%;
+      color: #222222;
+      @include AcuminproL;
+      @include ellipse(1);
+    }
+  }
+  .btn_logout {
+    margin-left: 10px;
   }
 }
