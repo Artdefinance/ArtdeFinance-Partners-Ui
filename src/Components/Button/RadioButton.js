@@ -33,7 +33,12 @@ export default class RadioButton extends React.Component {
             value={value}
             style={radioStyle}
             checked={selected === value}
-            onChange={this.handleChange}
+            onClick={ () => {
+              this.handleChange()
+              if (pressFucn !== undefined) {
+                pressFucn();
+              }
+            } }
           />
           <span>{content}</span>
         </label>
