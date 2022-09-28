@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
 import './Process.scss';
 import 'react-circular-progressbar/dist/styles.css';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';

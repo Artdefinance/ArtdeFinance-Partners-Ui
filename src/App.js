@@ -12,6 +12,7 @@ import ArtworksProcess03 from './Main/Process03';
 import ArtworksProcess04 from './Main/Process04';
 import ArtworksProcess05 from './Main/Process05';
 import ArtworksProcess06 from './Main/Process06';
+import ArtworksProcess07 from './Main/Process07';
 import ArtworksList from './Main/List';
 import Artist from './Artist/Artist';
 import List from './Artist/List';
@@ -55,6 +56,7 @@ function App() {
         <Route path="/main/artworks/process04" element={<ArtworksProcess04 />} />
         <Route path="/main/artworks/process05" element={<ArtworksProcess05 />} />
         <Route path="/main/artworks/process06" element={<ArtworksProcess06 />} />
+        <Route path="/main/artworks/process07" element={<ArtworksProcess07 />} />
         <Route path="/artist" element={<Artist />} />
         <Route path="/artist/list" element={<List />} />
         <Route path="/artist/regist" element={<Regist />} />

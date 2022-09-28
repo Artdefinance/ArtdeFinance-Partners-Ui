@@ -1066,3 +1066,202 @@
   }
 }
 
+.main-setting {
+  position: relative;
+  min-height: 480px;
+  margin-top: 15px;
+  padding: 0 50px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 15px 40px 0px #BBBBBB26;
+  box-sizing: border-box;
+
+  &__main-title {
+    padding: 30px 0;
+    color: #000000;
+    font-size: 20px;
+    line-height: 1;
+    border-bottom: 1px solid #EEEEEE;
+    @include RotaB;
+  }
+
+  &__title {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    color: #000000;
+    font-size: 24px;
+    line-height: 28px;
+    @include RotaB;
+  }
+
+  &__text {
+    margin-bottom: 70px;
+    color: #555555;
+    font-size: 16px;
+    line-height: 20px;
+    @include AcuminproM;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+
+    > div + div {
+      margin-left: 36px;
+    }
+
+    div + div {
+      margin-top: 10px;
+    }
+  }
+
+  &__sub-title {
+    margin-bottom: 6px;
+    color: #888888;
+    font-size: 16px;
+    line-height: 1;
+    @include RotaB;
+  }
+
+  &__box {
+    width: calc(100% - 18px);
+  }
+
+  &__count {
+    padding: 20px;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    div:nth-child(1) {
+      > p {
+        color: #000000;
+        font-size: 28px;
+        line-height: 1;
+        @include RotaB;
+      }
+    }
+
+    div:nth-child(2) {
+      > p {
+        color: #888888;
+        font-size: 20px;
+        line-height: 1;
+        @include RotaSB;
+      }
+    }
+  }
+
+  &__numbering {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__unity {
+    margin-left: 10px;
+    padding: 5px 9px;
+    color: #888888 !important;
+    font-size: 15px !important;
+    line-height: 1;
+    background: #8888881A;
+    border-radius: 2px;
+  }
+
+  &__number {
+    width: 310px;
+    text-align: right;
+    @include ellipse(1);
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #EEEEEE;
+  }
+
+  &__year {
+    margin: 0 10px;
+    padding: 15px 20px;
+    color: #000000;
+    font-size: 36px;
+    line-height: 1;
+    background: #F4F4F4;
+    border-radius: 5px;
+    @include RotaB;
+  }
+}
+
+.main-regist {
+  padding-top: 40px;
+  text-align: left;
+
+  &__title {
+    color: #888888;
+    font-size: 16px;
+    line-height: 1;
+    @include RotaB;
+  }
+
+  &__text {
+    padding-bottom: 10px;
+    color: #5182FF;
+    font-size: 14px;
+    line-height: 24px;
+    @include AcuminproR;
+  }
+
+  .button-position {
+    display: flex;
+    gap: 37px;
+    margin-bottom: 40px;
+  }
+
+  .radio-button {
+    width: 50%;
+  }
+
+  .radio-button__label,
+  .radio-button__button {
+    width: 100%;
+  }
+
+  &__description {
+    padding: 28px 0;
+    text-align: center;
+    background: #F9F9F9;
+    border-radius: 5px; 
+    font-size: 14px;
+    line-height: 18px;
+    @include AcuminproR;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 30px;
+    padding-bottom: 90px;
+  }
+
+  .button--gray-line {
+    width: 200px;
+  }
+  
+  .button--black {
+    width: 430px;
+  }
+}
+
+.process-dialog {
+  &__wrap {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+

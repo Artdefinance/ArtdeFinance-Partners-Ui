@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
 import './Process.scss';
 import About from './About';
 import BreadCrumbs from '../Components/BreadCrumbs/BreadCrumbs';
