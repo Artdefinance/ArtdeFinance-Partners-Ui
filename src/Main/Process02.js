@@ -8,6 +8,9 @@ import Button from '../Components/Button/Button';
 import ProcessStatus from './ProcessStatus';
 import SummaryTab from './SummaryTab';
 import CheckButton from '../Components/Button/CheckButton';
+import Input from '../Components/Inputs/Input';
+import DateDropdown from '../Components/Dropdown/DateDropdown';
+import TimeDropdown from '../Components/Dropdown/TimeDropdown';
 
 export default class Process02 extends React.Component {
   constructor(props) {
@@ -41,6 +44,21 @@ export default class Process02 extends React.Component {
       },
       closed: { opacity: 0, y: 20, transition: { duration: 0.2 }, zIndex: -1 },
     };
+
+    const ExampleContent3 = [
+      {
+        id: '1',
+        title: '14 : 00',
+      },
+      {
+        id: '2',
+        title: '14 : 30',
+      },
+      {
+        id: '3',
+        title: '15 : 00',
+      },
+    ];
 
     return (
       <div className="main-process">
@@ -132,6 +150,15 @@ export default class Process02 extends React.Component {
                         From the setting date when curation starts
                         The end date is automatically set to 7 days.
                       </span>
+                    </div>
+                    <div className="form__body">
+                      <div className="form__inputs">
+                        <div className="form__title form__title--need">Creation Year</div>
+                      </div>
+                      <div className="form__inputs form_multi">
+                        <DateDropdown dropWidth="415px" />
+                        <TimeDropdown dropWidth="333px" content={ExampleContent3} />
+                      </div>
                     </div>
                   </div>
 

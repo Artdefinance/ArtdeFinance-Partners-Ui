@@ -23,6 +23,40 @@
   &--second {
     width: 65.8%;
   }
+
+  .form__inputs {
+    text-align: left;
+  }
+  .form__inputs.form_multi {
+    display: flex;
+    justify-content: space-between;
+    gap: 38px;
+    > div  {
+      flex: 1;
+      text-align: left;
+    }
+  }
+  .form__title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #888888;
+    line-height: 100%;
+    text-align: left;
+  }
+  .form__title--need::after {
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    right: -7px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #FD3D39;
+    content: "";
+  }
 }
 
 .main-about {
@@ -795,6 +829,16 @@
   }
   .btn {
     margin: 0 auto;
+  }
+  button {
+    margin-top: 0;
+  }
+  .date-dropdown__button {
+    height: 70px;
+    background-color: #ffffff;
+  }
+  .date-dropdown__data {
+    font-weight: 400;
   }
 }
 
