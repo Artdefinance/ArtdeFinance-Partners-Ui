@@ -8,7 +8,6 @@ import Button from '../Components/Button/Button';
 import ProcessStatus from './ProcessStatus';
 import SummaryTab from './SummaryTab';
 import CheckButton from '../Components/Button/CheckButton';
-import Input from '../Components/Inputs/Input';
 import DateDropdown from '../Components/Dropdown/DateDropdown';
 import TimeDropdown from '../Components/Dropdown/TimeDropdown';
 

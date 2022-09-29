@@ -5,7 +5,9 @@ import './Process.scss';
 export default class About extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isToggleOn: false,
+    };
     this.onClickHandler = this.onClickHandler.bind(this);
     this.onClickHandler2 = this.onClickHandler2.bind(this);
   }

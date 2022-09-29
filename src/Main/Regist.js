@@ -36,7 +36,6 @@ export default class ArtworksRegist extends React.Component {
   }
 
   handleClick(e) {
-    console.log(e.target.value);
     this.setState((prevState) => ({
       [e.target.value]: !prevState[e.target.value],
     }));
@@ -46,7 +45,7 @@ export default class ArtworksRegist extends React.Component {
     this.setState({ open: false });
   };
 
-  openDialog(e) {
+  openDialog() {
     this.setState({ open: true });
   }
 

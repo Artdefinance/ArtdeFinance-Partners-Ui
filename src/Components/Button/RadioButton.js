@@ -5,20 +5,10 @@ import './Buttons.scss';
 export default class RadioButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selected: '',
-    };
-    this.handleChange = this.handleChange.bind(this);
+    this.state = {};
   }
 
-  handleChange = (e) => {
-    this.setState({
-      selected: e.target.value,
-    });
-  };
-
   render() {
-    const { selected } = this.state;
     const { value, name, content, widthStyle, pressFucn } = this.props;
     const radioStyle = {
       width: widthStyle,
