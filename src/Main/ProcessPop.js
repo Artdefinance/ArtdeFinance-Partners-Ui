@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Icons from '../Components/Icons/Icons';
 import ButtonGray from '../Components/Button/ButtonGray';
+import SummaryTab from './SummaryTab';
 
 export default class ProcessPop extends React.Component {
   constructor(props) {
@@ -101,6 +102,9 @@ export default class ProcessPop extends React.Component {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="main-tab">
+              <SummaryTab />
             </div>
           </div>
           <div className="process-dialog--right">

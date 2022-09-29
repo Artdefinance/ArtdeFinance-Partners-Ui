@@ -1326,6 +1326,10 @@
     margin-top: 0;
     padding: 40px 50px;
   }
+  
+  .main-tab .tab_panel__button {
+    display: none;
+  }
 }
 
 .main-market {
@@ -1403,15 +1407,6 @@
     text-align: right;
     @include RotaB;
   }
-
-  .button--gray-line {
-    width: 200px;
-  }
-
-  .button--black {
-    width: 400px;
-  }
-
 }
 
 .main-market--price {
@@ -1485,6 +1480,61 @@
     background-image: url('../../public/assets/images/page/main/mark.png');
     background-repeat: no-repeat;
     background-size: cover;
+  }
+}
+
+.main-result {
+  margin-top: 40px;
+
+  &--top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 35px 50px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 10px;
+
+    div:nth-child(1) {
+      width: 345px;
+    }
+
+    div + div {
+      border-left: 1px solid #EEEEEE;
+      padding-left: 50px;
+
+      span:nth-child(1) {
+        max-width: 550px;
+      }
+    }
+
+    p:nth-child(2) {
+      display: flex;
+      align-items: center;
+    }
+
+    span:nth-child(1) {
+      max-width: 280px;
+      color: #000000;
+      font-size: 36px;
+      line-height: 1;
+      @include RotaB;
+      @include ellipse(1);
+    }
+
+    span:nth-child(2) {
+      margin-left: 15px;
+      color: #888888;
+      font-size: 25px;
+      @include RotaB;
+      @include ellipse(1);
+    }
+  }
+
+  &__title {
+    color: #888888;
+    font-size: 18px;
+    @include RotaB;
   }
 }
 

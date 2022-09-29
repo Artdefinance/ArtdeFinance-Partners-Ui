@@ -86,7 +86,7 @@ export default class SummaryTab extends React.Component {
         {tabvalue === 0 && (
           // Exhibition History
           <div className="tab_panel" style={{ display: 'block' }}>
-            <button type="button" onClick={this.openDialog}>Show all</button>
+            <button type="button" className="tab_panel__button" onClick={this.openDialog}>Show all</button>
             <ul className="history_list">
               {listData.map((item) => (
                 <li key={item.id}>
@@ -100,7 +100,7 @@ export default class SummaryTab extends React.Component {
         {tabvalue === 1 && (
           // DAO Voting Result
           <div className="tab_panel">
-            <button type="button" onClick={this.openDialog}>Show all</button>
+            <button type="button" className="tab_panel__button" onClick={this.openDialog}>Show all</button>
             <dl className="dao_list">
               <dt>
                 <span>Curator</span>
@@ -145,7 +145,7 @@ export default class SummaryTab extends React.Component {
         {tabvalue === 2 && (
           // Curation Result
           <div className="tab_panel">
-            <button type="button" onClick={this.openDialog}>Show all</button>
+            <button type="button" className="tab_panel__button" onClick={this.openDialog}>Show all</button>
             <div className="curation_result">
               <p className="rate items">
                 <i className="ico_rate"><span className="a11y">result percent</span></i>
