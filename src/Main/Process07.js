@@ -18,7 +18,7 @@ export default class Process07 extends React.Component {
       open: false,
       toggleButton: false,
       auctionButton: false,
-      deliveryButton: false,
+      deliveryButton: true,
     };
     this.checkAuctionFalse = this.checkAuctionFalse.bind(this);
     this.checkAuction = this.checkAuction.bind(this);
@@ -182,6 +182,7 @@ export default class Process07 extends React.Component {
                               content="List Price"
                               value="optionPrice"
                               name="sale"
+                              isChecked="true"
                               pressFucn={() => this.checkAuctionFalse()}
                             />
                             <RadioButton
@@ -246,6 +247,7 @@ export default class Process07 extends React.Component {
                               content="Separate storage is not possible. Delivery only"
                               value="optionDelivery"
                               name="how"
+                              isChecked="true"
                               pressFucn={() => this.checkDelivery()}
                             />
                             <RadioButton
@@ -313,6 +315,7 @@ export default class Process07 extends React.Component {
           { toggleButton === false && <ProcessPop type="false" /> }
           { toggleButton === true && auctionButton === false && deliveryButton === true && <ProcessPop type="true" />}
           { toggleButton === true && auctionButton === true && deliveryButton === true && <ProcessPop type="undefined" regist="true" delivery="true" />}
+          { toggleButton === true && auctionButton === true && deliveryButton === false && <ProcessPop type="undefined" regist="true" delivery="false" />}
         </Dialog>
       </>
     );

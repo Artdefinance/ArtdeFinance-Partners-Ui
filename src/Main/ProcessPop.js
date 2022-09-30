@@ -270,7 +270,7 @@ export default class ProcessPop extends React.Component {
                 </>
               ) : null}
 
-              {delivery === 'true' ? (
+              {delivery === 'true' && (
                 <div className="main-market">
                   <p className="main-market__title">
                     Artwork storage &amp; Delivery
@@ -293,8 +293,8 @@ export default class ProcessPop extends React.Component {
                     When shipping works, transportation and installation are
                     carried out after discussing the delivery address
                     <br />
-                    and schedule with the buyer. You must ship directly from
-                    the gallery.
+                    and schedule with the buyer. You must ship directly from the
+                    gallery.
                   </p>
                   <div className="main-market__wrap">
                     <ButtonGray
@@ -309,7 +309,48 @@ export default class ProcessPop extends React.Component {
                     </button>
                   </div>
                 </div>
-              ) : null}
+              )}
+
+              {delivery === 'false' && (
+                <div className="main-market">
+                  <p className="main-market__title">
+                    Artwork storage &amp; Delivery
+                  </p>
+                  <p className="main-market__text">
+                    Shipping or storage in gallery All are possible
+                  </p>
+                  <p
+                    className="main-market__description"
+                    style={{ color: '#888888' }}
+                  >
+                    ADF Labs Co., Ltd. is a platform provider
+                    <br />
+                    The gallery is responsible for the storage and delivery of
+                    the artwork.
+                    <br />
+                    Compensation and liability for damage when storing,
+                    transporting, or installing works in the gallery
+                    <br />
+                    When shipping works, transportation and installation are
+                    carried out after discussing the delivery address
+                    <br />
+                    and schedule with the buyer. You must ship directly from the
+                    gallery.
+                  </p>
+                  <div className="main-market__wrap">
+                    <ButtonGray
+                      className="button button--gray-line button--mid"
+                      content="Back"
+                    />
+                    <button
+                      type="button"
+                      className="button button--black button--mid"
+                    >
+                      Confirm
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

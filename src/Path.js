@@ -62,8 +62,44 @@ function Path() {
               <td>-</td>
               <td>-</td>
               <td>
+              <Link to="/main/artworks/process03">
+                /main/artworks/process03
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>
               <Link to="/main/artworks/process04">
                 /main/artworks/process04
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>
+              <Link to="/main/artworks/process05">
+                /main/artworks/process05
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>
+              <Link to="/main/artworks/process06">
+                /main/artworks/process06
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>
+              <Link to="/main/artworks/process07">
+                /main/artworks/process07
               </Link>
               </td>
             </tr>
