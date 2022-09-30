@@ -243,7 +243,7 @@ export default class ProcessPop extends React.Component {
                       <p className="main-type__text">7 days</p>
                     </div>
                     <div className="main-type__box">
-                      <p className="main-type__title">
+                      <div className="main-type__title">
                         Bid Period
                         <button
                           type="button"
@@ -263,7 +263,7 @@ export default class ProcessPop extends React.Component {
                           Seamlessly formulate magnetic methodologies with go
                           forward deliverables.
                         </motion.div>
-                      </p>
+                      </div>
                       <p className="main-type__text">2</p>
                     </div>
                   </div>
