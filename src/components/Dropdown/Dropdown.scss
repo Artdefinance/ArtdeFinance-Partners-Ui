@@ -45,6 +45,11 @@
     background-repeat: no-repeat;
   }
 
+  &__title-box {
+    display: flex;
+    align-items: center;
+  }
+
   &__list {
     overflow: hidden;
     position: absolute;

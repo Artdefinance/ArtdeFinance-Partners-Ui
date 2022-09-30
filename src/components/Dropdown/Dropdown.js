@@ -36,6 +36,7 @@ export default class Dropdown extends React.Component {
       dropTitle,
       dropClass,
       content,
+      titleIcon,
     } = this.props;
     const dropdownStyle = {
       width: dropWidth,
@@ -51,22 +52,27 @@ export default class Dropdown extends React.Component {
           onClick={this.handleClick}
           style={dropdownStyle}
         >
-          <span>{getDropTitle === '' ? dropTitle : getDropTitle}</span>
+          <div className="dropdown__title-box">
+            {
+              titleIcon === undefined ? null : <div className="dropdown__title-icon">{titleIcon}</div>
+            }
+            <span>{getDropTitle === '' ? dropTitle : getDropTitle}</span>
+          </div>
         </button>
         <div
           className={isToggleOn ? 'dropdown__list active' : 'dropdown__list'}
           style={{ width: dropWidth }}
         >
           {content && content.map((items) => (
-              <button
-                type="button"
-                className="dropdown__item"
-                key={items.id}
-                onClick={this.handleClick2}
-              >
-                <span>{items.title}</span>
-              </button>
-            ))}
+            <button
+              type="button"
+              className="dropdown__item"
+              key={items.id}
+              onClick={this.handleClick2}
+            >
+              <span>{items.title}</span>
+            </button>
+          ))}
         </div>
       </div>
     );

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { FileDrop } from 'react-file-drop';
 import './FileDragDrop.scss';
 import Icons from '../Icons/Icons';
@@ -49,7 +49,13 @@ export default function FileDragDrop({
   };
 
   return (
-    <div className={`drag-drop_container ${boxTypeClass}`}>
+    <div
+      className={
+        boxTypeClass === 'multiple_container'
+          ? 'drag-drop_container multiple_container'
+          : 'drag-drop_container'
+      }
+    >
       {/* <div className="drag-drop dropbox_disabled"> */}
       <div className="drag-drop">
         <FileDrop onTargetClick={filePicker} onDrop={(f) => fileHandler(f)}>
@@ -76,19 +82,20 @@ export default function FileDragDrop({
         </FileDrop>
       </div>
       <div>
-        {filenames.map((file, i) => (
+        {filenames.map((file) => (
           <>
-            <div className="drag-drop__item">
+            <div className="drag-drop__item" key={file.index}>
               <div className="drag-drop__box">
                 <i style={fileDefault} />
                 <p>{file.name}</p>
                 <span>
                   (
-                  {file.size}
-                  KB
-                  )
+                    {file.size}
+                  KB )
                 </span>
-                <button type="button" className="preview">Preview</button>
+                <button type="button" className="preview">
+                  Preview
+                </button>
               </div>
               <button type="button" className="trash">
                 <Icons shape="trash" color="#BBBBBB" />

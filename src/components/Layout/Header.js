@@ -1,7 +1,6 @@
 import './Header.scss';
 import { Link, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
-import Button from '../Button/Button';
 import Icons from '../Icons/Icons';
 
 function Header() {

@@ -15,8 +15,6 @@ export default class List extends React.Component {
       categoryActive2: false,
       categoryActive3: false,
       isToggleOn: false,
-      isToggleOn2: true,
-      isToggleOn3: true,
     };
     this.categoryClick = this.categoryClick.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
@@ -45,8 +43,6 @@ export default class List extends React.Component {
       categoryActive2,
       categoryActive3,
       isToggleOn,
-      isToggleOn2,
-      isToggleOn3,
     } = this.state;
     const ExampleContent1 = [
       {

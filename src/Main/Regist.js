@@ -162,7 +162,8 @@ export default class ArtworksRegist extends React.Component {
                     <Dropdown
                       dropClass="artist_list"
                       dropHeight="36px"
-                      dropTitle={[<Icons shape="search" width="24px" height="24px" color="#BBBBBB" />, 'Please select an artist']}
+                      dropTitle="Please select an artist"
+                      titleIcon={<Icons shape="search" width="24px" height="24px" color="#BBBBBB" />}
                       content={artistList}
                     />
                     <div className="warning__message">
@@ -574,7 +575,7 @@ export default class ArtworksRegist extends React.Component {
                   <div className="sortable_wrap exhibition_history">
                     <SortableList
                       data={ExhibitionHistory.map((i) => (
-                        <div className="placeholder">
+                        <div className="placeholder" key={i.id}>
                           <div className="year">{i.year}</div>
                           <div className="location">{i.Location}</div>
                           <div className="country">{i.Country}</div>
@@ -664,7 +665,7 @@ export default class ArtworksRegist extends React.Component {
                   <p className="row_title">ExhibitionHistory</p>
                   <div className="row_scroll">
                     {ExhibitionHistory.map((i) => (
-                      <div className="row_items">
+                      <div className="row_items" key={i.id}>
                         <p className="year">{i.year}</p>
                         <p className="content">{i.Location}</p>
                         <p className="location">

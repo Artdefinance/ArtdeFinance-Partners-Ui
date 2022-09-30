@@ -2,7 +2,6 @@
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import './Gallery.scss';
-import Button from '../Components/Button/Button';
 import Icons from '../Components/Icons/Icons';
 
 export default class Gallery extends React.Component {
