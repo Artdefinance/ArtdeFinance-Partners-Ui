@@ -1,3 +1,5 @@
+@import '../../assets/css/Mixins.scss';
+
 .foo_wrap {
 	// min-width: 1240px;
   // max-width: 1440px;
@@ -16,12 +18,167 @@
     margin: 0 auto;
   }
   .inner-top {
+    align-items: flex-start;
     padding-top: 115px;
     padding-bottom: 91px;
     border-bottom: 1px solid #555555;
   }
   .inner-btm {
+    align-items: flex-start;
     padding-top: 90px;
     padding-bottom: 90px;
+    border-bottom: 1px solid #555555;
+    .footer-message {
+      max-width: 265px;
+      margin-top:12px;
+    }
+  }
+
+  .footer-subtitle {
+    @include RotaEB;
+    display: block;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #fff;
+  }
+
+  .footer-subscribe {
+    width: 50%;
+    .footer-subtitle {
+      margin-bottom: 9px;
+    } 
+    
+    .footer-message {
+      width: 100%;
+      max-width: 490px;
+      margin-bottom: 36px;
+    }
+
+    &__form {
+      position: relative;
+      width: 100%;
+      height: 60px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: inset 0px -3px 17px rgba(0, 0, 0, 0.15);
+    }
+
+    &__label {
+      display: block;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    &__input {
+      @include RotaSB;
+      width: 100%;
+      appearance: none;
+      padding: 14px 155px 10px 21px;
+      border: 0;
+      border-radius: 5px;
+      font-size: 18px;
+      line-height: 2;
+      color: #888;
+      box-sizing: border-box;
+      background-color: #fff;
+    }
+
+    &__input::placeholder {
+      color: #888;
+    }
+
+    &__submit {
+      @include RotaB;
+      position: absolute;
+      top: 50%;
+      right: 11px;
+      margin-top: -22px;
+      margin-left: auto;
+      background: linear-gradient(113.33deg, #000000 34.93%, #676767 97.4%);
+      border-radius: 23px;
+      font-size: 18px;
+      line-height: 1;
+      width: 134px;
+      height: 45px;
+      color: #fff;
+    }
+  }
+  .footer-channel {
+    margin-left: auto;
+  
+    .footer-subtitle {
+      margin-bottom: 20px;
+    }
+  
+    &__link {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 72px;
+      height: 50px;
+      border-radius: 25px;
+      margin-right: 10px;
+      background-color: #222;
+      color: #888;
+  
+      &:first-child {
+        margin-right: 0;
+      }
+  
+      &:hover {
+        background-color: #fff;
+        color: #19191b;
+      }
+    }
+  }
+
+  .footer-sitemap {
+    display: flex;
+    justify-content: flex-end;
+    gap: 145px;
+    &__link-head {
+      @include RotaEB;
+      font-size: 18px;
+      line-height: 1;
+      color: #fff;
+      display: block;
+      margin-bottom: 15px;
+    }
+  
+    &__link {
+      @include RotaM;
+      font-size: 15px;
+      line-height: 2;
+      color: #bbb;
+      display: block;
+    }
+  
+    // Stats
+    &__link + .footer-sitemap__link-head {
+      margin-top: 84px;
+    }
+  }
+  .footer-end {
+    display: flex;
+    width: 100%;
+    margin-top: 28px;
+    padding-bottom:36px;
+  }
+  
+  .footer-copy {
+    margin-right: auto;
+  }
+  
+  .footer-copy,
+  .footer-policy__link {
+    @include RotaSB;
+    font-size: 16px;
+    line-height: 1.375;
+    color: #bbb;
+  }
+  
+  .footer-policy__link {
+    margin-left: 17px;
   }
 }
