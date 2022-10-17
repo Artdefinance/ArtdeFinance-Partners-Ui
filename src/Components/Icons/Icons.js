@@ -235,7 +235,7 @@ export default class IconStyle extends React.Component {
               </g>
               <path d="M19.1668 27.7916V22.2916H22.8335V27.7916H27.4168V20.4583H30.1668L21.0002 12.2083L11.8335 20.4583H14.5835V27.7916H19.1668Z" fill="black" />
               <defs>
-              <filter id="filter0_d_372_8491" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" colorinterpolation-filters="sRGB">
+              <filter id="filter0_d_372_8491" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
               <feOffset />

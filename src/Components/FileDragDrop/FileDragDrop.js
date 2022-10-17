@@ -76,7 +76,6 @@ export default function FileDragDrop({
             ref={inputRef}
             multiple
             type="file"
-            maxsize="1"
             onChange={(e) => fileHandler(e.target.files)}
           />
         </FileDrop>
