@@ -4,27 +4,38 @@ import { FileDrop } from 'react-file-drop';
 import './FileDragDrop.scss';
 import Icons from '../Icons/Icons';
 
-export default function FileDragDrop({
-  boxTypeClass,
-}) {
+export default function FileDragDrop({ boxTypeClass }) {
   const inputRef = useRef();
   const [filenames, setNames] = useState([]);
 
   const fileHandler = (files) => {
     const extension = files[0].name.split('.')[1]?.toLowerCase();
 
-    if (extension !== undefined) {
-      const fNames = Object.keys(files).map((name) => {
+    if (filenames.length === 0) {
+      // 첫번째 드롭
+      if (extension !== undefined) {
+        const fNames = Object.keys(files).map((name, index) => {
+          const temp = 'string';
+          return {
+            name: files[name].name,
+            icon: files[name].name.split('.')[1]?.toUpperCase().trim(),
+            size: files[name].size,
+            number: index,
+          };
+        });
+        setNames((prev) => [...prev, fNames].flat());
+      }
+    } else {
+      const fNames = Object.keys(files).map((name, index) => {
         const temp = 'string';
         return {
           name: files[name].name,
           icon: files[name].name.split('.')[1]?.toUpperCase().trim(),
           size: files[name].size,
+          number: filenames.length + index,
         };
       });
       setNames((prev) => [...prev, fNames].flat());
-    } else {
-      alert('file type not supported');
     }
   };
 
@@ -47,7 +58,6 @@ export default function FileDragDrop({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
   };
-
   return (
     <div
       className={
@@ -82,8 +92,8 @@ export default function FileDragDrop({
       </div>
       <div>
         {filenames.map((file) => (
-          <>
-            <div className="drag-drop__item" key={file.index}>
+          <div key={file.number}>
+            <div className="drag-drop__item">
               <div className="drag-drop__box">
                 <i style={fileDefault} />
                 <p>{file.name}</p>
@@ -118,7 +128,7 @@ export default function FileDragDrop({
               </button>
               <p className="error_text">Something went wrong. Try uploading your document again.</p>
             </div> */}
-          </>
+          </div>
         ))}
       </div>
     </div>
