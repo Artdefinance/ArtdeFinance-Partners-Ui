@@ -53,14 +53,14 @@ export default class Main extends React.Component {
               <ul className="count">
                 <li className="item">
                   <p>
-                  <Icons shape="panorama" width="20px" height="20px" color="#BBBBBB" />
-                  Artworks
+                    <Icons shape="panorama" viewBox=" 0 0 18.33 13.33" />
+                    Artworks
                   </p>
                   <strong>0</strong>
                 </li>
                 <li className="item">
                   <p>
-                  <Icons shape="account" width="20px" height="20px" color="#BBBBBB" />
+                  <Icons shape="account" width="20px" height="20px" color="#BBBBBB" viewBox=" 0 0 20 20" />
                   Artist
                   </p>
                   <strong>0</strong>
@@ -77,27 +77,26 @@ export default class Main extends React.Component {
             <div className="status_count board_item">
               <div className="item_inner">
                 <div className="status_items">
-                  <Icons shape="data" width="20px" height="20px" />
+                  <Icons shape="data" width="20px" height="20px" viewBox="0 0 20 20" />
                   1,234
                   <button type="button" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></button>
                   <p className="desc">NFT Minted</p>
                 </div>
                 <div className="status_items">
-                  <Icons shape="dashboard" width="20px" height="20px" color="#BBBBBB" />
+                  <Icons shape="dashboard" width="20px" height="20px" viewBox="0 0 20 20" color="#BBBBBB" />
                   0
                   <button type="button" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></button>
                   <p className="desc">Curating</p>
                 </div>
                 <div className="status_items">
-                  <Icons shape="heart" width="20px" height="20px" color="#BBBBBB" />
+                  <Icons shape="heart" width="20px" height="20px" viewBox="0 0 20 20" color="#BBBBBB" />
                   10
                   <button type="button" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></button>
                   <p className="desc">Curated</p>
                 </div>
                 <div className="status_items">
-                  <Icons shape="hand" width="20px" height="20px" color="#BBBBBB" />
+                  <Icons shape="hand" width="20px" height="20px" viewBox="0 0 20 20" color="#BBBBBB" />
                   999
-                  <button type="button" className="more"><Icons shape="arrow-link" width="20px" height="20px" /></button>
                   <p className="desc">Dao Voted</p>
                 </div>
               </div>
@@ -188,7 +187,7 @@ export default class Main extends React.Component {
                 <li className="curation_items">
                   <Link to="/">
                     <p className="curation_time-tag">
-                      <Icons shape="clock" width="20px" height="20px" />
+                      <Icons shape="clock" width="20px" height="20px" viewBox="0 0 20 20" />
                       <span>180d</span>
                       <span>17h</span>
                       <span>38m</span>
@@ -213,7 +212,7 @@ export default class Main extends React.Component {
                 <li className="curation_items">
                   <Link to="/">
                     <p className="curation_time-tag">
-                      <Icons shape="clock" width="20px" height="20px" />
+                      <Icons shape="clock" width="20px" height="20px" viewBox="0 0 20 20" />
                       <span>180d</span>
                       <span>17h</span>
                       <span>38m</span>
@@ -251,7 +250,7 @@ export default class Main extends React.Component {
               >
                 <div className="slide-item">
                   <div className="work_info">
-                    <div className="figure"><img src={curationImg0} alt="work_thumnail" /></div>
+                    <div className="figure" style={{ backgroundImage: `url(${curationImg0})` }} />
                     <div className="info">
                       <p className="name">Vincent van Gogh, 1955Vincent van</p>
                       <p className="desc">Congregation Leaving the Reformed Church in Nuenen, 2011</p>
@@ -304,7 +303,7 @@ export default class Main extends React.Component {
                 </div>
                 <div className="slide-item">
                   <div className="work_info">
-                    <div className="figure"><img src={curationImg0} alt="work_thumnail" /></div>
+                    <div className="figure" style={{ backgroundImage: `url(${curationImg0})` }} />
                     <div className="info">
                       <p className="name">Vincent van Gogh, 1955Vincent van</p>
                       <p className="desc">Congregation Leaving the Reformed Church in Nuenen, 2011</p>
@@ -379,7 +378,7 @@ export default class Main extends React.Component {
               >
                 <div className="slide-item">
                   <div className="work_info">
-                    <div className="figure"><img src={curationImg0} alt="work_thumnail" /></div>
+                    <div className="figure" style={{ backgroundImage: `url(${curationImg0})` }} />
                     <div className="info">
                       <p className="name">Vincent van Gogh, 1955Vincent van</p>
                       <p className="desc">Congregation Leaving the Reformed Church in Nuenen, 2011</p>
@@ -406,17 +405,12 @@ export default class Main extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div className="price_info">
+                  <div className="price_info price_info--dao">
                     <div className="price_box">
+                      <p>DAO</p>
                       <div className="currency">
-                        <Icons shape="data" width="20px" height="20px" />
-                        1,500,000.00
-                        <span className="unit">USD</span>
-                      </div>
-                      <div className="crypto">
-                        <Icons shape="busd20" width="20px" height="20px" />
-                        1,500,000.00
-                        <span className="unit">BUSD</span>
+                        3,567,878,654
+                        <span className="unit">Voted</span>
                       </div>
                     </div>
                   </div>
