@@ -112,7 +112,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 25px;
+    margin-top: 20px;
+    padding-bottom:15px;
+    border-bottom: 1px solid #EEEEEE;
   }
 
   &__piece {
@@ -147,7 +149,7 @@
   &__numbering {
     display: inline-block;
     margin-top: 5px;
-    padding: 5px 5px 3px;
+    padding: 5px 5px 5px;
     color: #888888;
     font-size: 14px;
     line-height: 1;
@@ -187,16 +189,22 @@
       font-size: 16px;
       @include AcuminproM;
     }
+    .activity-info__content {
+      p {
+        @include AcuminproR;
+      }
+    }
 
     .activity-info__item:last-child {
       padding-bottom: 30px;
+      margin-bottom: 20px;
     }
   }
 }
 
 .main-side {
   &__result {
-    margin-top: 17px;
+    margin-top: 0;
     padding: 20px;
     border-radius: 10px;
     background: linear-gradient(178.21deg, #5F44FF 50%, #9482FF 113.28%);
@@ -239,12 +247,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 45px;
-      height: 21px;
+      width: 55px;
+      height: 24px;
       margin-left: 12px;
-      color: #ffffff;
+      color: #dddddd;
       font-size: 15px;
-      line-height: 1;
       background: rgba(241, 203, 255, 0.2);
       border-radius: 2px;
       @include RotaB;
@@ -409,6 +416,10 @@
       &:last-of-type {
         border-bottom: 0;
       }
+      &.rate {
+        border-bottom: 1px solid #EEEEEE;
+        margin-bottom: 10px;
+      }
     }
     .rate {
       display: flex;
@@ -444,11 +455,13 @@
       }
       dd {
         font-size: 15px;
+        @include AcuminproL;
       }
       .price {
         font-weight: 800;
         font-size: 26px;
         line-height: 100%;
+        @include RotaM;
       }
       .unit {
         display: inline-flex;
@@ -461,6 +474,7 @@
         font-size: 15px;
         line-height: 100%;
         color: #888888;
+        @include RotaR;
       }
     }
   }
@@ -872,7 +886,7 @@
     }
 
     li:nth-child(1) {
-      width: 15.3%;
+      width: calc(15.3% - 10px);
     }
     li:nth-child(2) {
       width: 63%;
@@ -891,7 +905,7 @@
     }
 
     p:nth-child(1) {
-      width: 15.3%;
+      width: calc(15.3% - 15px);
       color: #888888;
       font-size: 16px;
       @include RotaB;
@@ -899,6 +913,7 @@
     }
     p:nth-child(2) {
       width: 63%;
+      padding-right: 15px;
       color: #222222;
       font-size: 16px;
       line-height: 19px;
@@ -907,6 +922,7 @@
     }
     p:nth-child(3) {
       width: 21.7%;
+      padding-left: 15px;
       color: #888888;
       font-size: 16px;
       line-height: 19px;
@@ -922,6 +938,13 @@
       }
       .MuiTabs-scroller {
         margin-bottom: 40px;
+      }
+    }
+    .MuiAccordionSummary-root {
+      &.Mui-expanded {
+        .util_area .btn_showmore:after {
+          background-image: url('../../public/assets/images/icons/ico_sclose.svg');
+        }
       }
     }
     .dialog_panel {
@@ -1009,6 +1032,20 @@
         line-height: 100%;
         color: #888888;
         @include AcuminproR();
+        vertical-align: middle;
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background: {
+            image: url('../../public/assets/images/icons/ico_sopen.svg');
+            size: cover;
+            position: center center;
+            repeat: no-repeat;
+          }
+          vertical-align: middle;
+        }
       }
       .period {
         font-size: 14px;
@@ -1030,6 +1067,7 @@
           line-height: 100%;
           color: #555555;
           vertical-align: middle;
+          @include RotaB();
         }
       }
     }
@@ -1086,6 +1124,7 @@
       .curation-evaluation__desc {
         margin-bottom: 10px;
         color: #888888;
+        @include RotaR;
       }
     }
     .accordion_wrap {
@@ -1492,6 +1531,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 35px 50px;
+    margin-bottom: 36px;
     box-sizing: border-box;
     background-color: #ffffff;
     border-radius: 10px;
@@ -1502,7 +1542,7 @@
 
     div + div {
       border-left: 1px solid #EEEEEE;
-      padding-left: 50px;
+      padding-left: 60px;
 
       span:nth-child(1) {
         max-width: 550px;
@@ -1524,7 +1564,7 @@
     }
 
     span:nth-child(2) {
-      margin-left: 15px;
+      margin-left: 10px;
       color: #888888;
       font-size: 25px;
       @include RotaB;
@@ -1533,6 +1573,7 @@
   }
 
   &__title {
+    margin-bottom: 3px;
     color: #888888;
     font-size: 18px;
     @include RotaB;
@@ -1545,9 +1586,10 @@
   &__item {
     display: inline-block;
     position: relative;
-    width: calc(50% - 18px);
-    margin: 35px 0;
-    padding: 40px 50px;
+    width: calc(50% - 21px);
+    min-height: 258px;
+    margin: 0 0 36px;
+    padding: 40px 50px 20px;
     border-radius: 5px;
     background: #ffffff;
     box-shadow: 0px 15px 40px 0px #BBBBBB26;
@@ -1555,7 +1597,7 @@
   }
 
   &__item:nth-child(odd) {
-    margin-right: 18px;
+    margin-right: 36px;
   }
 
   &__sub-title {
@@ -1565,6 +1607,10 @@
     color: #888888;
     font-size: 15px;
     @include RotaB;
+    p:first-child {
+      font-size: 16px;
+      @include RotaB;
+    }
 
     p:nth-child(3) {
       display: flex;
@@ -1604,7 +1650,7 @@
 
     >div {
       width: calc(50% - 18px);
-      padding: 12px;
+      padding: 10px 12px 12px;
       background-color: #F4F4F4;
       border-radius: 5px;
     }
