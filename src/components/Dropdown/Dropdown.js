@@ -20,8 +20,13 @@ export default class Dropdown extends React.Component {
   }
 
   handleClick2(e) {
+    const { content } = this.props;
+    const selected = content.find(({ title }) => title === e.target.innerText);
+
+    if (!selected) return;
+
     this.setState((prevState) => ({
-      getDropTitle: e.target.innerText,
+      getDropTitle: selected.title,
       isToggleOn: !prevState.isToggleOn,
     }));
   }
@@ -48,7 +53,7 @@ export default class Dropdown extends React.Component {
       <div className={`dropdown ${dropClass}`} style={dropdownStyle}>
         <button
           type="button"
-          className={isToggleOn ? 'dropdown__title active' : 'dropdown__title '}
+          className={isToggleOn ? 'dropdown__title active' : 'dropdown__title'}
           onClick={this.handleClick}
           style={dropdownStyle}
         >
@@ -70,7 +75,7 @@ export default class Dropdown extends React.Component {
               key={items.id}
               onClick={this.handleClick2}
             >
-              <span>{items.title}</span>
+              <span className="dropdown__inner-text">{items.title}</span>
             </button>
           ))}
         </div>

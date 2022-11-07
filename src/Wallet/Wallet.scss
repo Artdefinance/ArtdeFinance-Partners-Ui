@@ -207,9 +207,63 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 14px;
-    height: 14px;
+    width: 9px;
+    height: 9px;
     background-image: url('../../public/assets/images/page/wallet/icon_close.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.question-bubble2 {
+  position: relative;
+  line-height: 1;
+  z-index: 1;
+
+  &__wrap {
+    position: absolute;
+    min-width: 210px;
+    padding: 13px 23px;
+    color: #366DFC;
+    line-height: 18.2px;
+    letter-spacing: -.7px;
+    background-color: #EDF2FF;
+    border: 1px solid #366DFC;
+    border-radius: 6px;
+    box-shadow: 0px 5px 15px 0px #0510371A;
+    @include AcuminproR;
+
+    &::after {
+      display: inline-block;
+      position: absolute;
+      left: -6px;
+      bottom: 42%;
+      transform: rotate(90deg);
+      width: 19px;
+      height: 10.5px;
+      margin-left: -8.5px;
+      background-image: url('../../public/assets/images/page/main/icon_bubble_blue.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: '';
+    }
+  }
+
+  &__mark {
+    width: 20px;
+    height: 20px;
+    background-image: url('../../public/assets/images/page/main/icon_mark.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url('../../public/assets/images/page/main/icon_close_small_blue.png');
     background-repeat: no-repeat;
     background-size: contain;
   }

@@ -928,17 +928,16 @@ body .MuiAccordion-rounded:last-child {border-radius: 0;}
 /* material accordion */
 body .MuiAccordion-root {box-shadow: none;}
 body .MuiAccordion-root:before {display: none;}
-body .MuiAccordion-root.Mui-expanded {margin: 0;}
 body .MuiAccordion-root.accordion__item .MuiButtonBase-root:after {
   content: '';
   position: absolute;
   right: 35px; 
-  top: 48%;
+  top: calc(50% - 6px);
   transform: translateY(-50%);
   width: 12px;
   height: 12px;
-  border-top: 2px solid #000;
-  border-right: 2px solid #000;
+  border-top: 2.5px solid #000;
+  border-right: 2.5px solid #000;
   transform: rotate(135deg);
 }
 body .MuiAccordion-root.accordion__item .MuiButtonBase-root[aria-expanded=true]:after {

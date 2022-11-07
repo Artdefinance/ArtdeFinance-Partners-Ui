@@ -108,7 +108,7 @@
 }
 
 .dropdown__title.active {
-  border: 2px solid #5F44FF;
+  border-bottom: 2px solid #5F44FF !important;
 
   &::before {
     transform: rotate(-45deg);

@@ -24,18 +24,57 @@ export default class ArtworksRegist extends React.Component {
       isToggleOn3: false,
       isToggleOn4: false,
       isToggleOn5: false,
+      isToggleOn6: false,
+      isToggleOn7: false,
+      isToggleOn8: false,
+      isToggleOn9: false,
+      isToggleOn10: false,
+      isToggleOn11: false,
+      isblank1: true,
+      isblank2: true,
+      isblank3: true,
+      isblank4: true,
+      isblank5: true,
+      isblank6: true,
+      isblank7: true,
       totalByte: 0,
       open: false,
       dummyImg: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
+      isFooterShow: true,
     };
     this.handleClick = this.handleClick.bind(this);
     this.clickClose = this.clickClose.bind(this);
     this.checkByte = this.checkByte.bind(this);
     this.openDialog = this.openDialog.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.isblankDropDown = this.isblankDropDown.bind(this);
+    this.isblankRadioCheck = this.isblankRadioCheck.bind(this);
+    this.registTarget = React.createRef();
+    this.formButton = React.createRef();
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > this.registTarget.current.clientHeight - 1124) {
+        this.setState(() => ({
+          isFooterShow: true,
+        }));
+      } else {
+        this.setState(() => ({
+          isFooterShow: false,
+        }));
+      }
+    });
   }
 
   handleClick(e) {
+    console.log(e.currentTarget.value);
+    if (e.currentTarget.value === 'isToggleOn11') {
+      this.setState((prevState) => ({
+        isToggleOn11: false,
+      }));
+    }
+
     this.setState((prevState) => ({
       [e.target.value]: !prevState[e.target.value],
     }));
@@ -44,6 +83,22 @@ export default class ArtworksRegist extends React.Component {
   handleClose = () => {
     this.setState({ open: false });
   };
+
+  isblankDropDown(e) {
+    if (e.target.className === 'dropdown__inner-text') {
+      this.setState({
+        isblank1: false,
+       });
+    }
+  }
+
+  isblankRadioCheck(e) {
+    if (e.currentTarget.className === 'button-position' || e.currentTarget.className === 'radio_inputs') {
+      this.setState({
+        [e.currentTarget.getAttribute('value')]: false,
+       });
+    }
+  }
 
   openDialog() {
     this.setState({ open: true });
@@ -100,9 +155,11 @@ export default class ArtworksRegist extends React.Component {
     ];
 
     const {
-      isToggleOn1, isToggleOn2, isToggleOn3,
-      isToggleOn4, isToggleOn5,
+      isToggleOn1, isToggleOn2, isToggleOn3, isToggleOn4, isToggleOn5,
+      isToggleOn6, isToggleOn7, isToggleOn8, isToggleOn9, isToggleOn10, isToggleOn11,
+      isblank1, isblank2, isblank3, isblank4, isblank5, isblank6, isblank7,
       totalByte, open, dummyImg,
+      isFooterShow,
     } = this.state;
 
     const style = {
@@ -135,7 +192,7 @@ export default class ArtworksRegist extends React.Component {
 
     return (
       <div className="main_regist">
-        <div className="main_regist-wrap">
+        <div className="main_regist-wrap" ref={this.registTarget}>
           <div className="head">
             <p>
               Artworks Registration
@@ -158,21 +215,23 @@ export default class ArtworksRegist extends React.Component {
               <AccordionDetails>
                 <div className="form__body">
                   <div className="form__inputs">
-                    <div className="form__title form__title--need">Artist</div>
-                    <Dropdown
-                      dropClass="artist_list"
-                      dropHeight="36px"
-                      dropTitle="Please select an artist"
-                      titleIcon={<Icons shape="search" width="24px" height="24px" color="#BBBBBB" />}
-                      content={artistList}
-                    />
+                    <div className={isblank1 ? 'form__title form__title--need' : 'form__title'}>Artist</div>
+                    <div onClick={this.isblankDropDown}>
+                      <Dropdown
+                        dropClass="artist_list"
+                        dropHeight="36px"
+                        dropTitle="Please select an artist"
+                        titleIcon={<Icons shape="search" width="24px" height="24px" color="#BBBBBB" />}
+                        content={artistList}
+                      />
+                    </div>
                     <div className="warning__message">
                       <span className="warning__text">Supporting Text</span>
                     </div>
                   </div>
 
                   <div className="form__inputs">
-                    <div className="form__title form__title--need">
+                    <div className={isblank2 ? 'form__title form__title--need' : 'form__title'}>
                       Market Type
                       <div className="question-bubble">
                         <button
@@ -186,7 +245,7 @@ export default class ArtworksRegist extends React.Component {
                             isToggleOn1 === true ? style.open : style.closed
                           }
                           className="question-bubble__wrap"
-                          style={{ top: '-85px', left: '-115px' }}
+                          style={{ top: '-91px', left: '-124px' }}
                         >
                           실물이 포함된 작품 또는 오직 디지털 파일로 구성된 작품 중 작품의 유형을 선택할 수 있습니다.
                           <button
@@ -198,7 +257,7 @@ export default class ArtworksRegist extends React.Component {
                         </motion.div>
                       </div>
                     </div>
-                    <div className="button-position">
+                    <div className="button-position" onClick={this.isblankRadioCheck} value="isblank2">
                       <RadioButton content="Default" value="option1" name="option1" widthStyle="368px" />
                       <RadioButton content="Default" value="option2" name="option1" widthStyle="368px" />
                     </div>
@@ -206,8 +265,8 @@ export default class ArtworksRegist extends React.Component {
 
                   <div className="form__inputs form_multi">
                     <div>
-                      <div className="form__title form__title--need">Creation Year</div>
-                      <Input value="" placeholder="Text" />
+                      <div className={isblank3 ? 'form__title form__title--need' : 'form__title'}>Creation Year</div>
+                        <Input value="" placeholder="Text" />
                       <div className="warning__message">
                         <span className="warning__text">Supporting Text</span>
                       </div>
@@ -227,7 +286,7 @@ export default class ArtworksRegist extends React.Component {
                               isToggleOn2 === true ? style.open : style.closed
                             }
                             className="question-bubble__wrap"
-                            style={{ top: '-85px', left: '-115px' }}
+                            style={{ top: '-80px', left: '-124px' }}
                           >
                             원본 작품 이외에 복수로 제작된
                             <br />
@@ -257,7 +316,7 @@ export default class ArtworksRegist extends React.Component {
                   </div>
 
                   <div className="form__inputs">
-                    <div className="form__title form__title--need">
+                    <div className={isblank6 ? 'form__title form__title--need' : 'form__title'}>
                       Artist Sign
                       <div className="question-bubble">
                         <button
@@ -271,7 +330,7 @@ export default class ArtworksRegist extends React.Component {
                             isToggleOn3 === true ? style.open : style.closed
                           }
                           className="question-bubble__wrap"
-                          style={{ top: '-85px', left: '-115px' }}
+                          style={{ top: '-77px', left: '-124px' }}
                         >
                           작품에 작가의 사인이 포함 여부를
                           <br />
@@ -285,7 +344,7 @@ export default class ArtworksRegist extends React.Component {
                         </motion.div>
                       </div>
                     </div>
-                    <div className="button-position">
+                    <div className="button-position" onClick={this.isblankRadioCheck} value="isblank6">
                       <RadioButton content="Include Signed" value="option2-1" name="option2" widthStyle="368px" />
                       <RadioButton content="Unsigned" value="option2-2" name="option2" widthStyle="368px" />
                     </div>
@@ -293,7 +352,7 @@ export default class ArtworksRegist extends React.Component {
 
                   <div className="form__inputs">
                     <div className="form__inputs-head">
-                      <div className="form__title form__title--need">
+                      <div className={isblank7 ? 'form__title form__title--need' : 'form__title'}>
                         Dimensions
                         <div className="question-bubble">
                           <button
@@ -307,7 +366,7 @@ export default class ArtworksRegist extends React.Component {
                               isToggleOn4 === true ? style.open : style.closed
                             }
                             className="question-bubble__wrap"
-                            style={{ top: '-85px', left: '-115px' }}
+                            style={{ top: '-111px', left: '-124px' }}
                           >
                             작품의 크기와 두께 또는 너비를 입력하십시오.
                             <br />
@@ -321,7 +380,7 @@ export default class ArtworksRegist extends React.Component {
                           </motion.div>
                         </div>
                       </div>
-                      <div className="radio_inputs">
+                      <div className="radio_inputs" onClick={this.isblankRadioCheck} value="isblank7">
                         <label htmlFor="default-radio1">
                           <input type="radio" id="default-radio1" name="default-radio" />
                           <span />
@@ -338,7 +397,33 @@ export default class ArtworksRegist extends React.Component {
                           chkId="depthchk"
                           content="Depth check"
                         />
-                        <Icons shape="exclama20" width="20px" height="20px" color="#366DFC" />
+                        <button
+                          type="button"
+                          className="question-bubble2__mark"
+                          onClick={this.handleClick}
+                          value="isToggleOn11"
+                        />
+                        <div className="question-bubble2">
+                          <motion.div
+                            animate={
+                              isToggleOn11 === true ? style.open : style.closed
+                            }
+                            className="question-bubble2__wrap"
+                            style={{ top: '-60px', left: '35px' }}
+                          >
+                            This is tooltip content.
+                            <br />
+                            Seamlessly formulate magnetic methodologies
+                            <br />
+                            with go forward deliverables.
+                            <button
+                              type="button"
+                              onClick={this.clickClose}
+                              className="question-bubble2__close"
+                              value="isToggleOn11"
+                            />
+                          </motion.div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -383,21 +468,21 @@ export default class ArtworksRegist extends React.Component {
                           type="button"
                           onClick={this.handleClick}
                           className="question-bubble__mark"
-                          value="isToggleOn2"
+                          value="isToggleOn6"
                         />
                         <motion.div
                           animate={
-                            isToggleOn2 === true ? style.open : style.closed
+                            isToggleOn6 === true ? style.open : style.closed
                           }
                           className="question-bubble__wrap"
-                          style={{ top: '-85px', left: '-115px' }}
+                          style={{ top: '-92px', left: '-125px' }}
                         >
                           큐레이션 또는 마켓 플레이스에서 리스트로 보여지며, NFT로 저장되는 이미지입니다.
                           <button
                             type="button"
                             onClick={this.clickClose}
                             className="question-bubble__close"
-                            value="isToggleOn2"
+                            value="isToggleOn6"
                           />
                         </motion.div>
                       </div>
@@ -414,21 +499,21 @@ export default class ArtworksRegist extends React.Component {
                           type="button"
                           onClick={this.handleClick}
                           className="question-bubble__mark"
-                          value="isToggleOn2"
+                          value="isToggleOn7"
                         />
                         <motion.div
                           animate={
-                            isToggleOn2 === true ? style.open : style.closed
+                            isToggleOn7 === true ? style.open : style.closed
                           }
                           className="question-bubble__wrap"
-                          style={{ top: '-85px', left: '-115px' }}
+                          style={{ top: '-78px', left: '-124px' }}
                         >
                           작품의 측면이나 다양한 각도에서 촬영한 이미지를 추가할 수 있습니다.
                           <button
                             type="button"
                             onClick={this.clickClose}
                             className="question-bubble__close"
-                            value="isToggleOn2"
+                            value="isToggleOn7"
                           />
                         </motion.div>
                       </div>
@@ -448,21 +533,21 @@ export default class ArtworksRegist extends React.Component {
                           type="button"
                           onClick={this.handleClick}
                           className="question-bubble__mark"
-                          value="isToggleOn2"
+                          value="isToggleOn8"
                         />
                         <motion.div
                           animate={
-                            isToggleOn2 === true ? style.open : style.closed
+                            isToggleOn8 === true ? style.open : style.closed
                           }
                           className="question-bubble__wrap"
-                          style={{ top: '-85px', left: '-115px' }}
+                          style={{ top: '-60px', left: '-125px' }}
                         >
                           작품의 컨디션 또는 상태를 입력해주세요.
                           <button
                             type="button"
                             onClick={this.clickClose}
                             className="question-bubble__close"
-                            value="isToggleOn2"
+                            value="isToggleOn8"
                           />
                         </motion.div>
                       </div>
@@ -481,23 +566,25 @@ export default class ArtworksRegist extends React.Component {
                           type="button"
                           onClick={this.handleClick}
                           className="question-bubble__mark"
-                          value="isToggleOn2"
+                          value="isToggleOn9"
                         />
                         <motion.div
                           animate={
-                            isToggleOn2 === true ? style.open : style.closed
+                            isToggleOn9 === true ? style.open : style.closed
                           }
                           className="question-bubble__wrap"
-                          style={{ top: '-85px', left: '-115px' }}
+                          style={{ top: '-127px', left: '-125px' }}
                         >
-                          작가의 작품에 대한 의도나 작품을 잘 표현할 수 있는 내용으로 작성을 해주세요.
+                          작가의 작품에 대한 의도나 작품을 잘
+                          <br />
+                          표현할 수 있는 내용으로 작성을 해주세요.
                           <br />
                           내용은 2,000 Byte 이내로만 작성 가능합니다.
                           <button
                             type="button"
                             onClick={this.clickClose}
                             className="question-bubble__close"
-                            value="isToggleOn2"
+                            value="isToggleOn9"
                           />
                         </motion.div>
                       </div>
@@ -523,14 +610,14 @@ export default class ArtworksRegist extends React.Component {
                           type="button"
                           onClick={this.handleClick}
                           className="question-bubble__mark"
-                          value="isToggleOn2"
+                          value="isToggleOn10"
                         />
                         <motion.div
                           animate={
-                            isToggleOn2 === true ? style.open : style.closed
+                            isToggleOn10 === true ? style.open : style.closed
                           }
                           className="question-bubble__wrap"
-                          style={{ top: '-85px', left: '-115px' }}
+                          style={{ top: '-108px', left: '-124px' }}
                         >
                           작가 또는 갤러리에서 보증하는 작품의 진품 인증서를 등록해주세요.
                           <br />
@@ -539,7 +626,7 @@ export default class ArtworksRegist extends React.Component {
                             type="button"
                             onClick={this.clickClose}
                             className="question-bubble__close"
-                            value="isToggleOn2"
+                            value="isToggleOn10"
                           />
                         </motion.div>
                       </div>
@@ -567,9 +654,9 @@ export default class ArtworksRegist extends React.Component {
                     </button>
                   </div>
                   <div className="sortable_head">
-                    <div className="year">Years</div>
-                    <div className="location">Location</div>
-                    <div className="country">Country</div>
+                    <input type="text" className="year" placeholder="Years" />
+                    <input type="text" className="location" placeholder="Location" />
+                    <input type="text" className="country" placeholder="Country" />
                     <div className="del"><span className="a11y">delete</span></div>
                   </div>
                   <div className="sortable_wrap exhibition_history">
@@ -593,13 +680,15 @@ export default class ArtworksRegist extends React.Component {
             </Accordion>
           </div>
 
-          <div className="form__fixed form_fixed-multi">
+          <div className={ isFooterShow ? 'form__fixed form_fixed-multi hide' : 'form__fixed form_fixed-multi'} ref={this.formButton}>
             <div>
-              <Button className="button button--gray-line button--mid" content="back" type="type1" />
-            </div>
-            <div>
-              <Button className="button button--black-line button--mid" content="Temporary Storage" type="type1" />
-              <Button pressFucn={this.openDialog} value="open" className="button button--black button--mid" content="Comfirm" type="type1" />
+              <div>
+                <Button className="button button--gray-line button--mid" content="back" />
+              </div>
+              <div>
+                <Button className="button button--black-line button--mid" content="Temporary Storage" />
+                <Button pressFucn={this.openDialog} value="open" className="button button--black button--mid" content="Comfirm" type="type1" />
+              </div>
             </div>
           </div>
           {/* full dialog */}

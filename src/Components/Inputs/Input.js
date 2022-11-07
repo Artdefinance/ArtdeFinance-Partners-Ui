@@ -9,9 +9,11 @@ export default class Input extends React.Component {
     this.state = {
       value: '',
       isClearButton: false,
+      textValue: '',
     };
     this.showCloseButton = this.showCloseButton.bind(this);
     this.clearText = this.clearText.bind(this);
+    this.inputTarget = React.createRef();
   }
 
   showCloseButton(e) {
@@ -26,6 +28,7 @@ export default class Input extends React.Component {
       this.setState(() => ({
         value: e.target.value,
         isClearButton: true,
+        textValue: e.target.value,
       }));
     }
     if (e.target.value && [e.target.name]) {
@@ -38,13 +41,14 @@ export default class Input extends React.Component {
 
   clearText() {
     this.setState(() => ({
-      value: '',
       isClearButton: false,
     }));
+
+    this.inputTarget.current.value = '';
   }
 
   render() {
-    const { value, isClearButton } = this.state;
+    const { value, isClearButton, textValue } = this.state;
     const { name, disabled, placeholder, getValue } = this.props;
     return (
       <div className={disabled === 'true' ? 'input disabled' : 'input'}>
@@ -78,6 +82,7 @@ export default class Input extends React.Component {
                   name={name}
                   onChange={this.showCloseButton}
                   value={getValue}
+                  ref={this.inputTarget}
                 />
               )}
             </div>

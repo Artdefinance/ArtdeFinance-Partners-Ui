@@ -13,7 +13,7 @@ export default class Button extends React.Component {
           }
         }}
         className={
-          className + (type === 'type1' ? ' button--type1' : ' button--type2')
+          className + (type === 'type1' ? ' button--type1' : '')
         }
         type="button"
         disabled={disabled === 'true' ? 'disabled' : null}
