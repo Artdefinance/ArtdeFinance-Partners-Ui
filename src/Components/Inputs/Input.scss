@@ -1,6 +1,10 @@
 @import "../../assets/css/Mixins.scss";
 
 .input {
+  input:focus {
+    outline: none;
+  }
+  
   &__input {
     display: block;
     width: 100%;

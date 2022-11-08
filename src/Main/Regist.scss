@@ -77,6 +77,11 @@
         transform: rotate(180deg);
       }
     }
+
+    .dropdown__title.active {
+      border-bottom: 2px solid #5F44FF !important;
+    }
+
     .dropdown__list {
       width: 100%;
     }

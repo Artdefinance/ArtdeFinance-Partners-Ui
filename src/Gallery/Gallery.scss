@@ -43,7 +43,7 @@
   .items {
     position: relative;
     flex: 1;
-    padding: 27px 32px;
+    padding: 32px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 0px 20px rgba(197, 197, 197, 0.1);
@@ -64,6 +64,7 @@
   }
   .desc {
     display: block;
+    color: #888888;
     font-size: 16px;
     line-height: 110%;
     @include AcuminproL();
@@ -210,7 +211,7 @@
     padding: 80px 123px;
   }
   .form__inputs {
-    padding-bottom: 54px;
+    padding-bottom: 70px;
   }
   .form__inputs-head {
     display: flex;

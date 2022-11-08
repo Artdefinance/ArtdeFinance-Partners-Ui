@@ -68,7 +68,6 @@ export default class ArtworksRegist extends React.Component {
   }
 
   handleClick(e) {
-    console.log(e.currentTarget.value);
     if (e.currentTarget.value === 'isToggleOn11') {
       this.setState((prevState) => ({
         isToggleOn11: false,

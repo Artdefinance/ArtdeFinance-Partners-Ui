@@ -49,7 +49,7 @@
   }
 
   &__text {
-    margin-top: 7px;
+    margin-top: 4px;
     color: #888888;
     font-size: 14px;
     @include AcuminproR;
@@ -64,8 +64,8 @@
 
   &__img {
     position: relative;
-    width: 68px;
-    height: 68px;
+    width: 80px;
+    height: 80px;
     margin: 0 auto;
     border-radius: 20px;
 
@@ -281,7 +281,7 @@
 
   &__item {
     width: 18.4%;
-    padding: 20px;
+    padding: 15px 20px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 15px 40px 0px #BBBBBB26;
@@ -334,6 +334,11 @@
     @include RotaB;
     @include ellipse(1);
   }
+}
+
+.dropdown__title-box span {
+  display: inline-block;
+  @include RotaSB;
 }
 
 .wallet-data {
@@ -478,6 +483,7 @@
   &__filter {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     margin-top: 60px;
     margin-bottom: 20px;
   }
@@ -513,7 +519,8 @@
 
 .tab-category {
   &__button {
-    height: 47px;
+    padding-top: 10px;
+    padding-bottom: 15px;
     color: #BBBBBB;
     font-size: 20px;
     line-height: 22px;

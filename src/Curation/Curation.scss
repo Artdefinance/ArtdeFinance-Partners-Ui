@@ -400,7 +400,7 @@
 .curation-about {
   margin-top: 30px;
   margin-bottom: 343px;
-  padding: 40px 50px;
+  padding: 40px 50px 20px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 15px 40px 0px #BBBBBB26;
@@ -754,6 +754,7 @@
 
   &__header {
     position: relative;
+
     svg {
       margin-top: -4px;
     }
@@ -762,7 +763,7 @@
       display: flex;
     }
   }
-
+  
   &__desc {
     margin-bottom: 15px;
     color: #5182FF;
@@ -829,22 +830,32 @@
   &__inputs {
     position: relative;
     width: 100%;
-    height: 70px;
-    border: 1px solid #DDDDDD;
+    height: 100%;
     border-radius: 5px;
     box-sizing: border-box;
 
+    &:focus, &:focus-visible {
+      height: calc(100% + 1px);
+      outline: none;
+    }
+
     input {
       width: 100%;
-      height: calc(100% - 2px);
-      padding-left: 75px;
-      padding-right: 80px;
+      height: 70px;
+      padding: 0 80px 0 75px;
       color: #000000;
       font-size: 36px;
       text-align: right;
-      border: none;
+      border: 1px solid #DDDDDD;
       border-radius: 5px;
       @include RotaB;
+
+      &:focus , &:focus-visible {
+        width: calc(100% - 4px);
+        height: 68px; 
+        border: 2px solid #5F44FF !important;
+        outline: none;
+      }
     }
 
     input::placeholder {
@@ -879,6 +890,10 @@
       color: #888888;
     }
   }
+}
+
+.curation-evaluation__header.active .dropdown__title span {
+  color: #000000;
 }
 
 .bubble-description {

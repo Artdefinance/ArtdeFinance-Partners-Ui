@@ -21,11 +21,13 @@ export default class Evaluation extends React.Component {
       bubble4: false,
       bubble5: false,
       open: false,
+      isblankDropdown: true,
     };
     this.onClickHandler = this.onClickHandler.bind(this);
     this.onToggleOpen = this.onToggleOpen.bind(this);
     this.openDialog = this.openDialog.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.dropdownHandler = this.dropdownHandler.bind(this);
   }
 
   onClickHandler() {
@@ -43,6 +45,14 @@ export default class Evaluation extends React.Component {
   handleClose = () => {
     this.setState({ open: false });
   };
+
+  dropdownHandler(e) {
+    console.log(e.target.className);
+
+    if (e.target.className === 'dropdown__inner-text') {
+      this.setState({ isblankDropdown: false });
+    }
+  }
 
   openDialog() {
     this.setState({ open: true });
@@ -66,7 +76,9 @@ export default class Evaluation extends React.Component {
   render() {
     const time = new Date();
     time.setSeconds(time.getSeconds() + 1); // 1초
-    const { bubble, totalByte, bubble2, bubble3, bubble4, bubble5, open } = this.state;
+    const {
+      bubble, totalByte, bubble2, bubble3, bubble4, bubble5, open, isblankDropdown,
+    } = this.state;
     const { disabled } = this.props;
 
     const ExampleContent1 = [
@@ -506,7 +518,7 @@ export default class Evaluation extends React.Component {
           </div>
           <div className="curation-evaluation__item--checkbox">
             {disabled ? null : (
-              <div className="curation-evaluation__header">
+              <div className={isblankDropdown ? 'curation-evaluation__header' : 'curation-evaluation__header active'} onClick={this.dropdownHandler}>
                 <div>
                   <p className="curation-evaluation__title">
                     Expected value of this work after years
