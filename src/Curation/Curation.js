@@ -20,12 +20,6 @@ export default class Curation extends React.Component {
     };
     this.categoryClick = this.categoryClick.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
-    this.dropdownHandler = this.dropdownHandler.bind(this);
-    this.dropDownTarget = React.createRef();
-  }
-
-  dropdownHandler() {
-    console.log(this.dropDownTarget);
   }
 
   categoryClick(e) {
@@ -263,7 +257,7 @@ export default class Curation extends React.Component {
                     </div>
                   ) : null}
                 </div>
-                <div className="curation-filter__dropdown" onClick={this.dropdownHandler}>
+                <div className="curation-filter__dropdown">
                   <Dropdown
                     dropWidth="215px"
                     dropHeight="60px"

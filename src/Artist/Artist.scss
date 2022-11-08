@@ -93,19 +93,19 @@
     }
 
     li:nth-child(1) {
-      width: 44%;
+      width: 50%;
     }
 
     li:nth-child(2) {
-      text-align: right;
-      width: 36%;
+      text-align: center;
+      width: 20%;
       padding-right: 10px;
       box-sizing: border-box;
     } 
 
     li:nth-child(3) {
-      text-align: right;
-      width: 20%;
+      text-align: center;
+      width: 30%;
     } 
   }
 
@@ -161,22 +161,26 @@
     }
 
     p:nth-child(1) {
-      width: 44%;
+      width: 50%;
       @include ellipse(1);
     }
 
     p:nth-child(2) {
-      width: 36%;
+      width: 20%;
       padding-right: 10px;
+      color: #000000;
+      font-size: 16px;
       text-align: right;
       box-sizing: border-box;
       @include ellipse(1);
     } 
 
     p:nth-child(3) {
-      width: 20%;
+      width: 30%;
+      color: #888888;
       font-size: 14px;
       text-align: right;
+      @include AcuminproR;
       @include ellipse(1);
     } 
   }
@@ -242,6 +246,7 @@
       font-size: 14px;
       font-weight: 400;
       line-height: 20px;
+      @include AcuminproR;
     }
   }
 
@@ -485,6 +490,12 @@
       font-size: 14px;
       @include AcuminproR;
     }
+  }
+
+  .input__input {
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
   }
 }
 

@@ -90,7 +90,7 @@ function AuctionStatus() {
                 </div>
                 <div className="curator-info__content">
                   <div className="curator-info__info">
-                    <p>
+                    <p style={{ 'margin-left': 0 }}>
                       Artdefinance Reality sub labs
                       <br />
                       galler Artdefinance

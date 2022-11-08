@@ -16,7 +16,7 @@ function List() {
             <Info activeHistory />
           </div>
           <div className="activity-item--right">
-            <SaleTypePrice contents="Remove Market list" isDisabled="false" />
+            <SaleTypePrice contents="Remove Market list" />
           </div>
         </div>
       </div>
