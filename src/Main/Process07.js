@@ -19,6 +19,8 @@ export default class Process07 extends React.Component {
       toggleButton: false,
       auctionButton: false,
       deliveryButton: true,
+      isSelectNo: false,
+      isSelectedPeriodDropdown: false,
     };
     this.checkAuctionFalse = this.checkAuctionFalse.bind(this);
     this.checkAuction = this.checkAuction.bind(this);
@@ -28,14 +30,28 @@ export default class Process07 extends React.Component {
     this.closeDialog = this.closeDialog.bind(this);
     this.checkDelivery = this.checkDelivery.bind(this);
     this.checkDeliveryFalse = this.checkDeliveryFalse.bind(this);
+    this.clickPeriodHandler = this.clickPeriodHandler.bind(this);
+    this.periodDropdown = React.createRef();
   }
 
   onClickHandler() {
-    this.setState({ toggleButton: true });
+    this.setState({
+      toggleButton: true,
+      isSelectNo: false,
+     });
   }
 
   onClickHandler2() {
-    this.setState({ toggleButton: false });
+    this.setState({
+      toggleButton: false,
+      isSelectNo: true,
+    });
+  }
+
+  clickPeriodHandler(e) {
+    if (e.target.className === 'dropdown__inner-text') {
+      this.setState({ isSelectedPeriodDropdown: true });
+    }
   }
 
   checkDeliveryFalse() {
@@ -63,7 +79,9 @@ export default class Process07 extends React.Component {
   }
 
   render() {
-    const { open, toggleButton, auctionButton, deliveryButton } = this.state;
+    const {
+      open, toggleButton, auctionButton, deliveryButton, isSelectNo, isSelectedPeriodDropdown,
+     } = this.state;
     const ExampleContent1 = [
       {
         id: '1',
@@ -111,7 +129,7 @@ export default class Process07 extends React.Component {
                       The sale can be set to a full price sale or auction type.
                     </p>
                     <div className="main-setting__wrap">
-                      <div className="main-setting__box">
+                      <div className="main-setting__content">
                         <p className="main-setting__sub-title">
                           Curation Price
                         </p>
@@ -126,8 +144,10 @@ export default class Process07 extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <div className="main-setting__box">
-                        <p>Curation Price</p>
+                      <div className="main-setting__content">
+                        <p className="main-setting__sub-title">
+                          Curation Price
+                        </p>
                         <div className="main-setting__count">
                           <div className="main-setting__numbering">
                             <p className="main-setting__number">1,500,000.00</p>
@@ -156,18 +176,22 @@ export default class Process07 extends React.Component {
                         your work?
                       </p>
                       <div className="button-position">
+                        <div className="button-position__wrap">
                         <RadioButton
                           content="Register on the market Start selling."
                           value="option1"
                           name="option"
                           pressFucn={() => this.onClickHandler()}
                         />
-                        <RadioButton
-                          content="No, work. I will not sell"
-                          value="option2"
-                          name="option"
-                          pressFucn={() => this.onClickHandler2()}
-                        />
+                        </div>
+                        <div className={isSelectNo ? 'button-position__wrap no-select--active' : 'button-position__wrap'}>
+                          <RadioButton
+                            content="No, work. I will not sell"
+                            value="option2"
+                            name="option"
+                            pressFucn={() => this.onClickHandler2()}
+                          />
+                        </div>
                       </div>
                       {toggleButton ? (
                         <>
@@ -216,14 +240,17 @@ export default class Process07 extends React.Component {
                               <p className="main-regist__text">
                                 Please set the auction participation period.
                               </p>
-                              <Dropdown
-                                dropWidth="100%"
-                                dropHeight="80px"
-                                dropTitle="Select a bid Period"
-                                content={ExampleContent1}
-                                dropFontSize="24px"
-                                dropFontColor="#BBBBBB"
-                              />
+                              <div className={isSelectedPeriodDropdown ? 'period-select--true' : 'period-select'} onClick={this.clickPeriodHandler}>
+                                <Dropdown
+                                  dropWidth="100%"
+                                  dropHeight="80px"
+                                  dropTitle="Select a bid Period"
+                                  content={ExampleContent1}
+                                  dropFontSize="24px"
+                                  dropFontColor="#BBBBBB"
+                                  ref={this.periodDropdown}
+                                />
+                              </div>
                               <p className="main-regist__description">
                                 AWhen bidding within the auction period, the
                                 auction can be sold up to 3 times.

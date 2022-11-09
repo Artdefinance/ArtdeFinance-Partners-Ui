@@ -26,6 +26,12 @@
 
   .form__inputs {
     text-align: left;
+
+    .time-dropdown {
+      span {
+        @include RotaM;
+      }
+    }
   }
   .form__inputs.form_multi {
     display: flex;
@@ -56,6 +62,10 @@
     border-radius: 50%;
     background-color: #FD3D39;
     content: "";
+  }
+
+  .form__body + .form__body{
+    margin-top: 40px;
   }
 }
 
@@ -202,6 +212,10 @@
   }
 }
 
+.main-about + .main-side {
+  margin-top: 36px;
+}
+
 .main-side {
   &__result {
     margin-top: 0;
@@ -260,7 +274,7 @@
 }
 
 .main-tab {
-  margin-top: 30px;
+  margin-top: 36px;
   margin-bottom: 52px;
 
   .MuiButtonBase-root {
@@ -522,7 +536,7 @@
     }
   }
 
-  button {
+  .button {
     width: 400px;
     height: 60px;
     margin: 40px auto 0;
@@ -537,6 +551,7 @@
     background-color: #FF3B39;
     border-radius: 5px;
     transform: translate(-50%, 0);
+    box-shadow: 0px 5px 15px 0px #FF3B301A;
     box-sizing: border-box;
 
     img {
@@ -722,6 +737,15 @@
   }
   .setting_inner {
     margin: 35px 50px;
+
+    .radio-button__button {
+      left: 0;
+    }
+
+    .radio-button__button + span {
+      font-size: 18px;
+      @include RotaB;
+    }
   }
   .fee_area {
     display: flex;
@@ -740,6 +764,7 @@
       font-size: 16px;
       line-height: 100%;
       color:#ffffff;
+      @include RotaB;
     }
     .question-bubble__wrap {
       min-width: auto;
@@ -853,6 +878,7 @@
   }
   .date-dropdown__data {
     font-weight: 400;
+    @include RotaR;
   }
 }
 
@@ -1210,8 +1236,9 @@
     @include RotaB;
   }
 
-  &__box {
+  &__content {
     width: calc(100% - 18px);
+    margin-top: 0 !important;
   }
 
   &__count {
@@ -1279,6 +1306,10 @@
     @include RotaB;
   }
 
+  .main-market+.main-regist__title {
+    margin-top: 20px;
+  }
+
   .main-market__box {
     margin: 10px 0 60px;
   }
@@ -1304,7 +1335,7 @@
   }
 
   &__text {
-    margin-top: 5px;
+    margin-top: 2px;
     padding-bottom: 10px;
     color: #5182FF;
     font-size: 14px;
@@ -1315,11 +1346,18 @@
   .button-position {
     display: flex;
     gap: 37px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+
+    &__wrap {
+      width: 50%;
+    }
+  }
+  .button-position__wrap.no-select--active span {
+    font-weight: bold;
   }
 
   .radio-button {
-    width: 50%;
+    width: 100%;
   }
 
   .radio-button__label,
@@ -1352,6 +1390,18 @@
   
   .button--black {
     width: 430px;
+  }
+
+  .period-select {
+    .dropdown__item span {
+      font-size: 20px;
+    }
+  }
+
+  .period-select--true {
+    .dropdown__title-box span {
+      color: #000000;
+    }
   }
 }
 
@@ -1465,7 +1515,7 @@
 
 .main-type {
   padding-bottom: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   border-bottom: 1px solid #EEEEEE;
 
   &__box {

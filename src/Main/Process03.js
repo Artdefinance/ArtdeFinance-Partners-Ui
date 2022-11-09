@@ -140,7 +140,7 @@ function Process03() {
                       <p className="main-description__small">300.00</p>
                     </div>
                   </div>
-                  <div style={{ marginBottom: '80px' }}>
+                  <div style={{ marginBottom: '80px', marginTop: '-10px' }}>
                     <Button
                       className="button button--black button--mid"
                       content="Curating Try again"

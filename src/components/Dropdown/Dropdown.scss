@@ -137,4 +137,16 @@
   }
 }
 
+.time-dropdown  {
+  .date-dropdown__data {
+    color: #BBBBBB;
+  }
+}
+
+.time-dropdown.active {
+  .date-dropdown__data {
+    color: #000000;
+  }
+}
+
 

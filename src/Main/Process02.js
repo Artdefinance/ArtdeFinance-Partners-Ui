@@ -15,7 +15,7 @@ export default class Process02 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isToggleOn1: false,
+      isToggleOn1: true,
     };
     this.bubbleOpen = this.bubbleOpen.bind(this);
     this.bubbleClose = this.bubbleClose.bind(this);
@@ -90,8 +90,8 @@ export default class Process02 extends React.Component {
               <div className="main-description curating_setting">
                 <div className="setting_head">Curating Setting</div>
                 <div className="setting_summary">
-                  <p className="title">We start curating the registered works.</p>
-                  <p className="desc">
+                  <p className="title" style={{ textAlign: 'left' }}>We start curating the registered works.</p>
+                  <p className="desc" style={{ textAlign: 'left' }}>
                     After selecting the value for the work, the final sale is up to you.
                     <br />
                     <br />
@@ -122,7 +122,7 @@ export default class Process02 extends React.Component {
                           isToggleOn1 === true ? style.open : style.closed
                         }
                         className="question-bubble__wrap"
-                        style={{ top: '-75px', left: '-40px' }}
+                        style={{ top: '-75px', left: '-20px' }}
                       >
                         <p>Registration is free during the promotion period.</p>
                       </motion.div>
@@ -156,6 +156,15 @@ export default class Process02 extends React.Component {
                       </div>
                       <div className="form__inputs form_multi">
                         <DateDropdown dropWidth="415px" />
+                        <TimeDropdown dropWidth="333px" content={ExampleContent3} />
+                      </div>
+                    </div>
+                    <div className="form__body">
+                      <div className="form__inputs">
+                        <div className="form__title">Title</div>
+                      </div>
+                      <div className="form__inputs form_multi">
+                        <DateDropdown dropWidth="415px" disabled />
                         <TimeDropdown dropWidth="333px" content={ExampleContent3} />
                       </div>
                     </div>

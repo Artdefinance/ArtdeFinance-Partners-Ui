@@ -8,6 +8,7 @@ export default class DateDropdown extends React.Component {
     this.state = {
       hour: 'Hours',
       isToggleOn: false,
+      isBlank: true,
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
@@ -23,11 +24,12 @@ export default class DateDropdown extends React.Component {
     this.setState((prevState) => ({
       hour: e.target.innerText,
       isToggleOn: !prevState.isToggleOn,
+      isBlank: false,
     }));
   }
 
   render() {
-    const { hour, isToggleOn } = this.state;
+    const { hour, isToggleOn, isBlank } = this.state;
     const { dropWidth, disabled, content } = this.props;
     const iconStyle = {
       backgroundImage: 'url(/assets/images/component/alarm.png)',
@@ -47,7 +49,7 @@ export default class DateDropdown extends React.Component {
     return (
       <div>
         {disabled ? (
-          <div className="date-dropdown disabled" style={{ width: dropWidth }}>
+          <div className="date-dropdown time-dropdown disabled" style={{ width: dropWidth }}>
             <button
               type="button"
               className="date-dropdown__button"
@@ -64,7 +66,7 @@ export default class DateDropdown extends React.Component {
             </button>
           </div>
         ) : (
-          <div className="date-dropdown" style={{ width: dropWidth }}>
+          <div className={ isBlank ? 'date-dropdown time-dropdown' : 'date-dropdown time-dropdown active' } style={{ width: dropWidth }}>
             <button
               type="button"
               className={
