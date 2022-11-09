@@ -328,9 +328,19 @@
   &__title {
     display: inline-block;
     position: relative;
-    color: #888888;
-    font-size: 16px;
-    @include RotaB;
+
+    span {
+      display: inline-block;
+      margin-top: 5px;
+      line-height: 1;
+      color: #888888;
+      font-size: 16px;
+      @include RotaB;
+    }
+
+    .question-bubble__mark {
+      margin-top: 2px;
+    }
   }
 
   &__title--need::after {
@@ -353,7 +363,7 @@
 
   &__inputs {
     position: relative;
-    padding-bottom: 54px;
+    padding-bottom: 40px;
   }
 
   &__input-box {

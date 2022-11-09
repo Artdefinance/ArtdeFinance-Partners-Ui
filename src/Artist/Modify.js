@@ -133,7 +133,9 @@ export default class Regist extends React.Component {
               </div>
               <div className="side-regist__inputs side-regist__inputs--half">
                 <div className="side-regist__title side-regist__title--need side-regist__title--mark">
-                  Birth
+                  <span>
+                    Birth
+                  </span>
                   <button
                     type="button"
                     className="question-bubble__mark"

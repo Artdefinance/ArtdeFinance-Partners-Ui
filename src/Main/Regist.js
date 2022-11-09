@@ -69,7 +69,7 @@ export default class ArtworksRegist extends React.Component {
 
   handleClick(e) {
     if (e.currentTarget.value === 'isToggleOn11') {
-      this.setState((prevState) => ({
+      this.setState(() => ({
         isToggleOn11: false,
       }));
     }
@@ -156,7 +156,7 @@ export default class ArtworksRegist extends React.Component {
     const {
       isToggleOn1, isToggleOn2, isToggleOn3, isToggleOn4, isToggleOn5,
       isToggleOn6, isToggleOn7, isToggleOn8, isToggleOn9, isToggleOn10, isToggleOn11,
-      isblank1, isblank2, isblank3, isblank4, isblank5, isblank6, isblank7,
+      isblank1, isblank2, isblank3, isblank6, isblank7,
       totalByte, open, dummyImg,
       isFooterShow,
     } = this.state;
@@ -265,7 +265,7 @@ export default class ArtworksRegist extends React.Component {
                   <div className="form__inputs form_multi">
                     <div>
                       <div className={isblank3 ? 'form__title form__title--need' : 'form__title'}>Creation Year</div>
-                        <Input value="" placeholder="Text" />
+                      <Input value="" placeholder="Text" />
                       <div className="warning__message">
                         <span className="warning__text">Supporting Text</span>
                       </div>
@@ -679,7 +679,7 @@ export default class ArtworksRegist extends React.Component {
             </Accordion>
           </div>
 
-          <div className={ isFooterShow ? 'form__fixed form_fixed-multi hide' : 'form__fixed form_fixed-multi'} ref={this.formButton}>
+          <div className={isFooterShow ? 'form__fixed form_fixed-multi hide' : 'form__fixed form_fixed-multi'} ref={this.formButton}>
             <div>
               <div>
                 <Button className="button button--gray-line button--mid" content="back" />

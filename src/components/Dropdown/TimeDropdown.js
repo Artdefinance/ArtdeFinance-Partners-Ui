@@ -66,7 +66,7 @@ export default class DateDropdown extends React.Component {
             </button>
           </div>
         ) : (
-          <div className={ isBlank ? 'date-dropdown time-dropdown' : 'date-dropdown time-dropdown active' } style={{ width: dropWidth }}>
+          <div className={isBlank ? 'date-dropdown time-dropdown' : 'date-dropdown time-dropdown active'} style={{ width: dropWidth }}>
             <button
               type="button"
               className={

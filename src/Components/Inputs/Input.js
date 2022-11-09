@@ -9,7 +9,6 @@ export default class Input extends React.Component {
     this.state = {
       value: '',
       isClearButton: false,
-      textValue: '',
     };
     this.showCloseButton = this.showCloseButton.bind(this);
     this.clearText = this.clearText.bind(this);
@@ -28,7 +27,6 @@ export default class Input extends React.Component {
       this.setState(() => ({
         value: e.target.value,
         isClearButton: true,
-        textValue: e.target.value,
       }));
     }
     if (e.target.value && [e.target.name]) {
@@ -43,12 +41,11 @@ export default class Input extends React.Component {
     this.setState(() => ({
       isClearButton: false,
     }));
-
     this.inputTarget.current.value = '';
   }
 
   render() {
-    const { value, isClearButton, textValue } = this.state;
+    const { value, isClearButton } = this.state;
     const { name, disabled, placeholder, getValue } = this.props;
     return (
       <div className={disabled === 'true' ? 'input disabled' : 'input'}>
@@ -75,15 +72,20 @@ export default class Input extends React.Component {
                   value={value}
                 />
               ) : (
-                <input
-                  type="text"
-                  className="input__input"
-                  placeholder={placeholder}
-                  name={name}
-                  onChange={this.showCloseButton}
-                  value={getValue}
-                  ref={this.inputTarget}
-                />
+                <>
+                  <input
+                    type="text"
+                    className="input__input"
+                    placeholder={placeholder}
+                    name={name}
+                    onChange={this.showCloseButton}
+                    value={getValue}
+                    ref={this.inputTarget}
+                  />
+                  <button type="button" onClick={this.clearText} name={name}>
+                    <Icons shape="close-circle" />
+                  </button>
+                </>
               )}
             </div>
           )}
