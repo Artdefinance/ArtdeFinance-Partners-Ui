@@ -919,6 +919,7 @@ html, body {
 .sortable_wrap > div ul li {background: transparent;}
 .sortable_wrap > div ul li .placeholder:before {display: none;}
 .sortable_wrap > div ul li .placeholder {display: flex;background:transparent;}
+.sortable_wrap > div ul li.active {background: rgba(243, 241, 255, 0.5) !important}
 
 /* material reset */
 body .MuiAccordionSummary-content {margin: 0;}

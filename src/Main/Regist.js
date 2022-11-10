@@ -42,6 +42,7 @@ export default class ArtworksRegist extends React.Component {
       open: false,
       dummyImg: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
       isFooterShow: true,
+      sortActiveIndex: null,
     };
     this.handleClick = this.handleClick.bind(this);
     this.clickClose = this.clickClose.bind(this);
@@ -661,7 +662,12 @@ export default class ArtworksRegist extends React.Component {
                     <input type="text" className="country" placeholder="Country" />
                     <div className="del"><span className="a11y">delete</span></div>
                   </div>
-                  <div className="sortable_wrap exhibition_history">
+                  <div
+                    className="sortable_wrap exhibition_history"
+                    // 드래그 시에 배경색 처리
+                    onDragStart={(event) => event.target?.classList?.add?.('active')}
+                    onDragEnd={(event) => event.target?.classList?.remove?.('active')}
+                  >
                     <SortableList
                       data={ExhibitionHistory.map((i) => (
                         <div className="placeholder" key={i.id}>
