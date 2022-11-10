@@ -42,7 +42,7 @@ export default class ArtworksRegist extends React.Component {
       open: false,
       dummyImg: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
       isFooterShow: true,
-      sortActiveIndex: null,
+      depthChecked: false,
     };
     this.handleClick = this.handleClick.bind(this);
     this.clickClose = this.clickClose.bind(this);
@@ -162,7 +162,7 @@ export default class ArtworksRegist extends React.Component {
       isToggleOn6, isToggleOn7, isToggleOn8, isToggleOn9, isToggleOn10, isToggleOn11,
       isblank1, isblank2, isblank3, isblank4, isblank5, isblank6, isblank7, isblank8,
       totalByte, open, dummyImg,
-      isFooterShow,
+      isFooterShow, depthChecked,
     } = this.state;
 
     const style = {
@@ -399,6 +399,9 @@ export default class ArtworksRegist extends React.Component {
                         <Checkbox
                           chkId="depthchk"
                           content="Depth check"
+                          onChangeChecked={(checked) => this.setState(
+                            (state) => ({ ...state, depthChecked: checked }),
+                          )}
                         />
                         <button
                           type="button"
@@ -438,7 +441,7 @@ export default class ArtworksRegist extends React.Component {
                       </div>
                     </div>
                     <div>
-                      <Input value="" placeholder="Text" />
+                      <Input value="" placeholder="Text" disabled={depthChecked ? 'true' : ''} />
                       <div className="sub__message">
                       D 0cm
                       </div>
