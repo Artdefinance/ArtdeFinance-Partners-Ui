@@ -8,6 +8,10 @@ export default function FileDragDrop({ boxTypeClass }) {
   const inputRef = useRef();
   const [filenames, setNames] = useState([]);
 
+  const onClickDelete = (targetFile) => () => {
+    setNames(filenames.filter((file) => file !== targetFile));
+  };
+
   const fileHandler = (files) => {
     const extension = files[0].name.split('.')[1]?.toLowerCase();
 
@@ -73,6 +77,7 @@ export default function FileDragDrop({ boxTypeClass }) {
             <i style={fileContainer} className="drop_icon" />
             <p className="drag-drop__title">
               <span>Select a file</span>
+              {' '}
               or Drag and Drop here (Up to 1, 50 MB)
             </p>
             <p className="drag-drop__text">
@@ -106,7 +111,7 @@ export default function FileDragDrop({ boxTypeClass }) {
                   Preview
                 </button>
               </div>
-              <button type="button" className="trash">
+              <button type="button" className="trash" onClick={onClickDelete(file)}>
                 <Icons shape="trash" color="#BBBBBB" />
                 <span className="a11y">휴지통으로 이동</span>
               </button>

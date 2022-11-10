@@ -561,7 +561,7 @@ export default class ArtworksRegist extends React.Component {
                   </div>
                   {/* <div className="form__inputs"> */}
                   <div className="form__inputs form__error">
-                    <div className="form__title form__title--need">
+                    <div className={`form__title${totalByte > 0 ? '' : ' form__title--need'}`}>
                       Work Introduction
                       <div className="question-bubble">
                         <button
