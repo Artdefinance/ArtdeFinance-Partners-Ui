@@ -54,17 +54,19 @@ export default class ArtworksRegist extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > this.registTarget.current.clientHeight - 1124) {
-        this.setState(() => ({
-          isFooterShow: true,
-        }));
-      } else {
-        this.setState(() => ({
-          isFooterShow: false,
-        }));
-      }
-    });
+    if (this.registTarget.current) {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > this.registTarget.current.clientHeight - 1124) {
+          this.setState(() => ({
+            isFooterShow: true,
+          }));
+        } else {
+          this.setState(() => ({
+            isFooterShow: false,
+          }));
+        }
+      });
+    }
   }
 
   handleClick(e) {

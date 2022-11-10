@@ -69,7 +69,7 @@ export default class CountryDropdown extends React.Component {
                     backgroundImage: `url(/assets/images/component/icon_${items.country}.png)`,
                   }}
                 />
-                <span>{items.title}</span>
+                <span className="dropdown__inner-text">{items.title}</span>
               </button>
             ))}
         </div>

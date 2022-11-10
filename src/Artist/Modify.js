@@ -18,11 +18,15 @@ export default class Regist extends React.Component {
       fileImage: '/assets/images/page/artist/img_profile_view.png',
       totalByte: 0,
       isToggleOn1: false,
+      isblankNumberInput1: true,
+      isblankNumberInput2: true,
+      isblank1: true,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.checkByte = this.checkByte.bind(this);
     this.clickClose = this.clickClose.bind(this);
+    this.clickDropdown = this.clickDropdown.bind(this);
   }
 
   handleClick(e) {
@@ -52,6 +56,14 @@ export default class Regist extends React.Component {
     }));
   }
 
+  clickDropdown(e) {
+    if (e.target.className === 'dropdown__inner-text') {
+      this.setState({
+        isblank1: false,
+       });
+    }
+  }
+
   clickClose(e) {
     this.setState(() => ({
       [e.target.value]: false,
@@ -59,7 +71,10 @@ export default class Regist extends React.Component {
   }
 
   render() {
-    const { fileImage, totalByte, isToggleOn1 } = this.state;
+    const {
+      fileImage, totalByte, isToggleOn1, isblankNumberInput1, isblankNumberInput2,
+      isblank1,
+    } = this.state;
 
     const style = {
       open: {
@@ -117,7 +132,12 @@ export default class Regist extends React.Component {
               </div>
               <div className="side-regist__inputs">
                 <p className="side-regist__title">Artist Name</p>
-                <Input name="artist" disabled="true" placeholder="Content" />
+                <Input
+                  name="artist"
+                  disabled="true"
+                  placeholder="Content"
+                  isShowCloseButton={false}
+                />
                 <div className="side-regist__message">
                   <Icons shape="warning_fill" color="#FF3B30" />
                   <span className="side-regist__more">Supporting Text</span>
@@ -125,17 +145,26 @@ export default class Regist extends React.Component {
               </div>
               <div className="side-regist__inputs">
                 <p className="side-regist__title">ID</p>
-                <Input name="ID" placeholder="Content" getValue="Content" />
+                <Input
+                  name="ID"
+                  placeholder="Content"
+                  getValue="Content"
+                  isShowCloseButton={true}
+                />
                 <div className="side-regist__message">
                   <Icons shape="warning_fill" color="#FF3B30" />
                   <span className="side-regist__more">Supporting Text</span>
                 </div>
               </div>
               <div className="side-regist__inputs side-regist__inputs--half">
-                <div className="side-regist__title side-regist__title--need side-regist__title--mark">
-                  <span>
-                    Birth
-                  </span>
+                <div
+                  className={
+                    !isblankNumberInput1 && !isblankNumberInput2
+                      ? 'side-regist__title'
+                      : 'side-regist__title side-regist__title--need side-regist__title--mark'
+                  }
+                >
+                  <span>Birth</span>
                   <button
                     type="button"
                     className="question-bubble__mark"
@@ -168,6 +197,11 @@ export default class Regist extends React.Component {
                       if (!/[0-9]/.test(event.key)) {
                         event.preventDefault();
                       }
+                      if (event.target.value.length > 3) {
+                        this.setState(() => ({
+                          isblankNumberInput1: false,
+                        }));
+                      }
                     }}
                   />
                   <span />
@@ -180,6 +214,11 @@ export default class Regist extends React.Component {
                       if (!/[0-9]/.test(event.key)) {
                         event.preventDefault();
                       }
+                      if (event.target.value.length > 3) {
+                        this.setState(() => ({
+                          isblankNumberInput2: false,
+                        }));
+                      }
                     }}
                   />
                 </div>
@@ -189,16 +228,18 @@ export default class Regist extends React.Component {
                 </div>
               </div>
               <div className="side-regist__inputs">
-                <p className="side-regist__title side-regist__title--need">
+                <p className={ isblank1 ? 'side-regist__title side-regist__title--need' : 'side-regist__title' }>
                   Country
                 </p>
-                <CountryDropdown
-                  dropWidth="100%"
-                  dropHeight="80px"
-                  dropTitle="Please select a country"
-                  content={ExampleContent1}
-                  dropFontSize="24px"
-                />
+                <div onClick={this.clickDropdown}>
+                  <CountryDropdown
+                    dropWidth="100%"
+                    dropHeight="80px"
+                    dropTitle="Please select a country"
+                    content={ExampleContent1}
+                    dropFontSize="24px"
+                  />
+                </div>
                 <span className="side-regist__more">
                   Up to 2000Bytes can be registered.
                 </span>
@@ -233,7 +274,7 @@ export default class Regist extends React.Component {
                     />
                   </button>
                 </p>
-                <div className="side-regist__drag-drop">
+                <div className="side-regist__drag-drop" onClick={this.clickfileDropdown}>
                   <FileDragDrop />
                 </div>
               </div>
