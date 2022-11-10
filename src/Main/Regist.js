@@ -37,6 +37,7 @@ export default class ArtworksRegist extends React.Component {
       isblank5: true,
       isblank6: true,
       isblank7: true,
+      isblank8: true,
       totalByte: 0,
       open: false,
       dummyImg: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
@@ -158,7 +159,7 @@ export default class ArtworksRegist extends React.Component {
     const {
       isToggleOn1, isToggleOn2, isToggleOn3, isToggleOn4, isToggleOn5,
       isToggleOn6, isToggleOn7, isToggleOn8, isToggleOn9, isToggleOn10, isToggleOn11,
-      isblank1, isblank2, isblank3, isblank6, isblank7,
+      isblank1, isblank2, isblank3, isblank4, isblank5, isblank6, isblank7, isblank8,
       totalByte, open, dummyImg,
       isFooterShow,
     } = this.state;
@@ -266,14 +267,14 @@ export default class ArtworksRegist extends React.Component {
 
                   <div className="form__inputs form_multi">
                     <div>
-                      <div className={isblank3 ? 'form__title form__title--need' : 'form__title'}>Creation Year</div>
-                      <Input value="" placeholder="Text" />
+                      <div className={`form__title${isblank3 ? ' form__title--need' : ''}`}>Creation Year</div>
+                      <Input value="" placeholder="Text" onChangeValue={(value) => this.setState((state) => ({ ...state, isblank3: !value }))} />
                       <div className="warning__message">
                         <span className="warning__text">Supporting Text</span>
                       </div>
                     </div>
                     <div>
-                      <div className="form__title form__title--need">
+                      <div className={`form__title${isblank4 ? ' form__title--need' : ''}`}>
                         Edition
                         <div className="question-bubble">
                           <button
@@ -301,7 +302,7 @@ export default class ArtworksRegist extends React.Component {
                           </motion.div>
                         </div>
                       </div>
-                      <Input value="" placeholder="Text" />
+                      <Input value="" placeholder="Text" onChangeValue={(value) => this.setState((state) => ({ ...state, isblank4: !value }))} />
                       <div className="warning__message">
                         <span className="warning__text">Supporting Text</span>
                       </div>
@@ -309,8 +310,8 @@ export default class ArtworksRegist extends React.Component {
                   </div>
 
                   <div className="form__inputs">
-                    <div className="form__title form__title--need">Medium</div>
-                    <Input value="" placeholder="Text" />
+                    <div className={`form__title${isblank5 ? ' form__title--need' : ''}`}>Medium</div>
+                    <Input value="" placeholder="Text" onChangeValue={(value) => this.setState((state) => ({ ...state, isblank5: !value }))} />
                     <div className="warning__message">
                       <span className="warning__text">Supporting Text</span>
                     </div>
@@ -527,7 +528,7 @@ export default class ArtworksRegist extends React.Component {
                 <hr />
                 <div className="form__body">
                   <div className="form__inputs">
-                    <div className="form__title form__title--need">
+                    <div className={`form__title${isblank8 ? ' form__title--need' : ''}`}>
                       Condition
                       <div className="question-bubble">
                         <button
@@ -553,7 +554,7 @@ export default class ArtworksRegist extends React.Component {
                         </motion.div>
                       </div>
                     </div>
-                    <Input value="" placeholder="Text" />
+                    <Input value="" placeholder="Text" onChangeValue={(value) => this.setState((state) => ({ ...state, isblank8: !value }))} />
                     <div className="warning__message">
                       <span className="warning__text">Supporting Text</span>
                     </div>

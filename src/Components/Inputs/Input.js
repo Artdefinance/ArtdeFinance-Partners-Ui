@@ -36,14 +36,20 @@ export default class Input extends React.Component {
   }
 
   showCloseButton(e) {
+    const { onChangeValue } = this.props;
+
+    if (typeof onChangeValue === 'function') {
+      onChangeValue(e.target.value);
+    }
+
     if (e.target.value === '') {
       this.setState(() => ({
         [e.target.name]: false,
         isClearButton: false,
         value: '',
+        value2: '',
       }));
-    }
-    if (e.target.value !== '') {
+    } else if (e.target.value !== '') {
       this.setState(() => ({
         value: e.target.value,
         value2: e.target.value,
@@ -59,6 +65,11 @@ export default class Input extends React.Component {
   }
 
   clearText() {
+    const { onChangeValue } = this.props;
+    if (typeof onChangeValue === 'function') {
+      onChangeValue('');
+    }
+
     this.setState(() => ({
       isClearButton: false,
       value2: '',
