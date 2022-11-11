@@ -435,21 +435,58 @@ export default class ArtworksRegist extends React.Component {
                   </div>
                   <div className="form__inputs form_multi">
                     <div>
-                      <Input value="" placeholder="Text" />
+                      <div className="inputs">
+                        <p className="text">Text</p>
+                        <input
+                          type="text"
+                          placeholder="0.0"
+                          onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {
+                              event.preventDefault();
+                            }
+                          }}
+                         />
+                        <p className="count">in</p>
+                      </div>
                       <div className="sub__message">
-                      W 202.7cm
+                        0.0cm
                       </div>
                     </div>
                     <div>
-                      <Input value="" placeholder="Text" disabled={depthChecked ? 'true' : ''} />
+                      <div className={depthChecked ? 'inputs inputs-acitve' : 'inputs'}>
+                        <p className="text">Text</p>
+                        <input
+                          type="text"
+                          placeholder="0.0"
+                          onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {
+                              event.preventDefault();
+                            }
+                          }}
+                          disabled={depthChecked ? 'true' : ''}
+                         />
+                        <p className="count">in</p>
+                      </div>
                       <div className="sub__message">
-                      D 0cm
+                        0.0cm
                       </div>
                     </div>
                     <div>
-                      <Input value="" placeholder="Text" />
+                      <div className="inputs">
+                        <p className="text">Text</p>
+                        <input
+                          type="text"
+                          placeholder="0.0"
+                          onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {
+                              event.preventDefault();
+                            }
+                          }}
+                         />
+                        <p className="count">in</p>
+                      </div>
                       <div className="sub__message">
-                      H 202.6cm
+                        0.0cm
                       </div>
                     </div>
                   </div>

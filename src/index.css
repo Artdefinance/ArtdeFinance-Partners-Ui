@@ -916,10 +916,11 @@ html, body {
 }
 
 /* sortable */
-.sortable_wrap > div ul li {background: transparent;}
+.sortable_wrap > div ul li {position: relative; background: transparent;}
 .sortable_wrap > div ul li .placeholder:before {display: none;}
 .sortable_wrap > div ul li .placeholder {display: flex;background:transparent;}
 .sortable_wrap > div ul li.active {background: rgba(243, 241, 255, 0.5) !important}
+.sortable_wrap > div ul li.active::before {display: inline-block; position: absolute; left: 9px; top:38px; width: 24px; height: 24px; background:url('/public/assets/images/page/artworks/icon_buger.png') 0 0 no-repeat; background-size: contain; content: '';}
 
 /* material reset */
 body .MuiAccordionSummary-content {margin: 0;}

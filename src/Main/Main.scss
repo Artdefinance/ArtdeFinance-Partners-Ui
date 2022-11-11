@@ -41,6 +41,43 @@
       color: #888888;
       @include RotaB;
     }
+
+    .btn_head_arrow::after {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background:url('../../public/assets/images/page/main/icon_right.png') 0 0 no-repeat;
+      background-size: contain;
+      content: '';
+    }
+  }
+
+  .item_tag {
+    display: inline-block;
+    position: absolute;
+    left: 140px;
+    width: 55px;
+    height: 25px;
+    padding-left: 10px;
+    background-color: #5F44FF;
+    border-radius: 5px 0 5px 0;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 25px;
+    box-shadow: 1px 1px 1px 0px #FFFFFF40 inset;
+    box-sizing: border-box;
+    @include RotaB;
+
+    &::before {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      margin-right: 6px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      vertical-align: middle;
+      content: '';
+    }
   }
 }
 .nodata-content {
@@ -395,7 +432,7 @@
     }
 
     li + li {
-       padding-left: 60px;
+      margin-left: 60px;
     }
     .figure {
       position: relative;

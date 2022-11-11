@@ -168,9 +168,9 @@ export default class Main extends React.Component {
           <div className="item_inner">
             <div className="item_head">
               <h2>Now Curating</h2>
-              <button type="button" className="btn_head">
+              <span className="item_tag">Live</span>
+              <button type="button" className="btn_head btn_head_arrow">
                 View All
-                <Icons shape="refresh" width="24px" height="24px" />
               </button>
             </div>
             {/* nodata */}

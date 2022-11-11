@@ -161,6 +161,55 @@
       > div  {
         flex: 1;
       }
+
+      .inputs {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 11px;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      .inputs input {
+        width: calc(100% - 6.3px);
+        padding-right: 6.3px;
+        border: none;
+        color: #BBBBBB;
+        font-size: 24px;
+        text-align: right;
+        @include RotaR;
+
+        &::placeholder {
+          color: #BBBBBB;
+        }
+      }
+
+      .inputs-acitve .text {
+        color: #BBBBBB;
+      }
+
+      .inputs-acitve input {
+        background-color: transparent !important;
+      }
+
+      .inputs-acitve + .sub__message {
+        color: #BBBBBB;
+      }
+
+      .inputs input:focus {
+        outline: none;
+      }
+
+      .text {
+        color: #555555;
+        font-size: 16px;
+        @include RotaSB;
+      }
+
+      .count {
+        color:  #BBBBBB;
+        font-size: 16px;
+        @include RotaSB;
+      }
     }
     .depth_check {
       display: flex;
@@ -237,7 +286,7 @@
       }
     }
     .year {
-      width: 14%; 
+      width: 18.5%; 
       padding: 0;
       font-size: 18px;
       justify-content: center;
@@ -249,7 +298,7 @@
       }
     }
     .location {
-      width: calc(55% - 50px);
+      width: calc(50% - 50px);
       border-width: 0 0 0 1px;
       border-style: dashed;
       border-color: #dddddd;
@@ -306,7 +355,7 @@
         }
       }
       .year {
-        width: 15%; 
+        width: 20%; 
         padding-left: 0;
         font-size: 18px;
         justify-content: center;
@@ -316,7 +365,7 @@
         }
       }
       .location {
-        width: calc(55% - 40px);
+        width: calc(50% - 40px);
       }
       .country {
         width: 30%;
