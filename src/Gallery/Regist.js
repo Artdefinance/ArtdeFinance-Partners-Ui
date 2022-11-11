@@ -12,8 +12,18 @@ export default class GalleryRegist extends React.Component {
     super(props);
     this.state = {
       agreechecked: false,
+      isblank1: true,
+      isblank2: true,
+      isblank3: true,
+      isblank4: true,
+      isblank5: true,
+      isblank6: true,
     };
     this.handleAgreeChange = this.handleAgreeChange.bind(this);
+    this.clickRadioTabButton = this.clickRadioTabButton.bind(this);
+    this.clickRadioTabButton2 = this.clickRadioTabButton2.bind(this);
+    this.changeNumberInput = this.changeNumberInput.bind(this);
+    this.numberInputTarget = React.createRef();
   }
 
   handleAgreeChange = (e) => {
@@ -21,6 +31,31 @@ export default class GalleryRegist extends React.Component {
       agreechecked: e.target.checked,
     });
   };
+
+  clickRadioTabButton(e) {
+    if (e.target.className === 'radio-tab__button') {
+      this.setState({
+        isblank2: false,
+      });
+    }
+  }
+
+  clickRadioTabButton2(e) {
+    if (e.target.className === 'radio-tab__button') {
+      this.setState({
+        isblank6: false,
+      });
+    }
+  }
+
+  changeNumberInput() {
+    const target1 = this.numberInputTarget.current.value.length;
+    if (target1 > 8) {
+      this.setState(() => ({
+        isblank5: false,
+      }));
+    }
+  }
 
   render() {
     const GallerySize = [
@@ -105,7 +140,7 @@ export default class GalleryRegist extends React.Component {
       },
     ];
 
-    const { agreechecked } = this.state;
+    const { agreechecked, isblank1, isblank2, isblank3, isblank4, isblank5, isblank6 } = this.state;
     const chkboxChecked = {
       backgroundImage: 'url(/assets/images/component/check_true.png)',
     };
@@ -133,47 +168,47 @@ export default class GalleryRegist extends React.Component {
             </div>
             <div className="form__body">
               <div className="form__inputs">
-                <p className="form__title form__title--need">
+                <p className={isblank1 ? 'form__title form__title--need' : 'form__title'}>
                 Please tell us the name of the gallery you are running while working with artists.
                 </p>
-                <Input value="" placeholder="Text" />
+                <Input value="" placeholder="Text" onChangeValue={(value) => this.setState((state) => ({ ...state, isblank1: !value }))} />
                 <div className="warning__message">
                   <span className="warning__text">Supporting Text</span>
                 </div>
               </div>
 
               <div className="form__inputs">
-                <p className="form__title form__title--need">
-                What is the size of the artists in the gallery?
+                <p className={isblank2 ? 'form__title form__title--need' : 'form__title'}>
+                  What is the size of the artists in the gallery?
                 </p>
-                <div className="button-position">
+                <div className="button-position" onClick={this.clickRadioTabButton}>
                   <RadioTabButton data={GallerySize} name="" widthStyle="775px" heightStyle="80px" />
                 </div>
               </div>
 
               <div className="form__inputs">
-                <p className="form__title form__title--need">
+                <p className={isblank3 ? 'form__title form__title--need' : 'form__title'}>
                 Please let me know if there is an address of a site
                 where you can introduce and view your work.
                 </p>
-                <Input value="" placeholder="Text" />
+                <Input value="" placeholder="Text" onChangeValue={(value) => this.setState((state) => ({ ...state, isblank3: !value }))} />
                 <div className="warning__message">
                   <span className="warning__text">Supporting Text</span>
                 </div>
               </div>
 
               <div className="form__inputs">
-                <p className="form__title form__title--need">
+                <p className={isblank4 ? 'form__title form__title--need' : 'form__title'}>
                 Please provide the official email address you need when requesting assistance.
                 </p>
-                <Input value="" placeholder="Text" />
+                <Input value="" placeholder="Text" onChangeValue={(value) => this.setState((state) => ({ ...state, isblank4: !value }))} />
                 <div className="warning__message">
                   <span className="warning__text">Supporting Text</span>
                 </div>
               </div>
 
               <div className="form__inputs">
-                <p className="form__title form__title--need">
+                <p className={isblank5 ? 'form__title form__title--need' : 'form__title'}>
                 Please provide the official contact information you need when requesting assistance.
                 </p>
                 <div className="form__multi">
@@ -188,15 +223,25 @@ export default class GalleryRegist extends React.Component {
                       </option>
                     ))}
                   </select> */}
-                  <Input value="" placeholder="Please enter without hyphens," />
+                  <input
+                    type="text"
+                    placeholder="Please enter without hyphens,"
+                    onKeyPress={(event) => {
+                      if (!/[0-9]/.test(event.key)) {
+                        event.preventDefault();
+                      }
+                    }}
+                    onChange={this.changeNumberInput}
+                    ref={this.numberInputTarget}
+                  />
                 </div>
               </div>
 
               <div className="form__inputs">
-                <p className="form__title form__title--need">
+                <p className={isblank6 ? 'form__title form__title--need' : 'form__title'}>
                 Is there a storage or place to store the artist&apos;s work in the gallery?
                 </p>
-                <div className="button-position">
+                <div className="button-position" onClick={this.clickRadioTabButton2}>
                   <RadioTabButton data={PersonNumber} name="" widthStyle="775px" heightStyle="80px" />
                 </div>
               </div>

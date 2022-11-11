@@ -260,6 +260,15 @@
     @include ellipse(1);
   }
 
+  &__price-title {
+    margin-bottom: 15px;
+    color: #888888;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    @include RotaB;
+  }
+
   &__price--busd {
     margin-top: 6px;
     color: #888888;
@@ -420,13 +429,15 @@
 
   >div+div {
     padding-top: 23px;
+    padding-bottom: 10px;
     border-top: 1px solid #EEEEEE;
   }
 
   &__header {
     width: 100%;
-    padding-bottom: 23px;
+    padding-bottom: 10px;
     text-align: left;
+    line-height: 1;
 
     span {
       position: relative;
@@ -466,12 +477,14 @@
     width: 160px;
     color: #888888;
     font-size: 16px;
+    line-height: 1.4;
     @include RotaB;
   }
 
   &__text {
     width: calc(100% - 160px);
     text-align: right;
+    line-height: 1.4;
     @include AcuminproR;
   }
 
@@ -500,9 +513,11 @@
 
     li {
       width: 45%;
+      height: 18px;
       margin: 8.5px 0;
       text-align: left;
       font-size: 16px;
+      line-height: 1;
       @include AcuminproR;
       @include ellipse(1);
 
@@ -517,6 +532,7 @@
 
     li:last-child {
       width: 20%;
+      
     }
   }
 
@@ -554,7 +570,7 @@
 .activity-sale {
   width: 100%;
   margin-top: 72px;
-  padding: 40px 50px;
+  padding: 40px 50px 80px;
   background-color: #ffffff;
   border-radius: 10px;
   text-align: left;
@@ -659,7 +675,7 @@
 
   &__price {
     display: flex;
-    margin-top: 40px;
+    margin-top: 45px;
 
     >p {
       margin-right: 15px;
@@ -971,7 +987,7 @@
 
 .artboard-status {
   width: 700px;
-  padding: 47px 50px;
+  padding: 47px 50px 87px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 0px 25px 0px #BBBBBB26;
@@ -983,7 +999,7 @@
 
   .button {
     width: 400px;
-    margin: 40px auto 0;
+    margin: 48px auto 0;
   }
 
   &__main-title {
@@ -993,8 +1009,8 @@
   }
 
   &__content {
-    margin-top: 40px;
-    padding-top: 20px;
+    margin-top: 55px;
+    padding-top: 55px;
     border-top: 1px solid #EEEEEE;
   }
 
@@ -1412,7 +1428,7 @@
 }
 
 .curator-info + .more-info {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .status-guide {

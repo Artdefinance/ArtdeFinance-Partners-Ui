@@ -18,11 +18,19 @@ export default class Regist extends React.Component {
       fileImage: '/assets/images/page/artist/img_profile.png',
       totalByte: 0,
       isToggleOn1: false,
+      isblank1: true,
+      isblank2: true,
+      isNumberblank: true,
+      isblank3: true,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.checkByte = this.checkByte.bind(this);
     this.clickClose = this.clickClose.bind(this);
+    this.changeNumberInput = this.changeNumberInput.bind(this);
+    this.isblankDropDown = this.isblankDropDown.bind(this);
+    this.numberInputTarget1 = React.createRef();
+    this.numberInputTarget2 = React.createRef();
   }
 
   handleClick(e) {
@@ -58,8 +66,27 @@ export default class Regist extends React.Component {
     }));
   }
 
+  changeNumberInput(e) {
+    const target1 = this.numberInputTarget1.current.value.length;
+    const target2 = this.numberInputTarget2.current.value.length;
+    if (target1 > 3 && target2 > 3) {
+      this.setState(() => ({
+        isNumberblank: false,
+      }));
+    }
+  }
+
+  isblankDropDown(e) {
+    if (e.target.className === 'dropdown__inner-text') {
+      this.setState({
+        isblank3: false,
+       });
+    }
+  }
+
   render() {
-    const { fileImage, totalByte, isToggleOn1 } = this.state;
+    const { fileImage, totalByte,
+      isToggleOn1, isblank1, isblank2, isblank3, isNumberblank } = this.state;
 
     const style = {
       open: {
@@ -116,27 +143,44 @@ export default class Regist extends React.Component {
                 </div>
               </div>
               <div className="side-regist__inputs">
-                <p className="side-regist__title side-regist__title--need">
+                <p
+                  className={`side-regist__title ${
+                    isblank1 ? 'side-regist__title--need' : ''
+                  }`}
+                >
                   Artist Name
                 </p>
-                <Input name="artist" placeholder="Text" />
-                <div className="side-regist__message">
-                  <Icons shape="warning_fill" color="#FF3B30" />
-                  <span className="side-regist__more">Supporting Text</span>
-                </div>
+                <Input
+                  name="artist"
+                  placeholder="Text"
+                  onChangeValue={
+                    (value) => this.setState((state) => ({ ...state, isblank1: !value }))
+                  }
+                />
+                <span className="side-regist__more">Supporting Text</span>
               </div>
               <div className="side-regist__inputs">
-                <p className="side-regist__title side-regist__title--need">
+                <p
+                  className={`side-regist__title ${
+                    isblank2 ? 'side-regist__title--need' : ''
+                  }`}
+                >
                   ID
                 </p>
-                <Input name="ID" placeholder="Text" />
-                <div className="side-regist__message">
-                  <Icons shape="warning_fill" color="#FF3B30" />
-                  <span className="side-regist__more">Supporting Text</span>
-                </div>
+                <Input
+                  name="ID"
+                  placeholder="Text"
+                  onChangeValue={
+                    (value) => this.setState((state) => ({ ...state, isblank2: !value }))
+                  }
+                />
+                <span className="side-regist__more">Supporting Text</span>
               </div>
               <div className="side-regist__inputs side-regist__inputs--half">
-                <div className="side-regist__title side-regist__title--need side-regist__title--mark">
+                <div
+                  className={`side-regist__title 
+                  ${isNumberblank ? 'side-regist__title--need side-regist__title--mark' : ''}`}
+                >
                   Birth
                   <button
                     type="button"
@@ -171,6 +215,8 @@ export default class Regist extends React.Component {
                         event.preventDefault();
                       }
                     }}
+                    ref={this.numberInputTarget1}
+                    onChange={this.changeNumberInput}
                   />
                   <span />
                   <input
@@ -183,29 +229,30 @@ export default class Regist extends React.Component {
                         event.preventDefault();
                       }
                     }}
+                    ref={this.numberInputTarget2}
+                    onChange={this.changeNumberInput}
                   />
                 </div>
-                <div className="side-regist__message">
-                  <Icons shape="warning_fill" color="#FF3B30" />
-                  <span className="side-regist__more">Supporting Text</span>
-                </div>
+                <span className="side-regist__more">Supporting Text</span>
               </div>
               <div className="side-regist__inputs">
-                <p className="side-regist__title side-regist__title--need">
+                <p className={`side-regist__title ${isblank3 ? 'side-regist__title--need' : ''}`}>
                   Country
                 </p>
-                <CountryDropdown
-                  dropWidth="100%"
-                  dropHeight="80px"
-                  dropTitle="Please select a country"
-                  content={ExampleContent1}
-                  dropFontSize="24px"
-                />
-                <span className="side-regist__more">
+                <div onClick={this.isblankDropDown}>
+                  <CountryDropdown
+                    dropWidth="100%"
+                    dropHeight="80px"
+                    dropTitle="Please select a country"
+                    content={ExampleContent1}
+                    dropFontSize="24px"
+                  />
+                </div>
+                <span className="side-regist__more side-regist__more--right">
                   Up to 2000Bytes can be registered.
                 </span>
               </div>
-              <div className="side-regist__inputs">
+              <div className="side-regist__inputs side-regist__inputs--error">
                 <p className="side-regist__title">Biography</p>
                 <div className="textarea_box">
                   <textarea

@@ -25,6 +25,7 @@ import GalleryRegist from './Gallery/Regist';
 import GalleryConfirm from './Gallery/Confirm';
 import GallerySorry from './Gallery/Sorry';
 import Activity from './Activity/Activity';
+import ActivityNoresult from './Activity/Noresult';
 import ActivityList from './Activity/List';
 import ActivityPrice from './Activity/Price';
 import ActivityAuction from './Activity/Auction';
@@ -36,6 +37,7 @@ import Wallet from './Wallet/Wallet';
 import PrivacyPolicy from './Service/PrivacyPolicy';
 import TermsService from './Service/TermsService';
 import Curation from './Curation/Curation';
+import CurationNoResult from './Curation/Noresult';
 import CurationView from './Curation/View';
 import CurationEnd from './Curation/End';
 
@@ -68,6 +70,7 @@ function App() {
         <Route exact path="/gallery/confirm" element={<GalleryConfirm />} />
         <Route path="/gallery/sorry" element={<GallerySorry />} />
         <Route path="/activity" element={<Activity />} />
+        <Route path="/activity/noresult" element={<ActivityNoresult />} />
         <Route path="/activity/list" element={<ActivityList />} />
         <Route path="/activity/price" element={<ActivityPrice />} />
         <Route path="/activity/auction" element={<ActivityAuction />} />
@@ -79,6 +82,7 @@ function App() {
         <Route path="/service/policy" element={<PrivacyPolicy />} />
         <Route path="/service/terms" element={<TermsService />} />
         <Route path="/curation" element={<Curation />} />
+        <Route path="/curation/noresult" element={<CurationNoResult />} />
         <Route path="/curation/view" element={<CurationView />} />
         <Route path="/curation/end" element={<CurationEnd />} />
       </Routes>

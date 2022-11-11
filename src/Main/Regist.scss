@@ -173,7 +173,7 @@
         width: calc(100% - 6.3px);
         padding-right: 6.3px;
         border: none;
-        color: #BBBBBB;
+        color: #000000;
         font-size: 24px;
         text-align: right;
         @include RotaR;
@@ -208,6 +208,7 @@
       .count {
         color:  #BBBBBB;
         font-size: 16px;
+        line-height: 29px;
         @include RotaSB;
       }
     }
@@ -216,6 +217,24 @@
       align-items: center;
       svg {
         margin-top: 5px;
+      }
+    }
+
+    .warning-info {
+      display: flex;
+      align-items: flex-start;
+      padding: 10px 20px;
+      color:  #366DFC;
+      font-size: 14px;
+      border-radius: 5px;
+      background-color: #EDF2FF;
+      box-shadow: 0px 5px 15px 0px #A5A5A51A;
+      box-sizing: border-box;
+      @include AcuminproR;
+
+      svg {
+        margin-top: 5px;
+        margin-right: 6px;
       }
     }
   }
@@ -505,6 +524,7 @@
       .content {
         width: 70%;
         @include AcuminproL();
+        @include ellipse(2);
       }
       .location {
         width: 20%;
@@ -628,7 +648,7 @@
       }
     }
     .waller_addr {
-      margin: 20px 0;
+      margin: 20px auto;
       text-align: center;
       > p {
         margin-bottom: 10px;
@@ -668,7 +688,7 @@
       }
       .bubble-top-right {
         max-width: 610px;
-        margin-top: 10px;
+        margin: 10px auto;
         background: #EDF2FF;
         border: 1px solid #366DFC;
         color: #366DFC;
@@ -677,7 +697,7 @@
         text-align: left;
         @include AcuminproR();
         &:before {
-          right: 5%;
+          right: 14.5%;
           border-color: #366DFC;
           background: #EDF2FF;
         }
@@ -708,7 +728,7 @@
       }
     }
     .Toastify__toast-container--bottom-center {
-      margin-top: -10%;
+      margin-top: 11%;
       width: 100%;
       max-width: 620px;
       .toastify__custom {

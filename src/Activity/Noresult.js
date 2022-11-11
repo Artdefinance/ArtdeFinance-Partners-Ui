@@ -6,11 +6,11 @@ import Dropdown from '../Components/Dropdown/Dropdown';
 import Icons from '../Components/Icons/Icons';
 import Pagenation from '../Components/Pagenation/Pagenation';
 
-export default class Activity extends React.Component {
+export default class Noresult extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isData: true, // false 일경우 nodata 화면
+      isData: false, // false 일경우 nodata 화면
     };
   }
 

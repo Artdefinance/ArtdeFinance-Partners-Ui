@@ -152,7 +152,7 @@ export default class Process02 extends React.Component {
                     </div>
                     <div className="form__body">
                       <div className="form__inputs">
-                        <div className="form__title form__title--need">Creation Year</div>
+                        <div className="form__title form__title--need">Start Date</div>
                       </div>
                       <div className="form__inputs form_multi">
                         <DateDropdown dropWidth="415px" />
@@ -161,7 +161,7 @@ export default class Process02 extends React.Component {
                     </div>
                     <div className="form__body">
                       <div className="form__inputs">
-                        <div className="form__title">Title</div>
+                        <div className="form__title">End Date</div>
                       </div>
                       <div className="form__inputs form_multi">
                         <DateDropdown dropWidth="415px" disabled />

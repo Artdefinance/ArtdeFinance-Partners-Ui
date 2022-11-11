@@ -98,7 +98,7 @@ textarea::placeholder {
 .byte__check {
   display: block;
   position: absolute;
-  bottom: 1px;
+  bottom: 2px;
   right: 2px;
   width: calc(100% - 4px);
   background-color: #ffffff;

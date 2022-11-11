@@ -175,10 +175,10 @@ export default class Process07 extends React.Component {
                         Would you like to register on the marketplace to sell
                         your work?
                       </p>
-                      <div className="button-position">
+                      <div className="button-position button-position--center">
                         <div className="button-position__wrap">
                         <RadioButton
-                          content="Register on the market Start selling."
+                          content="Register on the market<br/>Start selling."
                           value="option1"
                           name="option"
                           pressFucn={() => this.onClickHandler()}
@@ -186,7 +186,7 @@ export default class Process07 extends React.Component {
                         </div>
                         <div className={isSelectNo ? 'button-position__wrap no-select--active' : 'button-position__wrap'}>
                           <RadioButton
-                            content="No, work. I will not sell"
+                            content="No, work.<br/>I will not sell"
                             value="option2"
                             name="option"
                             pressFucn={() => this.onClickHandler2()}

@@ -267,8 +267,8 @@ export default class Wallet extends React.Component {
                           animate={
                             isToggleOn1 === true ? style.open : style.closed
                           }
-                          className="question-bubble__wrap"
-                          style={{ top: '-80px', left: '-115px' }}
+                          className="question-bubble__wrap question-bubble__wrap--1"
+                          style={{ top: '-68px', left: '-80px' }}
                         >
                           Among the registered works,
                           <br />
@@ -302,8 +302,8 @@ export default class Wallet extends React.Component {
                           animate={
                             isToggleOn2 === true ? style.open : style.closed
                           }
-                          className="question-bubble__wrap"
-                          style={{ top: '-100px', left: '-115px' }}
+                          className="question-bubble__wrap question-bubble__wrap--2"
+                          style={{ top: '-90px', left: '-84px' }}
                         >
                           Among the registered works,
                           <br />
@@ -340,8 +340,8 @@ export default class Wallet extends React.Component {
                           animate={
                             isToggleOn3 === true ? style.open : style.closed
                           }
-                          className="question-bubble__wrap"
-                          style={{ top: '-135px', left: '-115px' }}
+                          className="question-bubble__wrap question-bubble__wrap--3"
+                          style={{ top: '-126px', left: '-103px' }}
                         >
                           After the registered works
                           <br />
@@ -385,7 +385,7 @@ export default class Wallet extends React.Component {
                             isToggleOn4 === true ? style.open : style.closed
                           }
                           className="question-bubble__wrap"
-                          style={{ top: '-115px', left: '-115px' }}
+                          style={{ top: '-110px', left: '-109px' }}
                         >
                           All accumulated rewards
                           <br />
@@ -426,8 +426,8 @@ export default class Wallet extends React.Component {
                           animate={
                             isToggleOn5 === true ? style.open : style.closed
                           }
-                          className="question-bubble__wrap"
-                          style={{ top: '-135px', left: '-115px' }}
+                          className="question-bubble__wrap question-bubble__wrap--5"
+                          style={{ top: '-126px', left: '-115px' }}
                         >
                           The total accumulation
                           <br />

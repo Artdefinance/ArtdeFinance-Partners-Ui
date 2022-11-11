@@ -38,11 +38,13 @@ export default class ArtworksRegist extends React.Component {
       isblank6: true,
       isblank7: true,
       isblank8: true,
+      isblank9: true,
       totalByte: 0,
       open: false,
       dummyImg: 'https://www.worldhistory.org/img/r/p/500x600/15460.png',
       isFooterShow: true,
       depthChecked: false,
+      isCm: false,
     };
     this.handleClick = this.handleClick.bind(this);
     this.clickClose = this.clickClose.bind(this);
@@ -96,6 +98,16 @@ export default class ArtworksRegist extends React.Component {
   }
 
   isblankRadioCheck(e) {
+    if (e.target.id === 'default-radio1') {
+      this.setState({
+        isCm: true,
+       });
+    } else {
+      this.setState({
+        isCm: false,
+       });
+    }
+
     if (e.currentTarget.className === 'button-position' || e.currentTarget.className === 'radio_inputs') {
       this.setState({
         [e.currentTarget.getAttribute('value')]: false,
@@ -160,8 +172,8 @@ export default class ArtworksRegist extends React.Component {
     const {
       isToggleOn1, isToggleOn2, isToggleOn3, isToggleOn4, isToggleOn5,
       isToggleOn6, isToggleOn7, isToggleOn8, isToggleOn9, isToggleOn10, isToggleOn11,
-      isblank1, isblank2, isblank3, isblank4, isblank5, isblank6, isblank7, isblank8,
-      totalByte, open, dummyImg,
+      isblank1, isblank2, isblank3, isblank4, isblank5, isblank6, isblank7, isblank8, isblank9,
+      totalByte, open, dummyImg, isCm,
       isFooterShow, depthChecked,
     } = this.state;
 
@@ -263,6 +275,14 @@ export default class ArtworksRegist extends React.Component {
                     <div className="button-position" onClick={this.isblankRadioCheck} value="isblank2">
                       <RadioButton content="Default" value="option1" name="option1" widthStyle="368px" />
                       <RadioButton content="Default" value="option2" name="option1" widthStyle="368px" />
+                    </div>
+                  </div>
+
+                  <div className="form__inputs">
+                    <div className={`form__title${isblank9 ? ' form__title--need' : ''}`}>Title</div>
+                    <Input value="" placeholder="Text" onChangeValue={(value) => this.setState((state) => ({ ...state, isblank9: !value }))} />
+                    <div className="warning__message">
+                      <span className="warning__text">Supporting Text</span>
                     </div>
                   </div>
 
@@ -446,7 +466,7 @@ export default class ArtworksRegist extends React.Component {
                             }
                           }}
                          />
-                        <p className="count">in</p>
+                        <p className="count">{isCm ? 'Cm' : 'in' }</p>
                       </div>
                       <div className="sub__message">
                         0.0cm
@@ -463,9 +483,9 @@ export default class ArtworksRegist extends React.Component {
                               event.preventDefault();
                             }
                           }}
-                          disabled={depthChecked ? 'true' : ''}
+                          disabled={depthChecked ? true : ''}
                          />
-                        <p className="count">in</p>
+                        <p className="count">{isCm ? 'Cm' : 'in' }</p>
                       </div>
                       <div className="sub__message">
                         0.0cm
@@ -483,7 +503,7 @@ export default class ArtworksRegist extends React.Component {
                             }
                           }}
                          />
-                        <p className="count">in</p>
+                        <p className="count">{isCm ? 'Cm' : 'in' }</p>
                       </div>
                       <div className="sub__message">
                         0.0cm
@@ -674,8 +694,16 @@ export default class ArtworksRegist extends React.Component {
                         </motion.div>
                       </div>
                     </div>
+                    <div className="warning-info">
+                      <Icons shape="exclama24" color="#366DFC" />
+                      Please upload it as an image file or PDF file to prove
+                      the certificate of authenticity. The authenticity and
+                      <br />
+                      legal responsibility for the information in the Certificate
+                      of Authenticity rests with the gallery or the artist.
+                    </div>
                     <div className="side-regist__drag-drop">
-                      <FileDragDrop boxType="multiple_container" />
+                      <FileDragDrop boxTypeClass="multiple_container" />
                     </div>
                   </div>
                 </div>
@@ -772,7 +800,7 @@ export default class ArtworksRegist extends React.Component {
                       <dd>2001</dd>
                     </dl>
                     <dl className="info_items">
-                      <dt>Edition</dt>
+                      <dt>Condition</dt>
                       <dd>#3547A</dd>
                     </dl>
                     <dl className="info_items">
@@ -877,12 +905,12 @@ export default class ArtworksRegist extends React.Component {
                         0.00
                         <span className="unit">USDT</span>
                       </div>
-                      {/* <div className="warning__message type__error">
+                      <div className="warning__message type__error">
                         <Icons shape="warning" color="#FF3B30" />
                         <span className="warning__text">
                           Supporting Text
                         </span>
-                      </div> */}
+                      </div>
                       <div className="nft_infomation">
                         <p className="info">Please check the information of the work before NFT minting once more!</p>
                         <div className="waller_addr bubble-position">
@@ -899,11 +927,15 @@ export default class ArtworksRegist extends React.Component {
                           {isToggleOn5 ? (
                             <div className="bubble bubble-top-right">
                             NFTs are stored with the wallet address you log in to.
+                            <br />
                             Stored NFTs can be moved to another wallet address,
-                            but Curation and market registration are not possible,
-                            so please check the wallet address to be stored again.
-                            Once the information of the work is stored with NFT,
-                            it cannot be canceled or deleted afterwards.
+                            but Curation and market registration
+                            <br />
+                            are not possible, so please check the wallet address
+                            to be stored again. Once the
+                            <br />
+                            information of the work is stored with NFT, it cannot
+                            be canceled or deleted afterwards.
                             </div>
                           ) : null}
                         </div>

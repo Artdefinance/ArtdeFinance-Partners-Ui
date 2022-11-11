@@ -7,9 +7,11 @@ export default class About extends React.Component {
     super(props);
     this.state = {
       isToggleOn: false,
+      isClickSeemore: false,
     };
     this.onClickHandler = this.onClickHandler.bind(this);
     this.onClickHandler2 = this.onClickHandler2.bind(this);
+    this.moreHandler = this.moreHandler.bind(this);
   }
 
   onClickHandler() {
@@ -24,9 +26,15 @@ export default class About extends React.Component {
     }));
   }
 
+  moreHandler() {
+    this.setState((prevState) => ({
+      isClickSeemore: !prevState.isClickSeemore,
+    }));
+  }
+
   render() {
     const backgroundStyle = ['/assets/images/page/main/img_piece.png'];
-    const { isToggleOn, isToggleOn2 } = this.state;
+    const { isToggleOn, isToggleOn2, isClickSeemore } = this.state;
     const nftDatas = [
       {
         id: '1',
@@ -82,7 +90,7 @@ export default class About extends React.Component {
               </button>
               <div className="activity-info__content">
                 {isToggleOn ? (
-                  <div>
+                  <div className={isClickSeemore ? 'see-more__acitve' : 'see-more'}>
                     <p>
                       Born in 1979, Jisan Ahn studied plastic art at Korea
                       National University of Arts and has a degree with paintings
@@ -91,8 +99,15 @@ export default class About extends React.Component {
                       akademie residency for 2 years from 2013. European Art Scene
                       started paying attention to him after his solo exhibition at
                       Galerie Bart/
+                      Born in 1979, Jisan Ahn studied plastic art at Korea
+                      National University of Arts and has a degree with paintings
+                      at Frank Mohr International in the Netherlands. . He debuted
+                      in the Netherlands first while he was staying in Rijks
+                      akademie residency for 2 years from 2013. European Art Scene
+                      started paying attention to him after his solo exhibition at
+                      Galerie Bart/
                     </p>
-                    <button type="button">See more</button>
+                    <button type="button" onClick={this.moreHandler}>See more</button>
                   </div>
                 ) : null}
               </div>

@@ -80,8 +80,8 @@ export default class SummaryTab extends React.Component {
       <div className="main-tab">
         <Tabs value={tabvalue} onChange={this.handleTabChange}>
           <Tab label="Exhibition History" />
-          <Tab label="DAO Voting Result" />
           <Tab label="Curation Result" />
+          <Tab label="DAO Voting Result" />
         </Tabs>
         {tabvalue === 0 && (
           // Exhibition History
@@ -98,51 +98,6 @@ export default class SummaryTab extends React.Component {
           </div>
         )}
         {tabvalue === 1 && (
-          // DAO Voting Result
-          <div className="tab_panel">
-            <button type="button" className="tab_panel__button" onClick={this.openDialog}>Show all</button>
-            <dl className="dao_list">
-              <dt>
-                <span>Curator</span>
-                Artdefinance Reality sub labs gallery
-              </dt>
-              <dd className="price_box">
-                <p>Curation Price</p>
-                <div className="price">
-                  1,800,000.00
-                  <span className="unit">USD</span>
-                </div>
-              </dd>
-            </dl>
-            <dl className="dao_list">
-              <dt>
-                <span>Curator</span>
-                Artdefinance Reality sub labs gallery
-              </dt>
-              <dd className="price_box">
-                <p>Curation Price</p>
-                <div className="price">
-                  1,800,000.00
-                  <span className="unit">USD</span>
-                </div>
-              </dd>
-            </dl>
-            <dl className="dao_list">
-              <dt>
-                <span>Curator</span>
-                Artdefinance Reality sub labs gallery
-              </dt>
-              <dd className="price_box">
-                <p>Curation Price</p>
-                <div className="price">
-                  1,800,000.00
-                  <span className="unit">USD</span>
-                </div>
-              </dd>
-            </dl>
-          </div>
-        )}
-        {tabvalue === 2 && (
           // Curation Result
           <div className="tab_panel">
             <button type="button" className="tab_panel__button" onClick={this.openDialog}>Show all</button>
@@ -190,6 +145,51 @@ export default class SummaryTab extends React.Component {
                 </dl>
               </div>
             </div>
+          </div>
+        )}
+        {tabvalue === 2 && (
+          // DAO Voting Result
+          <div className="tab_panel">
+            <button type="button" className="tab_panel__button" onClick={this.openDialog}>Show all</button>
+            <dl className="dao_list">
+              <dt>
+                <span>Curator</span>
+                Artdefinance Reality sub labs gallery
+              </dt>
+              <dd className="price_box">
+                <p>Curation Price</p>
+                <div className="price">
+                  1,800,000.00
+                  <span className="unit">USD</span>
+                </div>
+              </dd>
+            </dl>
+            <dl className="dao_list">
+              <dt>
+                <span>Curator</span>
+                Artdefinance Reality sub labs gallery
+              </dt>
+              <dd className="price_box">
+                <p>Curation Price</p>
+                <div className="price">
+                  1,800,000.00
+                  <span className="unit">USD</span>
+                </div>
+              </dd>
+            </dl>
+            <dl className="dao_list">
+              <dt>
+                <span>Curator</span>
+                Artdefinance Reality sub labs gallery
+              </dt>
+              <dd className="price_box">
+                <p>Curation Price</p>
+                <div className="price">
+                  1,800,000.00
+                  <span className="unit">USD</span>
+                </div>
+              </dd>
+            </dl>
           </div>
         )}
       </div>

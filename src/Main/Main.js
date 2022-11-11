@@ -418,6 +418,48 @@ export default class Main extends React.Component {
                     <Button className="button button--black button--mid" content="Artist Registration" type="type1" />
                   </div>
                 </div>
+                <div className="slide-item">
+                  <div className="work_info">
+                    <div className="figure" style={{ backgroundImage: `url(${curationImg0})` }} />
+                    <div className="info">
+                      <p className="name">Vincent van Gogh, 1955Vincent van</p>
+                      <p className="desc">Congregation Leaving the Reformed Church in Nuenen, 2011</p>
+                      <p className="number">Edition #2345</p>
+                    </div>
+                  </div>
+                  <div className="price_info info-half">
+                    <div>
+                      <p className="title">Curation High Price</p>
+                      <div className="price_box">
+                        <div className="currency">
+                          1,500,000.00
+                          <span className="unit">USD</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="title">Curation Low Price</p>
+                      <div className="price_box">
+                        <div className="currency">
+                          1,500,000.00
+                          <span className="unit">USD</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="price_info price_info--dao">
+                    <div className="price_box">
+                      <p>DAO</p>
+                      <div className="currency">
+                        3,567,878,654
+                        <span className="unit">Voted</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="btnwrap">
+                    <Button className="button button--black button--mid" content="Artist Registration" type="type1" />
+                  </div>
+                </div>
               </Slider>
             </div>
           </div>

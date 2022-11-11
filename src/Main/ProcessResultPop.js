@@ -75,8 +75,8 @@ export default class ProcessResultPop extends React.Component {
       <div className="dialog_wrap artworkprocess_dialog">
         <Tabs value={tabvalue} onChange={this.handleTabChange}>
           <Tab label="Exhibition History" />
-          <Tab label="DAO Voting Result" />
           <Tab label="Curation Result" />
+          <Tab label="DAO Voting Result" />
         </Tabs>
         {tabvalue === 0 && (
           <>
@@ -100,304 +100,6 @@ export default class ProcessResultPop extends React.Component {
           </>
         )}
         {tabvalue === 1 && (
-          <>
-            {/* DAO Voting Result */}
-            <div className="dialog__content content_dao">
-              <div className="main-result">
-                <div className="main-result--top">
-                  <div>
-                    <p className="main-result__title">Voted</p>
-                    <p>
-                      <span>123,456,678,234</span>
-                      <span>%</span>
-                    </p>
-                  </div>
-                  <div>
-                    <p className="main-result__title">Request Amount</p>
-                    <p>
-                      <span>133,500,000,000.00</span>
-                      <span>vADF</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="main-result__content">
-                  <div className="main-result__list">
-                    <div className="main-result__item main-result__item--popular">
-                      <div className="main-result__mark">
-                        <p>Most Votes</p>
-                      </div>
-                      <div className="main-result__sub-title">
-                        <p>Curator</p>
-                        <p className="main-result__description">
-                          Artdefinance Reality sub labs galler
-                          <br />
-                          Artdefinance
-                        </p>
-                        <p>
-                          78.56
-                          <span>%</span>
-                        </p>
-                      </div>
-                      <div className="main-result__box">
-                        <div>
-                          <p>Curation Price</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                        <div>
-                          <p>Expected Value</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="main-result__info">
-                        Expected Value after
-                        <span>3</span>
-                        years
-                      </p>
-                    </div>
-                    <div className="main-result__item">
-                      <div className="main-result__sub-title">
-                        <p>Curator</p>
-                        <p className="main-result__description">
-                          Artdefinance Reality sub labs galler Artde
-                        </p>
-                        <p>
-                          78.56
-                          <span>%</span>
-                        </p>
-                      </div>
-                      <div className="main-result__box">
-                        <div>
-                          <p>Curation Price</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                        <div>
-                          <p>Expected Value</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="main-result__info">
-                        Expected Value after
-                        <span>3</span>
-                        years
-                      </p>
-                    </div>
-                    <div className="main-result__item">
-                      <div className="main-result__sub-title">
-                        <p>Curator</p>
-                        <p className="main-result__description">
-                          Artdefinance Reality sub labs galler Artde
-                        </p>
-                        <p>
-                          78.56
-                          <span>%</span>
-                        </p>
-                      </div>
-                      <div className="main-result__box">
-                        <div>
-                          <p>Curation Price</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                        <div>
-                          <p>Expected Value</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="main-result__info">
-                        Expected Value after
-                        <span>3</span>
-                        years
-                      </p>
-                    </div>
-                    <div className="main-result__item">
-                      <div className="main-result__sub-title">
-                        <p>Curator</p>
-                        <p className="main-result__description">
-                          Artdefinance Reality sub labs galler Artde
-                        </p>
-                        <p>
-                          78.56
-                          <span>%</span>
-                        </p>
-                      </div>
-                      <div className="main-result__box">
-                        <div>
-                          <p>Curation Price</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                        <div>
-                          <p>Expected Value</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="main-result__info">
-                        Expected Value after
-                        <span>3</span>
-                        years
-                      </p>
-                    </div>
-                    <div className="main-result__item">
-                      <div className="main-result__sub-title">
-                        <p>Curator</p>
-                        <p className="main-result__description">
-                          Artdefinance Reality sub labs galler Artde
-                        </p>
-                        <p>
-                          78.56
-                          <span>%</span>
-                        </p>
-                      </div>
-                      <div className="main-result__box">
-                        <div>
-                          <p>Curation Price</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                        <div>
-                          <p>Expected Value</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="main-result__info">
-                        Expected Value after
-                        <span>3</span>
-                        years
-                      </p>
-                    </div>
-                    <div className="main-result__item">
-                      <div className="main-result__sub-title">
-                        <p>Curator</p>
-                        <p className="main-result__description">
-                          Artdefinance Reality sub labs galler Artde
-                        </p>
-                        <p>
-                          78.56
-                          <span>%</span>
-                        </p>
-                      </div>
-                      <div className="main-result__box">
-                        <div>
-                          <p>Curation Price</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                        <div>
-                          <p>Expected Value</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="main-result__info">
-                        Expected Value after
-                        <span>3</span>
-                        years
-                      </p>
-                    </div>
-                    <div className="main-result__item">
-                      <div className="main-result__sub-title">
-                        <p>Curator</p>
-                        <p className="main-result__description">
-                          Artdefinance Reality sub labs galler Artde
-                        </p>
-                        <p>
-                          78.56
-                          <span>%</span>
-                        </p>
-                      </div>
-                      <div className="main-result__box">
-                        <div>
-                          <p>Curation Price</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                        <div>
-                          <p>Expected Value</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="main-result__info">
-                        Expected Value after
-                        <span>3</span>
-                        years
-                      </p>
-                    </div>
-                    <div className="main-result__item">
-                      <div className="main-result__sub-title">
-                        <p>Curator</p>
-                        <p className="main-result__description">
-                          Artdefinance Reality sub labs galler Artde
-                        </p>
-                        <p>
-                          78.56
-                          <span>%</span>
-                        </p>
-                      </div>
-                      <div className="main-result__box">
-                        <div>
-                          <p>Curation Price</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                        <div>
-                          <p>Expected Value</p>
-                          <div className="main-result__count">
-                            <p>1,800,000.00</p>
-                            <p>USD</p>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="main-result__info">
-                        Expected Value after
-                        <span>3</span>
-                        years
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>
-        )}
-        {tabvalue === 2 && (
           <>
             {/* Curation Result */}
             <div className="dialog__content content_curation">
@@ -720,6 +422,304 @@ export default class ProcessResultPop extends React.Component {
                         </div>
                       </AccordionDetails>
                     </Accordion>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+        {tabvalue === 2 && (
+          <>
+            {/* DAO Voting Result */}
+            <div className="dialog__content content_dao">
+              <div className="main-result">
+                <div className="main-result--top">
+                  <div>
+                    <p className="main-result__title">Voted</p>
+                    <p>
+                      <span>123,456,678,234</span>
+                      <span>%</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p className="main-result__title">Request Amount</p>
+                    <p>
+                      <span>133,500,000,000.00</span>
+                      <span>vADF</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="main-result__content">
+                  <div className="main-result__list">
+                    <div className="main-result__item main-result__item--popular">
+                      <div className="main-result__mark">
+                        <p>Most Votes</p>
+                      </div>
+                      <div className="main-result__sub-title">
+                        <p>Curator</p>
+                        <p className="main-result__description">
+                          Artdefinance Reality sub labs galler
+                          <br />
+                          Artdefinance
+                        </p>
+                        <p>
+                          78.56
+                          <span>%</span>
+                        </p>
+                      </div>
+                      <div className="main-result__box">
+                        <div>
+                          <p>Curation Price</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                        <div>
+                          <p>Expected Value</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="main-result__info">
+                        Expected Value after
+                        <span>3</span>
+                        years
+                      </p>
+                    </div>
+                    <div className="main-result__item">
+                      <div className="main-result__sub-title">
+                        <p>Curator</p>
+                        <p className="main-result__description">
+                          Artdefinance Reality sub labs galler Artde
+                        </p>
+                        <p>
+                          78.56
+                          <span>%</span>
+                        </p>
+                      </div>
+                      <div className="main-result__box">
+                        <div>
+                          <p>Curation Price</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                        <div>
+                          <p>Expected Value</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="main-result__info">
+                        Expected Value after
+                        <span>3</span>
+                        years
+                      </p>
+                    </div>
+                    <div className="main-result__item">
+                      <div className="main-result__sub-title">
+                        <p>Curator</p>
+                        <p className="main-result__description">
+                          Artdefinance Reality sub labs galler Artde
+                        </p>
+                        <p>
+                          78.56
+                          <span>%</span>
+                        </p>
+                      </div>
+                      <div className="main-result__box">
+                        <div>
+                          <p>Curation Price</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                        <div>
+                          <p>Expected Value</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="main-result__info">
+                        Expected Value after
+                        <span>3</span>
+                        years
+                      </p>
+                    </div>
+                    <div className="main-result__item">
+                      <div className="main-result__sub-title">
+                        <p>Curator</p>
+                        <p className="main-result__description">
+                          Artdefinance Reality sub labs galler Artde
+                        </p>
+                        <p>
+                          78.56
+                          <span>%</span>
+                        </p>
+                      </div>
+                      <div className="main-result__box">
+                        <div>
+                          <p>Curation Price</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                        <div>
+                          <p>Expected Value</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="main-result__info">
+                        Expected Value after
+                        <span>3</span>
+                        years
+                      </p>
+                    </div>
+                    <div className="main-result__item">
+                      <div className="main-result__sub-title">
+                        <p>Curator</p>
+                        <p className="main-result__description">
+                          Artdefinance Reality sub labs galler Artde
+                        </p>
+                        <p>
+                          78.56
+                          <span>%</span>
+                        </p>
+                      </div>
+                      <div className="main-result__box">
+                        <div>
+                          <p>Curation Price</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                        <div>
+                          <p>Expected Value</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="main-result__info">
+                        Expected Value after
+                        <span>3</span>
+                        years
+                      </p>
+                    </div>
+                    <div className="main-result__item">
+                      <div className="main-result__sub-title">
+                        <p>Curator</p>
+                        <p className="main-result__description">
+                          Artdefinance Reality sub labs galler Artde
+                        </p>
+                        <p>
+                          78.56
+                          <span>%</span>
+                        </p>
+                      </div>
+                      <div className="main-result__box">
+                        <div>
+                          <p>Curation Price</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                        <div>
+                          <p>Expected Value</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="main-result__info">
+                        Expected Value after
+                        <span>3</span>
+                        years
+                      </p>
+                    </div>
+                    <div className="main-result__item">
+                      <div className="main-result__sub-title">
+                        <p>Curator</p>
+                        <p className="main-result__description">
+                          Artdefinance Reality sub labs galler Artde
+                        </p>
+                        <p>
+                          78.56
+                          <span>%</span>
+                        </p>
+                      </div>
+                      <div className="main-result__box">
+                        <div>
+                          <p>Curation Price</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                        <div>
+                          <p>Expected Value</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="main-result__info">
+                        Expected Value after
+                        <span>3</span>
+                        years
+                      </p>
+                    </div>
+                    <div className="main-result__item">
+                      <div className="main-result__sub-title">
+                        <p>Curator</p>
+                        <p className="main-result__description">
+                          Artdefinance Reality sub labs galler Artde
+                        </p>
+                        <p>
+                          78.56
+                          <span>%</span>
+                        </p>
+                      </div>
+                      <div className="main-result__box">
+                        <div>
+                          <p>Curation Price</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                        <div>
+                          <p>Expected Value</p>
+                          <div className="main-result__count">
+                            <p>1,800,000.00</p>
+                            <p>USD</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="main-result__info">
+                        Expected Value after
+                        <span>3</span>
+                        years
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

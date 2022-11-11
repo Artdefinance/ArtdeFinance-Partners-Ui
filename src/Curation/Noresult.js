@@ -6,11 +6,11 @@ import Dropdown from '../Components/Dropdown/Dropdown';
 import Icons from '../Components/Icons/Icons';
 import Pagenation from '../Components/Pagenation/Pagenation';
 
-export default class Curation extends React.Component {
+export default class Noresult extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: true, // 데이터 여부 false 시 데이터 없음 화면 전환
+      data: false, // 데이터 여부 false 시 데이터 없음 화면 전환
       isToggleOn: false,
       isToggleOn2: true,
       isToggleOn3: true,

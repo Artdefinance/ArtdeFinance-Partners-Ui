@@ -413,7 +413,7 @@ export default class Evaluation extends React.Component {
           <div className="curation-evaluation__item">
             <div className="curation-evaluation__header">
               <div>
-                <p className="curation-evaluation__title curation-evaluation__title--disabled">
+                <p className="curation-evaluation__title">
                   Artwork Curating
                 </p>
               </div>
@@ -485,7 +485,7 @@ export default class Evaluation extends React.Component {
                 <>
                   <div>
                     <p className="curation-evaluation__title curation-evaluation__title--disabled">
-                      xpected Value
+                      Expected Value
                     </p>
                   </div>
                   <div className="curation-evaluation__inputs curation-evaluation__inputs--disabled">

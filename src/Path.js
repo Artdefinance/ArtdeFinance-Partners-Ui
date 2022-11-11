@@ -207,6 +207,15 @@ function Path() {
             </tr>
             <tr>
               <td>-</td>
+              <td>Activity_List_01 _noresult</td>
+              <td>
+              <Link to="/activity/noresult">
+                /activity/noresult
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>-</td>
               <td>Activity_List Price_01</td>
               <td>
               <Link to="/activity/list">
@@ -303,6 +312,15 @@ function Path() {
               <td>
               <Link to="/curation">
                 /curation
+              </Link>
+              </td>
+            </tr>
+            <tr>
+              <td>Curation</td>
+              <td>Curation List_1_noresult</td>
+              <td>
+              <Link to="/curation/noresult">
+                /curation/noresult
               </Link>
               </td>
             </tr>

@@ -240,7 +240,7 @@ export default class Regist extends React.Component {
                     dropFontSize="24px"
                   />
                 </div>
-                <span className="side-regist__more">
+                <span className="side-regist__more side-regist__more--right">
                   Up to 2000Bytes can be registered.
                 </span>
               </div>

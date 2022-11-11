@@ -31,7 +31,11 @@ export default class RadioButton extends React.Component {
         }}
         className="radio-button"
       >
-        <label htmlFor={value} className="radio-button__label" style={radioStyle}>
+        <label
+          htmlFor={value}
+          className="radio-button__label"
+          style={radioStyle}
+        >
           <input
             type="radio"
             className="radio-button__button"
@@ -42,7 +46,14 @@ export default class RadioButton extends React.Component {
             style={radioStyle}
             onChange={this.handleChange}
           />
-          <span>{content}</span>
+          <span>
+            {content.split('<br/>').map((txt) => (
+              <>
+                {txt}
+                <br />
+              </>
+            ))}
+          </span>
         </label>
       </div>
     );
