@@ -7,6 +7,7 @@ import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core
 import { ToastContainer, toast } from 'react-toastify';
 import './Regist.scss';
 import FileDragDrop from '../Components/FileDragDrop/FileDragDrop';
+import UploadProgress from '../Components/UploadProgress';
 import Button from '../Components/Button/Button';
 import ButtonGray from '../Components/Button/ButtonGray';
 import Input from '../Components/Inputs/Input';
@@ -711,6 +712,12 @@ export default class ArtworksRegist extends React.Component {
                     </div>
                     <div className="side-regist__drag-drop">
                       <FileDragDrop boxTypeClass="multiple_container" />
+                      <UploadProgress
+                        fileName="Sub_01.jpg"
+                        fileSize="38MB"
+                        progress={40}
+                        onClickAbort={() => {}}
+                      />
                     </div>
                   </div>
                 </div>

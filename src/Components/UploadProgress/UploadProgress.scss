@@ -1,0 +1,58 @@
+@import '../../assets/css/Mixins.scss';
+
+.upload-progress {
+  padding: 18px 23px 19px 29px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+  &__status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 5px;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-left: -5px;
+  }
+
+  &__name {
+    @include RotaB;
+    font-size: 16px;
+    line-height: 16px;
+    color: #000;
+    margin-left: 5px;
+    position: relative;
+    top: 4px;
+  }
+
+  &__size {
+    @include AcuminproM;
+    font-size: 14px;
+    line-height: 16px;
+    color: #888;
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+  }
+
+  &__progress {
+    @include AcuminproM;
+    font-size: 12px;
+    line-height: 1;
+    color: #bbb;
+    margin-left: auto;
+    margin-right: 7px;
+    position: relative;
+    top: 7px;
+  }
+
+  &__btn-abort {
+    position: relative;
+    top: 8px;
+  }
+}
