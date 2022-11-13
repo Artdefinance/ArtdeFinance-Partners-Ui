@@ -465,7 +465,7 @@ export default class ArtworksRegist extends React.Component {
                               event.preventDefault();
                             }
                           }}
-                         />
+                        />
                         <p className="count">{isCm ? 'Cm' : 'in' }</p>
                       </div>
                       <div className="sub__message">
@@ -484,7 +484,7 @@ export default class ArtworksRegist extends React.Component {
                             }
                           }}
                           disabled={depthChecked ? true : ''}
-                         />
+                        />
                         <p className="count">{isCm ? 'Cm' : 'in' }</p>
                       </div>
                       <div className="sub__message">
@@ -502,7 +502,7 @@ export default class ArtworksRegist extends React.Component {
                               event.preventDefault();
                             }
                           }}
-                         />
+                        />
                         <p className="count">{isCm ? 'Cm' : 'in' }</p>
                       </div>
                       <div className="sub__message">

@@ -47,11 +47,11 @@ export default class RadioButton extends React.Component {
             onChange={this.handleChange}
           />
           <span>
-            {content.split('<br/>').map((txt) => (
-              <>
+            {content.split('<br/>').map((txt, index) => (
+              <React.Fragment key={`${txt}.${index.toString()}`}>
                 {txt}
                 <br />
-              </>
+              </React.Fragment>
             ))}
           </span>
         </label>

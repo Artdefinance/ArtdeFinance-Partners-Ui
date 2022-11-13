@@ -20,16 +20,19 @@ export default class Input extends React.Component {
   componentDidMount() {
     const { getValue, isShowCloseButton } = this.props;
 
-    this.setState(() => ({
-      value2: getValue,
+    this.setState((state) => ({
+      ...state,
+      value2: getValue || '',
     }));
 
     if (isShowCloseButton) {
-      this.setState(() => ({
+      this.setState((state) => ({
+        ...state,
         isClearButton2: true,
       }));
     } else {
-      this.setState(() => ({
+      this.setState((state) => ({
+        ...state,
         isClearButton2: false,
       }));
     }
@@ -43,21 +46,24 @@ export default class Input extends React.Component {
     }
 
     if (e.target.value === '') {
-      this.setState(() => ({
+      this.setState((state) => ({
+        ...state,
         [e.target.name]: false,
         isClearButton: false,
         value: '',
         value2: '',
       }));
     } else if (e.target.value !== '') {
-      this.setState(() => ({
+      this.setState((state) => ({
+        ...state,
         value: e.target.value,
         value2: e.target.value,
         isClearButton: true,
       }));
     }
     if (e.target.value && [e.target.name]) {
-      this.setState(() => ({
+      this.setState((state) => ({
+        ...state,
         [e.target.name]: true,
         isClearButton: true,
       }));
@@ -70,7 +76,8 @@ export default class Input extends React.Component {
       onChangeValue('');
     }
 
-    this.setState(() => ({
+    this.setState((state) => ({
+      ...state,
       isClearButton: false,
       value2: '',
       isClearButton2: false,
