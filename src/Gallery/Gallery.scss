@@ -181,6 +181,15 @@
   background-color: #ffffff;
   padding: 20px;
   border-top: 1px solid #BBBBBB;
+
+  & > div {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    max-width: 1021px;
+    margin: 0 auto;
+  }
+
   &.form_fixed-multi {
     justify-content:space-between;
     > div {
@@ -189,6 +198,11 @@
     }
   }
 }
+
+.form__fixed.hide {
+  display: none;
+}
+
 // .regist_wrap
 .regist__form {
   background-color: #ffffff;

@@ -66,7 +66,7 @@ export default class Regist extends React.Component {
     }));
   }
 
-  changeNumberInput(e) {
+  changeNumberInput() {
     const target1 = this.numberInputTarget1.current.value.length;
     const target2 = this.numberInputTarget2.current.value.length;
     if (target1 > 3 && target2 > 3) {
@@ -297,8 +297,13 @@ export default class Regist extends React.Component {
                   className="button button--black button--default"
                   content="Registration"
                   type="type1"
-                  disabled="true"
                 />
+                {/* <Button
+                  className="button button--black button--default"
+                  content="Registration"
+                  type="type1"
+                  disabled="true"
+                /> */}
               </div>
             </div>
           </div>

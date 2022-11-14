@@ -18,13 +18,38 @@ export default class GalleryRegist extends React.Component {
       isblank4: true,
       isblank5: true,
       isblank6: true,
+      isFooterShow: true,
     };
     this.handleAgreeChange = this.handleAgreeChange.bind(this);
     this.clickRadioTabButton = this.clickRadioTabButton.bind(this);
     this.clickRadioTabButton2 = this.clickRadioTabButton2.bind(this);
     this.changeNumberInput = this.changeNumberInput.bind(this);
     this.numberInputTarget = React.createRef();
+    this.registTarget = React.createRef();
   }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+    if (!this.registTarget.current) return;
+    if (window.pageYOffset > this.registTarget.current.clientHeight - 1124) {
+      this.setState((state) => ({
+        ...state,
+        isFooterShow: true,
+      }));
+    } else {
+      this.setState((state) => ({
+        ...state,
+        isFooterShow: false,
+      }));
+    }
+  };
 
   handleAgreeChange = (e) => {
     this.setState({
@@ -140,7 +165,10 @@ export default class GalleryRegist extends React.Component {
       },
     ];
 
-    const { agreechecked, isblank1, isblank2, isblank3, isblank4, isblank5, isblank6 } = this.state;
+    const {
+      agreechecked, isblank1, isblank2,
+      isblank3, isblank4, isblank5, isblank6, isFooterShow,
+     } = this.state;
     const chkboxChecked = {
       backgroundImage: 'url(/assets/images/component/check_true.png)',
     };
@@ -150,7 +178,7 @@ export default class GalleryRegist extends React.Component {
 
     return (
       <div className="gallery">
-        <div className="gallery__wrap regist_wrap">
+        <div className="gallery__wrap regist_wrap" ref={this.registTarget}>
           <div className="head">
             <p>
               Partner Registration
@@ -271,8 +299,10 @@ export default class GalleryRegist extends React.Component {
 
             </div>
           </div>
-          <div className="form__fixed">
-            <Button className="button button--black button--mid" content="Comfirm" type="type1" />
+          <div className={isFooterShow ? 'form__fixed hide' : 'form__fixed'}>
+            <div>
+              <Button className="button button--black button--mid" content="Comfirm" type="type1" />
+            </div>
           </div>
         </div>
       </div>
